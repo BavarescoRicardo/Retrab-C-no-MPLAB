@@ -18,55 +18,55 @@ config CONFIG 0 2007 2007 1 2
 $PIC16F877A.obj
 cinit CODE 0 15 15 2F 2
 intentry CODE 0 4 4 E 2
-text36 CODE 0 B9D B9D 5F 2
-text35 CODE 0 BFC BFC 68 2
-text34 CODE 0 92E 92E 14 2
-text33 CODE 0 8DF 8DF F 2
-text32 CODE 0 AC6 AC6 3E 2
-text31 CODE 0 D51 D51 9F 2
-text30 CODE 0 CD1 CD1 80 2
-text29 CODE 0 958 958 1B 2
-text28 CODE 0 9C4 9C4 23 2
-text27 CODE 0 44 44 3CD 2
-text26 CODE 0 8C7 8C7 8 2
-text25 CODE 0 9E7 9E7 23 2
-text24 CODE 0 973 973 1B 2
-text23 CODE 0 8BB 8BB 6 2
-text22 CODE 0 63A 63A 177 2
-text21 CODE 0 91C 91C 12 2
-text20 CODE 0 8EE 8EE F 2
-text19 CODE 0 A9D A9D 29 2
-text18 CODE 0 942 942 16 2
-text17 CODE 0 C64 C64 6D 2
-text16 CODE 0 8FD 8FD F 2
-text15 CODE 0 A2E A2E 25 2
-text14 CODE 0 98E 98E 1B 2
-text13 CODE 0 9A9 9A9 1B 2
-text12 CODE 0 A0A A0A 24 2
-text11 CODE 0 7F5 7F5 B 2
-text10 CODE 0 8C1 8C1 6 2
-text9 CODE 0 DF0 DF0 BB 2
-text8 CODE 0 B44 B44 59 2
-text7 CODE 0 8CF 8CF 8 2
-text6 CODE 0 A53 A53 25 2
-text5 CODE 0 B04 B04 40 2
-text4 CODE 0 7B1 7B1 44 2
-text3 CODE 0 A78 A78 25 2
-text2 CODE 0 90C 90C 10 2
-text1 CODE 0 411 411 229 2
-maintext CODE 0 EAB EAB 155 2
+text36 CODE 0 799 799 5F 2
+text35 CODE 0 CAF CAF 68 2
+text34 CODE 0 9FC 9FC 14 2
+text33 CODE 0 9AD 9AD F 2
+text32 CODE 0 B94 B94 3E 2
+text31 CODE 0 E04 E04 9F 2
+text30 CODE 0 D84 D84 80 2
+text29 CODE 0 A26 A26 1B 2
+text28 CODE 0 A92 A92 23 2
+text27 CODE 0 44 44 2F0 2
+text26 CODE 0 992 992 8 2
+text25 CODE 0 AB5 AB5 23 2
+text24 CODE 0 A41 A41 1B 2
+text23 CODE 0 986 986 6 2
+text22 CODE 0 55D 55D 181 2
+text21 CODE 0 9EA 9EA 12 2
+text20 CODE 0 9BC 9BC F 2
+text19 CODE 0 B6B B6B 29 2
+text18 CODE 0 A10 A10 16 2
+text17 CODE 0 D17 D17 6D 2
+text16 CODE 0 9CB 9CB F 2
+text15 CODE 0 AFC AFC 25 2
+text14 CODE 0 A5C A5C 1B 2
+text13 CODE 0 A77 A77 1B 2
+text12 CODE 0 AD8 AD8 24 2
+text11 CODE 0 9A2 9A2 B 2
+text10 CODE 0 98C 98C 6 2
+text9 CODE 0 6DE 6DE BB 2
+text8 CODE 0 C56 C56 59 2
+text7 CODE 0 99A 99A 8 2
+text6 CODE 0 B21 B21 25 2
+text5 CODE 0 BD2 BD2 40 2
+text4 CODE 0 C12 C12 44 2
+text3 CODE 0 B46 B46 25 2
+text2 CODE 0 9DA 9DA 10 2
+text1 CODE 0 334 334 229 2
+maintext CODE 0 EA3 EA3 15D 2
 cstackBANK0 BANK0 1 20 20 21 1
 cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK1 BANK1 1 D8 D8 16 1
 cstackBANK3 BANK3 1 190 190 3 1
-clrtext CODE 0 8D7 8D7 8 2
+clrtext CODE 0 7F8 7F8 8 2
 dataBANK1 BANK1 1 EE EE 2 1
 bssBANK1 BANK1 1 A0 A0 38 1
 dataBANK0 BANK0 1 57 57 2 1
 bssBANK0 BANK0 1 41 41 16 1
 stringtext STRCODE 0 1000 1000 123 2
-idataBANK1 CODE 0 8B7 8B7 2 2
-idataBANK0 CODE 0 8B9 8B9 2 2
+idataBANK1 CODE 0 982 982 2 2
+idataBANK0 CODE 0 984 984 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -77,14 +77,14 @@ BANK0 0059-006F 1
 BANK2 0110-016F 1
 BANK3 0193-01EF 1
 CODE 0003-0003 2
-CODE 0800-08B6 2
+CODE 0800-0981 2
 CODE 1123-1FFF 2
 CONST 0003-0003 2
-CONST 0800-08B6 2
+CONST 0800-0981 2
 CONST 1123-1FFF 2
 EEDATA 2100-21FF 2
 ENTRY 0003-0003 2
-ENTRY 0800-08B6 2
+ENTRY 0800-0981 2
 ENTRY 1123-1FFF 2
 IDLOC 2000-2003 2
 RAM 0059-006F 1
@@ -96,10 +96,10 @@ SFR2 0100-010F 1
 SFR3 0180-018F 1
 STACK 0110-016F 1
 STRCODE 0003-0003 2
-STRCODE 0800-08B6 2
+STRCODE 0800-0981 2
 STRCODE 1123-1FFF 2
 STRING 0003-0003 2
-STRING 0800-08B6 2
+STRING 0800-0981 2
 STRING 1123-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -115,7 +115,7 @@ STRING 1123-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $PIC16F877A.obj
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":321 4 intentry CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":324 4 intentry CODE
 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1715 15 cinit CODE
 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1718 15 cinit CODE
 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1853 15 cinit CODE
@@ -150,535 +150,529 @@ $PIC16F877A.obj
 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":155 5A text27 CODE
 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":156 5B text27 CODE
 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":159 5C text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":162 71 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":166 7E text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":169 9E text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":172 C3 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":175 DA text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":176 DC text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":178 DE text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":180 101 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":182 109 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":186 112 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":193 11F text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":196 12F text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":199 14E text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":202 165 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":203 167 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":205 169 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":207 188 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":209 190 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":213 199 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":221 1A6 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":224 1AE text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":228 1D1 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":231 1E8 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":232 1EA text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":234 1EC text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":236 20F text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":238 217 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":242 220 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":249 22D text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":251 24E text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":254 25C text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":256 2A0 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":259 2AE text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":261 2D9 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":267 2E7 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":268 2ED text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":270 2EF text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":271 2F7 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":276 2FD text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":282 316 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":285 336 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":287 33C text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":290 380 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":293 386 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":296 3A8 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":300 3AE text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":301 3C7 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":302 3DF text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":305 3F9 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":308 402 text27 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":309 410 text27 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":492 411 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":542 414 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":545 418 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":547 438 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":550 43C text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":551 447 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":555 448 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":557 44A text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":560 44B text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":588 44C text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":589 44C text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":590 44F text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":560 453 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":606 468 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":607 480 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":609 484 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":610 4AB text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":611 4CC text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":644 4E2 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1268 507 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1270 515 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1271 517 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1272 51B text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1314 520 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1315 526 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1314 54B text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1354 553 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1355 55B text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1390 561 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1391 572 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1393 580 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1396 584 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1401 586 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1402 58A text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1424 595 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1426 599 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1427 5A4 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1437 5AB text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1439 5AF text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1440 5BA text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1447 5C4 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1448 5C8 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1481 5D3 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1483 5D7 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1498 5DF text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1533 627 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1483 632 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1547 633 text1 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":321 63A text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":324 63A text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":326 63C text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":327 642 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":329 64A text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":330 653 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":331 657 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":335 662 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":337 66A text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":338 673 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":342 679 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":344 681 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":345 68A text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":349 690 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":351 698 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":352 6A1 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":354 6A7 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":356 6A9 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":357 6AA text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":358 6AB text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":362 6AC text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":364 6B4 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":365 6BD text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":367 6C3 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":369 6C5 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":370 6C6 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":371 6C7 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":375 6C8 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":377 6D0 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":378 6D9 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":382 6DF text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":384 6E7 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":385 6F0 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":389 6F6 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":391 6FE text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":392 707 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":396 70D text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":398 715 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":399 71E text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":403 724 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":405 72C text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":406 735 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":412 73B text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":415 748 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":419 74B text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":424 74C text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":429 74D text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":432 74F text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":435 755 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":438 75E text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":441 764 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":442 767 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":446 768 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":449 76C text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":450 774 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":453 79C text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":454 79F text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":457 7A0 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":461 7A1 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":465 7A2 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":470 7A3 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":474 7A4 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":479 7A5 text22 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":481 7A6 text22 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":6 7B1 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":13 7B1 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":14 7B7 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":15 7BB text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":16 7BF text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":17 7C8 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":15 7CE text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":20 7CF text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":21 7D9 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":22 7DF text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":23 7E6 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":25 7EC text4 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":6 7F5 text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":8 7F5 text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":9 7F8 text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":10 7F9 text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":11 7FA text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":12 7FB text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":13 7FC text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":14 7FD text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":15 7FE text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":16 7FF text11 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":20 8BB text23 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":22 8BC text23 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":23 8C0 text23 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":20 8C1 text10 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":22 8C4 text10 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":23 8C6 text10 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":44 8C7 text26 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":46 8C8 text26 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":47 8CC text26 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":48 8CE text26 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":44 8CF text7 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":46 8D2 text7 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":47 8D4 text7 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":48 8D6 text7 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1840 8D7 clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1841 8D7 clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1842 8D8 clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1843 8D8 clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1844 8D9 clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1845 8DA clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1846 8DB clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1847 8DC clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1848 8DD clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1849 8DE clrtext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":127 8DF text33 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":129 8DF text33 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":132 8E7 text33 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":32 8EE text20 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":34 8F1 text20 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":36 8F2 text20 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":39 8F4 text20 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":41 8F5 text20 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":43 8F9 text20 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":44 8FC text20 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":47 8FD text16 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":49 900 text16 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":51 901 text16 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":53 903 text16 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":55 904 text16 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":57 908 text16 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":58 90B text16 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c":8 90C text2 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c":14 90F text2 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":6 91C text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":9 91C text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":32 91F text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":33 920 text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":34 921 text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":35 922 text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":38 923 text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":39 926 text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":42 927 text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":43 92A text21 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":44 92D text21 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c":28 92E text34 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c":30 92E text34 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":10 942 text18 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":12 945 text18 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":14 946 text18 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":16 949 text18 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":20 94C text18 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":24 94F text18 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":26 950 text18 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":28 954 text18 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":29 957 text18 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":96 958 text29 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":98 958 text29 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":99 966 text29 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":100 972 text29 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":63 973 text24 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":67 973 text24 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":69 977 text24 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":74 97C text24 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":76 983 text24 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":77 986 text24 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":78 98A text24 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":79 98B text24 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":82 98C text24 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":64 98E text14 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":91 98E text14 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":92 99C text14 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":94 9A8 text14 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":96 9A9 text13 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":98 9A9 text13 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":99 9B7 text13 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":100 9C3 text13 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":15 9C4 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":43 9C4 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":45 9C6 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":46 9C8 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":47 9CE text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":48 9D5 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":49 9DC text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":52 9E0 text28 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":52 9E7 text25 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":54 9E7 text25 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":56 9F5 text25 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":57 A05 text25 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":54 A09 text25 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":5 A0A text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":14 A0A text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":15 A0D text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":18 A0E text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":19 A0F text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":20 A10 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":21 A11 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":24 A12 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":27 A13 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":43 A17 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":44 A1A text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":45 A1B text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":46 A1C text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":49 A1D text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":50 A20 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":53 A23 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":54 A24 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":55 A25 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":56 A26 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":59 A27 text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":60 A2A text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":61 A2D text12 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":61 A2E text15 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":63 A2E text15 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":65 A3C text15 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":66 A4C text15 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":63 A52 text15 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":52 A53 text6 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":54 A53 text6 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":56 A61 text6 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":57 A71 text6 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":54 A77 text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":15 A78 text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":43 A78 text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":45 A7C text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":46 A7E text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":47 A84 text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":48 A8B text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":49 A92 text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":52 A96 text3 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":71 A9D text19 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":73 A9D text19 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":75 AA3 text19 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":77 AAD text19 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":79 AB3 text19 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":81 AB9 text19 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":83 ABF text19 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":84 AC5 text19 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":6 AC6 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":14 AC6 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":15 AC8 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":16 ACC text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 ACE text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":18 AD0 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":19 AD7 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 ADB text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":22 ADC text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":23 AE3 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":24 AEB text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":25 AF1 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":27 AF2 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":28 AF9 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":30 AFD text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":6 B04 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":14 B04 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":15 B08 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":16 B0C text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 B0E text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":18 B10 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":19 B17 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 B1B text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":22 B1C text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":23 B23 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":24 B2B text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":25 B31 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":27 B32 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":28 B39 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":30 B3D text5 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":6 B44 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":13 B44 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":16 B7F text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":17 B80 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":18 B81 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":19 B82 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":21 B83 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":22 B84 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":23 B85 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":26 B86 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":27 B89 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":28 B8A text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":29 B8B text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":30 B8C text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":31 B8D text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":32 B8E text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":33 B8F text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":36 B90 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":37 B93 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":38 B96 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":39 B99 text8 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":40 B9C text8 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":4 B9D text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":6 B9D text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":7 BA1 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":8 BC6 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":9 BC8 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":10 BED text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":11 BEF text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":12 BF1 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":62 BFC text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":64 BFC text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":65 C04 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":67 C0B text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":68 C0F text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":66 C17 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":71 C1C text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":72 C20 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":73 C2A text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":70 C32 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":74 C32 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":76 C37 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":77 C39 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":75 C41 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":79 C43 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":80 C45 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":81 C4B text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":82 C4D text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":83 C5F text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":84 C62 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":86 C63 text35 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":87 C64 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":90 C64 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":91 C67 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":92 C68 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":93 C69 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":95 C6A text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":97 C74 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":98 C7A text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":100 C84 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":101 C8A text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":103 C90 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":104 C96 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":106 C9C text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":107 CA2 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":109 CA8 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":110 CAE text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":112 CB8 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":113 CBE text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":115 CC4 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":116 CCA text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":117 CD0 text17 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":78 CD1 text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":80 CD1 text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":82 CD3 text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":83 CDC text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":84 CDD text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":85 CED text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":86 D00 text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":87 D12 text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":88 D3C text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":89 D46 text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":91 D48 text30 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":97 D51 text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":99 D51 text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":101 D53 text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":102 D5C text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":103 D5D text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":104 D6D text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":105 D8A text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":106 D9C text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":107 DA1 text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":108 DB1 text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":109 DDB text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":110 DE5 text31 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":112 DE7 text31 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":6 DF0 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":14 DF0 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":15 DF3 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":16 DF7 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":17 E02 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":18 E06 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":19 E06 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":20 E09 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":21 E14 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":23 E1A text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":24 E24 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":25 E2C text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":26 E30 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":27 E34 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":28 E3E text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":26 E44 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":31 E45 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":32 E53 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":33 E63 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":34 E71 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":36 E74 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":37 E7E text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":39 E84 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":40 E89 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":41 E94 text9 CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":484 EAB maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":486 EAB maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":487 EAF maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":488 EB3 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":489 EB6 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":490 EB9 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":491 EBD maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":492 EC1 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":493 EC4 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":494 EC7 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":495 ECA maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":498 ECD maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":499 ECF maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":500 ED0 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":503 ED1 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":504 EE0 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":505 EE5 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":506 EEA maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":507 EEF maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":510 EF4 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":511 EF5 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":514 EF6 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":515 F01 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":518 F0C maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":519 F11 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":520 F1A maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":523 F25 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":524 F30 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":527 F3B maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":530 F41 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":533 F50 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":536 F50 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":537 F62 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":541 F7C maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":542 F87 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":545 F92 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":546 F97 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":547 FA0 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":548 FAB maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":549 FB9 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":550 FC4 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":551 FCD maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":552 FD8 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":553 FE6 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":555 FF1 maintext CODE
-"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":533 FFF maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":162 6B text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":166 76 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":169 96 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":172 BB text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":175 D2 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":176 D4 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":178 D6 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":180 F9 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":182 101 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":186 10A text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":193 117 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":196 127 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":199 146 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":202 15D text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":203 15F text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":205 161 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":207 180 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":209 188 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":213 191 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":221 19E text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":224 1A6 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":228 1C9 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":231 1E0 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":232 1E2 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":234 1E4 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":236 207 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":238 20F text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":242 218 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":267 225 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":268 22A text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":269 241 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":271 243 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":272 24B text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":277 251 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":283 26A text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":286 28A text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":288 290 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":291 2D4 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":294 2DA text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":297 2FC text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":301 302 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":303 31B text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":304 322 text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":305 32B text27 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":307 32C text27 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":492 334 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":542 337 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":545 33B text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":547 35B text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":550 35F text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":551 36A text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":555 36B text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":557 36D text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":560 36E text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":588 36F text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":589 36F text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":590 372 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":560 376 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":606 38B text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":607 3A3 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":609 3A7 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":610 3CE text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":611 3EF text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":644 405 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1268 42A text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1270 438 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1271 43A text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1272 43E text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1314 443 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1315 449 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1314 46E text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1354 476 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1355 47E text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1390 484 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1391 495 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1393 4A3 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1396 4A7 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1401 4A9 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1402 4AD text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1424 4B8 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1426 4BC text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1427 4C7 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1437 4CE text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1439 4D2 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1440 4DD text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1447 4E7 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1448 4EB text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1481 4F6 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1483 4FA text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1498 502 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1533 54A text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1483 555 text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1547 556 text1 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":324 55D text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":327 55D text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":329 55F text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":330 565 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":332 56D text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":333 576 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":334 57A text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":338 585 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":340 58D text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":341 596 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":345 59C text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":347 5A4 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":348 5AD text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":352 5B3 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":354 5BB text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":355 5C4 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":357 5CA text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":359 5CC text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":360 5CD text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":361 5CE text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":365 5CF text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":367 5D7 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":368 5E0 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":370 5E6 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":372 5E8 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":373 5E9 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":374 5EA text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":378 5EB text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":380 5F3 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":381 5FC text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":385 602 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":387 60A text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":388 613 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":392 619 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":394 621 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":395 62A text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":399 630 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":401 638 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":402 641 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":406 647 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":408 64F text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":409 658 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":415 65E text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":418 66B text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":422 66E text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":427 66F text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":432 670 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":435 672 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":438 678 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":441 681 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":444 687 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":445 68A text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":449 68B text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":452 68F text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":453 69D text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":456 6C9 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":457 6CC text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":460 6CD text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":464 6CE text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":468 6CF text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":473 6D0 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":477 6D1 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":482 6D2 text22 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":484 6D3 text22 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":6 6DE text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":14 6DE text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":15 6E1 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":16 6E5 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":17 6F0 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":18 6F4 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":19 6F4 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":20 6F7 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":21 702 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":23 708 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":24 712 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":25 71A text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":26 71E text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":27 722 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":28 72C text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":26 732 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":31 733 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":32 741 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":33 751 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":34 75F text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":36 762 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":37 76C text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":39 772 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":40 777 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":41 782 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":4 799 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":6 799 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":7 79D text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":8 7C2 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":9 7C4 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":10 7E9 text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":11 7EB text36 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c":12 7ED text36 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1840 7F8 clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1841 7F8 clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1842 7F9 clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1843 7F9 clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1844 7FA clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1845 7FB clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1846 7FC clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1847 7FD clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1848 7FE clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\PIC16F877A.as":1849 7FF clrtext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":20 986 text23 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":22 987 text23 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":23 98B text23 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":20 98C text10 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":22 98F text10 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":23 991 text10 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":44 992 text26 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":46 993 text26 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":47 997 text26 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":48 999 text26 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":44 99A text7 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":46 99D text7 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":47 99F text7 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":48 9A1 text7 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":6 9A2 text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":8 9A2 text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":9 9A5 text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":10 9A6 text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":11 9A7 text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":12 9A8 text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":13 9A9 text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":14 9AA text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":15 9AB text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c":16 9AC text11 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":127 9AD text33 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":129 9AD text33 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":132 9B5 text33 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":32 9BC text20 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":34 9BF text20 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":36 9C0 text20 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":39 9C2 text20 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":41 9C3 text20 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":43 9C7 text20 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":44 9CA text20 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":47 9CB text16 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":49 9CE text16 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":51 9CF text16 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":53 9D1 text16 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":55 9D2 text16 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":57 9D6 text16 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":58 9D9 text16 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c":8 9DA text2 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c":14 9DD text2 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":6 9EA text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":9 9EA text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":32 9ED text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":33 9EE text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":34 9EF text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":35 9F0 text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":38 9F1 text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":39 9F4 text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":42 9F5 text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":43 9F8 text21 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c":44 9FB text21 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c":28 9FC text34 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c":30 9FC text34 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":10 A10 text18 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":12 A13 text18 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":14 A14 text18 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":16 A17 text18 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":20 A1A text18 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":24 A1D text18 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":26 A1E text18 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":28 A22 text18 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":29 A25 text18 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":96 A26 text29 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":98 A26 text29 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":99 A34 text29 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":100 A40 text29 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":63 A41 text24 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":67 A41 text24 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":69 A45 text24 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":74 A4A text24 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":76 A51 text24 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":77 A54 text24 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":78 A58 text24 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":79 A59 text24 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":82 A5A text24 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":64 A5C text14 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":91 A5C text14 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":92 A6A text14 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":94 A76 text14 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":96 A77 text13 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":98 A77 text13 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":99 A85 text13 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":100 A91 text13 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":15 A92 text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":43 A92 text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":45 A94 text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":46 A96 text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":47 A9C text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":48 AA3 text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":49 AAA text28 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":52 AAE text28 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":52 AB5 text25 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":54 AB5 text25 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":56 AC3 text25 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":57 AD3 text25 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":54 AD7 text25 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":5 AD8 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":14 AD8 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":15 ADB text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":18 ADC text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":19 ADD text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":20 ADE text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":21 ADF text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":24 AE0 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":27 AE1 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":43 AE5 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":44 AE8 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":45 AE9 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":46 AEA text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":49 AEB text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":50 AEE text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":53 AF1 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":54 AF2 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":55 AF3 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":56 AF4 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":59 AF5 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":60 AF8 text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c":61 AFB text12 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":61 AFC text15 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":63 AFC text15 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":65 B0A text15 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":66 B1A text15 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":63 B20 text15 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":52 B21 text6 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":54 B21 text6 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":56 B2F text6 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":57 B3F text6 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":54 B45 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":15 B46 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":43 B46 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":45 B4A text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":46 B4C text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":47 B52 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":48 B59 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":49 B60 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":52 B64 text3 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":71 B6B text19 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":73 B6B text19 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":75 B71 text19 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":77 B7B text19 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":79 B81 text19 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":81 B87 text19 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":83 B8D text19 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":84 B93 text19 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":6 B94 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":14 B94 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":15 B96 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":16 B9A text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 B9C text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":18 B9E text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":19 BA5 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 BA9 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":22 BAA text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":23 BB1 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":24 BB9 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":25 BBF text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":27 BC0 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":28 BC7 text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":30 BCB text32 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":6 BD2 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":14 BD2 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":15 BD6 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":16 BDA text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 BDC text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":18 BDE text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":19 BE5 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 BE9 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":22 BEA text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":23 BF1 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":24 BF9 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":25 BFF text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":27 C00 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":28 C07 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":30 C0B text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":6 C12 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":13 C12 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":14 C18 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":15 C1C text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":16 C20 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":17 C29 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":15 C2F text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":20 C30 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":21 C3A text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":22 C40 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":23 C47 text4 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":25 C4D text4 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":6 C56 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":13 C56 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":16 C91 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":17 C92 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":18 C93 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":19 C94 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":21 C95 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":22 C96 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":23 C97 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":26 C98 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":27 C9B text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":28 C9C text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":29 C9D text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":30 C9E text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":31 C9F text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":32 CA0 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":33 CA1 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":36 CA2 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":37 CA5 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":38 CA8 text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":39 CAB text8 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c":40 CAE text8 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":62 CAF text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":64 CAF text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":65 CB7 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":67 CBE text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":68 CC2 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":66 CCA text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":71 CCF text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":72 CD3 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":73 CDD text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":70 CE5 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":74 CE5 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":76 CEA text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":77 CEC text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":75 CF4 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":79 CF6 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":80 CF8 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":81 CFE text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":82 D00 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":83 D12 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":84 D15 text35 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c":86 D16 text35 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":87 D17 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":90 D17 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":91 D1A text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":92 D1B text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":93 D1C text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":95 D1D text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":97 D27 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":98 D2D text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":100 D37 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":101 D3D text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":103 D43 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":104 D49 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":106 D4F text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":107 D55 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":109 D5B text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":110 D61 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":112 D6B text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":113 D71 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":115 D77 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":116 D7D text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c":117 D83 text17 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":78 D84 text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":80 D84 text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":82 D86 text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":83 D8F text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":84 D90 text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":85 DA0 text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":86 DB3 text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":87 DC5 text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":88 DEF text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":89 DF9 text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":91 DFB text30 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":97 E04 text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":99 E04 text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":101 E06 text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":102 E0F text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":103 E10 text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":104 E20 text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":105 E3D text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":106 E4F text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":107 E54 text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":108 E64 text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":109 E8E text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":110 E98 text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":112 E9A text31 CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":487 EA3 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":489 EA3 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":490 EA7 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":491 EAB maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":492 EAE maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":493 EB1 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":494 EB5 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":495 EB9 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":496 EBC maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":497 EBF maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":498 EC2 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":501 EC5 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":502 EC7 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":503 EC8 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":506 EC9 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":507 ED8 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":508 EDD maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":509 EE2 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":510 EE7 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":513 EEC maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":514 EED maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":517 EEE maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":518 EF9 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":521 F04 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":522 F09 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":523 F12 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":526 F1D maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":527 F28 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":530 F33 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":533 F39 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":536 F48 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":539 F48 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":540 F62 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":544 F7C maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":545 F87 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":548 F92 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":549 F97 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":550 FA0 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":551 FAB maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":552 FB9 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":553 FC4 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":554 FCD maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":555 FD8 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":556 FE6 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":558 FF1 maintext CODE
+"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c":536 FFF maintext CODE
 $startup.obj
 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\startup.as":40 0 functab CODE
 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\startup.as":41 0 functab CODE
@@ -705,8 +699,8 @@ $startup.obj
 ___lwdiv@dividend 39 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___aldiv@counter D8 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 sprintf@f DC 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-_x 51 0 BANK0 1 bssBANK0 PIC16F877A.obj
-_y 53 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_x 53 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_y 55 0 BANK0 1 bssBANK0 PIC16F877A.obj
 ___lwdiv@counter 3C 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___lwtoft@c 78 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 _tf EE 0 BANK1 1 dataBANK1 PIC16F877A.obj
@@ -715,33 +709,33 @@ __S0 2008 0 ABS 0 - -
 __S1 193 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_ISR C74 0 CODE 0 text22 PIC16F877A.obj
+_ISR ABA 0 CODE 0 text22 PIC16F877A.obj
 __Hintentry 24 0 CODE 0 intentry -
 __Lintentry 8 0 CODE 0 intentry -
 __size_of_USART_WriteString 0 0 ABS 0 - PIC16F877A.obj
 __pintentry 8 0 CODE 0 intentry PIC16F877A.obj
-_tip 4D 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_tip 4F 0 BANK0 1 bssBANK0 PIC16F877A.obj
 _rpm B6 0 BANK1 1 bssBANK1 PIC16F877A.obj
 _sum BA 0 BANK1 1 bssBANK1 PIC16F877A.obj
-_pwm 47 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_pwm 49 0 BANK0 1 bssBANK0 PIC16F877A.obj
 _contagens_tm0 A4 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __CFG_PWRTE$ON 0 0 ABS 0 - PIC16F877A.obj
-_posicao_do_grafico_service B4 0 BANK1 1 bssBANK1 PIC16F877A.obj
-__end_ofi1_TIMER0_Set 1182 0 CODE 0 text23 PIC16F877A.obj
+_posicao_do_grafico_service B2 0 BANK1 1 bssBANK1 PIC16F877A.obj
+__end_ofi1_TIMER0_Set 1318 0 CODE 0 text23 PIC16F877A.obj
 _TMR0 1 0 ABS 0 - PIC16F877A.obj
 _TMR1 E 0 ABS 0 - PIC16F877A.obj
-__end_of_LCD_Init 19A2 0 CODE 0 text17 PIC16F877A.obj
+__end_of_LCD_Init 1B08 0 CODE 0 text17 PIC16F877A.obj
 _OERR C1 0 ABS 0 - PIC16F877A.obj
 trapmf@ua 7C 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-_main 1D56 0 CODE 0 maintext PIC16F877A.obj
+_main 1D46 0 CODE 0 maintext PIC16F877A.obj
 ___sp 0 0 STACK 2 stack startup.obj
-_temp 4B 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_temp 4D 0 BANK0 1 bssBANK0 PIC16F877A.obj
 btemp 7E 0 ABS 0 - PIC16F877A.obj
 ltemp 7E 0 ABS 0 - PIC16F877A.obj
 ttemp 7E 0 ABS 0 - PIC16F877A.obj
 wtemp 7E 0 ABS 0 - PIC16F877A.obj
 start 24 0 CODE 0 init startup.obj
-__end_of___aldiv 1D56 0 CODE 0 text9 PIC16F877A.obj
+__end_of___aldiv F32 0 CODE 0 text9 PIC16F877A.obj
 _TMR1H F 0 ABS 0 - PIC16F877A.obj
 _TMR1L E 0 ABS 0 - PIC16F877A.obj
 _RCREG 1A 0 ABS 0 - PIC16F877A.obj
@@ -779,28 +773,28 @@ wtemp6 7F 0 ABS 0 - PIC16F877A.obj
 interrupt_function 8 0 CODE 0 intentry PIC16F877A.obj
 __Hconfig 4010 0 CONFIG 0 config -
 __Lconfig 400E 0 CONFIG 0 config -
-___ftpack 17F8 0 CODE 0 text35 PIC16F877A.obj
+___ftpack 195E 0 CODE 0 text35 PIC16F877A.obj
 __end_of__stringtab 2024 0 STRCODE 0 stringtext PIC16F877A.obj
 ?___lwmod D8 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 ?_max_val 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-__end_ofi1_PWM_DutyCycle2 12E6 0 CODE 0 text29 PIC16F877A.obj
+__end_ofi1_PWM_DutyCycle2 1482 0 CODE 0 text29 PIC16F877A.obj
 Fuzzy@velocidade 30 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_ideal AE 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_ideal AC 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_trimf 19A2 0 CODE 0 text30 PIC16F877A.obj
-_foTip AC 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_trimf 1B08 0 CODE 0 text30 PIC16F877A.obj
+_foTip AA 0 BANK1 1 bssBANK1 PIC16F877A.obj
 _temp_lida BC 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __end_of__stringdata 2246 0 STRCODE 0 stringtext PIC16F877A.obj
 ___ftge@ff1 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_derro A8 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_derro A6 0 BANK1 1 bssBANK1 PIC16F877A.obj
 ?_sprintf DC 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-__end_of_USART_WriteChar 11AE 0 CODE 0 text7 PIC16F877A.obj
-_ADC_Init 1238 0 CODE 0 text21 PIC16F877A.obj
-_LCD_Init 18C8 0 CODE 0 text17 PIC16F877A.obj
+__end_of_USART_WriteChar 1344 0 CODE 0 text7 PIC16F877A.obj
+_ADC_Init 13D4 0 CODE 0 text21 PIC16F877A.obj
+_LCD_Init 1A2E 0 CODE 0 text17 PIC16F877A.obj
 _Fuzzy 88 0 CODE 0 text27 PIC16F877A.obj
-__end_of_ISR F62 0 CODE 0 text22 PIC16F877A.obj
-_PWM_Init 1414 0 CODE 0 text12 PIC16F877A.obj
+__end_of_ISR DBC 0 CODE 0 text22 PIC16F877A.obj
+_PWM_Init 15B0 0 CODE 0 text12 PIC16F877A.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Lfunctab 0 0 CODE 0 functab -
 ___ftge@ff2 23 0 BANK0 1 cstackBANK0 PIC16F877A.obj
@@ -814,7 +808,7 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 _PIR1bits C 0 ABS 0 - PIC16F877A.obj
 _PIR2bits D 0 ABS 0 - PIC16F877A.obj
-i1___wmul 1388 0 CODE 0 text28 PIC16F877A.obj
+i1___wmul 1524 0 CODE 0 text28 PIC16F877A.obj
 sprintf@ap E3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 _SSPADD 93 0 ABS 0 - PIC16F877A.obj
 ___int_sp 0 0 STACK 2 stack startup.obj
@@ -822,10 +816,10 @@ ___int_sp 0 0 STACK 2 stack startup.obj
 _CCPR1L 15 0 ABS 0 - PIC16F877A.obj
 _CCPR2L 1B 0 ABS 0 - PIC16F877A.obj
 _EEDATA 10C 0 ABS 0 - PIC16F877A.obj
-_posicao_do_grafico_food B2 0 BANK1 1 bssBANK1 PIC16F877A.obj
-__end_of_trimf 1AA2 0 CODE 0 text30 PIC16F877A.obj
+_posicao_do_grafico_food B0 0 BANK1 1 bssBANK1 PIC16F877A.obj
+__end_of_trimf 1C08 0 CODE 0 text30 PIC16F877A.obj
 ?___lwdiv 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-___lwtoft 125C 0 CODE 0 text34 PIC16F877A.obj
+___lwtoft 13F8 0 CODE 0 text34 PIC16F877A.obj
 _SSPBUF 13 0 ABS 0 - PIC16F877A.obj
 _ADRESH 1E 0 ABS 0 - PIC16F877A.obj
 __Habs1 0 0 ABS 0 abs1 -
@@ -840,48 +834,48 @@ __Hsfr2 0 0 ABS 0 sfr2 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Hsfr3 0 0 ABS 0 sfr3 -
 __Lsfr3 0 0 ABS 0 sfr3 -
-__end_of_PWM_DutyCycle1 1352 0 CODE 0 text14 PIC16F877A.obj
-__end_of_PWM_DutyCycle2 1388 0 CODE 0 text13 PIC16F877A.obj
-__end_of___ftpack 18C8 0 CODE 0 text35 PIC16F877A.obj
+__end_of_PWM_DutyCycle1 14EE 0 CODE 0 text14 PIC16F877A.obj
+__end_of_PWM_DutyCycle2 1524 0 CODE 0 text13 PIC16F877A.obj
+__end_of___ftpack 1A2E 0 CODE 0 text35 PIC16F877A.obj
 ?___ftpack 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 LCD_WriteData@Byte 38 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trimf@a 22 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_TIMER0_Init FEA 0 CODE 0 text11 PIC16F877A.obj
+_TIMER0_Init 1344 0 CODE 0 text11 PIC16F877A.obj
 trimf@b 24 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_ativa_fan 55 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_ativa_fan 41 0 BANK0 1 bssBANK0 PIC16F877A.obj
 trimf@c 26 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_deltaV A6 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_deltaV 43 0 BANK0 1 bssBANK0 PIC16F877A.obj
 __size_of___ftpack 0 0 ABS 0 - PIC16F877A.obj
 __size_ofi1_USART_WriteChar 0 0 ABS 0 - PIC16F877A.obj
-__end_ofi1___lwdiv 1608 0 CODE 0 text32 PIC16F877A.obj
+__end_ofi1___lwdiv 17A4 0 CODE 0 text32 PIC16F877A.obj
 __end_of_dpowers 2038 0 STRCODE 0 stringtext PIC16F877A.obj
 __size_ofi1_TIMER0_Set 0 0 ABS 0 - PIC16F877A.obj
-_LCD_Clear 153A 0 CODE 0 text19 PIC16F877A.obj
+_LCD_Clear 16D6 0 CODE 0 text19 PIC16F877A.obj
 i1USART_WriteChar@byte 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
 trimf@x 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-___ftge 173A 0 CODE 0 text36 PIC16F877A.obj
+___ftge F32 0 CODE 0 text36 PIC16F877A.obj
 stackhi 0 0 ABS 0 - startup.obj
 ?_trimf 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 sprintf@sp EC 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-_trapmf 1AA2 0 CODE 0 text31 PIC16F877A.obj
+_trapmf 1C08 0 CODE 0 text31 PIC16F877A.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 i1___wmul@product 7C 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-_pwmAnt 49 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_pwmAnt 4B 0 BANK0 1 bssBANK0 PIC16F877A.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 stacklo 0 0 ABS 0 - startup.obj
 saved_w 7E 0 ABS 0 - PIC16F877A.obj
-_fitemp 41 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_fitemp 45 0 BANK0 1 bssBANK0 PIC16F877A.obj
 __Hinit 24 0 CODE 0 init -
 __Linit 24 0 CODE 0 init -
-___wmul 14F0 0 CODE 0 text3 PIC16F877A.obj
+___wmul 168C 0 CODE 0 text3 PIC16F877A.obj
 __end_of_main 2000 0 CODE 0 maintext PIC16F877A.obj
 __size_of___lwtoft 0 0 ABS 0 - PIC16F877A.obj
 __Htext 0 0 ABS 0 text -
 __Ltext 0 0 ABS 0 text -
-_pulsos 45 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_pulsos B4 0 BANK1 1 bssBANK1 PIC16F877A.obj
 _status B8 0 BANK1 1 bssBANK1 PIC16F877A.obj
 USART_ReceiveChar@byte 74 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 sprintf@width EA 0 BANK1 1 cstackBANK1 PIC16F877A.obj
@@ -889,10 +883,10 @@ ___wmul@multiplier 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 USART_WriteChar@byte 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
 __LdataBANK0 0 0 ABS 0 dataBANK0 -
-_total_area 4F 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_total_area 51 0 BANK0 1 bssBANK0 PIC16F877A.obj
 __pdataBANK0 57 0 BANK0 1 dataBANK0 PIC16F877A.obj
-_PWM_DutyCycle1 131C 0 CODE 0 text14 PIC16F877A.obj
-__end_of___lwtoft 1284 0 CODE 0 text34 PIC16F877A.obj
+_PWM_DutyCycle1 14B8 0 CODE 0 text14 PIC16F877A.obj
+__end_of___lwtoft 1420 0 CODE 0 text34 PIC16F877A.obj
 end_of_initialization 80 0 CODE 0 cinit PIC16F877A.obj
 ___aldiv@sign D9 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 LCD_Cursor@Row 39 0 BANK0 1 cstackBANK0 PIC16F877A.obj
@@ -919,15 +913,15 @@ _T2CONbits 12 0 ABS 0 - PIC16F877A.obj
 __Lstrings 0 0 ABS 0 strings -
 _PORTEbits 9 0 ABS 0 - PIC16F877A.obj
 PWM_DutyCycle1@valor 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-i1___lwdiv 158C 0 CODE 0 text32 PIC16F877A.obj
+i1___lwdiv 1728 0 CODE 0 text32 PIC16F877A.obj
 ?___lwtoft 78 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __size_of_trimf 0 0 ABS 0 - PIC16F877A.obj
-__end_of_LCD_WriteString 14A6 0 CODE 0 text15 PIC16F877A.obj
-__end_of_trapmf 1BE0 0 CODE 0 text31 PIC16F877A.obj
-__end_ofi1___wmul 13CE 0 CODE 0 text28 PIC16F877A.obj
+__end_of_LCD_WriteString 1642 0 CODE 0 text15 PIC16F877A.obj
+__end_of_trapmf 1D46 0 CODE 0 text31 PIC16F877A.obj
+__end_ofi1___wmul 156A 0 CODE 0 text28 PIC16F877A.obj
 _CCP1CON 17 0 ABS 0 - PIC16F877A.obj
 _CCP2CON 1D 0 ABS 0 - PIC16F877A.obj
-__end_of_USART_ReceiveChar 131C 0 CODE 0 text24 PIC16F877A.obj
+__end_of_USART_ReceiveChar 14B8 0 CODE 0 text24 PIC16F877A.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Lbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -944,32 +938,32 @@ __Lpowerup 0 0 CODE 0 powerup -
 _display_rpm CE 0 BANK1 1 bssBANK1 PIC16F877A.obj
 _SSPCON2bits 91 0 ABS 0 - PIC16F877A.obj
 i1TIMER0_Set@contagens 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-__ptext1 822 0 CODE 0 text1 PIC16F877A.obj
-__ptext2 1218 0 CODE 0 text2 PIC16F877A.obj
-__ptext3 14F0 0 CODE 0 text3 PIC16F877A.obj
-__ptext4 F62 0 CODE 0 text4 PIC16F877A.obj
-__ptext5 1608 0 CODE 0 text5 PIC16F877A.obj
-_TIMER0_Set 1182 0 CODE 0 text10 PIC16F877A.obj
-__ptext6 14A6 0 CODE 0 text6 PIC16F877A.obj
-__ptext7 119E 0 CODE 0 text7 PIC16F877A.obj
+__ptext1 668 0 CODE 0 text1 PIC16F877A.obj
+__ptext2 13B4 0 CODE 0 text2 PIC16F877A.obj
+__ptext3 168C 0 CODE 0 text3 PIC16F877A.obj
+__ptext4 1824 0 CODE 0 text4 PIC16F877A.obj
+__ptext5 17A4 0 CODE 0 text5 PIC16F877A.obj
+_TIMER0_Set 1318 0 CODE 0 text10 PIC16F877A.obj
+__ptext6 1642 0 CODE 0 text6 PIC16F877A.obj
+__ptext7 1334 0 CODE 0 text7 PIC16F877A.obj
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
-__ptext8 1688 0 CODE 0 text8 PIC16F877A.obj
-__ptext9 1BE0 0 CODE 0 text9 PIC16F877A.obj
+__ptext8 18AC 0 CODE 0 text8 PIC16F877A.obj
+__ptext9 DBC 0 CODE 0 text9 PIC16F877A.obj
 __pcstackBANK1 D8 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
 __size_of_LCD_WriteData 0 0 ABS 0 - PIC16F877A.obj
-i1PWM_DutyCycle2@valor 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
+i1PWM_DutyCycle2@valor 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 trapmf@a 22 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trapmf@b 24 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trapmf@c 26 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trapmf@d 28 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_USART_WriteChar 119E 0 CODE 0 text7 PIC16F877A.obj
+_USART_WriteChar 1334 0 CODE 0 text7 PIC16F877A.obj
 __end_of__initialization 80 0 CODE 0 cinit PIC16F877A.obj
 _CCP1CONbits 17 0 ABS 0 - PIC16F877A.obj
 _CCP2CONbits 1D 0 ABS 0 - PIC16F877A.obj
-__end_of___lwdiv 1688 0 CODE 0 text5 PIC16F877A.obj
+__end_of___lwdiv 1824 0 CODE 0 text5 PIC16F877A.obj
 _contador_rb6 A2 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __size_of_USART_Init 0 0 ABS 0 - PIC16F877A.obj
 _SSPSTATbits 94 0 ABS 0 - PIC16F877A.obj
@@ -977,7 +971,7 @@ trimf@ua 7C 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 _tip_gorgeous C2 0 BANK1 1 bssBANK1 PIC16F877A.obj
 USART_WriteString@str 38 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trapmf@x 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_LCD_WriteData 11FA 0 CODE 0 text16 PIC16F877A.obj
+_LCD_WriteData 1396 0 CODE 0 text16 PIC16F877A.obj
 __Hidloc 0 0 IDLOC 0 idloc -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
@@ -985,48 +979,48 @@ __Lstack 0 0 STACK 2 stack -
 _display_pwm C4 0 BANK1 1 bssBANK1 PIC16F877A.obj
 PWM_DutyCycle2@valor 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ?_trapmf 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-___lwmod F62 0 CODE 0 text4 PIC16F877A.obj
+___lwmod 1824 0 CODE 0 text4 PIC16F877A.obj
 __Hspace_0 2008 0 ABS 0 - -
 __Lspace_0 0 0 ABS 0 - -
-_max_val 11BE 0 CODE 0 text33 PIC16F877A.obj
+_max_val 135A 0 CODE 0 text33 PIC16F877A.obj
 ___ftpack@sign 74 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-_sprintf 822 0 CODE 0 text1 PIC16F877A.obj
+_sprintf 668 0 CODE 0 text1 PIC16F877A.obj
 __Hspace_1 193 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
-__end_of_LCD_Clear 158C 0 CODE 0 text19 PIC16F877A.obj
-i1_USART_WriteString 13CE 0 CODE 0 text25 PIC16F877A.obj
+__end_of_LCD_Clear 1728 0 CODE 0 text19 PIC16F877A.obj
+i1_USART_WriteString 156A 0 CODE 0 text25 PIC16F877A.obj
 __Hspace_2 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 ?___wmul 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_isdigit 1218 0 CODE 0 text2 PIC16F877A.obj
+_isdigit 13B4 0 CODE 0 text2 PIC16F877A.obj
 __Hcinit 88 0 CODE 0 cinit -
 __Lcinit 2A 0 CODE 0 cinit -
 __CFG_FOSC$HS 0 0 ABS 0 - PIC16F877A.obj
-___aldiv 1BE0 0 CODE 0 text9 PIC16F877A.obj
-_LCD_WriteString 145C 0 CODE 0 text15 PIC16F877A.obj
-_USART_WriteString 14A6 0 CODE 0 text6 PIC16F877A.obj
+___aldiv DBC 0 CODE 0 text9 PIC16F877A.obj
+_LCD_WriteString 15F8 0 CODE 0 text15 PIC16F877A.obj
+_USART_WriteString 1642 0 CODE 0 text6 PIC16F877A.obj
 __Hspace_3 0 0 ABS 0 - -
-___lwdiv 1608 0 CODE 0 text5 PIC16F877A.obj
+___lwdiv 17A4 0 CODE 0 text5 PIC16F877A.obj
 __Lspace_3 0 0 ABS 0 - -
 __size_of_main 0 0 ABS 0 - PIC16F877A.obj
 _dpowers 2024 0 STRCODE 0 stringtext PIC16F877A.obj
 __size_of_USART_WriteChar 0 0 ABS 0 - PIC16F877A.obj
-__end_of_max_val 11DC 0 CODE 0 text33 PIC16F877A.obj
+__end_of_max_val 1378 0 CODE 0 text33 PIC16F877A.obj
 __HidataBANK0 0 0 ABS 0 idataBANK0 -
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
-__pidataBANK0 1172 0 CODE 0 idataBANK0 PIC16F877A.obj
-__end_of_LCD_Cursor 12B0 0 CODE 0 text18 PIC16F877A.obj
-__end_of_isdigit 1238 0 CODE 0 text2 PIC16F877A.obj
+__pidataBANK0 1308 0 CODE 0 idataBANK0 PIC16F877A.obj
+__end_of_LCD_Cursor 144C 0 CODE 0 text18 PIC16F877A.obj
+__end_of_isdigit 13D4 0 CODE 0 text2 PIC16F877A.obj
 __size_of_LCD_Init 0 0 ABS 0 - PIC16F877A.obj
-__end_of_sprintf C74 0 CODE 0 text1 PIC16F877A.obj
+__end_of_sprintf ABA 0 CODE 0 text1 PIC16F877A.obj
 __size_of_max_val 0 0 ABS 0 - PIC16F877A.obj
 i1___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-_USART_Init 1688 0 CODE 0 text8 PIC16F877A.obj
-_posicao_do_grafico B0 0 BANK1 1 bssBANK1 PIC16F877A.obj
-clear_ram0 11AE 0 CODE 0 clrtext PIC16F877A.obj
+_USART_Init 18AC 0 CODE 0 text8 PIC16F877A.obj
+_posicao_do_grafico AE 0 BANK1 1 bssBANK1 PIC16F877A.obj
+clear_ram0 FF0 0 CODE 0 clrtext PIC16F877A.obj
 ___ftpack@arg 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-_fop_rule1 43 0 BANK0 1 bssBANK0 PIC16F877A.obj
-_PWM_DutyCycle2 1352 0 CODE 0 text13 PIC16F877A.obj
+_fop_rule1 47 0 BANK0 1 bssBANK0 PIC16F877A.obj
+_PWM_DutyCycle2 14EE 0 CODE 0 text13 PIC16F877A.obj
 __size_of___lwdiv 0 0 ABS 0 - PIC16F877A.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
@@ -1042,128 +1036,128 @@ i1___wmul@multiplier 78 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __Hstringtext 0 0 ABS 0 stringtext -
 __Lstringtext 0 0 ABS 0 stringtext -
 __pstringtext 2000 0 STRCODE 0 stringtext PIC16F877A.obj
-__ptext10 1182 0 CODE 0 text10 PIC16F877A.obj
+__ptext10 1318 0 CODE 0 text10 PIC16F877A.obj
 _pas_cooler 57 0 BANK0 1 dataBANK0 PIC16F877A.obj
-__ptext20 11DC 0 CODE 0 text20 PIC16F877A.obj
-__ptext11 FEA 0 CODE 0 text11 PIC16F877A.obj
-__ptext30 19A2 0 CODE 0 text30 PIC16F877A.obj
-__ptext21 1238 0 CODE 0 text21 PIC16F877A.obj
-__ptext12 1414 0 CODE 0 text12 PIC16F877A.obj
-__ptext31 1AA2 0 CODE 0 text31 PIC16F877A.obj
-__ptext22 C74 0 CODE 0 text22 PIC16F877A.obj
-__ptext13 1352 0 CODE 0 text13 PIC16F877A.obj
-__ptext32 158C 0 CODE 0 text32 PIC16F877A.obj
+__ptext20 1378 0 CODE 0 text20 PIC16F877A.obj
+__ptext11 1344 0 CODE 0 text11 PIC16F877A.obj
+__ptext30 1B08 0 CODE 0 text30 PIC16F877A.obj
+__ptext21 13D4 0 CODE 0 text21 PIC16F877A.obj
+__ptext12 15B0 0 CODE 0 text12 PIC16F877A.obj
+__ptext31 1C08 0 CODE 0 text31 PIC16F877A.obj
+__ptext22 ABA 0 CODE 0 text22 PIC16F877A.obj
+__ptext13 14EE 0 CODE 0 text13 PIC16F877A.obj
+__ptext32 1728 0 CODE 0 text32 PIC16F877A.obj
 _ADCON0bits 1F 0 ABS 0 - PIC16F877A.obj
 _ADCON1bits 9F 0 ABS 0 - PIC16F877A.obj
-__ptext23 1176 0 CODE 0 text23 PIC16F877A.obj
+__ptext23 130C 0 CODE 0 text23 PIC16F877A.obj
 _EECON1bits 18C 0 ABS 0 - PIC16F877A.obj
 sprintf@prec E4 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __HidataBANK1 0 0 ABS 0 idataBANK1 -
 __LidataBANK1 0 0 ABS 0 idataBANK1 -
-__ptext14 131C 0 CODE 0 text14 PIC16F877A.obj
-__ptext33 11BE 0 CODE 0 text33 PIC16F877A.obj
+__ptext14 14B8 0 CODE 0 text14 PIC16F877A.obj
+__ptext33 135A 0 CODE 0 text33 PIC16F877A.obj
 __size_ofi1_PWM_DutyCycle2 0 0 ABS 0 - PIC16F877A.obj
-__pidataBANK1 116E 0 CODE 0 idataBANK1 PIC16F877A.obj
-__ptext24 12E6 0 CODE 0 text24 PIC16F877A.obj
-__ptext15 145C 0 CODE 0 text15 PIC16F877A.obj
-__ptext34 125C 0 CODE 0 text34 PIC16F877A.obj
-__ptext25 13CE 0 CODE 0 text25 PIC16F877A.obj
-__ptext16 11FA 0 CODE 0 text16 PIC16F877A.obj
-__ptext35 17F8 0 CODE 0 text35 PIC16F877A.obj
-__ptext26 118E 0 CODE 0 text26 PIC16F877A.obj
+__pidataBANK1 1304 0 CODE 0 idataBANK1 PIC16F877A.obj
+__ptext24 1482 0 CODE 0 text24 PIC16F877A.obj
+__ptext15 15F8 0 CODE 0 text15 PIC16F877A.obj
+__ptext34 13F8 0 CODE 0 text34 PIC16F877A.obj
+__ptext25 156A 0 CODE 0 text25 PIC16F877A.obj
+__ptext16 1396 0 CODE 0 text16 PIC16F877A.obj
+__ptext35 195E 0 CODE 0 text35 PIC16F877A.obj
+__ptext26 1324 0 CODE 0 text26 PIC16F877A.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - PIC16F877A.obj
-__ptext17 18C8 0 CODE 0 text17 PIC16F877A.obj
-__ptext36 173A 0 CODE 0 text36 PIC16F877A.obj
-__end_of___lwmod FEA 0 CODE 0 text4 PIC16F877A.obj
+__ptext17 1A2E 0 CODE 0 text17 PIC16F877A.obj
+__ptext36 F32 0 CODE 0 text36 PIC16F877A.obj
+__end_of___lwmod 18AC 0 CODE 0 text4 PIC16F877A.obj
 __ptext27 88 0 CODE 0 text27 PIC16F877A.obj
 ___lwmod@divisor D8 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-__ptext18 1284 0 CODE 0 text18 PIC16F877A.obj
-__ptext28 1388 0 CODE 0 text28 PIC16F877A.obj
-__ptext19 153A 0 CODE 0 text19 PIC16F877A.obj
-__ptext29 12B0 0 CODE 0 text29 PIC16F877A.obj
+__ptext18 1420 0 CODE 0 text18 PIC16F877A.obj
+__ptext28 1524 0 CODE 0 text28 PIC16F877A.obj
+__ptext19 16D6 0 CODE 0 text19 PIC16F877A.obj
+__ptext29 144C 0 CODE 0 text29 PIC16F877A.obj
 _INTCONbits B 0 ABS 0 - PIC16F877A.obj
 _SSPCONbits 14 0 ABS 0 - PIC16F877A.obj
-__end_ofi1_USART_WriteString 1414 0 CODE 0 text25 PIC16F877A.obj
+__end_ofi1_USART_WriteString 15B0 0 CODE 0 text25 PIC16F877A.obj
 __Hend_init 2A 0 CODE 0 end_init -
 __Lend_init 24 0 CODE 0 end_init -
 ___aldiv@divisor 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___ftpack@exp 73 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 ___lwdiv@divisor 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-__end_of_TIMER0_Set 118E 0 CODE 0 text10 PIC16F877A.obj
+__end_of_TIMER0_Set 1324 0 CODE 0 text10 PIC16F877A.obj
 __size_of_Fuzzy 0 0 ABS 0 - PIC16F877A.obj
 _tip_average C0 0 BANK1 1 bssBANK1 PIC16F877A.obj
 LCD_WriteCmd@Byte 38 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ?i1___lwdiv 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-__end_of_TIMER0_Init 1000 0 CODE 0 text11 PIC16F877A.obj
+__end_of_TIMER0_Init 135A 0 CODE 0 text11 PIC16F877A.obj
 LCD_Cursor@Col 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 i1___wmul@multiplicand 7A 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __size_of___wmul 0 0 ABS 0 - PIC16F877A.obj
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-i1_USART_WriteChar 118E 0 CODE 0 text26 PIC16F877A.obj
-i1_TIMER0_Set 1176 0 CODE 0 text23 PIC16F877A.obj
+i1_USART_WriteChar 1324 0 CODE 0 text26 PIC16F877A.obj
+i1_TIMER0_Set 130C 0 CODE 0 text23 PIC16F877A.obj
 __HcstackBANK3 0 0 ABS 0 cstackBANK3 -
 __LcstackBANK3 0 0 ABS 0 cstackBANK3 -
 __pcstackBANK3 190 0 BANK3 1 cstackBANK3 PIC16F877A.obj
 __size_of_trapmf 0 0 ABS 0 - PIC16F877A.obj
 __stringdata 2038 0 STRCODE 0 stringtext PIC16F877A.obj
 __size_of___aldiv 0 0 ABS 0 - PIC16F877A.obj
-_LCD_Cursor 1284 0 CODE 0 text18 PIC16F877A.obj
+_LCD_Cursor 1420 0 CODE 0 text18 PIC16F877A.obj
 __size_ofi1___wmul 0 0 ABS 0 - PIC16F877A.obj
 USART_Init@BaudRate DE 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 intlevel0 0 0 CODE 0 functab startup.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - PIC16F877A.obj
 _isdigit$1450 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_fisetpoint AA 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_fisetpoint A8 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __size_of_TIMER0_Set 0 0 ABS 0 - PIC16F877A.obj
 intlevel1 0 0 CODE 0 functab startup.obj
 intlevel2 0 0 CODE 0 functab startup.obj
 LCD_WriteString@Str 39 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-i1_PWM_DutyCycle2 12B0 0 CODE 0 text29 PIC16F877A.obj
+i1_PWM_DutyCycle2 144C 0 CODE 0 text29 PIC16F877A.obj
 intlevel3 0 0 CODE 0 functab startup.obj
 __size_of_PWM_DutyCycle1 0 0 ABS 0 - PIC16F877A.obj
 intlevel4 0 0 CODE 0 functab startup.obj
 __size_of_PWM_DutyCycle2 0 0 ABS 0 - PIC16F877A.obj
 intlevel5 0 0 CODE 0 functab startup.obj
-__end_of_USART_WriteString 14F0 0 CODE 0 text6 PIC16F877A.obj
-_USART_ReceiveChar 12E6 0 CODE 0 text24 PIC16F877A.obj
+__end_of_USART_WriteString 168C 0 CODE 0 text6 PIC16F877A.obj
+_USART_ReceiveChar 1482 0 CODE 0 text24 PIC16F877A.obj
 __size_of_TIMER0_Init 0 0 ABS 0 - PIC16F877A.obj
-__end_of_Fuzzy 822 0 CODE 0 text27 PIC16F877A.obj
+__end_of_Fuzzy 668 0 CODE 0 text27 PIC16F877A.obj
 __size_of___lwmod 0 0 ABS 0 - PIC16F877A.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-__end_of___wmul 153A 0 CODE 0 text3 PIC16F877A.obj
-__end_of_LCD_WriteCmd 11FA 0 CODE 0 text20 PIC16F877A.obj
+__end_of___wmul 16D6 0 CODE 0 text3 PIC16F877A.obj
+__end_of_LCD_WriteCmd 1396 0 CODE 0 text20 PIC16F877A.obj
 __CFG_CPD$OFF 0 0 ABS 0 - PIC16F877A.obj
 start_initialization 2A 0 CODE 0 cinit PIC16F877A.obj
 ___aldiv@quotient DA 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 ___lwdiv@quotient 3D 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __size_of___ftge 0 0 ABS 0 - PIC16F877A.obj
-__end_of_PWM_Init 145C 0 CODE 0 text12 PIC16F877A.obj
-__end_of_ADC_Init 125C 0 CODE 0 text21 PIC16F877A.obj
-__end_ofi1_USART_WriteChar 119E 0 CODE 0 text26 PIC16F877A.obj
+__end_of_PWM_Init 15F8 0 CODE 0 text12 PIC16F877A.obj
+__end_of_ADC_Init 13F8 0 CODE 0 text21 PIC16F877A.obj
+__end_ofi1_USART_WriteChar 1334 0 CODE 0 text26 PIC16F877A.obj
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
-__pmaintext 1D56 0 CODE 0 maintext PIC16F877A.obj
+__pmaintext 1D46 0 CODE 0 maintext PIC16F877A.obj
 _OPTION_REGbits 81 0 ABS 0 - PIC16F877A.obj
 __size_ofi1___lwdiv 0 0 ABS 0 - PIC16F877A.obj
 __size_of_sprintf 0 0 ABS 0 - PIC16F877A.obj
 i1___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __size_ofi1_USART_WriteString 0 0 ABS 0 - PIC16F877A.obj
 __initialization 2A 0 CODE 0 cinit PIC16F877A.obj
-__end_of___ftge 17F8 0 CODE 0 text36 PIC16F877A.obj
+__end_of___ftge FF0 0 CODE 0 text36 PIC16F877A.obj
 __stringbase 2024 0 STRCODE 0 stringtext PIC16F877A.obj
-__end_of_LCD_WriteData 1218 0 CODE 0 text16 PIC16F877A.obj
+__end_of_LCD_WriteData 13B4 0 CODE 0 text16 PIC16F877A.obj
 ___lwmod@dividend DA 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 sprintf@_val E5 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 ___wmul@product 3B 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___lwmod@counter 40 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __CFG_CP$OFF 0 0 ABS 0 - PIC16F877A.obj
-__end_of_USART_Init 173A 0 CODE 0 text8 PIC16F877A.obj
+__end_of_USART_Init 195E 0 CODE 0 text8 PIC16F877A.obj
 max_val@a 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 max_val@b 72 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-_LCD_WriteCmd 11DC 0 CODE 0 text20 PIC16F877A.obj
+_LCD_WriteCmd 1378 0 CODE 0 text20 PIC16F877A.obj
 __CFG_LVP$OFF 0 0 ABS 0 - PIC16F877A.obj
 sprintf@c ED 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 TIMER0_Set@contagens 37 0 BANK0 1 cstackBANK0 PIC16F877A.obj
@@ -1203,39 +1197,38 @@ cstackCOMMON 1 70 70 E 1
 bssBANK1 1 A0 A0 50 1
 cstackBANK0 1 20 20 39 1
 cstackBANK3 1 190 190 3 1
-maintext 0 EAB 1D56 155 2
+maintext 0 EA3 1D46 15D 2
 stringtext 0 1000 2000 123 2
-text9 0 DF0 1BE0 BB 2
-text31 0 D51 1AA2 9F 2
-text30 0 CD1 19A2 80 2
-text17 0 C64 18C8 6D 2
-text35 0 BFC 17F8 68 2
-text36 0 B9D 173A 5F 2
-text8 0 B44 1688 59 2
-text5 0 B04 1608 40 2
-text32 0 AC6 158C 3E 2
-text19 0 A9D 153A 29 2
-text3 0 A78 14F0 25 2
-text6 0 A53 14A6 25 2
-text15 0 A2E 145C 25 2
-text12 0 A0A 1414 24 2
-text25 0 9E7 13CE 23 2
-text28 0 9C4 1388 23 2
-text13 0 9A9 1352 1B 2
-text14 0 98E 131C 1B 2
-text24 0 973 12E6 1B 2
-text29 0 958 12B0 1B 2
-text18 0 942 1284 16 2
-text34 0 92E 125C 14 2
-text21 0 91C 1238 12 2
-text2 0 90C 1218 10 2
-text16 0 8FD 11FA F 2
-text20 0 8EE 11DC F 2
-text33 0 8DF 11BE F 2
-clrtext 0 8D7 11AE 8 2
-text7 0 8CF 119E 8 2
-text26 0 8C7 118E 8 2
-text10 0 8C1 1182 6 2
-text23 0 8BB 1176 6 2
-idataBANK0 0 8B9 1172 2 2
-idataBANK1 0 8B7 116E 2 2
+text31 0 E04 1C08 9F 2
+text30 0 D84 1B08 80 2
+text17 0 D17 1A2E 6D 2
+text35 0 CAF 195E 68 2
+text8 0 C56 18AC 59 2
+text4 0 C12 1824 44 2
+text5 0 BD2 17A4 40 2
+text32 0 B94 1728 3E 2
+text19 0 B6B 16D6 29 2
+text3 0 B46 168C 25 2
+text6 0 B21 1642 25 2
+text15 0 AFC 15F8 25 2
+text12 0 AD8 15B0 24 2
+text25 0 AB5 156A 23 2
+text28 0 A92 1524 23 2
+text13 0 A77 14EE 1B 2
+text14 0 A5C 14B8 1B 2
+text24 0 A41 1482 1B 2
+text29 0 A26 144C 1B 2
+text18 0 A10 1420 16 2
+text34 0 9FC 13F8 14 2
+text21 0 9EA 13D4 12 2
+text2 0 9DA 13B4 10 2
+text16 0 9CB 1396 F 2
+text20 0 9BC 1378 F 2
+text33 0 9AD 135A F 2
+text11 0 9A2 1344 B 2
+text7 0 99A 1334 8 2
+text26 0 992 1324 8 2
+text10 0 98C 1318 6 2
+text23 0 986 130C 6 2
+idataBANK0 0 984 1308 2 2
+idataBANK1 0 982 1304 2 2

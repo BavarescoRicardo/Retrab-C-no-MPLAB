@@ -1835,30 +1835,12 @@ tip_gorgeous = y;
 
 }
 
-
-
-if (temp < 2.5)
-{
-tip = ideal ;
-}
-
-if (temp >= 2.5 && temp < 7.5)
-{
-tip = tip_average ;
-}
-
-if (temp >= 7.5 && temp <= 10)
-{
-tip = tip_gorgeous;
-}
-
-
-
-
+# 267
 total_area = 1;
+tip = fop_rule1*1000;
 unsigned int sum = 0;
 
-total_area = total_area + tip ;
+total_area = total_area + tip;
 sum = tip;
 
 
@@ -1888,18 +1870,20 @@ velocidade[0] = '9';
 }
 
 
-deltaV = fop_rule1*100;
-if(ativa_fan*100 >= 0 && ativa_fan*100 < 1024 ){
-PWM_DutyCycle2(ativa_fan*100);
+deltaV = fop_rule1*1000;
+
+if(deltaV >= 0 && deltaV < 9000 ){
+PWM_DutyCycle2(deltaV);
 }else
 {
 PWM_DutyCycle2(0);
 }
 
-rpm = ativa_fan;
+
+
 }
 
-# 321
+# 324
 void interrupt ISR(void)
 {
 

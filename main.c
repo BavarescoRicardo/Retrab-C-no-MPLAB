@@ -246,28 +246,29 @@ void Fuzzy(unsigned int setpoint)
 
 
 	// 4 - Aplicação do Método de Agregação.
-	if (temp < 2.5)
-	{
-		tip  = ideal ;
-	}
+	// if (temp < 2.5)
+	// {
+	// 	tip  = ideal ;
+	// }
 
-	if (temp >= 2.5 && temp < 7.5)
-	{
-		tip  = tip_average ;
-	}
+	// if (temp >= 2.5 && temp < 7.5)
+	// {
+	// 	tip  = tip_average ;
+	// }
 
-	if (temp >= 7.5 && temp <= 10)
-	{
-		tip  = tip_gorgeous;
-	}
+	// if (temp >= 7.5 && temp <= 10)
+	// {
+	// 	tip  = tip_gorgeous;
+	// }
 	
 
 	// Implicação dos antecedentes pelo consequente.
 	// 5 - defuzzificação da saida
 				total_area = 1;
+				tip = fop_rule1*1000;
 				unsigned int sum = 0;
 
-				total_area = total_area + tip ;
+				total_area = total_area + tip;
 				sum = tip;
 				
 				
@@ -298,6 +299,7 @@ void Fuzzy(unsigned int setpoint)
 
 	// Passa o resultado final para o pwm
 	deltaV = fop_rule1*1000;
+	//deltaV = ativa_fan*1000;
 	if(deltaV >= 0 && deltaV < 9000 ){
 		PWM_DutyCycle2(deltaV);
 	}else 
@@ -306,6 +308,7 @@ void Fuzzy(unsigned int setpoint)
 	}
 	
 	// rpm = ativa_fan;
+	// deltaV = ativa_fan*1000;
 }
 
 
@@ -329,7 +332,7 @@ void interrupt ISR(void)
 			USART_WriteString("\n\rdesligado\n\r");
 			pwm = 0;
 			PWM_DutyCycle2(pwm);
-			
+			return;
 		}
 
 		if (USART_ReceiveChar() == '1')

@@ -159,9 +159,9 @@
 [v _max_val max_val `(ui  1 e 2 0 ]
 "136
 [v _Fuzzy Fuzzy `(v  1 e 0 0 ]
-"321
+"324
 [v _ISR ISR `II(v  1 e 0 0 ]
-"484
+"487
 [v _main main `(v  1 e 0 0 ]
 "5 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c
 [v _PWM_Init PWM_Init `(v  1 e 0 0 ]
@@ -598,10 +598,10 @@
 [v _tf tf `ui  1 e 2 0 ]
 "72
 [v _derro derro `ui  1 e 2 0 ]
-"484
+"487
 [v _main main `(v  1 e 0 0 ]
 {
-"557
+"560
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -782,10 +782,10 @@
 {
 "44
 } 0
-"321 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c
+"324 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c
 [v _ISR ISR `II(v  1 e 0 0 ]
 {
-"481
+"484
 } 0
 "20 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c
 [v i1_TIMER0_Set TIMER0_Set `(v  1 e 0 0 ]
@@ -820,13 +820,13 @@
 "136 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c
 [v _Fuzzy Fuzzy `(v  1 e 0 0 ]
 {
-"267
+"268
 [v Fuzzy@sum sum `ui  1 a 2 17 ]
-"280
+"281
 [v Fuzzy@velocidade velocidade `[1]uc  1 a 1 16 ]
 "136
 [v Fuzzy@setpoint setpoint `ui  1 p 2 12 ]
-"309
+"312
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
 [v i1___wmul __wmul `(ui  1 e 2 0 ]

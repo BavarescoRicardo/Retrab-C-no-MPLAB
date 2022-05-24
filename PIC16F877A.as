@@ -1238,9 +1238,10 @@ _dpowers:
 	global __end_of_dpowers
 __end_of_dpowers:
 	global	_dpowers
+	global	_ativa_fan
+	global	_deltaV
 	global	_fitemp
 	global	_fop_rule1
-	global	_pulsos
 	global	_pwm
 	global	_pwmAnt
 	global	_temp
@@ -1248,11 +1249,9 @@ __end_of_dpowers:
 	global	_total_area
 	global	_x
 	global	_y
-	global	_ativa_fan
 	global	_ADCResult
 	global	_contador_rb6
 	global	_contagens_tm0
-	global	_deltaV
 	global	_derro
 	global	_fisetpoint
 	global	_foTip
@@ -1260,6 +1259,7 @@ __end_of_dpowers:
 	global	_posicao_do_grafico
 	global	_posicao_do_grafico_food
 	global	_posicao_do_grafico_service
+	global	_pulsos
 	global	_rpm
 	global	_status
 	global	_sum
@@ -1719,13 +1719,16 @@ __initialization:
 psect	bssBANK0,class=BANK0,space=1,noexec
 global __pbssBANK0
 __pbssBANK0:
+_ativa_fan:
+       ds      2
+
+_deltaV:
+       ds      2
+
 _fitemp:
        ds      2
 
 _fop_rule1:
-       ds      2
-
-_pulsos:
        ds      2
 
 _pwm:
@@ -1749,9 +1752,6 @@ _x:
 _y:
        ds      2
 
-_ativa_fan:
-       ds      2
-
 psect	dataBANK0,class=BANK0,space=1,noexec
 global __pdataBANK0
 __pdataBANK0:
@@ -1770,9 +1770,6 @@ _contador_rb6:
        ds      2
 
 _contagens_tm0:
-       ds      2
-
-_deltaV:
        ds      2
 
 _derro:
@@ -1794,6 +1791,9 @@ _posicao_do_grafico_food:
        ds      2
 
 _posicao_do_grafico_service:
+       ds      2
+
+_pulsos:
        ds      2
 
 _rpm:
@@ -1964,6 +1964,7 @@ __pcstackCOMMON:
 ??i1_USART_WriteChar:	; 0 bytes @ 0x0
 ?i1_TIMER0_Set:	; 0 bytes @ 0x0
 ??i1_TIMER0_Set:	; 0 bytes @ 0x0
+?i1_PWM_DutyCycle2:	; 0 bytes @ 0x0
 ?_USART_ReceiveChar:	; 1 bytes @ 0x0
 	global	?_max_val
 ?_max_val:	; 2 bytes @ 0x0
@@ -1977,6 +1978,8 @@ i1USART_WriteChar@byte:	; 1 bytes @ 0x0
 i1TIMER0_Set@contagens:	; 1 bytes @ 0x0
 	global	max_val@a
 max_val@a:	; 2 bytes @ 0x0
+	global	i1PWM_DutyCycle2@valor
+i1PWM_DutyCycle2@valor:	; 2 bytes @ 0x0
 	global	i1___lwdiv@divisor
 i1___lwdiv@divisor:	; 2 bytes @ 0x0
 	global	___ftpack@arg
@@ -1986,6 +1989,7 @@ ___ftpack@arg:	; 3 bytes @ 0x0
 	global	i1USART_WriteString@str
 i1USART_WriteString@str:	; 2 bytes @ 0x1
 	ds	1
+??i1_PWM_DutyCycle2:	; 0 bytes @ 0x2
 	global	max_val@b
 max_val@b:	; 2 bytes @ 0x2
 	global	i1___lwdiv@dividend
@@ -2038,7 +2042,6 @@ psect	cstackBANK0,class=BANK0,space=1,noexec
 global __pcstackBANK0
 __pcstackBANK0:
 ?___ftge:	; 1 bit 
-?i1_PWM_DutyCycle2:	; 0 bytes @ 0x0
 	global	?_trimf
 ?_trimf:	; 2 bytes @ 0x0
 	global	?_trapmf
@@ -2047,12 +2050,9 @@ __pcstackBANK0:
 trimf@x:	; 2 bytes @ 0x0
 	global	trapmf@x
 trapmf@x:	; 2 bytes @ 0x0
-	global	i1PWM_DutyCycle2@valor
-i1PWM_DutyCycle2@valor:	; 2 bytes @ 0x0
 	global	___ftge@ff1
 ___ftge@ff1:	; 3 bytes @ 0x0
 	ds	2
-??i1_PWM_DutyCycle2:	; 0 bytes @ 0x2
 	global	trimf@a
 trimf@a:	; 2 bytes @ 0x2
 	global	trapmf@a
@@ -2231,7 +2231,6 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;!    _Fuzzy->_trimf
 ;!    _Fuzzy->i1___wmul
 ;!    i1___wmul->i1___lwdiv
-;!    i1_PWM_DutyCycle2->i1___wmul
 ;!    _trimf->i1___lwdiv
 ;!    _trapmf->i1___lwdiv
 ;!    ___lwtoft->___ftpack
@@ -2288,7 +2287,7 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;! ---------------------------------------------------------------------------------
 ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
 ;! ---------------------------------------------------------------------------------
-;! (0) _main                                                 3     3      0    6189
+;! (0) _main                                                 3     3      0    6105
 ;!                                              0 BANK3      3     3      0
 ;!                           _ADC_Init
 ;!                          _LCD_Clear
@@ -2304,7 +2303,7 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;!                  _USART_WriteString
 ;!                            _sprintf
 ;! ---------------------------------------------------------------------------------
-;! (1) _sprintf                                             18    14      4    3572
+;! (1) _sprintf                                             18    14      4    3488
 ;!                                              4 BANK1     18    14      4
 ;!                            ___lwdiv
 ;!                            ___lwmod
@@ -2314,7 +2313,7 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;! (2) _isdigit                                              2     2      0      99
 ;!                                             23 BANK0      2     2      0
 ;! ---------------------------------------------------------------------------------
-;! (2) ___wmul                                               6     2      4     626
+;! (2) ___wmul                                               6     2      4     542
 ;!                                             23 BANK0      6     2      4
 ;! ---------------------------------------------------------------------------------
 ;! (2) ___lwmod                                              6     2      4     386
@@ -2380,7 +2379,7 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;! ---------------------------------------------------------------------------------
 ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
 ;! ---------------------------------------------------------------------------------
-;! (3) _ISR                                                  4     4      0   10731
+;! (3) _ISR                                                  4     4      0    9859
 ;!                                             19 BANK0      4     4      0
 ;!                              _Fuzzy
 ;!                  _USART_ReceiveChar
@@ -2404,7 +2403,7 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;! (5) i1_USART_WriteChar                                    1     1      0      22
 ;!                                              0 COMMON     1     1      0
 ;! ---------------------------------------------------------------------------------
-;! (4) _Fuzzy                                                7     5      2    9083
+;! (4) _Fuzzy                                                7     5      2    8263
 ;!                                             12 BANK0      7     5      2
 ;!                             ___ftge
 ;!                           ___lwtoft
@@ -2415,13 +2414,12 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;!                          i1___lwdiv
 ;!                           i1___wmul
 ;! ---------------------------------------------------------------------------------
-;! (4) i1___wmul                                             6     2      4     300
+;! (4) i1___wmul                                             6     2      4     248
 ;!                                              8 COMMON     6     2      4
 ;!                          i1___lwdiv (ARG)
 ;! ---------------------------------------------------------------------------------
 ;! (4) i1_PWM_DutyCycle2                                     4     2      2     122
-;!                                              0 BANK0      4     2      2
-;!                           i1___wmul (ARG)
+;!                                              0 COMMON     4     2      2
 ;! ---------------------------------------------------------------------------------
 ;! (5) _trimf                                               14     6      8    1453
 ;!                                              8 COMMON     6     6      0
@@ -2439,14 +2437,14 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;! (5) _max_val                                              4     0      4     472
 ;!                                              0 COMMON     4     0      4
 ;! ---------------------------------------------------------------------------------
-;! (5) ___lwtoft                                             4     1      3    2529
+;! (5) ___lwtoft                                             4     1      3    2273
 ;!                                              8 COMMON     4     1      3
 ;!                           ___ftpack
 ;! ---------------------------------------------------------------------------------
 ;! (6) ___ftpack                                             8     3      5    1931
 ;!                                              0 COMMON     8     3      5
 ;! ---------------------------------------------------------------------------------
-;! (5) ___ftge                                              12     6      6    1288
+;! (5) ___ftge                                              12     6      6     776
 ;!                                              0 BANK0     12     6      6
 ;!                           ___lwtoft (ARG)
 ;! ---------------------------------------------------------------------------------
@@ -2493,8 +2491,6 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;!     _trimf
 ;!       i1___lwdiv
 ;!     i1_PWM_DutyCycle2
-;!       i1___wmul (ARG)
-;!         i1___lwdiv (ARG)
 ;!     i1___lwdiv
 ;!     i1___wmul
 ;!       i1___lwdiv (ARG)
@@ -2502,8 +2498,6 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;!     i1_USART_WriteString
 ;!       i1_USART_WriteChar
 ;!   i1_PWM_DutyCycle2
-;!     i1___wmul (ARG)
-;!       i1___lwdiv (ARG)
 ;!   i1_TIMER0_Set
 ;!   i1_USART_WriteString
 ;!     i1_USART_WriteChar
@@ -2544,7 +2538,7 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 484 in file "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
+;;		line 487 in file "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -2584,12 +2578,12 @@ ___lwmod@counter:	; 1 bytes @ 0x20
 ;;
 psect	maintext,global,class=CODE,delta=2,split=1
 	file	"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
-	line	484
+	line	487
 global __pmaintext
 __pmaintext:	;psect for function _main
 psect	maintext
 	file	"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
-	line	484
+	line	487
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
 	
@@ -2597,92 +2591,92 @@ _main:
 ;incstack = 0
 	opt	stack 2
 ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
-	line	486
+	line	489
 	
-l3145:	
-;main.c: 486: TRISA = 0b00000001;
+l3110:	
+;main.c: 489: TRISA = 0b00000001;
 	movlw	(01h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(133)^080h	;volatile
-	line	487
-;main.c: 487: PORTA = 0b00000001;
+	line	490
+;main.c: 490: PORTA = 0b00000001;
 	movlw	(01h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(5)	;volatile
-	line	488
+	line	491
 	
-l3147:	
-;main.c: 488: TRISB = 0b00000000;
+l3112:	
+;main.c: 491: TRISB = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(134)^080h	;volatile
-	line	489
+	line	492
 	
-l3149:	
-;main.c: 489: PORTB = 0b00000000;
+l3114:	
+;main.c: 492: PORTB = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(6)	;volatile
-	line	490
-;main.c: 490: TRISC = 0b10000001;
+	line	493
+;main.c: 493: TRISC = 0b10000001;
 	movlw	(081h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(135)^080h	;volatile
-	line	491
-;main.c: 491: PORTC = 0b11000000;
+	line	494
+;main.c: 494: PORTC = 0b11000000;
 	movlw	(0C0h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	492
+	line	495
 	
-l3151:	
-;main.c: 492: TRISD = 0b00000000;
+l3116:	
+;main.c: 495: TRISD = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(136)^080h	;volatile
-	line	493
+	line	496
 	
-l3153:	
-;main.c: 493: PORTD = 0b00000000;
+l3118:	
+;main.c: 496: PORTD = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(8)	;volatile
-	line	494
+	line	497
 	
-l3155:	
-;main.c: 494: TRISE = 0b00000000;
+l3120:	
+;main.c: 497: TRISE = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(137)^080h	;volatile
-	line	495
+	line	498
 	
-l3157:	
-;main.c: 495: PORTE = 0b00000000;
+l3122:	
+;main.c: 498: PORTE = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(9)	;volatile
-	line	498
-;main.c: 498: T1CON = 0x03;
+	line	501
+;main.c: 501: T1CON = 0x03;
 	movlw	(03h)
 	movwf	(16)	;volatile
-	line	499
+	line	502
 	
-l3159:	
-;main.c: 499: TMR1L = 0x00;
+l3124:	
+;main.c: 502: TMR1L = 0x00;
 	clrf	(14)	;volatile
-	line	500
-	
-l3161:	
-;main.c: 500: TMR1H = 0x00;
-	clrf	(15)	;volatile
 	line	503
 	
-l3163:	
-;main.c: 503: USART_Init(115200);
+l3126:	
+;main.c: 503: TMR1H = 0x00;
+	clrf	(15)	;volatile
+	line	506
+	
+l3128:	
+;main.c: 506: USART_Init(115200);
 	movlw	0
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2695,36 +2689,36 @@ l3163:
 	movwf	(USART_Init@BaudRate)^080h
 
 	fcall	_USART_Init
-	line	504
-;main.c: 504: TIMER0_Init();
-	fcall	_TIMER0_Init
-	line	505
-;main.c: 505: ADC_Init();
-	fcall	_ADC_Init
-	line	506
-	
-l3165:	
-;main.c: 506: PWM_Init();
-	fcall	_PWM_Init
 	line	507
+;main.c: 507: TIMER0_Init();
+	fcall	_TIMER0_Init
+	line	508
+;main.c: 508: ADC_Init();
+	fcall	_ADC_Init
+	line	509
 	
-l3167:	
-;main.c: 507: LCD_Init();
-	fcall	_LCD_Init
+l3130:	
+;main.c: 509: PWM_Init();
+	fcall	_PWM_Init
 	line	510
 	
-l3169:	
-;main.c: 510: INTCONbits.PEIE = 1;
-	bsf	(11),6	;volatile
-	line	511
+l3132:	
+;main.c: 510: LCD_Init();
+	fcall	_LCD_Init
+	line	513
 	
-l3171:	
-;main.c: 511: INTCONbits.GIE = 1;
-	bsf	(11),7	;volatile
+l3134:	
+;main.c: 513: INTCONbits.PEIE = 1;
+	bsf	(11),6	;volatile
 	line	514
 	
-l3173:	
-;main.c: 514: USART_WriteString("Inicializando o PIC16F877A\n\r");
+l3136:	
+;main.c: 514: INTCONbits.GIE = 1;
+	bsf	(11),7	;volatile
+	line	517
+	
+l3138:	
+;main.c: 517: USART_WriteString("Inicializando o PIC16F877A\n\r");
 	movlw	low((STR_11)|8000h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2732,10 +2726,10 @@ l3173:
 	movlw	high((STR_11)|8000h)
 	movwf	((USART_WriteString@str))+1
 	fcall	_USART_WriteString
-	line	515
+	line	518
 	
-l3175:	
-;main.c: 515: USART_WriteString("USART: 115.200bps\n\r");
+l3140:	
+;main.c: 518: USART_WriteString("USART: 115.200bps\n\r");
 	movlw	low((STR_12)|8000h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2743,24 +2737,24 @@ l3175:
 	movlw	high((STR_12)|8000h)
 	movwf	((USART_WriteString@str))+1
 	fcall	_USART_WriteString
-	line	518
+	line	521
 	
-l3177:	
-;main.c: 518: LCD_Init();
+l3142:	
+;main.c: 521: LCD_Init();
 	fcall	_LCD_Init
-	line	519
+	line	522
 	
-l3179:	
-;main.c: 519: LCD_Cursor(0,0);
+l3144:	
+;main.c: 522: LCD_Cursor(0,0);
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(LCD_Cursor@Col)
 	movlw	(0)
 	fcall	_LCD_Cursor
-	line	520
+	line	523
 	
-l3181:	
-;main.c: 520: LCD_WriteString("Inicializando...");
+l3146:	
+;main.c: 523: LCD_WriteString("Inicializando...");
 	movlw	low((STR_13)|8000h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2768,10 +2762,10 @@ l3181:
 	movlw	high((STR_13)|8000h)
 	movwf	((LCD_WriteString@Str))+1
 	fcall	_LCD_WriteString
-	line	523
+	line	526
 	
-l3183:	
-;main.c: 523: PWM_DutyCycle1(0);
+l3148:	
+;main.c: 526: PWM_DutyCycle1(0);
 	movlw	low(0)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2779,10 +2773,10 @@ l3183:
 	movlw	high(0)
 	movwf	((PWM_DutyCycle1@valor))+1
 	fcall	_PWM_DutyCycle1
-	line	524
+	line	527
 	
-l3185:	
-;main.c: 524: PWM_DutyCycle2(0);
+l3150:	
+;main.c: 527: PWM_DutyCycle2(0);
 	movlw	low(0)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2790,16 +2784,16 @@ l3185:
 	movlw	high(0)
 	movwf	((PWM_DutyCycle2@valor))+1
 	fcall	_PWM_DutyCycle2
-	line	527
-	
-l3187:	
-;main.c: 527: TIMER0_Set(238);
-	movlw	(0EEh)
-	fcall	_TIMER0_Set
 	line	530
 	
-l3189:	
-;main.c: 530: _delay((unsigned long)((1000)*(18432000/4000.0)));
+l3152:	
+;main.c: 530: TIMER0_Set(238);
+	movlw	(0EEh)
+	fcall	_TIMER0_Set
+	line	533
+	
+l3154:	
+;main.c: 533: _delay((unsigned long)((1000)*(18432000/4000.0)));
 	opt asmopt_off
 movlw  24
 	bsf	status, 5	;RP0=1, select bank3
@@ -2809,40 +2803,48 @@ movlw	97
 movwf	((??_main+0)^0180h+0+1),f
 	movlw	110
 movwf	((??_main+0)^0180h+0),f
-u3397:
+u3297:
 	decfsz	((??_main+0)^0180h+0),f
-	goto	u3397
+	goto	u3297
 	decfsz	((??_main+0)^0180h+0+1),f
-	goto	u3397
+	goto	u3297
 	decfsz	((??_main+0)^0180h+0+2),f
-	goto	u3397
+	goto	u3297
 	nop
 opt asmopt_on
 
-	line	533
-;main.c: 533: while(1)
-	
-l211:	
 	line	536
-;main.c: 534: {
-;main.c: 536: sprintf(display_rpm,"%04d", deltaV);
+;main.c: 536: while(1)
+	
+l208:	
+	line	539
+;main.c: 537: {
+;main.c: 539: sprintf(display_rpm,"%04d", deltaV);
 	movlw	low((STR_14)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(sprintf@f)^080h
 	movlw	high((STR_14)|8000h)
 	movwf	((sprintf@f)^080h)+1
-	movf	(_deltaV+1)^080h,w
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	movf	(_deltaV+1),w
+	bsf	status, 5	;RP0=1, select bank1
+	bcf	status, 6	;RP1=0, select bank1
 	clrf	1+(?_sprintf)^080h+02h
 	addwf	1+(?_sprintf)^080h+02h
-	movf	(_deltaV)^080h,w
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	movf	(_deltaV),w
+	bsf	status, 5	;RP0=1, select bank1
+	bcf	status, 6	;RP1=0, select bank1
 	clrf	0+(?_sprintf)^080h+02h
 	addwf	0+(?_sprintf)^080h+02h
 
 	movlw	(_display_rpm)&0ffh
 	fcall	_sprintf
-	line	537
-;main.c: 537: sprintf(display_pwm,"%04d", pwm);
+	line	540
+;main.c: 540: sprintf(display_pwm,"%04d", pwm);
 	movlw	low((STR_15)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2866,8 +2868,8 @@ l211:
 
 	movlw	(_display_pwm)&0ffh
 	fcall	_sprintf
-	line	541
-;main.c: 541: USART_WriteString(display_rpm);
+	line	544
+;main.c: 544: USART_WriteString(display_rpm);
 	movlw	(_display_rpm&0ffh)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2875,8 +2877,8 @@ l211:
 	movlw	(0x0)
 	movwf	(USART_WriteString@str+1)
 	fcall	_USART_WriteString
-	line	542
-;main.c: 542: USART_WriteString("\n\r");
+	line	545
+;main.c: 545: USART_WriteString("\n\r");
 	movlw	low((STR_16)|8000h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2884,22 +2886,22 @@ l211:
 	movlw	high((STR_16)|8000h)
 	movwf	((USART_WriteString@str))+1
 	fcall	_USART_WriteString
-	line	545
+	line	548
 	
-l3191:	
-;main.c: 545: LCD_Clear();
+l3156:	
+;main.c: 548: LCD_Clear();
 	fcall	_LCD_Clear
-	line	546
+	line	549
 	
-l3193:	
-;main.c: 546: LCD_Cursor(0,0);
+l3158:	
+;main.c: 549: LCD_Cursor(0,0);
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(LCD_Cursor@Col)
 	movlw	(0)
 	fcall	_LCD_Cursor
-	line	547
-;main.c: 547: LCD_WriteString("DlV: ");
+	line	550
+;main.c: 550: LCD_WriteString("DlV: ");
 	movlw	low((STR_17)|8000h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2907,10 +2909,10 @@ l3193:
 	movlw	high((STR_17)|8000h)
 	movwf	((LCD_WriteString@Str))+1
 	fcall	_LCD_WriteString
-	line	548
+	line	551
 	
-l3195:	
-;main.c: 548: LCD_Cursor(0,6);
+l3160:	
+;main.c: 551: LCD_Cursor(0,6);
 	movlw	(06h)
 	bsf	status, 5	;RP0=1, select bank3
 	bsf	status, 6	;RP1=1, select bank3
@@ -2921,10 +2923,10 @@ l3195:
 	movwf	(LCD_Cursor@Col)
 	movlw	(0)
 	fcall	_LCD_Cursor
-	line	549
+	line	552
 	
-l3197:	
-;main.c: 549: LCD_WriteString(display_rpm);
+l3162:	
+;main.c: 552: LCD_WriteString(display_rpm);
 	movlw	(_display_rpm&0ffh)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2932,17 +2934,17 @@ l3197:
 	movlw	(0x0)
 	movwf	(LCD_WriteString@Str+1)
 	fcall	_LCD_WriteString
-	line	550
-;main.c: 550: LCD_Cursor(1,0);
+	line	553
+;main.c: 553: LCD_Cursor(1,0);
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(LCD_Cursor@Col)
 	movlw	(01h)
 	fcall	_LCD_Cursor
-	line	551
+	line	554
 	
-l3199:	
-;main.c: 551: LCD_WriteString("PWM: ");
+l3164:	
+;main.c: 554: LCD_WriteString("PWM: ");
 	movlw	low((STR_18)|8000h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2950,10 +2952,10 @@ l3199:
 	movlw	high((STR_18)|8000h)
 	movwf	((LCD_WriteString@Str))+1
 	fcall	_LCD_WriteString
-	line	552
+	line	555
 	
-l3201:	
-;main.c: 552: LCD_Cursor(1,6);
+l3166:	
+;main.c: 555: LCD_Cursor(1,6);
 	movlw	(06h)
 	bsf	status, 5	;RP0=1, select bank3
 	bsf	status, 6	;RP1=1, select bank3
@@ -2964,8 +2966,8 @@ l3201:
 	movwf	(LCD_Cursor@Col)
 	movlw	(01h)
 	fcall	_LCD_Cursor
-	line	553
-;main.c: 553: LCD_WriteString(display_pwm);
+	line	556
+;main.c: 556: LCD_WriteString(display_pwm);
 	movlw	(_display_pwm&0ffh)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -2973,10 +2975,10 @@ l3201:
 	movlw	(0x0)
 	movwf	(LCD_WriteString@Str+1)
 	fcall	_LCD_WriteString
-	line	555
+	line	558
 	
-l3203:	
-;main.c: 555: _delay((unsigned long)((200)*(18432000/4000.0)));
+l3168:	
+;main.c: 558: _delay((unsigned long)((200)*(18432000/4000.0)));
 	opt asmopt_off
 movlw  5
 	bsf	status, 5	;RP0=1, select bank3
@@ -2986,26 +2988,26 @@ movlw	173
 movwf	((??_main+0)^0180h+0+1),f
 	movlw	224
 movwf	((??_main+0)^0180h+0),f
-u3407:
+u3307:
 	decfsz	((??_main+0)^0180h+0),f
-	goto	u3407
+	goto	u3307
 	decfsz	((??_main+0)^0180h+0+1),f
-	goto	u3407
+	goto	u3307
 	decfsz	((??_main+0)^0180h+0+2),f
-	goto	u3407
+	goto	u3307
 opt asmopt_on
 
-	goto	l211
-	line	556
+	goto	l208
+	line	559
 	
-l212:	
-	line	533
-	goto	l211
+l209:	
+	line	536
+	goto	l208
 	
-l213:	
-	line	557
+l210:	
+	line	560
 	
-l214:	
+l211:	
 	global	start
 	ljmp	start
 	opt stack 0
@@ -3078,7 +3080,7 @@ _sprintf:
 	movwf	(sprintf@sp)^080h
 	line	542
 	
-l3037:	
+l3002:	
 ;doprnt.c: 494: va_list ap;
 ;doprnt.c: 499: signed char c;
 ;doprnt.c: 501: int width;
@@ -3098,24 +3100,24 @@ l3037:
 	movwf	(sprintf@ap)^080h
 	line	545
 ;doprnt.c: 545: while(c = *f++) {
-	goto	l3139
+	goto	l3104
 	
-l484:	
+l481:	
 	line	547
 	
-l3039:	
+l3004:	
 ;doprnt.c: 547: if(c != '%')
 	movf	(sprintf@c)^080h,w
 	xorlw	025h
 	skipnz
-	goto	u3201
-	goto	u3200
-u3201:
-	goto	l3045
-u3200:
+	goto	u3101
+	goto	u3100
+u3101:
+	goto	l3010
+u3100:
 	line	550
 	
-l3041:	
+l3006:	
 ;doprnt.c: 549: {
 ;doprnt.c: 550: ((*sp++ = (c)));
 	movf	(sprintf@c)^080h,w
@@ -3126,20 +3128,20 @@ l3041:
 	bcf	status, 7	;select IRP bank0
 	movwf	indf
 	
-l3043:	
+l3008:	
 	movlw	(01h)
 	movwf	(??_sprintf+0)^080h+0
 	movf	(??_sprintf+0)^080h+0,w
 	addwf	(sprintf@sp)^080h,f
 	line	551
 ;doprnt.c: 551: continue;
-	goto	l3139
+	goto	l3104
 	line	552
 	
-l485:	
+l482:	
 	line	555
 	
-l3045:	
+l3010:	
 ;doprnt.c: 552: }
 ;doprnt.c: 555: width = 0;
 	clrf	(sprintf@width)^080h
@@ -3147,18 +3149,18 @@ l3045:
 	line	557
 ;doprnt.c: 557: flag = 0;
 	clrf	(sprintf@flag)^080h
-	goto	l3049
+	goto	l3014
 	line	559
 ;doprnt.c: 559: for(;;) {
 	
-l486:	
+l483:	
 	line	560
 ;doprnt.c: 560: switch(*f) {
-	goto	l3049
+	goto	l3014
 	line	588
 ;doprnt.c: 588: case '0':
 	
-l488:	
+l485:	
 	line	589
 ;doprnt.c: 589: flag |= 0x04;
 	bsf	status, 5	;RP0=1, select bank1
@@ -3172,17 +3174,17 @@ l488:
 	incf	(sprintf@f+1)^080h,f
 	line	591
 ;doprnt.c: 591: continue;
-	goto	l3049
+	goto	l3014
 	line	593
 	
-l3047:	
+l3012:	
 ;doprnt.c: 593: }
-	goto	l3051
+	goto	l3016
 	line	560
 	
-l487:	
+l484:	
 	
-l3049:	
+l3014:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(sprintf@f+1)^080h,w
@@ -3208,26 +3210,26 @@ l3049:
 	opt asmopt_off
 	xorlw	48^0	; case 48
 	skipnz
-	goto	l488
-	goto	l3051
+	goto	l485
+	goto	l3016
 	opt asmopt_on
 
 	line	593
 	
-l490:	
+l487:	
 	line	594
 ;doprnt.c: 594: break;
-	goto	l3051
+	goto	l3016
 	line	595
 	
-l489:	
+l486:	
 ;doprnt.c: 595: }
-	goto	l3049
+	goto	l3014
 	
-l491:	
+l488:	
 	line	606
 	
-l3051:	
+l3016:	
 ;doprnt.c: 606: if(isdigit((unsigned)*f)) {
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3244,27 +3246,27 @@ l3051:
 	fcall	stringtab
 	fcall	_isdigit
 	btfss	status,0
-	goto	u3211
-	goto	u3210
-u3211:
-	goto	l3065
-u3210:
+	goto	u3111
+	goto	u3110
+u3111:
+	goto	l3030
+u3110:
 	line	607
 	
-l3053:	
+l3018:	
 ;doprnt.c: 607: width = 0;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(sprintf@width)^080h
 	clrf	(sprintf@width+1)^080h
-	goto	l3055
+	goto	l3020
 	line	608
 ;doprnt.c: 608: do {
 	
-l493:	
+l490:	
 	line	609
 	
-l3055:	
+l3020:	
 ;doprnt.c: 609: width *= 10;
 	movlw	low(0Ah)
 	bcf	status, 5	;RP0=0, select bank0
@@ -3305,7 +3307,7 @@ l3055:
 
 	line	610
 	
-l3057:	
+l3022:	
 ;doprnt.c: 610: width += *f++ - '0';
 	movf	(sprintf@f+1)^080h,w
 	bcf	status, 5	;RP0=0, select bank0
@@ -3333,14 +3335,14 @@ l3057:
 	movf	1+(??_sprintf+0)^080h+0,w
 	addwf	(sprintf@width+1)^080h,f
 	
-l3059:	
+l3024:	
 	movlw	01h
 	addwf	(sprintf@f)^080h,f
 	skipnc
 	incf	(sprintf@f+1)^080h,f
 	line	611
 	
-l3061:	
+l3026:	
 ;doprnt.c: 611: } while(isdigit((unsigned)*f));
 	movf	(sprintf@f+1)^080h,w
 	bcf	status, 5	;RP0=0, select bank0
@@ -3355,58 +3357,58 @@ l3061:
 	fcall	stringtab
 	fcall	_isdigit
 	btfsc	status,0
-	goto	u3221
-	goto	u3220
-u3221:
-	goto	l3055
-u3220:
-	goto	l3065
+	goto	u3121
+	goto	u3120
+u3121:
+	goto	l3020
+u3120:
+	goto	l3030
 	
-l494:	
-	goto	l3065
+l491:	
+	goto	l3030
 	line	617
 	
-l492:	
+l489:	
 	line	644
 ;doprnt.c: 617: }
 ;doprnt.c: 644: switch(c = *f++) {
-	goto	l3065
+	goto	l3030
 	line	646
 ;doprnt.c: 646: case 0:
 	
-l496:	
+l493:	
 	line	647
 ;doprnt.c: 647: goto alldone;
-	goto	l3141
+	goto	l3106
 	line	706
 ;doprnt.c: 706: case 'd':
 	
-l498:	
-	goto	l3067
+l495:	
+	goto	l3032
 	line	707
 	
-l499:	
+l496:	
 	line	708
 ;doprnt.c: 707: case 'i':
 ;doprnt.c: 708: break;
-	goto	l3067
+	goto	l3032
 	line	811
 ;doprnt.c: 811: default:
 	
-l501:	
+l498:	
 	line	822
 ;doprnt.c: 822: continue;
-	goto	l3139
+	goto	l3104
 	line	831
 	
-l3063:	
+l3028:	
 ;doprnt.c: 831: }
-	goto	l3067
+	goto	l3032
 	line	644
 	
-l495:	
+l492:	
 	
-l3065:	
+l3030:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(sprintf@f+1)^080h,w
@@ -3441,22 +3443,22 @@ l3065:
 	opt asmopt_off
 	xorlw	0^0	; case 0
 	skipnz
-	goto	l3141
+	goto	l3106
 	xorlw	100^0	; case 100
 	skipnz
-	goto	l3067
+	goto	l3032
 	xorlw	105^100	; case 105
 	skipnz
-	goto	l3067
-	goto	l3139
+	goto	l3032
+	goto	l3104
 	opt asmopt_on
 
 	line	831
 	
-l500:	
+l497:	
 	line	1268
 	
-l3067:	
+l3032:	
 ;doprnt.c: 1262: {
 ;doprnt.c: 1268: _val._val = (int)(*(int *)__va_arg((*(int **)ap), (int)0));
 	bsf	status, 5	;RP0=1, select bank1
@@ -3470,24 +3472,24 @@ l3067:
 	movf	indf,w
 	movwf	(sprintf@_val+1)^080h
 	
-l3069:	
+l3034:	
 	movlw	(02h)
 	movwf	(??_sprintf+0)^080h+0
 	movf	(??_sprintf+0)^080h+0,w
 	addwf	(sprintf@ap)^080h,f
 	line	1270
 	
-l3071:	
+l3036:	
 ;doprnt.c: 1270: if((int)_val._val < 0) {
 	btfss	(sprintf@_val+1)^080h,7
-	goto	u3231
-	goto	u3230
-u3231:
-	goto	l3077
-u3230:
+	goto	u3131
+	goto	u3130
+u3131:
+	goto	l3042
+u3130:
 	line	1271
 	
-l3073:	
+l3038:	
 ;doprnt.c: 1271: flag |= 0x03;
 	movlw	(03h)
 	movwf	(??_sprintf+0)^080h+0
@@ -3495,20 +3497,20 @@ l3073:
 	iorwf	(sprintf@flag)^080h,f
 	line	1272
 	
-l3075:	
+l3040:	
 ;doprnt.c: 1272: _val._val = -_val._val;
 	comf	(sprintf@_val)^080h,f
 	comf	(sprintf@_val+1)^080h,f
 	incf	(sprintf@_val)^080h,f
 	skipnz
 	incf	(sprintf@_val+1)^080h,f
-	goto	l3077
+	goto	l3042
 	line	1273
 	
-l502:	
+l499:	
 	line	1314
 	
-l3077:	
+l3042:	
 ;doprnt.c: 1273: }
 ;doprnt.c: 1275: }
 ;doprnt.c: 1314: for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
@@ -3517,20 +3519,20 @@ l3077:
 	movf	(sprintf@c)^080h,w
 	xorlw	05h
 	skipz
-	goto	u3241
-	goto	u3240
-u3241:
-	goto	l3081
-u3240:
-	goto	l3089
+	goto	u3141
+	goto	u3140
+u3141:
+	goto	l3046
+u3140:
+	goto	l3054
 	
-l3079:	
-	goto	l3089
+l3044:	
+	goto	l3054
 	line	1315
 	
-l503:	
+l500:	
 	
-l3081:	
+l3046:	
 ;doprnt.c: 1315: if(_val._val < dpowers[c])
 	movf	(sprintf@c)^080h,w
 	movwf	(??_sprintf+0)^080h+0
@@ -3556,69 +3558,69 @@ l3081:
 	movf	1+(??_sprintf+1)^080h+0,w
 	subwf	(sprintf@_val+1)^080h,w
 	skipz
-	goto	u3255
+	goto	u3155
 	movf	0+(??_sprintf+1)^080h+0,w
 	subwf	(sprintf@_val)^080h,w
-u3255:
+u3155:
 	skipnc
-	goto	u3251
-	goto	u3250
-u3251:
-	goto	l3085
-u3250:
-	goto	l3089
+	goto	u3151
+	goto	u3150
+u3151:
+	goto	l3050
+u3150:
+	goto	l3054
 	line	1316
 	
-l3083:	
+l3048:	
 ;doprnt.c: 1316: break;
-	goto	l3089
+	goto	l3054
 	
-l505:	
+l502:	
 	line	1314
 	
-l3085:	
+l3050:	
 	movlw	(01h)
 	movwf	(??_sprintf+0)^080h+0
 	movf	(??_sprintf+0)^080h+0,w
 	addwf	(sprintf@c)^080h,f
 	
-l3087:	
+l3052:	
 	movf	(sprintf@c)^080h,w
 	xorlw	05h
 	skipz
-	goto	u3261
-	goto	u3260
-u3261:
-	goto	l3081
-u3260:
-	goto	l3089
+	goto	u3161
+	goto	u3160
+u3161:
+	goto	l3046
+u3160:
+	goto	l3054
 	
-l504:	
+l501:	
 	line	1354
 	
-l3089:	
+l3054:	
 ;doprnt.c: 1354: if(width && flag & 0x03)
 	movf	(sprintf@width+1)^080h,w
 	iorwf	(sprintf@width)^080h,w
 	skipnz
-	goto	u3271
-	goto	u3270
-u3271:
-	goto	l506
-u3270:
+	goto	u3171
+	goto	u3170
+u3171:
+	goto	l503
+u3170:
 	
-l3091:	
+l3056:	
 	movf	(sprintf@flag)^080h,w
 	andlw	03h
 	btfsc	status,2
-	goto	u3281
-	goto	u3280
-u3281:
-	goto	l506
-u3280:
+	goto	u3181
+	goto	u3180
+u3181:
+	goto	l503
+u3180:
 	line	1355
 	
-l3093:	
+l3058:	
 ;doprnt.c: 1355: width--;
 	movlw	low(-1)
 	addwf	(sprintf@width)^080h,f
@@ -3627,7 +3629,7 @@ l3093:
 	movlw	high(-1)
 	addwf	(sprintf@width+1)^080h,f
 	
-l506:	
+l503:	
 	line	1390
 ;doprnt.c: 1390: if(width > c)
 	movf	(sprintf@c)^080h,w
@@ -3642,20 +3644,20 @@ l506:
 	xorlw	80h
 	subwf	(??_sprintf+2)^080h+0,w
 	skipz
-	goto	u3295
+	goto	u3195
 	movf	(sprintf@width)^080h,w
 	subwf	0+(??_sprintf+0)^080h+0,w
-u3295:
+u3195:
 
 	skipnc
-	goto	u3291
-	goto	u3290
-u3291:
-	goto	l3097
-u3290:
+	goto	u3191
+	goto	u3190
+u3191:
+	goto	l3062
+u3190:
 	line	1391
 	
-l3095:	
+l3060:	
 ;doprnt.c: 1391: width -= c;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3670,47 +3672,47 @@ l3095:
 	skipc
 	decf	(sprintf@width+1)^080h,f
 	subwf	(sprintf@width+1)^080h,f
-	goto	l3099
+	goto	l3064
 	line	1392
 	
-l507:	
+l504:	
 	line	1393
 	
-l3097:	
+l3062:	
 ;doprnt.c: 1392: else
 ;doprnt.c: 1393: width = 0;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(sprintf@width)^080h
 	clrf	(sprintf@width+1)^080h
-	goto	l3099
+	goto	l3064
 	
-l508:	
+l505:	
 	line	1396
 	
-l3099:	
+l3064:	
 ;doprnt.c: 1396: if(flag & 0x04) {
 	btfss	(sprintf@flag)^080h,(2)&7
-	goto	u3301
-	goto	u3300
-u3301:
-	goto	l3115
-u3300:
+	goto	u3201
+	goto	u3200
+u3201:
+	goto	l3080
+u3200:
 	line	1401
 	
-l3101:	
+l3066:	
 ;doprnt.c: 1401: if(flag & 0x03)
 	movf	(sprintf@flag)^080h,w
 	andlw	03h
 	btfsc	status,2
-	goto	u3311
-	goto	u3310
-u3311:
-	goto	l3107
-u3310:
+	goto	u3211
+	goto	u3210
+u3211:
+	goto	l3072
+u3210:
 	line	1402
 	
-l3103:	
+l3068:	
 ;doprnt.c: 1402: ((*sp++ = ('-')));
 	movlw	(02Dh)
 	movwf	(??_sprintf+0)^080h+0
@@ -3720,34 +3722,34 @@ l3103:
 	bcf	status, 7	;select IRP bank0
 	movwf	indf
 	
-l3105:	
+l3070:	
 	movlw	(01h)
 	movwf	(??_sprintf+0)^080h+0
 	movf	(??_sprintf+0)^080h+0,w
 	addwf	(sprintf@sp)^080h,f
-	goto	l3107
+	goto	l3072
 	
-l510:	
+l507:	
 	line	1424
 	
-l3107:	
+l3072:	
 ;doprnt.c: 1424: if(width)
 	movf	(sprintf@width+1)^080h,w
 	iorwf	(sprintf@width)^080h,w
 	skipnz
-	goto	u3321
-	goto	u3320
-u3321:
-	goto	l3129
-u3320:
-	goto	l3109
+	goto	u3221
+	goto	u3220
+u3221:
+	goto	l3094
+u3220:
+	goto	l3074
 	line	1425
 ;doprnt.c: 1425: do
 	
-l512:	
+l509:	
 	line	1426
 	
-l3109:	
+l3074:	
 ;doprnt.c: 1426: ((*sp++ = ('0')));
 	movlw	(030h)
 	movwf	(??_sprintf+0)^080h+0
@@ -3757,14 +3759,14 @@ l3109:
 	bcf	status, 7	;select IRP bank0
 	movwf	indf
 	
-l3111:	
+l3076:	
 	movlw	(01h)
 	movwf	(??_sprintf+0)^080h+0
 	movf	(??_sprintf+0)^080h+0,w
 	addwf	(sprintf@sp)^080h,f
 	line	1427
 	
-l3113:	
+l3078:	
 ;doprnt.c: 1427: while(--width);
 	movlw	low(-1)
 	addwf	(sprintf@width)^080h,f
@@ -3775,44 +3777,44 @@ l3113:
 	movf	(((sprintf@width+1)^080h)),w
 	iorwf	(((sprintf@width)^080h)),w
 	skipz
-	goto	u3331
-	goto	u3330
-u3331:
-	goto	l3109
-u3330:
-	goto	l3129
+	goto	u3231
+	goto	u3230
+u3231:
+	goto	l3074
+u3230:
+	goto	l3094
 	
-l513:	
-	goto	l3129
+l510:	
+	goto	l3094
 	
-l511:	
+l508:	
 	line	1429
 ;doprnt.c: 1429: } else
-	goto	l3129
+	goto	l3094
 	
-l509:	
+l506:	
 	line	1437
 	
-l3115:	
+l3080:	
 ;doprnt.c: 1431: {
 ;doprnt.c: 1433: if(width
 ;doprnt.c: 1437: )
 	movf	(sprintf@width+1)^080h,w
 	iorwf	(sprintf@width)^080h,w
 	skipnz
-	goto	u3341
-	goto	u3340
-u3341:
-	goto	l3123
-u3340:
-	goto	l3117
+	goto	u3241
+	goto	u3240
+u3241:
+	goto	l3088
+u3240:
+	goto	l3082
 	line	1438
 ;doprnt.c: 1438: do
 	
-l516:	
+l513:	
 	line	1439
 	
-l3117:	
+l3082:	
 ;doprnt.c: 1439: ((*sp++ = (' ')));
 	movlw	(020h)
 	movwf	(??_sprintf+0)^080h+0
@@ -3822,14 +3824,14 @@ l3117:
 	bcf	status, 7	;select IRP bank0
 	movwf	indf
 	
-l3119:	
+l3084:	
 	movlw	(01h)
 	movwf	(??_sprintf+0)^080h+0
 	movf	(??_sprintf+0)^080h+0,w
 	addwf	(sprintf@sp)^080h,f
 	line	1440
 	
-l3121:	
+l3086:	
 ;doprnt.c: 1440: while(--width);
 	movlw	low(-1)
 	addwf	(sprintf@width)^080h,f
@@ -3840,32 +3842,32 @@ l3121:
 	movf	(((sprintf@width+1)^080h)),w
 	iorwf	(((sprintf@width)^080h)),w
 	skipz
-	goto	u3351
-	goto	u3350
-u3351:
-	goto	l3117
-u3350:
-	goto	l3123
+	goto	u3251
+	goto	u3250
+u3251:
+	goto	l3082
+u3250:
+	goto	l3088
 	
-l517:	
-	goto	l3123
+l514:	
+	goto	l3088
 	
-l515:	
+l512:	
 	line	1447
 	
-l3123:	
+l3088:	
 ;doprnt.c: 1447: if(flag & 0x03)
 	movf	(sprintf@flag)^080h,w
 	andlw	03h
 	btfsc	status,2
-	goto	u3361
-	goto	u3360
-u3361:
-	goto	l3129
-u3360:
+	goto	u3261
+	goto	u3260
+u3261:
+	goto	l3094
+u3260:
 	line	1448
 	
-l3125:	
+l3090:	
 ;doprnt.c: 1448: ((*sp++ = ('-')));
 	movlw	(02Dh)
 	movwf	(??_sprintf+0)^080h+0
@@ -3875,21 +3877,21 @@ l3125:
 	bcf	status, 7	;select IRP bank0
 	movwf	indf
 	
-l3127:	
+l3092:	
 	movlw	(01h)
 	movwf	(??_sprintf+0)^080h+0
 	movf	(??_sprintf+0)^080h+0,w
 	addwf	(sprintf@sp)^080h,f
-	goto	l3129
+	goto	l3094
 	
-l518:	
-	goto	l3129
+l515:	
+	goto	l3094
 	line	1478
 	
-l514:	
+l511:	
 	line	1481
 	
-l3129:	
+l3094:	
 ;doprnt.c: 1478: }
 ;doprnt.c: 1481: prec = c;
 	movf	(sprintf@c)^080h,w
@@ -3898,12 +3900,12 @@ l3129:
 	movwf	(sprintf@prec)^080h
 	line	1483
 ;doprnt.c: 1483: while(prec--) {
-	goto	l3137
+	goto	l3102
 	
-l520:	
+l517:	
 	line	1498
 	
-l3131:	
+l3096:	
 ;doprnt.c: 1487: {
 ;doprnt.c: 1498: c = (_val._val / dpowers[prec]) % 10 + '0';
 	movlw	low(0Ah)
@@ -3966,7 +3968,7 @@ l3131:
 	movwf	(sprintf@c)^080h
 	line	1533
 	
-l3133:	
+l3098:	
 ;doprnt.c: 1532: }
 ;doprnt.c: 1533: ((*sp++ = (c)));
 	movf	(sprintf@c)^080h,w
@@ -3977,18 +3979,18 @@ l3133:
 	bcf	status, 7	;select IRP bank0
 	movwf	indf
 	
-l3135:	
+l3100:	
 	movlw	(01h)
 	movwf	(??_sprintf+0)^080h+0
 	movf	(??_sprintf+0)^080h+0,w
 	addwf	(sprintf@sp)^080h,f
-	goto	l3137
+	goto	l3102
 	line	1534
 	
-l519:	
+l516:	
 	line	1483
 	
-l3137:	
+l3102:	
 	movlw	(-1)
 	movwf	(??_sprintf+0)^080h+0
 	movf	(??_sprintf+0)^080h+0,w
@@ -3996,21 +3998,21 @@ l3137:
 	movf	((sprintf@prec)^080h),w
 	xorlw	-1
 	skipz
-	goto	u3371
-	goto	u3370
-u3371:
-	goto	l3131
-u3370:
-	goto	l3139
+	goto	u3271
+	goto	u3270
+u3271:
+	goto	l3096
+u3270:
+	goto	l3104
 	
-l521:	
-	goto	l3139
+l518:	
+	goto	l3104
 	line	1542
 	
-l483:	
+l480:	
 	line	545
 	
-l3139:	
+l3104:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(sprintf@f+1)^080h,w
@@ -4038,24 +4040,24 @@ l3139:
 	movwf	(sprintf@c)^080h
 	movf	((sprintf@c)^080h),f
 	skipz
-	goto	u3381
-	goto	u3380
-u3381:
-	goto	l3039
-u3380:
-	goto	l3141
+	goto	u3281
+	goto	u3280
+u3281:
+	goto	l3004
+u3280:
+	goto	l3106
 	
-l522:	
-	goto	l3141
+l519:	
+	goto	l3106
 	line	1544
 ;doprnt.c: 1534: }
 ;doprnt.c: 1542: }
 ;doprnt.c: 1544: alldone:
 	
-l497:	
+l494:	
 	line	1547
 	
-l3141:	
+l3106:	
 ;doprnt.c: 1547: *sp = 0;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -4063,15 +4065,15 @@ l3141:
 	movwf	fsr0
 	bcf	status, 7	;select IRP bank0
 	clrf	indf
-	goto	l523
+	goto	l520
 	line	1549
 	
-l3143:	
+l3108:	
 	line	1550
 ;doprnt.c: 1549: return 0;
 ;	Return value of _sprintf is never used
 	
-l523:	
+l520:	
 	return
 	opt stack 0
 GLOBAL	__end_of_sprintf
@@ -4129,45 +4131,45 @@ _isdigit:
 	movwf	(isdigit@c)
 	line	14
 	
-l2885:	
+l2850:	
 	clrf	(_isdigit$1450)
 	
-l2887:	
+l2852:	
 	movlw	(03Ah)
 	subwf	(isdigit@c),w
 	skipnc
-	goto	u2901
-	goto	u2900
-u2901:
-	goto	l2893
-u2900:
+	goto	u2801
+	goto	u2800
+u2801:
+	goto	l2858
+u2800:
 	
-l2889:	
+l2854:	
 	movlw	(030h)
 	subwf	(isdigit@c),w
 	skipc
-	goto	u2911
-	goto	u2910
-u2911:
-	goto	l2893
-u2910:
+	goto	u2811
+	goto	u2810
+u2811:
+	goto	l2858
+u2810:
 	
-l2891:	
+l2856:	
 	clrf	(_isdigit$1450)
 	incf	(_isdigit$1450),f
-	goto	l2893
+	goto	l2858
 	
-l863:	
+l860:	
 	
-l2893:	
+l2858:	
 	rrf	(_isdigit$1450),w
 	
-	goto	l864
+	goto	l861
 	
-l2895:	
+l2860:	
 	line	15
 	
-l864:	
+l861:	
 	return
 	opt stack 0
 GLOBAL	__end_of_isdigit
@@ -4222,27 +4224,27 @@ ___wmul:
 ; Regs used in ___wmul: [wreg+status,2+status,0]
 	line	43
 	
-l2897:	
+l2862:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(___wmul@product)
 	clrf	(___wmul@product+1)
-	goto	l2899
+	goto	l2864
 	line	44
 	
-l606:	
+l603:	
 	line	45
 	
-l2899:	
+l2864:	
 	btfss	(___wmul@multiplier),(0)&7
-	goto	u2921
-	goto	u2920
-u2921:
-	goto	l607
-u2920:
+	goto	u2821
+	goto	u2820
+u2821:
+	goto	l604
+u2820:
 	line	46
 	
-l2901:	
+l2866:	
 	movf	(___wmul@multiplicand),w
 	addwf	(___wmul@product),f
 	skipnc
@@ -4250,44 +4252,44 @@ l2901:
 	movf	(___wmul@multiplicand+1),w
 	addwf	(___wmul@product+1),f
 	
-l607:	
+l604:	
 	line	47
 	movlw	01h
 	
-u2935:
+u2835:
 	clrc
 	rlf	(___wmul@multiplicand),f
 	rlf	(___wmul@multiplicand+1),f
 	addlw	-1
 	skipz
-	goto	u2935
+	goto	u2835
 	line	48
 	
-l2903:	
+l2868:	
 	movlw	01h
 	
-u2945:
+u2845:
 	clrc
 	rrf	(___wmul@multiplier+1),f
 	rrf	(___wmul@multiplier),f
 	addlw	-1
 	skipz
-	goto	u2945
+	goto	u2845
 	line	49
 	movf	((___wmul@multiplier+1)),w
 	iorwf	((___wmul@multiplier)),w
 	skipz
-	goto	u2951
-	goto	u2950
-u2951:
-	goto	l2899
-u2950:
-	goto	l2905
+	goto	u2851
+	goto	u2850
+u2851:
+	goto	l2864
+u2850:
+	goto	l2870
 	
-l608:	
+l605:	
 	line	52
 	
-l2905:	
+l2870:	
 	movf	(___wmul@product+1),w
 	clrf	(?___wmul+1)
 	addwf	(?___wmul+1)
@@ -4295,12 +4297,12 @@ l2905:
 	clrf	(?___wmul)
 	addwf	(?___wmul)
 
-	goto	l609
+	goto	l606
 	
-l2907:	
+l2872:	
 	line	53
 	
-l609:	
+l606:	
 	return
 	opt stack 0
 GLOBAL	__end_of___wmul
@@ -4355,138 +4357,138 @@ ___lwmod:
 ; Regs used in ___lwmod: [wreg+status,2+status,0]
 	line	13
 	
-l2975:	
+l2940:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(___lwmod@divisor+1)^080h,w
 	iorwf	(___lwmod@divisor)^080h,w
 	skipnz
-	goto	u3131
-	goto	u3130
-u3131:
-	goto	l2993
-u3130:
+	goto	u3031
+	goto	u3030
+u3031:
+	goto	l2958
+u3030:
 	line	14
 	
-l2977:	
+l2942:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(___lwmod@counter)
 	incf	(___lwmod@counter),f
 	line	15
-	goto	l2983
+	goto	l2948
 	
-l953:	
+l950:	
 	line	16
 	
-l2979:	
+l2944:	
 	movlw	01h
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	
-u3145:
+u3045:
 	clrc
 	rlf	(___lwmod@divisor)^080h,f
 	rlf	(___lwmod@divisor+1)^080h,f
 	addlw	-1
 	skipz
-	goto	u3145
+	goto	u3045
 	line	17
 	
-l2981:	
+l2946:	
 	movlw	(01h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(??___lwmod+0)+0
 	movf	(??___lwmod+0)+0,w
 	addwf	(___lwmod@counter),f
-	goto	l2983
+	goto	l2948
 	line	18
 	
-l952:	
+l949:	
 	line	15
 	
-l2983:	
+l2948:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	btfss	(___lwmod@divisor+1)^080h,(15)&7
-	goto	u3151
-	goto	u3150
-u3151:
-	goto	l2979
-u3150:
-	goto	l2985
+	goto	u3051
+	goto	u3050
+u3051:
+	goto	l2944
+u3050:
+	goto	l2950
 	
-l954:	
-	goto	l2985
+l951:	
+	goto	l2950
 	line	19
 	
-l955:	
+l952:	
 	line	20
 	
-l2985:	
+l2950:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(___lwmod@divisor+1)^080h,w
 	subwf	(___lwmod@dividend+1)^080h,w
 	skipz
-	goto	u3165
+	goto	u3065
 	movf	(___lwmod@divisor)^080h,w
 	subwf	(___lwmod@dividend)^080h,w
-u3165:
+u3065:
 	skipc
-	goto	u3161
-	goto	u3160
-u3161:
-	goto	l2989
-u3160:
+	goto	u3061
+	goto	u3060
+u3061:
+	goto	l2954
+u3060:
 	line	21
 	
-l2987:	
+l2952:	
 	movf	(___lwmod@divisor)^080h,w
 	subwf	(___lwmod@dividend)^080h,f
 	movf	(___lwmod@divisor+1)^080h,w
 	skipc
 	decf	(___lwmod@dividend+1)^080h,f
 	subwf	(___lwmod@dividend+1)^080h,f
-	goto	l2989
+	goto	l2954
 	
-l956:	
+l953:	
 	line	22
 	
-l2989:	
+l2954:	
 	movlw	01h
 	
-u3175:
+u3075:
 	clrc
 	rrf	(___lwmod@divisor+1)^080h,f
 	rrf	(___lwmod@divisor)^080h,f
 	addlw	-1
 	skipz
-	goto	u3175
+	goto	u3075
 	line	23
 	
-l2991:	
+l2956:	
 	movlw	low(01h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	subwf	(___lwmod@counter),f
 	btfss	status,2
-	goto	u3181
-	goto	u3180
-u3181:
-	goto	l2985
-u3180:
-	goto	l2993
+	goto	u3081
+	goto	u3080
+u3081:
+	goto	l2950
+u3080:
+	goto	l2958
 	
-l957:	
-	goto	l2993
+l954:	
+	goto	l2958
 	line	24
 	
-l951:	
+l948:	
 	line	25
 	
-l2993:	
+l2958:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(___lwmod@dividend+1)^080h,w
@@ -4496,12 +4498,12 @@ l2993:
 	clrf	(?___lwmod)^080h
 	addwf	(?___lwmod)^080h
 
-	goto	l958
+	goto	l955
 	
-l2995:	
+l2960:	
 	line	26
 	
-l958:	
+l955:	
 	return
 	opt stack 0
 GLOBAL	__end_of___lwmod
@@ -4557,99 +4559,99 @@ ___lwdiv:
 ; Regs used in ___lwdiv: [wreg+status,2+status,0]
 	line	14
 	
-l2949:	
+l2914:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(___lwdiv@quotient)
 	clrf	(___lwdiv@quotient+1)
 	line	15
 	
-l2951:	
+l2916:	
 	movf	(___lwdiv@divisor+1),w
 	iorwf	(___lwdiv@divisor),w
 	skipnz
-	goto	u3061
-	goto	u3060
-u3061:
-	goto	l2971
-u3060:
+	goto	u2961
+	goto	u2960
+u2961:
+	goto	l2936
+u2960:
 	line	16
 	
-l2953:	
+l2918:	
 	clrf	(___lwdiv@counter)
 	incf	(___lwdiv@counter),f
 	line	17
-	goto	l2959
+	goto	l2924
 	
-l943:	
+l940:	
 	line	18
 	
-l2955:	
+l2920:	
 	movlw	01h
 	
-u3075:
+u2975:
 	clrc
 	rlf	(___lwdiv@divisor),f
 	rlf	(___lwdiv@divisor+1),f
 	addlw	-1
 	skipz
-	goto	u3075
+	goto	u2975
 	line	19
 	
-l2957:	
+l2922:	
 	movlw	(01h)
 	movwf	(??___lwdiv+0)+0
 	movf	(??___lwdiv+0)+0,w
 	addwf	(___lwdiv@counter),f
-	goto	l2959
+	goto	l2924
 	line	20
 	
-l942:	
+l939:	
 	line	17
 	
-l2959:	
+l2924:	
 	btfss	(___lwdiv@divisor+1),(15)&7
-	goto	u3081
-	goto	u3080
-u3081:
-	goto	l2955
-u3080:
-	goto	l2961
+	goto	u2981
+	goto	u2980
+u2981:
+	goto	l2920
+u2980:
+	goto	l2926
 	
-l944:	
-	goto	l2961
+l941:	
+	goto	l2926
 	line	21
 	
-l945:	
+l942:	
 	line	22
 	
-l2961:	
+l2926:	
 	movlw	01h
 	
-u3095:
+u2995:
 	clrc
 	rlf	(___lwdiv@quotient),f
 	rlf	(___lwdiv@quotient+1),f
 	addlw	-1
 	skipz
-	goto	u3095
+	goto	u2995
 	line	23
 	movf	(___lwdiv@divisor+1),w
 	subwf	(___lwdiv@dividend+1),w
 	skipz
-	goto	u3105
+	goto	u3005
 	movf	(___lwdiv@divisor),w
 	subwf	(___lwdiv@dividend),w
-u3105:
+u3005:
 	skipc
-	goto	u3101
-	goto	u3100
-u3101:
-	goto	l2967
-u3100:
+	goto	u3001
+	goto	u3000
+u3001:
+	goto	l2932
+u3000:
 	line	24
 	
-l2963:	
+l2928:	
 	movf	(___lwdiv@divisor),w
 	subwf	(___lwdiv@dividend),f
 	movf	(___lwdiv@divisor+1),w
@@ -4658,45 +4660,45 @@ l2963:
 	subwf	(___lwdiv@dividend+1),f
 	line	25
 	
-l2965:	
+l2930:	
 	bsf	(___lwdiv@quotient)+(0/8),(0)&7
-	goto	l2967
+	goto	l2932
 	line	26
 	
-l946:	
+l943:	
 	line	27
 	
-l2967:	
+l2932:	
 	movlw	01h
 	
-u3115:
+u3015:
 	clrc
 	rrf	(___lwdiv@divisor+1),f
 	rrf	(___lwdiv@divisor),f
 	addlw	-1
 	skipz
-	goto	u3115
+	goto	u3015
 	line	28
 	
-l2969:	
+l2934:	
 	movlw	low(01h)
 	subwf	(___lwdiv@counter),f
 	btfss	status,2
-	goto	u3121
-	goto	u3120
-u3121:
-	goto	l2961
-u3120:
-	goto	l2971
+	goto	u3021
+	goto	u3020
+u3021:
+	goto	l2926
+u3020:
+	goto	l2936
 	
-l947:	
-	goto	l2971
+l944:	
+	goto	l2936
 	line	29
 	
-l941:	
+l938:	
 	line	30
 	
-l2971:	
+l2936:	
 	movf	(___lwdiv@quotient+1),w
 	clrf	(?___lwdiv+1)
 	addwf	(?___lwdiv+1)
@@ -4704,12 +4706,12 @@ l2971:
 	clrf	(?___lwdiv)
 	addwf	(?___lwdiv)
 
-	goto	l948
+	goto	l945
 	
-l2973:	
+l2938:	
 	line	31
 	
-l948:	
+l945:	
 	return
 	opt stack 0
 GLOBAL	__end_of___lwdiv
@@ -4767,14 +4769,14 @@ _USART_WriteString:
 ; Regs used in _USART_WriteString: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
 	line	54
 	
-l2463:	
+l2428:	
 ;usart.c: 54: while(*str != '\0')
-	goto	l2469
+	goto	l2434
 	
-l243:	
+l240:	
 	line	56
 	
-l2465:	
+l2430:	
 ;usart.c: 55: {
 ;usart.c: 56: USART_WriteChar(*str);
 	bcf	status, 5	;RP0=0, select bank0
@@ -4787,7 +4789,7 @@ l2465:
 	fcall	_USART_WriteChar
 	line	57
 	
-l2467:	
+l2432:	
 ;usart.c: 57: str++;
 	movlw	01h
 	bcf	status, 5	;RP0=0, select bank0
@@ -4795,13 +4797,13 @@ l2467:
 	addwf	(USART_WriteString@str),f
 	skipnc
 	incf	(USART_WriteString@str+1),f
-	goto	l2469
+	goto	l2434
 	line	58
 	
-l242:	
+l239:	
 	line	54
 	
-l2469:	
+l2434:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(USART_WriteString@str+1),w
@@ -4811,17 +4813,17 @@ l2469:
 	fcall	stringtab
 	iorlw	0
 	skipz
-	goto	u2481
-	goto	u2480
-u2481:
-	goto	l2465
-u2480:
-	goto	l245
+	goto	u2381
+	goto	u2380
+u2381:
+	goto	l2430
+u2380:
+	goto	l242
 	
-l244:	
+l241:	
 	line	59
 	
-l245:	
+l242:	
 	return
 	opt stack 0
 GLOBAL	__end_of_USART_WriteString
@@ -4878,31 +4880,31 @@ _USART_WriteChar:
 	movwf	(USART_WriteChar@byte)
 	line	46
 	
-l2149:	
+l2130:	
 ;usart.c: 46: while(!PIR1bits.TXIF);
-	goto	l236
+	goto	l233
 	
-l237:	
+l234:	
 	
-l236:	
+l233:	
 	btfss	(12),4	;volatile
-	goto	u1861
-	goto	u1860
-u1861:
-	goto	l236
-u1860:
-	goto	l2151
+	goto	u1811
+	goto	u1810
+u1811:
+	goto	l233
+u1810:
+	goto	l2132
 	
-l238:	
+l235:	
 	line	47
 	
-l2151:	
+l2132:	
 ;usart.c: 47: TXREG = byte;
 	movf	(USART_WriteChar@byte),w
 	movwf	(25)	;volatile
 	line	48
 	
-l239:	
+l236:	
 	return
 	opt stack 0
 GLOBAL	__end_of_USART_WriteChar
@@ -4955,7 +4957,7 @@ _USART_Init:
 ; Regs used in _USART_Init: [wreg+status,2+status,0+pclath+cstack]
 	line	13
 	
-l2997:	
+l2962:	
 ;usart.c: 13: SPBRG = (unsigned char)(18432000 / (16 * BaudRate)) - 1;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -4968,16 +4970,16 @@ l2997:
 	movf	(USART_Init@BaudRate+3)^080h,w
 	movwf	((??_USART_Init+0)^080h+0+3)
 	movlw	04h
-u3195:
+u3095:
 	clrc
 	rlf	(??_USART_Init+0)^080h+0,f
 	rlf	(??_USART_Init+0)^080h+1,f
 	rlf	(??_USART_Init+0)^080h+2,f
 	rlf	(??_USART_Init+0)^080h+3,f
-u3190:
+u3090:
 	addlw	-1
 	skipz
-	goto	u3195
+	goto	u3095
 	movf	3+(??_USART_Init+0)^080h+0,w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -5020,112 +5022,112 @@ u3190:
 	movwf	(153)^080h	;volatile
 	line	16
 	
-l2999:	
+l2964:	
 ;usart.c: 16: TXSTAbits.CSRC = 0;
 	bcf	(152)^080h,7	;volatile
 	line	17
 	
-l3001:	
+l2966:	
 ;usart.c: 17: TXSTAbits.TX9 = 0;
 	bcf	(152)^080h,6	;volatile
 	line	18
 	
-l3003:	
+l2968:	
 ;usart.c: 18: TXSTAbits.TXEN = 1;
 	bsf	(152)^080h,5	;volatile
 	line	19
 	
-l3005:	
+l2970:	
 ;usart.c: 19: TXSTAbits.SYNC = 0;
 	bcf	(152)^080h,4	;volatile
 	line	21
 	
-l3007:	
+l2972:	
 ;usart.c: 21: TXSTAbits.BRGH = 1;
 	bsf	(152)^080h,2	;volatile
 	line	22
 	
-l3009:	
+l2974:	
 ;usart.c: 22: TXSTAbits.TRMT = 1;
 	bsf	(152)^080h,1	;volatile
 	line	23
 	
-l3011:	
+l2976:	
 ;usart.c: 23: TXSTAbits.TX9D = 0;
 	bcf	(152)^080h,0	;volatile
 	line	26
 	
-l3013:	
+l2978:	
 ;usart.c: 26: RCSTAbits.SPEN = 1;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(24),7	;volatile
 	line	27
 	
-l3015:	
+l2980:	
 ;usart.c: 27: RCSTAbits.RX9 = 0;
 	bcf	(24),6	;volatile
 	line	28
 	
-l3017:	
+l2982:	
 ;usart.c: 28: RCSTAbits.SREN = 0;
 	bcf	(24),5	;volatile
 	line	29
 	
-l3019:	
+l2984:	
 ;usart.c: 29: RCSTAbits.CREN = 1;
 	bsf	(24),4	;volatile
 	line	30
 	
-l3021:	
+l2986:	
 ;usart.c: 30: RCSTAbits.ADDEN = 0;
 	bcf	(24),3	;volatile
 	line	31
 	
-l3023:	
+l2988:	
 ;usart.c: 31: RCSTAbits.FERR = 0;
 	bcf	(24),2	;volatile
 	line	32
 	
-l3025:	
+l2990:	
 ;usart.c: 32: RCSTAbits.OERR = 0;
 	bcf	(24),1	;volatile
 	line	33
 	
-l3027:	
+l2992:	
 ;usart.c: 33: RCSTAbits.RX9D = 0;
 	bcf	(24),0	;volatile
 	line	36
 	
-l3029:	
+l2994:	
 ;usart.c: 36: PIE1bits.TXIE = 0;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	bcf	(140)^080h,4	;volatile
 	line	37
 	
-l3031:	
+l2996:	
 ;usart.c: 37: PIR1bits.TXIF = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(12),4	;volatile
 	line	38
 	
-l3033:	
+l2998:	
 ;usart.c: 38: PIE1bits.RCIE = 1;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	bsf	(140)^080h,5	;volatile
 	line	39
 	
-l3035:	
+l3000:	
 ;usart.c: 39: PIR1bits.RCIF = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(12),5	;volatile
 	line	40
 	
-l233:	
+l230:	
 	return
 	opt stack 0
 GLOBAL	__end_of_USART_Init
@@ -5182,24 +5184,24 @@ ___aldiv:
 ; Regs used in ___aldiv: [wreg+status,2+status,0]
 	line	14
 	
-l2909:	
+l2874:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(___aldiv@sign)^080h
 	line	15
 	
-l2911:	
+l2876:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfss	(___aldiv@divisor+3),7
-	goto	u2961
-	goto	u2960
-u2961:
-	goto	l662
-u2960:
+	goto	u2861
+	goto	u2860
+u2861:
+	goto	l659
+u2860:
 	line	16
 	
-l2913:	
+l2878:	
 	comf	(___aldiv@divisor),f
 	comf	(___aldiv@divisor+1),f
 	comf	(___aldiv@divisor+2),f
@@ -5218,18 +5220,18 @@ l2913:
 	incf	(___aldiv@sign)^080h,f
 	line	18
 	
-l662:	
+l659:	
 	line	19
 	bcf	status, 5	;RP0=0, select bank0
 	btfss	(___aldiv@dividend+3),7
-	goto	u2971
-	goto	u2970
-u2971:
-	goto	l2919
-u2970:
+	goto	u2871
+	goto	u2870
+u2871:
+	goto	l2884
+u2870:
 	line	20
 	
-l2915:	
+l2880:	
 	comf	(___aldiv@dividend),f
 	comf	(___aldiv@dividend+1),f
 	comf	(___aldiv@dividend+2),f
@@ -5243,20 +5245,20 @@ l2915:
 	incf	(___aldiv@dividend+3),f
 	line	21
 	
-l2917:	
+l2882:	
 	movlw	(01h)
 	movwf	(??___aldiv+0)+0
 	movf	(??___aldiv+0)+0,w
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	xorwf	(___aldiv@sign)^080h,f
-	goto	l2919
+	goto	l2884
 	line	22
 	
-l663:	
+l660:	
 	line	23
 	
-l2919:	
+l2884:	
 	movlw	0
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -5270,7 +5272,7 @@ l2919:
 
 	line	24
 	
-l2921:	
+l2886:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(___aldiv@divisor+3),w
@@ -5278,36 +5280,36 @@ l2921:
 	iorwf	(___aldiv@divisor+1),w
 	iorwf	(___aldiv@divisor),w
 	skipnz
-	goto	u2981
-	goto	u2980
-u2981:
-	goto	l2941
-u2980:
+	goto	u2881
+	goto	u2880
+u2881:
+	goto	l2906
+u2880:
 	line	25
 	
-l2923:	
+l2888:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(___aldiv@counter)^080h
 	incf	(___aldiv@counter)^080h,f
 	line	26
-	goto	l2927
+	goto	l2892
 	
-l666:	
+l663:	
 	line	27
 	
-l2925:	
+l2890:	
 	movlw	01h
 	bcf	status, 5	;RP0=0, select bank0
 	movwf	(??___aldiv+0)+0
-u2995:
+u2895:
 	clrc
 	rlf	(___aldiv@divisor),f
 	rlf	(___aldiv@divisor+1),f
 	rlf	(___aldiv@divisor+2),f
 	rlf	(___aldiv@divisor+3),f
 	decfsz	(??___aldiv+0)+0
-	goto	u2995
+	goto	u2895
 	line	28
 	movlw	(01h)
 	movwf	(??___aldiv+0)+0
@@ -5315,35 +5317,35 @@ u2995:
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	addwf	(___aldiv@counter)^080h,f
-	goto	l2927
+	goto	l2892
 	line	29
 	
-l665:	
+l662:	
 	line	26
 	
-l2927:	
+l2892:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfss	(___aldiv@divisor+3),(31)&7
-	goto	u3001
-	goto	u3000
-u3001:
-	goto	l2925
-u3000:
-	goto	l2929
+	goto	u2901
+	goto	u2900
+u2901:
+	goto	l2890
+u2900:
+	goto	l2894
 	
-l667:	
-	goto	l2929
+l664:	
+	goto	l2894
 	line	30
 	
-l668:	
+l665:	
 	line	31
 	
-l2929:	
+l2894:	
 	movlw	01h
 	bcf	status, 5	;RP0=0, select bank0
 	movwf	(??___aldiv+0)+0
-u3015:
+u2915:
 	clrc
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -5354,34 +5356,34 @@ u3015:
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	decfsz	(??___aldiv+0)+0
-	goto	u3015
+	goto	u2915
 	line	32
 	
-l2931:	
+l2896:	
 	movf	(___aldiv@divisor+3),w
 	subwf	(___aldiv@dividend+3),w
 	skipz
-	goto	u3025
+	goto	u2925
 	movf	(___aldiv@divisor+2),w
 	subwf	(___aldiv@dividend+2),w
 	skipz
-	goto	u3025
+	goto	u2925
 	movf	(___aldiv@divisor+1),w
 	subwf	(___aldiv@dividend+1),w
 	skipz
-	goto	u3025
+	goto	u2925
 	movf	(___aldiv@divisor),w
 	subwf	(___aldiv@dividend),w
-u3025:
+u2925:
 	skipc
-	goto	u3021
-	goto	u3020
-u3021:
-	goto	l2937
-u3020:
+	goto	u2921
+	goto	u2920
+u2921:
+	goto	l2902
+u2920:
 	line	33
 	
-l2933:	
+l2898:	
 	movf	(___aldiv@divisor),w
 	subwf	(___aldiv@dividend),f
 	movf	(___aldiv@divisor+1),w
@@ -5398,19 +5400,19 @@ l2933:
 	subwf	(___aldiv@dividend+3),f
 	line	34
 	
-l2935:	
+l2900:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	bsf	(___aldiv@quotient)^080h+(0/8),(0)&7
-	goto	l2937
+	goto	l2902
 	line	35
 	
-l669:	
+l666:	
 	line	36
 	
-l2937:	
+l2902:	
 	movlw	01h
-u3035:
+u2935:
 	clrc
 	bcf	status, 5	;RP0=0, select bank0
 	rrf	(___aldiv@divisor+3),f
@@ -5419,41 +5421,41 @@ u3035:
 	rrf	(___aldiv@divisor),f
 	addlw	-1
 	skipz
-	goto	u3035
+	goto	u2935
 
 	line	37
 	
-l2939:	
+l2904:	
 	movlw	low(01h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	subwf	(___aldiv@counter)^080h,f
 	btfss	status,2
-	goto	u3041
-	goto	u3040
-u3041:
-	goto	l2929
-u3040:
-	goto	l2941
+	goto	u2941
+	goto	u2940
+u2941:
+	goto	l2894
+u2940:
+	goto	l2906
 	
-l670:	
-	goto	l2941
+l667:	
+	goto	l2906
 	line	38
 	
-l664:	
+l661:	
 	line	39
 	
-l2941:	
+l2906:	
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(___aldiv@sign)^080h,w
 	skipz
-	goto	u3050
-	goto	l2945
-u3050:
+	goto	u2950
+	goto	l2910
+u2950:
 	line	40
 	
-l2943:	
+l2908:	
 	comf	(___aldiv@quotient)^080h,f
 	comf	(___aldiv@quotient+1)^080h,f
 	comf	(___aldiv@quotient+2)^080h,f
@@ -5465,12 +5467,12 @@ l2943:
 	incf	(___aldiv@quotient+2)^080h,f
 	skipnz
 	incf	(___aldiv@quotient+3)^080h,f
-	goto	l2945
+	goto	l2910
 	
-l671:	
+l668:	
 	line	41
 	
-l2945:	
+l2910:	
 	movf	(___aldiv@quotient+3)^080h,w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -5494,12 +5496,12 @@ l2945:
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(?___aldiv)
 
-	goto	l672
+	goto	l669
 	
-l2947:	
+l2912:	
 	line	42
 	
-l672:	
+l669:	
 	return
 	opt stack 0
 GLOBAL	__end_of___aldiv
@@ -5557,13 +5559,13 @@ _TIMER0_Set:
 	movwf	(TIMER0_Set@contagens)
 	line	22
 	
-l2471:	
+l2436:	
 ;timers.c: 22: TMR0 = contagens;
 	movf	(TIMER0_Set@contagens),w
 	movwf	(1)	;volatile
 	line	23
 	
-l293:	
+l290:	
 	return
 	opt stack 0
 GLOBAL	__end_of_TIMER0_Set
@@ -5616,7 +5618,7 @@ _TIMER0_Init:
 ; Regs used in _TIMER0_Init: []
 	line	8
 	
-l2513:	
+l2478:	
 ;timers.c: 8: OPTION_REGbits.T0CS = 0;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -5644,7 +5646,7 @@ l2513:
 	bsf	(11),5	;volatile
 	line	16
 	
-l290:	
+l287:	
 	return
 	opt stack 0
 GLOBAL	__end_of_TIMER0_Init
@@ -5698,7 +5700,7 @@ _PWM_Init:
 ; Regs used in _PWM_Init: [wreg]
 	line	14
 	
-l2517:	
+l2482:	
 ;pwm.c: 14: T2CONbits.T2CKPS1 = 1;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -5723,7 +5725,7 @@ l2517:
 	bsf	(18),2	;volatile
 	line	27
 	
-l2519:	
+l2484:	
 ;pwm.c: 27: PR2 = 255;
 	movlw	(0FFh)
 	bsf	status, 5	;RP0=1, select bank1
@@ -5731,77 +5733,77 @@ l2519:
 	movwf	(146)^080h	;volatile
 	line	43
 	
-l2521:	
+l2486:	
 ;pwm.c: 43: CCP1CONbits.CCP1M3 = 1;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(23),3	;volatile
 	line	44
 	
-l2523:	
+l2488:	
 ;pwm.c: 44: CCP1CONbits.CCP1M2 = 1;
 	bsf	(23),2	;volatile
 	line	45
 	
-l2525:	
+l2490:	
 ;pwm.c: 45: CCP1CONbits.CCP1M1 = 1;
 	bsf	(23),1	;volatile
 	line	46
 	
-l2527:	
+l2492:	
 ;pwm.c: 46: CCP1CONbits.CCP1M0 = 1;
 	bsf	(23),0	;volatile
 	line	49
 	
-l2529:	
+l2494:	
 ;pwm.c: 49: PIE1bits.CCP1IE = 1;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	bsf	(140)^080h,2	;volatile
 	line	50
 	
-l2531:	
+l2496:	
 ;pwm.c: 50: PIR1bits.CCP1IF = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(12),2	;volatile
 	line	53
 	
-l2533:	
+l2498:	
 ;pwm.c: 53: CCP2CONbits.CCP2M3 = 1;
 	bsf	(29),3	;volatile
 	line	54
 	
-l2535:	
+l2500:	
 ;pwm.c: 54: CCP2CONbits.CCP2M2 = 1;
 	bsf	(29),2	;volatile
 	line	55
 	
-l2537:	
+l2502:	
 ;pwm.c: 55: CCP2CONbits.CCP2M1 = 1;
 	bsf	(29),1	;volatile
 	line	56
 	
-l2539:	
+l2504:	
 ;pwm.c: 56: CCP2CONbits.CCP2M0 = 1;
 	bsf	(29),0	;volatile
 	line	59
 	
-l2541:	
+l2506:	
 ;pwm.c: 59: PIE2bits.CCP2IE = 1;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	bsf	(141)^080h,0	;volatile
 	line	60
 	
-l2543:	
+l2508:	
 ;pwm.c: 60: PIR2bits.CCP2IF = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(13),0	;volatile
 	line	61
 	
-l441:	
+l438:	
 	return
 	opt stack 0
 GLOBAL	__end_of_PWM_Init
@@ -5854,7 +5856,7 @@ _PWM_DutyCycle2:
 ; Regs used in _PWM_DutyCycle2: [wreg+status,2+status,0]
 	line	98
 	
-l2439:	
+l2404:	
 ;pwm.c: 98: CCPR2L = valor >> 2;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -5872,24 +5874,24 @@ l2439:
 	movwf	(27)	;volatile
 	line	99
 	
-l2441:	
+l2406:	
 ;pwm.c: 99: CCP2CON = (valor << 4)|0X0C;
 	movf	(PWM_DutyCycle2@valor),w
 	movwf	(??_PWM_DutyCycle2+0)+0
 	movlw	(04h)-1
-u2465:
+u2365:
 	clrc
 	rlf	(??_PWM_DutyCycle2+0)+0,f
 	addlw	-1
 	skipz
-	goto	u2465
+	goto	u2365
 	clrc
 	rlf	(??_PWM_DutyCycle2+0)+0,w
 	iorlw	0Ch
 	movwf	(29)	;volatile
 	line	100
 	
-l447:	
+l444:	
 	return
 	opt stack 0
 GLOBAL	__end_of_PWM_DutyCycle2
@@ -5942,7 +5944,7 @@ _PWM_DutyCycle1:
 ; Regs used in _PWM_DutyCycle1: [wreg+status,2+status,0]
 	line	91
 	
-l2591:	
+l2556:	
 ;pwm.c: 91: CCPR1L = valor >> 2;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -5960,24 +5962,24 @@ l2591:
 	movwf	(21)	;volatile
 	line	92
 	
-l2593:	
+l2558:	
 ;pwm.c: 92: CCP1CON = (valor << 4)|0X0C;
 	movf	(PWM_DutyCycle1@valor),w
 	movwf	(??_PWM_DutyCycle1+0)+0
 	movlw	(04h)-1
-u2525:
+u2425:
 	clrc
 	rlf	(??_PWM_DutyCycle1+0)+0,f
 	addlw	-1
 	skipz
-	goto	u2525
+	goto	u2425
 	clrc
 	rlf	(??_PWM_DutyCycle1+0)+0,w
 	iorlw	0Ch
 	movwf	(23)	;volatile
 	line	94
 	
-l444:	
+l441:	
 	return
 	opt stack 0
 GLOBAL	__end_of_PWM_DutyCycle1
@@ -6033,14 +6035,14 @@ _LCD_WriteString:
 ; Regs used in _LCD_WriteString: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
 	line	63
 	
-l2583:	
+l2548:	
 ;lcd.c: 63: while(*Str != '\0')
-	goto	l2589
+	goto	l2554
 	
-l322:	
+l319:	
 	line	65
 	
-l2585:	
+l2550:	
 ;lcd.c: 64: {
 ;lcd.c: 65: LCD_WriteData(*Str);
 	bcf	status, 5	;RP0=0, select bank0
@@ -6053,7 +6055,7 @@ l2585:
 	fcall	_LCD_WriteData
 	line	66
 	
-l2587:	
+l2552:	
 ;lcd.c: 66: Str++;
 	movlw	01h
 	bcf	status, 5	;RP0=0, select bank0
@@ -6061,13 +6063,13 @@ l2587:
 	addwf	(LCD_WriteString@Str),f
 	skipnc
 	incf	(LCD_WriteString@Str+1),f
-	goto	l2589
+	goto	l2554
 	line	67
 	
-l321:	
+l318:	
 	line	63
 	
-l2589:	
+l2554:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(LCD_WriteString@Str+1),w
@@ -6077,17 +6079,17 @@ l2589:
 	fcall	stringtab
 	iorlw	0
 	skipz
-	goto	u2511
-	goto	u2510
-u2511:
-	goto	l2585
-u2510:
-	goto	l324
+	goto	u2411
+	goto	u2410
+u2411:
+	goto	l2550
+u2410:
+	goto	l321
 	
-l323:	
+l320:	
 	line	68
 	
-l324:	
+l321:	
 	return
 	opt stack 0
 GLOBAL	__end_of_LCD_WriteString
@@ -6144,18 +6146,18 @@ _LCD_WriteData:
 	movwf	(LCD_WriteData@Byte)
 	line	49
 	
-l2161:	
+l2142:	
 ;lcd.c: 49: PORTEbits.RE0 = 1;
 	bsf	(9),0	;volatile
 	line	51
 	
-l2163:	
+l2144:	
 ;lcd.c: 51: PORTD = Byte;
 	movf	(LCD_WriteData@Byte),w
 	movwf	(8)	;volatile
 	line	53
 	
-l2165:	
+l2146:	
 ;lcd.c: 53: PORTEbits.RE1 = 1;
 	bsf	(9),1	;volatile
 	line	55
@@ -6163,21 +6165,21 @@ l2165:
 	opt asmopt_off
 movlw	61
 movwf	(??_LCD_WriteData+0)+0,f
-u3417:
+u3317:
 decfsz	(??_LCD_WriteData+0)+0,f
-	goto	u3417
+	goto	u3317
 opt asmopt_on
 
 	line	57
 	
-l2167:	
+l2148:	
 ;lcd.c: 57: PORTEbits.RE1 = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(9),1	;volatile
 	line	58
 	
-l318:	
+l315:	
 	return
 	opt stack 0
 GLOBAL	__end_of_LCD_WriteData
@@ -6230,7 +6232,7 @@ _LCD_Init:
 ; Regs used in _LCD_Init: [wreg+status,2+status,0+pclath+cstack]
 	line	90
 	
-l2545:	
+l2510:	
 ;lcd.c: 90: ADCON1bits.PCFG3 = 0;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -6246,7 +6248,7 @@ l2545:
 	bcf	(159)^080h,0	;volatile
 	line	95
 	
-l2547:	
+l2512:	
 ;lcd.c: 95: _delay((unsigned long)((15)*(18432000/4000.0)));
 	opt asmopt_off
 movlw	90
@@ -6255,22 +6257,22 @@ movlw	90
 movwf	((??_LCD_Init+0)+0+1),f
 	movlw	195
 movwf	((??_LCD_Init+0)+0),f
-u3427:
+u3327:
 	decfsz	((??_LCD_Init+0)+0),f
-	goto	u3427
+	goto	u3327
 	decfsz	((??_LCD_Init+0)+0+1),f
-	goto	u3427
+	goto	u3327
 opt asmopt_on
 
 	line	97
 	
-l2549:	
+l2514:	
 ;lcd.c: 97: LCD_WriteCmd(0x30);
 	movlw	(030h)
 	fcall	_LCD_WriteCmd
 	line	98
 	
-l2551:	
+l2516:	
 ;lcd.c: 98: _delay((unsigned long)((4)*(18432000/4000.0)));
 	opt asmopt_off
 movlw	24
@@ -6279,11 +6281,11 @@ movlw	24
 movwf	((??_LCD_Init+0)+0+1),f
 	movlw	239
 movwf	((??_LCD_Init+0)+0),f
-u3437:
+u3337:
 	decfsz	((??_LCD_Init+0)+0),f
-	goto	u3437
+	goto	u3337
 	decfsz	((??_LCD_Init+0)+0+1),f
-	goto	u3437
+	goto	u3337
 opt asmopt_on
 
 	line	100
@@ -6292,21 +6294,21 @@ opt asmopt_on
 	fcall	_LCD_WriteCmd
 	line	101
 	
-l2553:	
+l2518:	
 ;lcd.c: 101: _delay((unsigned long)((100)*(18432000/4000000.0)));
 	opt asmopt_off
 movlw	153
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 movwf	(??_LCD_Init+0)+0,f
-u3447:
+u3347:
 decfsz	(??_LCD_Init+0)+0,f
-	goto	u3447
+	goto	u3347
 opt asmopt_on
 
 	line	103
 	
-l2555:	
+l2520:	
 ;lcd.c: 103: LCD_WriteCmd(0x30);
 	movlw	(030h)
 	fcall	_LCD_WriteCmd
@@ -6317,29 +6319,29 @@ movlw	61
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 movwf	(??_LCD_Init+0)+0,f
-u3457:
+u3357:
 decfsz	(??_LCD_Init+0)+0,f
-	goto	u3457
+	goto	u3357
 opt asmopt_on
 
 	line	106
 	
-l2557:	
+l2522:	
 ;lcd.c: 106: LCD_WriteCmd(0x38);
 	movlw	(038h)
 	fcall	_LCD_WriteCmd
 	line	107
 	
-l2559:	
+l2524:	
 ;lcd.c: 107: _delay((unsigned long)((40)*(18432000/4000000.0)));
 	opt asmopt_off
 movlw	61
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 movwf	(??_LCD_Init+0)+0,f
-u3467:
+u3367:
 decfsz	(??_LCD_Init+0)+0,f
-	goto	u3467
+	goto	u3367
 opt asmopt_on
 
 	line	109
@@ -6348,7 +6350,7 @@ opt asmopt_on
 	fcall	_LCD_WriteCmd
 	line	110
 	
-l2561:	
+l2526:	
 ;lcd.c: 110: _delay((unsigned long)((2)*(18432000/4000.0)));
 	opt asmopt_off
 movlw	12
@@ -6357,16 +6359,16 @@ movlw	12
 movwf	((??_LCD_Init+0)+0+1),f
 	movlw	247
 movwf	((??_LCD_Init+0)+0),f
-u3477:
+u3377:
 	decfsz	((??_LCD_Init+0)+0),f
-	goto	u3477
+	goto	u3377
 	decfsz	((??_LCD_Init+0)+0+1),f
-	goto	u3477
+	goto	u3377
 opt asmopt_on
 
 	line	112
 	
-l2563:	
+l2528:	
 ;lcd.c: 112: LCD_WriteCmd(0x0C);
 	movlw	(0Ch)
 	fcall	_LCD_WriteCmd
@@ -6377,34 +6379,34 @@ movlw	61
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 movwf	(??_LCD_Init+0)+0,f
-u3487:
+u3387:
 decfsz	(??_LCD_Init+0)+0,f
-	goto	u3487
+	goto	u3387
 opt asmopt_on
 
 	line	115
 	
-l2565:	
+l2530:	
 ;lcd.c: 115: LCD_WriteCmd(0x06);
 	movlw	(06h)
 	fcall	_LCD_WriteCmd
 	line	116
 	
-l2567:	
+l2532:	
 ;lcd.c: 116: _delay((unsigned long)((40)*(18432000/4000000.0)));
 	opt asmopt_off
 movlw	61
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 movwf	(??_LCD_Init+0)+0,f
-u3497:
+u3397:
 decfsz	(??_LCD_Init+0)+0,f
-	goto	u3497
+	goto	u3397
 opt asmopt_on
 
 	line	117
 	
-l330:	
+l327:	
 	return
 	opt stack 0
 GLOBAL	__end_of_LCD_Init
@@ -6462,23 +6464,23 @@ _LCD_Cursor:
 	movwf	(LCD_Cursor@Row)
 	line	12
 	
-l2569:	
+l2534:	
 ;lcd.c: 12: PORTEbits.RE0 = 0;
 	bcf	(9),0	;volatile
 	line	14
 	
-l2571:	
+l2536:	
 ;lcd.c: 14: if (Row == 0)
 	movf	(LCD_Cursor@Row),f
 	skipz
-	goto	u2501
-	goto	u2500
-u2501:
-	goto	l2575
-u2500:
+	goto	u2401
+	goto	u2400
+u2401:
+	goto	l2540
+u2400:
 	line	16
 	
-l2573:	
+l2538:	
 ;lcd.c: 15: {
 ;lcd.c: 16: PORTD = 0x80 + Col;
 	movf	(LCD_Cursor@Col),w
@@ -6486,51 +6488,51 @@ l2573:
 	movwf	(8)	;volatile
 	line	17
 ;lcd.c: 17: }
-	goto	l2577
+	goto	l2542
 	line	18
 	
-l310:	
+l307:	
 	line	20
 	
-l2575:	
+l2540:	
 ;lcd.c: 18: else
 ;lcd.c: 19: {
 ;lcd.c: 20: PORTD = 0xC0 + Col;
 	movf	(LCD_Cursor@Col),w
 	addlw	0C0h
 	movwf	(8)	;volatile
-	goto	l2577
+	goto	l2542
 	line	21
 	
-l311:	
+l308:	
 	line	24
 	
-l2577:	
+l2542:	
 ;lcd.c: 21: }
 ;lcd.c: 24: PORTEbits.RE1 = 1;
 	bsf	(9),1	;volatile
 	line	26
 	
-l2579:	
+l2544:	
 ;lcd.c: 26: _delay((unsigned long)((40)*(18432000/4000000.0)));
 	opt asmopt_off
 movlw	61
 movwf	(??_LCD_Cursor+0)+0,f
-u3507:
+u3407:
 decfsz	(??_LCD_Cursor+0)+0,f
-	goto	u3507
+	goto	u3407
 opt asmopt_on
 
 	line	28
 	
-l2581:	
+l2546:	
 ;lcd.c: 28: PORTEbits.RE1 = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(9),1	;volatile
 	line	29
 	
-l312:	
+l309:	
 	return
 	opt stack 0
 GLOBAL	__end_of_LCD_Cursor
@@ -6583,13 +6585,13 @@ _LCD_Clear:
 ; Regs used in _LCD_Clear: [wreg+status,2+status,0+pclath+cstack]
 	line	73
 	
-l2703:	
+l2668:	
 ;lcd.c: 73: LCD_WriteCmd(0x01);
 	movlw	(01h)
 	fcall	_LCD_WriteCmd
 	line	75
 	
-l2705:	
+l2670:	
 ;lcd.c: 75: _delay((unsigned long)((2)*(18432000/4000.0)));
 	opt asmopt_off
 movlw	12
@@ -6598,16 +6600,16 @@ movlw	12
 movwf	((??_LCD_Clear+0)+0+1),f
 	movlw	247
 movwf	((??_LCD_Clear+0)+0),f
-u3517:
+u3417:
 	decfsz	((??_LCD_Clear+0)+0),f
-	goto	u3517
+	goto	u3417
 	decfsz	((??_LCD_Clear+0)+0+1),f
-	goto	u3517
+	goto	u3417
 opt asmopt_on
 
 	line	77
 	
-l2707:	
+l2672:	
 ;lcd.c: 77: LCD_WriteCmd(0x0C);
 	movlw	(0Ch)
 	fcall	_LCD_WriteCmd
@@ -6618,34 +6620,34 @@ movlw	61
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 movwf	(??_LCD_Clear+0)+0,f
-u3527:
+u3427:
 decfsz	(??_LCD_Clear+0)+0,f
-	goto	u3527
+	goto	u3427
 opt asmopt_on
 
 	line	81
 	
-l2709:	
+l2674:	
 ;lcd.c: 81: LCD_WriteCmd(0x06);
 	movlw	(06h)
 	fcall	_LCD_WriteCmd
 	line	83
 	
-l2711:	
+l2676:	
 ;lcd.c: 83: _delay((unsigned long)((40)*(18432000/4000000.0)));
 	opt asmopt_off
 movlw	61
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 movwf	(??_LCD_Clear+0)+0,f
-u3537:
+u3437:
 decfsz	(??_LCD_Clear+0)+0,f
-	goto	u3537
+	goto	u3437
 opt asmopt_on
 
 	line	84
 	
-l327:	
+l324:	
 	return
 	opt stack 0
 GLOBAL	__end_of_LCD_Clear
@@ -6703,18 +6705,18 @@ _LCD_WriteCmd:
 	movwf	(LCD_WriteCmd@Byte)
 	line	34
 	
-l2153:	
+l2134:	
 ;lcd.c: 34: PORTEbits.RE0 = 0;
 	bcf	(9),0	;volatile
 	line	36
 	
-l2155:	
+l2136:	
 ;lcd.c: 36: PORTD = Byte;
 	movf	(LCD_WriteCmd@Byte),w
 	movwf	(8)	;volatile
 	line	39
 	
-l2157:	
+l2138:	
 ;lcd.c: 39: PORTEbits.RE1 = 1;
 	bsf	(9),1	;volatile
 	line	41
@@ -6722,21 +6724,21 @@ l2157:
 	opt asmopt_off
 movlw	61
 movwf	(??_LCD_WriteCmd+0)+0,f
-u3547:
+u3447:
 decfsz	(??_LCD_WriteCmd+0)+0,f
-	goto	u3547
+	goto	u3447
 opt asmopt_on
 
 	line	43
 	
-l2159:	
+l2140:	
 ;lcd.c: 43: PORTEbits.RE1 = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(9),1	;volatile
 	line	44
 	
-l315:	
+l312:	
 	return
 	opt stack 0
 GLOBAL	__end_of_LCD_WriteCmd
@@ -6790,7 +6792,7 @@ _ADC_Init:
 ; Regs used in _ADC_Init: []
 	line	9
 	
-l2515:	
+l2480:	
 ;adc.c: 9: ADCON1bits.ADFM = 1;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -6827,7 +6829,7 @@ l2515:
 	bcf	(12),6	;volatile
 	line	44
 	
-l267:	
+l264:	
 	return
 	opt stack 0
 GLOBAL	__end_of_ADC_Init
@@ -6837,7 +6839,7 @@ GLOBAL	__end_of_ADC_Init
 
 ;; *************** function _ISR *****************
 ;; Defined at:
-;;		line 321 in file "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
+;;		line 324 in file "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -6872,12 +6874,12 @@ GLOBAL	__end_of_ADC_Init
 ;;
 psect	text22,local,class=CODE,delta=2,merge=1
 	file	"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
-	line	321
+	line	324
 global __ptext22
 __ptext22:	;psect for function _ISR
 psect	text22
 	file	"C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
-	line	321
+	line	324
 	global	__size_of_ISR
 	__size_of_ISR	equ	__end_of_ISR-_ISR
 	
@@ -6905,21 +6907,21 @@ interrupt_function:
 	movwf	(??_ISR+3)
 	ljmp	_ISR
 psect	text22
-	line	324
+	line	327
 	
-i1l2715:	
-;main.c: 324: if (PIR1bits.RCIF)
+i1l2680:	
+;main.c: 327: if (PIR1bits.RCIF)
 	btfss	(12),5	;volatile
-	goto	u272_21
-	goto	u272_20
-u272_21:
-	goto	i1l2793
-u272_20:
-	line	326
+	goto	u262_21
+	goto	u262_20
+u262_21:
+	goto	i1l2758
+u262_20:
+	line	329
 	
-i1l2717:	
-;main.c: 325: {
-;main.c: 326: pwmAnt = pwm;
+i1l2682:	
+;main.c: 328: {
+;main.c: 329: pwmAnt = pwm;
 	movf	(_pwm+1),w
 	clrf	(_pwmAnt+1)
 	addwf	(_pwmAnt+1)
@@ -6927,40 +6929,40 @@ i1l2717:
 	clrf	(_pwmAnt)
 	addwf	(_pwmAnt)
 
-	line	327
+	line	330
 	
-i1l2719:	
-;main.c: 327: if (USART_ReceiveChar() == '0')
+i1l2684:	
+;main.c: 330: if (USART_ReceiveChar() == '0')
 	fcall	_USART_ReceiveChar
 	xorlw	030h
 	skipz
-	goto	u273_21
-	goto	u273_20
-u273_21:
-	goto	i1l2727
-u273_20:
-	line	329
+	goto	u263_21
+	goto	u263_20
+u263_21:
+	goto	i1l2692
+u263_20:
+	line	332
 	
-i1l2721:	
-;main.c: 328: {
-;main.c: 329: USART_WriteString("\n\rdesligado\n\r");
+i1l2686:	
+;main.c: 331: {
+;main.c: 332: USART_WriteString("\n\rdesligado\n\r");
 	movlw	low((STR_1)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_1)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	330
+	line	333
 	
-i1l2723:	
-;main.c: 330: pwm = 0;
+i1l2688:	
+;main.c: 333: pwm = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(_pwm)
 	clrf	(_pwm+1)
-	line	331
+	line	334
 	
-i1l2725:	
-;main.c: 331: PWM_DutyCycle2(pwm);
+i1l2690:	
+;main.c: 334: PWM_DutyCycle2(pwm);
 	movf	(_pwm+1),w
 	clrf	(i1PWM_DutyCycle2@valor+1)
 	addwf	(i1PWM_DutyCycle2@valor+1)
@@ -6969,406 +6971,406 @@ i1l2725:
 	addwf	(i1PWM_DutyCycle2@valor)
 
 	fcall	i1_PWM_DutyCycle2
-	goto	i1l2727
-	line	333
+	goto	i1l2692
+	line	336
 	
-i1l188:	
-	line	335
+i1l185:	
+	line	338
 	
-i1l2727:	
-;main.c: 333: }
-;main.c: 335: if (USART_ReceiveChar() == '1')
+i1l2692:	
+;main.c: 336: }
+;main.c: 338: if (USART_ReceiveChar() == '1')
 	fcall	_USART_ReceiveChar
 	xorlw	031h
 	skipz
-	goto	u274_21
-	goto	u274_20
-u274_21:
-	goto	i1l2733
-u274_20:
-	line	337
+	goto	u264_21
+	goto	u264_20
+u264_21:
+	goto	i1l2698
+u264_20:
+	line	340
 	
-i1l2729:	
-;main.c: 336: {
-;main.c: 337: USART_WriteString("\n\rpwm = 32\n\r");
+i1l2694:	
+;main.c: 339: {
+;main.c: 340: USART_WriteString("\n\rpwm = 32\n\r");
 	movlw	low((STR_2)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_2)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	338
+	line	341
 	
-i1l2731:	
-;main.c: 338: pwm = 32;
+i1l2696:	
+;main.c: 341: pwm = 32;
 	movlw	low(020h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_pwm)
 	movlw	high(020h)
 	movwf	((_pwm))+1
-	goto	i1l2733
-	line	340
+	goto	i1l2698
+	line	343
 	
-i1l189:	
-	line	342
+i1l186:	
+	line	345
 	
-i1l2733:	
-;main.c: 340: }
-;main.c: 342: if (USART_ReceiveChar() == '2')
+i1l2698:	
+;main.c: 343: }
+;main.c: 345: if (USART_ReceiveChar() == '2')
 	fcall	_USART_ReceiveChar
 	xorlw	032h
 	skipz
-	goto	u275_21
-	goto	u275_20
-u275_21:
-	goto	i1l2739
-u275_20:
-	line	344
+	goto	u265_21
+	goto	u265_20
+u265_21:
+	goto	i1l2704
+u265_20:
+	line	347
 	
-i1l2735:	
-;main.c: 343: {
-;main.c: 344: USART_WriteString("\n\rpwm = 64\n\r");
+i1l2700:	
+;main.c: 346: {
+;main.c: 347: USART_WriteString("\n\rpwm = 64\n\r");
 	movlw	low((STR_3)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_3)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	345
+	line	348
 	
-i1l2737:	
-;main.c: 345: pwm = 64;
+i1l2702:	
+;main.c: 348: pwm = 64;
 	movlw	low(040h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_pwm)
 	movlw	high(040h)
 	movwf	((_pwm))+1
-	goto	i1l2739
-	line	347
+	goto	i1l2704
+	line	350
 	
-i1l190:	
-	line	349
+i1l187:	
+	line	352
 	
-i1l2739:	
-;main.c: 347: }
-;main.c: 349: if (USART_ReceiveChar() == '3')
+i1l2704:	
+;main.c: 350: }
+;main.c: 352: if (USART_ReceiveChar() == '3')
 	fcall	_USART_ReceiveChar
 	xorlw	033h
 	skipz
-	goto	u276_21
-	goto	u276_20
-u276_21:
-	goto	i1l2749
-u276_20:
-	line	351
+	goto	u266_21
+	goto	u266_20
+u266_21:
+	goto	i1l2714
+u266_20:
+	line	354
 	
-i1l2741:	
-;main.c: 350: {
-;main.c: 351: USART_WriteString("\n\rpwm = 128\n\r");
+i1l2706:	
+;main.c: 353: {
+;main.c: 354: USART_WriteString("\n\rpwm = 128\n\r");
 	movlw	low((STR_4)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_4)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	352
+	line	355
 	
-i1l2743:	
-;main.c: 352: pwm = 128;
+i1l2708:	
+;main.c: 355: pwm = 128;
 	movlw	low(080h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_pwm)
 	movlw	high(080h)
 	movwf	((_pwm))+1
-	line	354
-	
-i1l2745:	
-;main.c: 354: if(PORTBbits.RB0 == 0)
-	btfsc	(6),0	;volatile
-	goto	u277_21
-	goto	u277_20
-u277_21:
-	goto	i1l192
-u277_20:
-	line	356
-	
-i1l2747:	
-;main.c: 355: {
-;main.c: 356: PORTBbits.RB0 = 1;
-	bsf	(6),0	;volatile
 	line	357
-;main.c: 357: }else{
-	goto	i1l2749
 	
-i1l192:	
-	line	358
-;main.c: 358: PORTBbits.RB0 = 0;
-	bcf	(6),0	;volatile
-	goto	i1l2749
+i1l2710:	
+;main.c: 357: if(PORTBbits.RB0 == 0)
+	btfsc	(6),0	;volatile
+	goto	u267_21
+	goto	u267_20
+u267_21:
+	goto	i1l189
+u267_20:
 	line	359
 	
-i1l193:	
-	goto	i1l2749
+i1l2712:	
+;main.c: 358: {
+;main.c: 359: PORTBbits.RB0 = 1;
+	bsf	(6),0	;volatile
 	line	360
+;main.c: 360: }else{
+	goto	i1l2714
 	
-i1l191:	
+i1l189:	
+	line	361
+;main.c: 361: PORTBbits.RB0 = 0;
+	bcf	(6),0	;volatile
+	goto	i1l2714
 	line	362
 	
-i1l2749:	
-;main.c: 359: }
-;main.c: 360: }
-;main.c: 362: if (USART_ReceiveChar() == '4')
+i1l190:	
+	goto	i1l2714
+	line	363
+	
+i1l188:	
+	line	365
+	
+i1l2714:	
+;main.c: 362: }
+;main.c: 363: }
+;main.c: 365: if (USART_ReceiveChar() == '4')
 	fcall	_USART_ReceiveChar
 	xorlw	034h
 	skipz
-	goto	u278_21
-	goto	u278_20
-u278_21:
-	goto	i1l2759
-u278_20:
-	line	364
+	goto	u268_21
+	goto	u268_20
+u268_21:
+	goto	i1l2724
+u268_20:
+	line	367
 	
-i1l2751:	
-;main.c: 363: {
-;main.c: 364: USART_WriteString("\n\rpwm = 256\n\r");
+i1l2716:	
+;main.c: 366: {
+;main.c: 367: USART_WriteString("\n\rpwm = 256\n\r");
 	movlw	low((STR_5)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_5)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	365
+	line	368
 	
-i1l2753:	
-;main.c: 365: pwm = 256;
+i1l2718:	
+;main.c: 368: pwm = 256;
 	movlw	low(0100h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_pwm)
 	movlw	high(0100h)
 	movwf	((_pwm))+1
-	line	367
-	
-i1l2755:	
-;main.c: 367: if(PORTBbits.RB1 == 0)
-	btfsc	(6),1	;volatile
-	goto	u279_21
-	goto	u279_20
-u279_21:
-	goto	i1l195
-u279_20:
-	line	369
-	
-i1l2757:	
-;main.c: 368: {
-;main.c: 369: PORTBbits.RB1 = 1;
-	bsf	(6),1	;volatile
 	line	370
-;main.c: 370: }else{
-	goto	i1l2759
 	
-i1l195:	
-	line	371
-;main.c: 371: PORTBbits.RB1 = 0;
-	bcf	(6),1	;volatile
-	goto	i1l2759
+i1l2720:	
+;main.c: 370: if(PORTBbits.RB1 == 0)
+	btfsc	(6),1	;volatile
+	goto	u269_21
+	goto	u269_20
+u269_21:
+	goto	i1l192
+u269_20:
 	line	372
 	
-i1l196:	
-	goto	i1l2759
+i1l2722:	
+;main.c: 371: {
+;main.c: 372: PORTBbits.RB1 = 1;
+	bsf	(6),1	;volatile
 	line	373
+;main.c: 373: }else{
+	goto	i1l2724
 	
-i1l194:	
+i1l192:	
+	line	374
+;main.c: 374: PORTBbits.RB1 = 0;
+	bcf	(6),1	;volatile
+	goto	i1l2724
 	line	375
 	
-i1l2759:	
-;main.c: 372: }
-;main.c: 373: }
-;main.c: 375: if (USART_ReceiveChar() == '5')
+i1l193:	
+	goto	i1l2724
+	line	376
+	
+i1l191:	
+	line	378
+	
+i1l2724:	
+;main.c: 375: }
+;main.c: 376: }
+;main.c: 378: if (USART_ReceiveChar() == '5')
 	fcall	_USART_ReceiveChar
 	xorlw	035h
 	skipz
-	goto	u280_21
-	goto	u280_20
-u280_21:
-	goto	i1l2765
-u280_20:
-	line	377
+	goto	u270_21
+	goto	u270_20
+u270_21:
+	goto	i1l2730
+u270_20:
+	line	380
 	
-i1l2761:	
-;main.c: 376: {
-;main.c: 377: USART_WriteString("\n\rpwm = 512\n\r");
+i1l2726:	
+;main.c: 379: {
+;main.c: 380: USART_WriteString("\n\rpwm = 512\n\r");
 	movlw	low((STR_6)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_6)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	378
+	line	381
 	
-i1l2763:	
-;main.c: 378: pwm = 512;
+i1l2728:	
+;main.c: 381: pwm = 512;
 	movlw	low(0200h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_pwm)
 	movlw	high(0200h)
 	movwf	((_pwm))+1
-	goto	i1l2765
-	line	380
+	goto	i1l2730
+	line	383
 	
-i1l197:	
-	line	382
+i1l194:	
+	line	385
 	
-i1l2765:	
-;main.c: 380: }
-;main.c: 382: if (USART_ReceiveChar() == '6')
+i1l2730:	
+;main.c: 383: }
+;main.c: 385: if (USART_ReceiveChar() == '6')
 	fcall	_USART_ReceiveChar
 	xorlw	036h
 	skipz
-	goto	u281_21
-	goto	u281_20
-u281_21:
-	goto	i1l2771
-u281_20:
-	line	384
+	goto	u271_21
+	goto	u271_20
+u271_21:
+	goto	i1l2736
+u271_20:
+	line	387
 	
-i1l2767:	
-;main.c: 383: {
-;main.c: 384: USART_WriteString("\n\rpwm = 768\n\r");
+i1l2732:	
+;main.c: 386: {
+;main.c: 387: USART_WriteString("\n\rpwm = 768\n\r");
 	movlw	low((STR_7)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_7)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	385
+	line	388
 	
-i1l2769:	
-;main.c: 385: pwm = 768;
+i1l2734:	
+;main.c: 388: pwm = 768;
 	movlw	low(0300h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_pwm)
 	movlw	high(0300h)
 	movwf	((_pwm))+1
-	goto	i1l2771
-	line	387
+	goto	i1l2736
+	line	390
 	
-i1l198:	
-	line	389
+i1l195:	
+	line	392
 	
-i1l2771:	
-;main.c: 387: }
-;main.c: 389: if (USART_ReceiveChar() == '7')
+i1l2736:	
+;main.c: 390: }
+;main.c: 392: if (USART_ReceiveChar() == '7')
 	fcall	_USART_ReceiveChar
 	xorlw	037h
 	skipz
-	goto	u282_21
-	goto	u282_20
-u282_21:
-	goto	i1l2777
-u282_20:
-	line	391
+	goto	u272_21
+	goto	u272_20
+u272_21:
+	goto	i1l2742
+u272_20:
+	line	394
 	
-i1l2773:	
-;main.c: 390: {
-;main.c: 391: USART_WriteString("\n\rpwm = 896\n\r");
+i1l2738:	
+;main.c: 393: {
+;main.c: 394: USART_WriteString("\n\rpwm = 896\n\r");
 	movlw	low((STR_8)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_8)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	392
+	line	395
 	
-i1l2775:	
-;main.c: 392: pwm = 896;
+i1l2740:	
+;main.c: 395: pwm = 896;
 	movlw	low(0380h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_pwm)
 	movlw	high(0380h)
 	movwf	((_pwm))+1
-	goto	i1l2777
-	line	394
+	goto	i1l2742
+	line	397
 	
-i1l199:	
-	line	396
+i1l196:	
+	line	399
 	
-i1l2777:	
-;main.c: 394: }
-;main.c: 396: if (USART_ReceiveChar() == '8')
+i1l2742:	
+;main.c: 397: }
+;main.c: 399: if (USART_ReceiveChar() == '8')
 	fcall	_USART_ReceiveChar
 	xorlw	038h
 	skipz
-	goto	u283_21
-	goto	u283_20
-u283_21:
-	goto	i1l2783
-u283_20:
-	line	398
+	goto	u273_21
+	goto	u273_20
+u273_21:
+	goto	i1l2748
+u273_20:
+	line	401
 	
-i1l2779:	
-;main.c: 397: {
-;main.c: 398: USART_WriteString("\n\rpwm = 1000\n\r");
+i1l2744:	
+;main.c: 400: {
+;main.c: 401: USART_WriteString("\n\rpwm = 1000\n\r");
 	movlw	low((STR_9)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_9)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	399
+	line	402
 	
-i1l2781:	
-;main.c: 399: pwm = 1000;
+i1l2746:	
+;main.c: 402: pwm = 1000;
 	movlw	low(03E8h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_pwm)
 	movlw	high(03E8h)
 	movwf	((_pwm))+1
-	goto	i1l2783
-	line	401
+	goto	i1l2748
+	line	404
 	
-i1l200:	
-	line	403
+i1l197:	
+	line	406
 	
-i1l2783:	
-;main.c: 401: }
-;main.c: 403: if (USART_ReceiveChar() == '9')
+i1l2748:	
+;main.c: 404: }
+;main.c: 406: if (USART_ReceiveChar() == '9')
 	fcall	_USART_ReceiveChar
 	xorlw	039h
 	skipz
-	goto	u284_21
-	goto	u284_20
-u284_21:
-	goto	i1l2789
-u284_20:
-	line	405
+	goto	u274_21
+	goto	u274_20
+u274_21:
+	goto	i1l2754
+u274_20:
+	line	408
 	
-i1l2785:	
-;main.c: 404: {
-;main.c: 405: USART_WriteString("\n\rpwm = 1023\n\r");
+i1l2750:	
+;main.c: 407: {
+;main.c: 408: USART_WriteString("\n\rpwm = 1023\n\r");
 	movlw	low((STR_10)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_10)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	406
+	line	409
 	
-i1l2787:	
-;main.c: 406: pwm = 1023;
+i1l2752:	
+;main.c: 409: pwm = 1023;
 	movlw	low(03FFh)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_pwm)
 	movlw	high(03FFh)
 	movwf	((_pwm))+1
-	goto	i1l2789
-	line	408
+	goto	i1l2754
+	line	411
 	
-i1l201:	
-	line	412
+i1l198:	
+	line	415
 	
-i1l2789:	
-;main.c: 408: }
-;main.c: 412: Fuzzy(pwm);
+i1l2754:	
+;main.c: 411: }
+;main.c: 415: Fuzzy(pwm);
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(_pwm+1),w
@@ -7379,57 +7381,57 @@ i1l2789:
 	addwf	(Fuzzy@setpoint)
 
 	fcall	_Fuzzy
-	line	415
+	line	418
 	
-i1l2791:	
-;main.c: 415: PIR1bits.RCIF = 0;
+i1l2756:	
+;main.c: 418: PIR1bits.RCIF = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(12),5	;volatile
-	goto	i1l2793
-	line	416
-	
-i1l187:	
+	goto	i1l2758
 	line	419
 	
-i1l2793:	
-;main.c: 416: }
-;main.c: 419: if (PIR1bits.ADIF)
+i1l184:	
+	line	422
+	
+i1l2758:	
+;main.c: 419: }
+;main.c: 422: if (PIR1bits.ADIF)
 	btfss	(12),6	;volatile
-	goto	u285_21
-	goto	u285_20
-u285_21:
-	goto	i1l202
-u285_20:
-	line	424
+	goto	u275_21
+	goto	u275_20
+u275_21:
+	goto	i1l199
+u275_20:
+	line	427
 	
-i1l2795:	
-;main.c: 420: {
-;main.c: 424: PIR1bits.ADIF = 0;
+i1l2760:	
+;main.c: 423: {
+;main.c: 427: PIR1bits.ADIF = 0;
 	bcf	(12),6	;volatile
-	line	425
+	line	428
 	
-i1l202:	
-	line	429
-;main.c: 425: }
-;main.c: 429: if (INTCONbits.T0IF)
-	btfss	(11),2	;volatile
-	goto	u286_21
-	goto	u286_20
-u286_21:
-	goto	i1l2819
-u286_20:
+i1l199:	
 	line	432
-	
-i1l2797:	
-;main.c: 430: {
-;main.c: 432: TIMER0_Set(238);
-	movlw	(0EEh)
-	fcall	i1_TIMER0_Set
+;main.c: 428: }
+;main.c: 432: if (INTCONbits.T0IF)
+	btfss	(11),2	;volatile
+	goto	u276_21
+	goto	u276_20
+u276_21:
+	goto	i1l2784
+u276_20:
 	line	435
 	
-i1l2799:	
-;main.c: 435: if (contagens_tm0 < 499)
+i1l2762:	
+;main.c: 433: {
+;main.c: 435: TIMER0_Set(238);
+	movlw	(0EEh)
+	fcall	i1_TIMER0_Set
+	line	438
+	
+i1l2764:	
+;main.c: 438: if (contagens_tm0 < 499)
 	movlw	high(01F3h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -7438,62 +7440,70 @@ i1l2799:
 	skipnz
 	subwf	(_contagens_tm0)^080h,w
 	skipnc
-	goto	u287_21
-	goto	u287_20
-u287_21:
-	goto	i1l2805
-u287_20:
-	line	438
+	goto	u277_21
+	goto	u277_20
+u277_21:
+	goto	i1l2770
+u277_20:
+	line	441
 	
-i1l2801:	
-;main.c: 436: {
-;main.c: 438: contagens_tm0++;
+i1l2766:	
+;main.c: 439: {
+;main.c: 441: contagens_tm0++;
 	movlw	low(01h)
 	addwf	(_contagens_tm0)^080h,f
 	skipnc
 	incf	(_contagens_tm0+1)^080h,f
 	movlw	high(01h)
 	addwf	(_contagens_tm0+1)^080h,f
-	line	441
+	line	444
 	
-i1l2803:	
-;main.c: 441: PORTBbits.RB6 = 1;
+i1l2768:	
+;main.c: 444: PORTBbits.RB6 = 1;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(6),6	;volatile
-	line	442
-;main.c: 442: }
-	goto	i1l2817
-	line	443
-	
-i1l204:	
+	line	445
+;main.c: 445: }
+	goto	i1l2782
 	line	446
 	
-i1l2805:	
-;main.c: 443: else
-;main.c: 444: {
-;main.c: 446: contagens_tm0 = 0;
+i1l201:	
+	line	449
+	
+i1l2770:	
+;main.c: 446: else
+;main.c: 447: {
+;main.c: 449: contagens_tm0 = 0;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(_contagens_tm0)^080h
 	clrf	(_contagens_tm0+1)^080h
-	line	449
+	line	452
 	
-i1l2807:	
-;main.c: 449: pulsos = (TMR1H << 8) + TMR1L;
+i1l2772:	
+;main.c: 452: pulsos = (TMR1H << 8) + TMR1L;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(15),w	;volatile
-	clrf	(_pulsos+1)
-	addwf	(_pulsos+1)
+	bsf	status, 5	;RP0=1, select bank1
+	bcf	status, 6	;RP1=0, select bank1
+	clrf	(_pulsos+1)^080h
+	addwf	(_pulsos+1)^080h
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
 	movf	(14),w	;volatile
-	clrf	(_pulsos)
-	addwf	(_pulsos)
+	bsf	status, 5	;RP0=1, select bank1
+	bcf	status, 6	;RP1=0, select bank1
+	clrf	(_pulsos)^080h
+	addwf	(_pulsos)^080h
 
-	line	450
+	line	453
 	
-i1l2809:	
-;main.c: 450: rpm = ((pulsos / pas_cooler) * 120);
+i1l2774:	
+;main.c: 453: rpm = ((pulsos / pas_cooler) * 120);
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
 	movf	(_pas_cooler+1),w
 	clrf	(i1___lwdiv@divisor+1)
 	addwf	(i1___lwdiv@divisor+1)
@@ -7501,10 +7511,12 @@ i1l2809:
 	clrf	(i1___lwdiv@divisor)
 	addwf	(i1___lwdiv@divisor)
 
-	movf	(_pulsos+1),w
+	bsf	status, 5	;RP0=1, select bank1
+	bcf	status, 6	;RP1=0, select bank1
+	movf	(_pulsos+1)^080h,w
 	clrf	(i1___lwdiv@dividend+1)
 	addwf	(i1___lwdiv@dividend+1)
-	movf	(_pulsos),w
+	movf	(_pulsos)^080h,w
 	clrf	(i1___lwdiv@dividend)
 	addwf	(i1___lwdiv@dividend)
 
@@ -7530,79 +7542,79 @@ i1l2809:
 	clrf	(_rpm)^080h
 	addwf	(_rpm)^080h
 
-	line	453
+	line	456
 	
-i1l2811:	
-;main.c: 453: TMR1L = 0x00;
+i1l2776:	
+;main.c: 456: TMR1L = 0x00;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(14)	;volatile
-	line	454
-	
-i1l2813:	
-;main.c: 454: TMR1H = 0x00;
-	clrf	(15)	;volatile
 	line	457
 	
-i1l2815:	
-;main.c: 457: PORTBbits.RB6 = 0;
-	bcf	(6),6	;volatile
-	goto	i1l2817
-	line	458
+i1l2778:	
+;main.c: 457: TMR1H = 0x00;
+	clrf	(15)	;volatile
+	line	460
 	
-i1l205:	
+i1l2780:	
+;main.c: 460: PORTBbits.RB6 = 0;
+	bcf	(6),6	;volatile
+	goto	i1l2782
 	line	461
 	
-i1l2817:	
-;main.c: 458: }
-;main.c: 461: INTCONbits.T0IF = 0;
-	bcf	(11),2	;volatile
-	goto	i1l2819
-	line	462
+i1l202:	
+	line	464
 	
-i1l203:	
+i1l2782:	
+;main.c: 461: }
+;main.c: 464: INTCONbits.T0IF = 0;
+	bcf	(11),2	;volatile
+	goto	i1l2784
 	line	465
 	
-i1l2819:	
-;main.c: 462: }
-;main.c: 465: if (PIR1bits.TMR1IF)
+i1l200:	
+	line	468
+	
+i1l2784:	
+;main.c: 465: }
+;main.c: 468: if (PIR1bits.TMR1IF)
 	btfss	(12),0	;volatile
-	goto	u288_21
-	goto	u288_20
-u288_21:
-	goto	i1l206
-u288_20:
-	line	470
+	goto	u278_21
+	goto	u278_20
+u278_21:
+	goto	i1l203
+u278_20:
+	line	473
 	
-i1l2821:	
-;main.c: 466: {
-;main.c: 470: PIR1bits.TMR1IF = 0;
+i1l2786:	
+;main.c: 469: {
+;main.c: 473: PIR1bits.TMR1IF = 0;
 	bcf	(12),0	;volatile
-	line	471
-	
-i1l206:	
 	line	474
-;main.c: 471: }
-;main.c: 474: if (PIR1bits.SSPIF)
+	
+i1l203:	
+	line	477
+;main.c: 474: }
+;main.c: 477: if (PIR1bits.SSPIF)
 	btfss	(12),3	;volatile
-	goto	u289_21
-	goto	u289_20
-u289_21:
-	goto	i1l208
-u289_20:
-	line	479
+	goto	u279_21
+	goto	u279_20
+u279_21:
+	goto	i1l205
+u279_20:
+	line	482
 	
-i1l2823:	
-;main.c: 475: {
-;main.c: 479: PIR1bits.SSPIF = 0;
+i1l2788:	
+;main.c: 478: {
+;main.c: 482: PIR1bits.SSPIF = 0;
 	bcf	(12),3	;volatile
-	goto	i1l208
-	line	480
+	goto	i1l205
+	line	483
 	
-i1l207:	
-	line	481
+i1l204:	
+	line	484
 	
-i1l208:	
+i1l205:	
 	movf	(??_ISR+3),w
 	movwf	btemp+1
 	movf	(??_ISR+2),w
@@ -7667,7 +7679,7 @@ i1_TIMER0_Set:
 	movwf	(i1TIMER0_Set@contagens)
 	line	22
 	
-i1l2713:	
+i1l2678:	
 ;timers.c: 22: TMR0 = contagens;
 	movf	(i1TIMER0_Set@contagens),w
 	bcf	status, 5	;RP0=0, select bank0
@@ -7675,7 +7687,7 @@ i1l2713:
 	movwf	(1)	;volatile
 	line	23
 	
-i1l293:	
+i1l290:	
 	return
 	opt stack 0
 GLOBAL	__end_ofi1_TIMER0_Set
@@ -7729,20 +7741,20 @@ _USART_ReceiveChar:
 ; Regs used in _USART_ReceiveChar: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
 	line	67
 	
-i1l2443:	
+i1l2408:	
 ;usart.c: 65: unsigned char byte;
 ;usart.c: 67: if (!OERR)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfsc	(193/8),(193)&7	;volatile
-	goto	u247_21
-	goto	u247_20
-u247_21:
-	goto	i1l2449
-u247_20:
+	goto	u237_21
+	goto	u237_20
+u237_21:
+	goto	i1l2414
+u237_20:
 	line	69
 	
-i1l2445:	
+i1l2410:	
 ;usart.c: 68: {
 ;usart.c: 69: byte = RCREG;
 	movf	(26),w	;volatile
@@ -7751,18 +7763,18 @@ i1l2445:
 	movwf	(USART_ReceiveChar@byte)
 	line	70
 	
-i1l2447:	
+i1l2412:	
 ;usart.c: 70: PIR1bits.RCIF = 0;
 	bcf	(12),5	;volatile
 	line	71
 ;usart.c: 71: }
-	goto	i1l2459
+	goto	i1l2424
 	line	72
 	
-i1l248:	
+i1l245:	
 	line	74
 	
-i1l2449:	
+i1l2414:	
 ;usart.c: 72: else
 ;usart.c: 73: {
 ;usart.c: 74: USART_WriteString("\n\r ------- ESTOURO DE PILHA ------- \n\r ");
@@ -7773,14 +7785,14 @@ i1l2449:
 	fcall	i1_USART_WriteString
 	line	76
 	
-i1l2451:	
+i1l2416:	
 ;usart.c: 76: RCSTAbits.CREN = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(24),4	;volatile
 	line	77
 	
-i1l2453:	
+i1l2418:	
 ;usart.c: 77: byte = RCREG;
 	movf	(26),w	;volatile
 	movwf	(??_USART_ReceiveChar+0)+0
@@ -7788,30 +7800,30 @@ i1l2453:
 	movwf	(USART_ReceiveChar@byte)
 	line	78
 	
-i1l2455:	
+i1l2420:	
 ;usart.c: 78: RCSTAbits.CREN = 1;
 	bsf	(24),4	;volatile
 	line	79
 	
-i1l2457:	
+i1l2422:	
 ;usart.c: 79: PIR1bits.RCIF = 0;
 	bcf	(12),5	;volatile
-	goto	i1l2459
+	goto	i1l2424
 	line	80
 	
-i1l249:	
+i1l246:	
 	line	82
 	
-i1l2459:	
+i1l2424:	
 ;usart.c: 80: }
 ;usart.c: 82: return(byte);
 	movf	(USART_ReceiveChar@byte),w
-	goto	i1l250
+	goto	i1l247
 	
-i1l2461:	
+i1l2426:	
 	line	83
 	
-i1l250:	
+i1l247:	
 	return
 	opt stack 0
 GLOBAL	__end_of_USART_ReceiveChar
@@ -7869,14 +7881,14 @@ i1_USART_WriteString:
 ; Regs used in i1_USART_WriteString: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
 	line	54
 	
-i1l2305:	
+i1l2286:	
 ;usart.c: 54: while(*str != '\0')
-	goto	i1l2311
+	goto	i1l2292
 	
-i1l243:	
+i1l240:	
 	line	56
 	
-i1l2307:	
+i1l2288:	
 ;usart.c: 55: {
 ;usart.c: 56: USART_WriteChar(*str);
 	movf	(i1USART_WriteString@str+1),w
@@ -7889,19 +7901,19 @@ i1l2307:
 	fcall	i1_USART_WriteChar
 	line	57
 	
-i1l2309:	
+i1l2290:	
 ;usart.c: 57: str++;
 	movlw	01h
 	addwf	(i1USART_WriteString@str),f
 	skipnc
 	incf	(i1USART_WriteString@str+1),f
-	goto	i1l2311
+	goto	i1l2292
 	line	58
 	
-i1l242:	
+i1l239:	
 	line	54
 	
-i1l2311:	
+i1l2292:	
 	movf	(i1USART_WriteString@str+1),w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -7911,17 +7923,17 @@ i1l2311:
 	fcall	stringtab
 	iorlw	0
 	skipz
-	goto	u221_21
-	goto	u221_20
-u221_21:
-	goto	i1l2307
-u221_20:
-	goto	i1l245
+	goto	u216_21
+	goto	u216_20
+u216_21:
+	goto	i1l2288
+u216_20:
+	goto	i1l242
 	
-i1l244:	
+i1l241:	
 	line	59
 	
-i1l245:	
+i1l242:	
 	return
 	opt stack 0
 GLOBAL	__end_ofi1_USART_WriteString
@@ -7975,33 +7987,33 @@ i1_USART_WriteChar:
 	movwf	(i1USART_WriteChar@byte)
 	line	46
 	
-i1l2051:	
+i1l2032:	
 ;usart.c: 46: while(!PIR1bits.TXIF);
-	goto	i1l236
+	goto	i1l233
 	
-i1l237:	
+i1l234:	
 	
-i1l236:	
+i1l233:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfss	(12),4	;volatile
-	goto	u163_21
-	goto	u163_20
-u163_21:
-	goto	i1l236
-u163_20:
-	goto	i1l2053
+	goto	u158_21
+	goto	u158_20
+u158_21:
+	goto	i1l233
+u158_20:
+	goto	i1l2034
 	
-i1l238:	
+i1l235:	
 	line	47
 	
-i1l2053:	
+i1l2034:	
 ;usart.c: 47: TXREG = byte;
 	movf	(i1USART_WriteChar@byte),w
 	movwf	(25)	;volatile
 	line	48
 	
-i1l239:	
+i1l236:	
 	return
 	opt stack 0
 GLOBAL	__end_ofi1_USART_WriteChar
@@ -8063,7 +8075,7 @@ _Fuzzy:
 ; Regs used in _Fuzzy: [wreg+status,2+status,0+pclath+cstack]
 	line	147
 	
-i1l2329:	
+i1l2310:	
 ;main.c: 147: fitemp =0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -8071,7 +8083,7 @@ i1l2329:
 	clrf	(_fitemp+1)
 	line	150
 	
-i1l2331:	
+i1l2312:	
 ;main.c: 150: temp = (setpoint - pwmAnt);
 	comf	(_pwmAnt),w
 	movwf	(??_Fuzzy+0)+0
@@ -8090,35 +8102,35 @@ i1l2331:
 	movwf	1+(_temp)
 	line	152
 	
-i1l2333:	
+i1l2314:	
 ;main.c: 152: if(PORTBbits.RB2 == 0)
 	btfsc	(6),2	;volatile
-	goto	u227_21
-	goto	u227_20
-u227_21:
+	goto	u222_21
+	goto	u222_20
+u222_21:
 	goto	i1l163
-u227_20:
+u222_20:
 	line	154
 	
-i1l2335:	
+i1l2316:	
 ;main.c: 153: {
 ;main.c: 154: PORTBbits.RB2 = 1;
 	bsf	(6),2	;volatile
 	line	155
 ;main.c: 155: }else{
-	goto	i1l2337
+	goto	i1l2318
 	
 i1l163:	
 	line	156
 ;main.c: 156: PORTBbits.RB2 = 0;
 	bcf	(6),2	;volatile
-	goto	i1l2337
+	goto	i1l2318
 	line	157
 	
 i1l164:	
 	line	159
 	
-i1l2337:	
+i1l2318:	
 ;main.c: 157: }
 ;main.c: 159: deltaV = (setpoint - pwmAnt);
 	comf	(_pwmAnt),w
@@ -8130,57 +8142,49 @@ i1l2337:
 	incf	((??_Fuzzy+0)+0+1),f
 	movf	(Fuzzy@setpoint),w
 	addwf	0+(??_Fuzzy+0)+0,w
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	movwf	(_deltaV)^080h
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
+	movwf	(_deltaV)
 	movf	(Fuzzy@setpoint+1),w
 	skipnc
 	incf	(Fuzzy@setpoint+1),w
 	addwf	1+(??_Fuzzy+0)+0,w
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	movwf	1+(_deltaV)^080h
+	movwf	1+(_deltaV)
 	line	162
 	
-i1l2339:	
+i1l2320:	
 ;main.c: 162: if (temp >10) temp = 10;
 	movlw	high(0Bh)
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
 	subwf	(_temp+1),w
 	movlw	low(0Bh)
 	skipnz
 	subwf	(_temp),w
 	skipc
-	goto	u228_21
-	goto	u228_20
-u228_21:
-	goto	i1l2345
-u228_20:
+	goto	u223_21
+	goto	u223_20
+u223_21:
+	goto	i1l2326
+u223_20:
 	
-i1l2341:	
+i1l2322:	
 	movlw	low(0Ah)
 	movwf	(_temp)
 	movlw	high(0Ah)
 	movwf	((_temp))+1
-	goto	i1l2345
+	goto	i1l2326
 	
 i1l165:	
 	line	163
 ;main.c: 163: if (temp <0) temp = 0;
-	goto	i1l2345
+	goto	i1l2326
 	
-i1l2343:	
+i1l2324:	
 	clrf	(_temp)
 	clrf	(_temp+1)
-	goto	i1l2345
+	goto	i1l2326
 	
 i1l166:	
 	line	166
 	
-i1l2345:	
+i1l2326:	
 ;main.c: 166: if (temp < 2.5)
 	movf	(_temp+1),w
 	clrf	(___lwtoft@c+1)
@@ -8206,14 +8210,14 @@ i1l2345:
 	movwf	(___ftge@ff2+2)
 	fcall	___ftge
 	btfsc	status,0
-	goto	u229_21
-	goto	u229_20
-u229_21:
-	goto	i1l2359
-u229_20:
+	goto	u224_21
+	goto	u224_20
+u224_21:
+	goto	i1l2340
+u224_20:
 	line	169
 	
-i1l2347:	
+i1l2328:	
 ;main.c: 167: {
 ;main.c: 169: fitemp = trapmf(temp,-1,0,1.5,3);
 	bcf	status, 5	;RP0=0, select bank0
@@ -8276,13 +8280,13 @@ i1l2347:
 
 	line	175
 	
-i1l2349:	
+i1l2330:	
 ;main.c: 175: x=0;
 	clrf	(_x)
 	clrf	(_x+1)
 	line	176
 	
-i1l2351:	
+i1l2332:	
 ;main.c: 176: y=0;
 	clrf	(_y)
 	clrf	(_y+1)
@@ -8323,24 +8327,24 @@ i1l2351:
 
 	line	180
 	
-i1l2353:	
+i1l2334:	
 ;main.c: 180: if (y > fop_rule1)
 	movf	(_y+1),w
 	subwf	(_fop_rule1+1),w
 	skipz
-	goto	u230_25
+	goto	u225_25
 	movf	(_y),w
 	subwf	(_fop_rule1),w
-u230_25:
+u225_25:
 	skipnc
-	goto	u230_21
-	goto	u230_20
-u230_21:
-	goto	i1l2357
-u230_20:
+	goto	u225_21
+	goto	u225_20
+u225_21:
+	goto	i1l2338
+u225_20:
 	line	182
 	
-i1l2355:	
+i1l2336:	
 ;main.c: 181: {
 ;main.c: 182: ideal = fop_rule1;
 	movf	(_fop_rule1+1),w
@@ -8358,13 +8362,13 @@ i1l2355:
 
 	line	183
 ;main.c: 183: }
-	goto	i1l2359
+	goto	i1l2340
 	line	184
 	
 i1l168:	
 	line	186
 	
-i1l2357:	
+i1l2338:	
 ;main.c: 184: else
 ;main.c: 185: {
 ;main.c: 186: ideal = y;
@@ -8382,17 +8386,17 @@ i1l2357:
 	clrf	(_ideal)^080h
 	addwf	(_ideal)^080h
 
-	goto	i1l2359
+	goto	i1l2340
 	line	187
 	
 i1l169:	
-	goto	i1l2359
+	goto	i1l2340
 	line	189
 	
 i1l167:	
 	line	193
 	
-i1l2359:	
+i1l2340:	
 ;main.c: 187: }
 ;main.c: 189: }
 ;main.c: 193: if ((temp > 2) && (temp < 7))
@@ -8404,27 +8408,27 @@ i1l2359:
 	skipnz
 	subwf	(_temp),w
 	skipc
-	goto	u231_21
-	goto	u231_20
-u231_21:
-	goto	i1l2375
-u231_20:
+	goto	u226_21
+	goto	u226_20
+u226_21:
+	goto	i1l2356
+u226_20:
 	
-i1l2361:	
+i1l2342:	
 	movlw	high(07h)
 	subwf	(_temp+1),w
 	movlw	low(07h)
 	skipnz
 	subwf	(_temp),w
 	skipnc
-	goto	u232_21
-	goto	u232_20
-u232_21:
-	goto	i1l2375
-u232_20:
+	goto	u227_21
+	goto	u227_20
+u227_21:
+	goto	i1l2356
+u227_20:
 	line	196
 	
-i1l2363:	
+i1l2344:	
 ;main.c: 194: {
 ;main.c: 196: fitemp = trimf(temp,2,5,8);
 	movf	(_temp+1),w
@@ -8481,13 +8485,13 @@ i1l2363:
 
 	line	202
 	
-i1l2365:	
+i1l2346:	
 ;main.c: 202: x=0;
 	clrf	(_x)
 	clrf	(_x+1)
 	line	203
 	
-i1l2367:	
+i1l2348:	
 ;main.c: 203: y=0;
 	clrf	(_y)
 	clrf	(_y+1)
@@ -8524,24 +8528,24 @@ i1l2367:
 
 	line	207
 	
-i1l2369:	
+i1l2350:	
 ;main.c: 207: if (y >= fop_rule1)
 	movf	(_fop_rule1+1),w
 	subwf	(_y+1),w
 	skipz
-	goto	u233_25
+	goto	u228_25
 	movf	(_fop_rule1),w
 	subwf	(_y),w
-u233_25:
+u228_25:
 	skipc
-	goto	u233_21
-	goto	u233_20
-u233_21:
-	goto	i1l2373
-u233_20:
+	goto	u228_21
+	goto	u228_20
+u228_21:
+	goto	i1l2354
+u228_20:
 	line	209
 	
-i1l2371:	
+i1l2352:	
 ;main.c: 208: {
 ;main.c: 209: tip_average = fop_rule1;
 	movf	(_fop_rule1+1),w
@@ -8559,13 +8563,13 @@ i1l2371:
 
 	line	210
 ;main.c: 210: }
-	goto	i1l2375
+	goto	i1l2356
 	line	211
 	
 i1l171:	
 	line	213
 	
-i1l2373:	
+i1l2354:	
 ;main.c: 211: else
 ;main.c: 212: {
 ;main.c: 213: tip_average = y;
@@ -8583,17 +8587,17 @@ i1l2373:
 	clrf	(_tip_average)^080h
 	addwf	(_tip_average)^080h
 
-	goto	i1l2375
+	goto	i1l2356
 	line	214
 	
 i1l172:	
-	goto	i1l2375
+	goto	i1l2356
 	line	217
 	
 i1l170:	
 	line	221
 	
-i1l2375:	
+i1l2356:	
 ;main.c: 214: }
 ;main.c: 217: }
 ;main.c: 221: if (temp > 7 )
@@ -8604,14 +8608,14 @@ i1l2375:
 	skipnz
 	subwf	(_temp),w
 	skipc
-	goto	u234_21
-	goto	u234_20
-u234_21:
-	goto	i1l2389
-u234_20:
+	goto	u229_21
+	goto	u229_20
+u229_21:
+	goto	i1l2370
+u229_20:
 	line	224
 	
-i1l2377:	
+i1l2358:	
 ;main.c: 222: {
 ;main.c: 224: fitemp = trapmf(temp,6,8.5,10,11);
 	movf	(_temp+1),w
@@ -8672,13 +8676,13 @@ i1l2377:
 
 	line	231
 	
-i1l2379:	
+i1l2360:	
 ;main.c: 231: x=0;
 	clrf	(_x)
 	clrf	(_x+1)
 	line	232
 	
-i1l2381:	
+i1l2362:	
 ;main.c: 232: y=0;
 	clrf	(_y)
 	clrf	(_y+1)
@@ -8719,24 +8723,24 @@ i1l2381:
 
 	line	236
 	
-i1l2383:	
+i1l2364:	
 ;main.c: 236: if (y >= fop_rule1)
 	movf	(_fop_rule1+1),w
 	subwf	(_y+1),w
 	skipz
-	goto	u235_25
+	goto	u230_25
 	movf	(_fop_rule1),w
 	subwf	(_y),w
-u235_25:
+u230_25:
 	skipc
-	goto	u235_21
-	goto	u235_20
-u235_21:
-	goto	i1l2387
-u235_20:
+	goto	u230_21
+	goto	u230_20
+u230_21:
+	goto	i1l2368
+u230_20:
 	line	238
 	
-i1l2385:	
+i1l2366:	
 ;main.c: 237: {
 ;main.c: 238: tip_gorgeous = fop_rule1;
 	movf	(_fop_rule1+1),w
@@ -8754,13 +8758,13 @@ i1l2385:
 
 	line	239
 ;main.c: 239: }
-	goto	i1l2389
+	goto	i1l2370
 	line	240
 	
 i1l174:	
 	line	242
 	
-i1l2387:	
+i1l2368:	
 ;main.c: 240: else
 ;main.c: 241: {
 ;main.c: 242: tip_gorgeous = y;
@@ -8778,263 +8782,60 @@ i1l2387:
 	clrf	(_tip_gorgeous)^080h
 	addwf	(_tip_gorgeous)^080h
 
-	goto	i1l2389
+	goto	i1l2370
 	line	243
 	
 i1l175:	
-	goto	i1l2389
+	goto	i1l2370
 	line	245
 	
 i1l173:	
-	line	249
-	
-i1l2389:	
-;main.c: 243: }
-;main.c: 245: }
-;main.c: 249: if (temp < 2.5)
-	bcf	status, 5	;RP0=0, select bank0
-	movf	(_temp+1),w
-	clrf	(___lwtoft@c+1)
-	addwf	(___lwtoft@c+1)
-	movf	(_temp),w
-	clrf	(___lwtoft@c)
-	addwf	(___lwtoft@c)
-
-	fcall	___lwtoft
-	movf	(0+(?___lwtoft)),w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movwf	(___ftge@ff1)
-	movf	(1+(?___lwtoft)),w
-	movwf	(___ftge@ff1+1)
-	movf	(2+(?___lwtoft)),w
-	movwf	(___ftge@ff1+2)
-	movlw	0x0
-	movwf	(___ftge@ff2)
-	movlw	0x20
-	movwf	(___ftge@ff2+1)
-	movlw	0x40
-	movwf	(___ftge@ff2+2)
-	fcall	___ftge
-	btfsc	status,0
-	goto	u236_21
-	goto	u236_20
-u236_21:
-	goto	i1l2393
-u236_20:
-	line	251
-	
-i1l2391:	
-;main.c: 250: {
-;main.c: 251: tip = ideal ;
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	movf	(_ideal+1)^080h,w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	clrf	(_tip+1)
-	addwf	(_tip+1)
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	movf	(_ideal)^080h,w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	clrf	(_tip)
-	addwf	(_tip)
-
-	goto	i1l2393
-	line	252
-	
-i1l176:	
-	line	254
-	
-i1l2393:	
-;main.c: 252: }
-;main.c: 254: if (temp >= 2.5 && temp < 7.5)
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movf	(_temp+1),w
-	clrf	(___lwtoft@c+1)
-	addwf	(___lwtoft@c+1)
-	movf	(_temp),w
-	clrf	(___lwtoft@c)
-	addwf	(___lwtoft@c)
-
-	fcall	___lwtoft
-	movf	(0+(?___lwtoft)),w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movwf	(___ftge@ff1)
-	movf	(1+(?___lwtoft)),w
-	movwf	(___ftge@ff1+1)
-	movf	(2+(?___lwtoft)),w
-	movwf	(___ftge@ff1+2)
-	movlw	0x0
-	movwf	(___ftge@ff2)
-	movlw	0x20
-	movwf	(___ftge@ff2+1)
-	movlw	0x40
-	movwf	(___ftge@ff2+2)
-	fcall	___ftge
-	btfss	status,0
-	goto	u237_21
-	goto	u237_20
-u237_21:
-	goto	i1l2399
-u237_20:
-	
-i1l2395:	
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movf	(_temp+1),w
-	clrf	(___lwtoft@c+1)
-	addwf	(___lwtoft@c+1)
-	movf	(_temp),w
-	clrf	(___lwtoft@c)
-	addwf	(___lwtoft@c)
-
-	fcall	___lwtoft
-	movf	(0+(?___lwtoft)),w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movwf	(___ftge@ff1)
-	movf	(1+(?___lwtoft)),w
-	movwf	(___ftge@ff1+1)
-	movf	(2+(?___lwtoft)),w
-	movwf	(___ftge@ff1+2)
-	movlw	0x0
-	movwf	(___ftge@ff2)
-	movlw	0xf0
-	movwf	(___ftge@ff2+1)
-	movlw	0x40
-	movwf	(___ftge@ff2+2)
-	fcall	___ftge
-	btfsc	status,0
-	goto	u238_21
-	goto	u238_20
-u238_21:
-	goto	i1l2399
-u238_20:
-	line	256
-	
-i1l2397:	
-;main.c: 255: {
-;main.c: 256: tip = tip_average ;
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	movf	(_tip_average+1)^080h,w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	clrf	(_tip+1)
-	addwf	(_tip+1)
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	movf	(_tip_average)^080h,w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	clrf	(_tip)
-	addwf	(_tip)
-
-	goto	i1l2399
-	line	257
-	
-i1l177:	
-	line	259
-	
-i1l2399:	
-;main.c: 257: }
-;main.c: 259: if (temp >= 7.5 && temp <= 10)
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movf	(_temp+1),w
-	clrf	(___lwtoft@c+1)
-	addwf	(___lwtoft@c+1)
-	movf	(_temp),w
-	clrf	(___lwtoft@c)
-	addwf	(___lwtoft@c)
-
-	fcall	___lwtoft
-	movf	(0+(?___lwtoft)),w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movwf	(___ftge@ff1)
-	movf	(1+(?___lwtoft)),w
-	movwf	(___ftge@ff1+1)
-	movf	(2+(?___lwtoft)),w
-	movwf	(___ftge@ff1+2)
-	movlw	0x0
-	movwf	(___ftge@ff2)
-	movlw	0xf0
-	movwf	(___ftge@ff2+1)
-	movlw	0x40
-	movwf	(___ftge@ff2+2)
-	fcall	___ftge
-	btfss	status,0
-	goto	u239_21
-	goto	u239_20
-u239_21:
-	goto	i1l2405
-u239_20:
-	
-i1l2401:	
-	movlw	high(0Bh)
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	subwf	(_temp+1),w
-	movlw	low(0Bh)
-	skipnz
-	subwf	(_temp),w
-	skipnc
-	goto	u240_21
-	goto	u240_20
-u240_21:
-	goto	i1l2405
-u240_20:
-	line	261
-	
-i1l2403:	
-;main.c: 260: {
-;main.c: 261: tip = tip_gorgeous;
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	movf	(_tip_gorgeous+1)^080h,w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	clrf	(_tip+1)
-	addwf	(_tip+1)
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	movf	(_tip_gorgeous)^080h,w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	clrf	(_tip)
-	addwf	(_tip)
-
-	goto	i1l2405
-	line	262
-	
-i1l178:	
 	line	267
 	
-i1l2405:	
-;main.c: 262: }
+i1l2370:	
+;main.c: 243: }
+;main.c: 245: }
 ;main.c: 267: total_area = 1;
 	movlw	low(01h)
 	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
 	movwf	(_total_area)
 	movlw	high(01h)
 	movwf	((_total_area))+1
 	line	268
 	
-i1l2407:	
-;main.c: 268: unsigned int sum = 0;
+i1l2372:	
+;main.c: 268: tip = fop_rule1*1000;
+	movf	(_fop_rule1+1),w
+	clrf	(i1___wmul@multiplier+1)
+	addwf	(i1___wmul@multiplier+1)
+	movf	(_fop_rule1),w
+	clrf	(i1___wmul@multiplier)
+	addwf	(i1___wmul@multiplier)
+
+	movlw	low(03E8h)
+	movwf	(i1___wmul@multiplicand)
+	movlw	high(03E8h)
+	movwf	((i1___wmul@multiplicand))+1
+	fcall	i1___wmul
+	movf	(1+(?i1___wmul)),w
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	clrf	(_tip+1)
+	addwf	(_tip+1)
+	movf	(0+(?i1___wmul)),w
+	clrf	(_tip)
+	addwf	(_tip)
+
+	line	269
+	
+i1l2374:	
+;main.c: 269: unsigned int sum = 0;
 	clrf	(Fuzzy@sum)
 	clrf	(Fuzzy@sum+1)
-	line	270
+	line	271
 	
-i1l2409:	
-;main.c: 270: total_area = total_area + tip ;
+i1l2376:	
+;main.c: 271: total_area = total_area + tip;
 	movf	(_tip),w
 	addwf	(_total_area),w
 	movwf	(_total_area)
@@ -9043,10 +8844,10 @@ i1l2409:
 	incf	(_tip+1),w
 	addwf	(_total_area+1),w
 	movwf	1+(_total_area)
-	line	271
+	line	272
 	
-i1l2411:	
-;main.c: 271: sum = tip;
+i1l2378:	
+;main.c: 272: sum = tip;
 	movf	(_tip+1),w
 	clrf	(Fuzzy@sum+1)
 	addwf	(Fuzzy@sum+1)
@@ -9054,10 +8855,10 @@ i1l2411:
 	clrf	(Fuzzy@sum)
 	addwf	(Fuzzy@sum)
 
-	line	276
+	line	277
 	
-i1l2413:	
-;main.c: 276: ativa_fan = sum/total_area;
+i1l2380:	
+;main.c: 277: ativa_fan = sum/total_area;
 	movf	(_total_area+1),w
 	clrf	(i1___lwdiv@divisor+1)
 	addwf	(i1___lwdiv@divisor+1)
@@ -9082,11 +8883,11 @@ i1l2413:
 	clrf	(_ativa_fan)
 	addwf	(_ativa_fan)
 
-	line	282
+	line	283
 	
-i1l2415:	
-;main.c: 280: char velocidade[1];
-;main.c: 282: if(ativa_fan <= 2.5 )
+i1l2382:	
+;main.c: 281: char velocidade[1];
+;main.c: 283: if(ativa_fan <= 2.5 )
 	movlw	0x0
 	movwf	(___ftge@ff1)
 	movlw	0x20
@@ -9111,31 +8912,31 @@ i1l2415:
 	movwf	(___ftge@ff2+2)
 	fcall	___ftge
 	btfss	status,0
-	goto	u241_21
-	goto	u241_20
-u241_21:
-	goto	i1l2419
-u241_20:
-	line	285
+	goto	u231_21
+	goto	u231_20
+u231_21:
+	goto	i1l2386
+u231_20:
+	line	286
 	
-i1l2417:	
-;main.c: 283: {
-;main.c: 285: velocidade[0] = '0';
+i1l2384:	
+;main.c: 284: {
+;main.c: 286: velocidade[0] = '0';
 	movlw	(030h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(??_Fuzzy+0)+0
 	movf	(??_Fuzzy+0)+0,w
 	movwf	(Fuzzy@velocidade)
-	goto	i1l2419
-	line	286
-	
-i1l179:	
+	goto	i1l2386
 	line	287
 	
-i1l2419:	
-;main.c: 286: }
-;main.c: 287: if(ativa_fan > 2.5 && ativa_fan < 7.5)
+i1l176:	
+	line	288
+	
+i1l2386:	
+;main.c: 287: }
+;main.c: 288: if(ativa_fan > 2.5 && ativa_fan < 7.5)
 	movlw	0x0
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -9162,13 +8963,13 @@ i1l2419:
 	movwf	(___ftge@ff2+2)
 	fcall	___ftge
 	btfsc	status,0
-	goto	u242_21
-	goto	u242_20
-u242_21:
-	goto	i1l2425
-u242_20:
+	goto	u232_21
+	goto	u232_20
+u232_21:
+	goto	i1l2392
+u232_20:
 	
-i1l2421:	
+i1l2388:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(_ativa_fan+1),w
@@ -9195,31 +8996,31 @@ i1l2421:
 	movwf	(___ftge@ff2+2)
 	fcall	___ftge
 	btfsc	status,0
-	goto	u243_21
-	goto	u243_20
-u243_21:
-	goto	i1l2425
-u243_20:
-	line	290
+	goto	u233_21
+	goto	u233_20
+u233_21:
+	goto	i1l2392
+u233_20:
+	line	291
 	
-i1l2423:	
-;main.c: 288: {
-;main.c: 290: velocidade[0] = '7';
+i1l2390:	
+;main.c: 289: {
+;main.c: 291: velocidade[0] = '7';
 	movlw	(037h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(??_Fuzzy+0)+0
 	movf	(??_Fuzzy+0)+0,w
 	movwf	(Fuzzy@velocidade)
-	goto	i1l2425
-	line	291
+	goto	i1l2392
+	line	292
 	
-i1l180:	
-	line	293
+i1l177:	
+	line	294
 	
-i1l2425:	
-;main.c: 291: }
-;main.c: 293: if(ativa_fan >= 7.5)
+i1l2392:	
+;main.c: 292: }
+;main.c: 294: if(ativa_fan >= 7.5)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(_ativa_fan+1),w
@@ -9246,31 +9047,31 @@ i1l2425:
 	movwf	(___ftge@ff2+2)
 	fcall	___ftge
 	btfss	status,0
-	goto	u244_21
-	goto	u244_20
-u244_21:
-	goto	i1l2429
-u244_20:
-	line	296
+	goto	u234_21
+	goto	u234_20
+u234_21:
+	goto	i1l2396
+u234_20:
+	line	297
 	
-i1l2427:	
-;main.c: 294: {
-;main.c: 296: velocidade[0] = '9';
+i1l2394:	
+;main.c: 295: {
+;main.c: 297: velocidade[0] = '9';
 	movlw	(039h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(??_Fuzzy+0)+0
 	movf	(??_Fuzzy+0)+0,w
 	movwf	(Fuzzy@velocidade)
-	goto	i1l2429
-	line	297
+	goto	i1l2396
+	line	298
 	
-i1l181:	
-	line	300
+i1l178:	
+	line	301
 	
-i1l2429:	
-;main.c: 297: }
-;main.c: 300: deltaV = fop_rule1*100;
+i1l2396:	
+;main.c: 298: }
+;main.c: 301: deltaV = fop_rule1*1000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(_fop_rule1+1),w
@@ -9280,121 +9081,69 @@ i1l2429:
 	clrf	(i1___wmul@multiplier)
 	addwf	(i1___wmul@multiplier)
 
-	movlw	low(064h)
+	movlw	low(03E8h)
 	movwf	(i1___wmul@multiplicand)
-	movlw	high(064h)
+	movlw	high(03E8h)
 	movwf	((i1___wmul@multiplicand))+1
 	fcall	i1___wmul
 	movf	(1+(?i1___wmul)),w
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	clrf	(_deltaV+1)^080h
-	addwf	(_deltaV+1)^080h
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	clrf	(_deltaV+1)
+	addwf	(_deltaV+1)
 	movf	(0+(?i1___wmul)),w
-	clrf	(_deltaV)^080h
-	addwf	(_deltaV)^080h
+	clrf	(_deltaV)
+	addwf	(_deltaV)
 
-	line	301
+	line	303
 	
-i1l2431:	
-;main.c: 301: if(ativa_fan*100 >= 0 && ativa_fan*100 < 1024 ){
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movf	(_ativa_fan+1),w
-	clrf	(i1___wmul@multiplier+1)
-	addwf	(i1___wmul@multiplier+1)
-	movf	(_ativa_fan),w
-	clrf	(i1___wmul@multiplier)
-	addwf	(i1___wmul@multiplier)
-
-	movlw	low(064h)
-	movwf	(i1___wmul@multiplicand)
-	movlw	high(064h)
-	movwf	((i1___wmul@multiplicand))+1
-	fcall	i1___wmul
-	movlw	high(0400h)
-	subwf	(1+(?i1___wmul)),w
-	movlw	low(0400h)
+i1l2398:	
+;main.c: 303: if(deltaV >= 0 && deltaV < 9000 ){
+	movlw	high(02328h)
+	subwf	(_deltaV+1),w
+	movlw	low(02328h)
 	skipnz
-	subwf	(0+(?i1___wmul)),w
+	subwf	(_deltaV),w
 	skipnc
-	goto	u245_21
-	goto	u245_20
-u245_21:
-	goto	i1l2435
-u245_20:
-	line	302
+	goto	u235_21
+	goto	u235_20
+u235_21:
+	goto	i1l2402
+u235_20:
+	line	304
 	
-i1l2433:	
-;main.c: 302: PWM_DutyCycle2(ativa_fan*100);
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movf	(_ativa_fan+1),w
-	clrf	(i1___wmul@multiplier+1)
-	addwf	(i1___wmul@multiplier+1)
-	movf	(_ativa_fan),w
-	clrf	(i1___wmul@multiplier)
-	addwf	(i1___wmul@multiplier)
-
-	movlw	low(064h)
-	movwf	(i1___wmul@multiplicand)
-	movlw	high(064h)
-	movwf	((i1___wmul@multiplicand))+1
-	fcall	i1___wmul
-	movf	(1+(?i1___wmul)),w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
+i1l2400:	
+;main.c: 304: PWM_DutyCycle2(deltaV);
+	movf	(_deltaV+1),w
 	clrf	(i1PWM_DutyCycle2@valor+1)
 	addwf	(i1PWM_DutyCycle2@valor+1)
-	movf	(0+(?i1___wmul)),w
+	movf	(_deltaV),w
 	clrf	(i1PWM_DutyCycle2@valor)
 	addwf	(i1PWM_DutyCycle2@valor)
 
 	fcall	i1_PWM_DutyCycle2
-	line	303
-;main.c: 303: }else
-	goto	i1l2437
-	
-i1l182:	
 	line	305
+;main.c: 305: }else
+	goto	i1l181
 	
-i1l2435:	
-;main.c: 304: {
-;main.c: 305: PWM_DutyCycle2(0);
+i1l179:	
+	line	307
+	
+i1l2402:	
+;main.c: 306: {
+;main.c: 307: PWM_DutyCycle2(0);
 	movlw	low(0)
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
 	movwf	(i1PWM_DutyCycle2@valor)
 	movlw	high(0)
 	movwf	((i1PWM_DutyCycle2@valor))+1
 	fcall	i1_PWM_DutyCycle2
-	goto	i1l2437
-	line	306
-	
-i1l183:	
+	goto	i1l181
 	line	308
 	
-i1l2437:	
-;main.c: 306: }
-;main.c: 308: rpm = ativa_fan;
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movf	(_ativa_fan+1),w
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	clrf	(_rpm+1)^080h
-	addwf	(_rpm+1)^080h
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	movf	(_ativa_fan),w
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	clrf	(_rpm)^080h
-	addwf	(_rpm)^080h
-
-	line	309
+i1l180:	
+	line	312
 	
-i1l184:	
+i1l181:	
 	return
 	opt stack 0
 GLOBAL	__end_of_Fuzzy
@@ -9449,25 +9198,25 @@ i1___wmul:
 ; Regs used in i1___wmul: [wreg+status,2+status,0]
 	line	43
 	
-i1l2317:	
+i1l2298:	
 	clrf	(i1___wmul@product)
 	clrf	(i1___wmul@product+1)
-	goto	i1l2319
+	goto	i1l2300
 	line	44
 	
-i1l606:	
+i1l603:	
 	line	45
 	
-i1l2319:	
+i1l2300:	
 	btfss	(i1___wmul@multiplier),(0)&7
-	goto	u223_21
-	goto	u223_20
-u223_21:
-	goto	i1l607
-u223_20:
+	goto	u218_21
+	goto	u218_20
+u218_21:
+	goto	i1l604
+u218_20:
 	line	46
 	
-i1l2321:	
+i1l2302:	
 	movf	(i1___wmul@multiplicand),w
 	addwf	(i1___wmul@product),f
 	skipnc
@@ -9475,44 +9224,44 @@ i1l2321:
 	movf	(i1___wmul@multiplicand+1),w
 	addwf	(i1___wmul@product+1),f
 	
-i1l607:	
+i1l604:	
 	line	47
 	movlw	01h
 	
-u224_25:
+u219_25:
 	clrc
 	rlf	(i1___wmul@multiplicand),f
 	rlf	(i1___wmul@multiplicand+1),f
 	addlw	-1
 	skipz
-	goto	u224_25
+	goto	u219_25
 	line	48
 	
-i1l2323:	
+i1l2304:	
 	movlw	01h
 	
-u225_25:
+u220_25:
 	clrc
 	rrf	(i1___wmul@multiplier+1),f
 	rrf	(i1___wmul@multiplier),f
 	addlw	-1
 	skipz
-	goto	u225_25
+	goto	u220_25
 	line	49
 	movf	((i1___wmul@multiplier+1)),w
 	iorwf	((i1___wmul@multiplier)),w
 	skipz
-	goto	u226_21
-	goto	u226_20
-u226_21:
-	goto	i1l2319
-u226_20:
-	goto	i1l2325
+	goto	u221_21
+	goto	u221_20
+u221_21:
+	goto	i1l2300
+u221_20:
+	goto	i1l2306
 	
-i1l608:	
+i1l605:	
 	line	52
 	
-i1l2325:	
+i1l2306:	
 	movf	(i1___wmul@product+1),w
 	clrf	(?i1___wmul+1)
 	addwf	(?i1___wmul+1)
@@ -9520,12 +9269,12 @@ i1l2325:
 	clrf	(?i1___wmul)
 	addwf	(?i1___wmul)
 
-	goto	i1l609
+	goto	i1l606
 	
-i1l2327:	
+i1l2308:	
 	line	53
 	
-i1l609:	
+i1l606:	
 	return
 	opt stack 0
 GLOBAL	__end_ofi1___wmul
@@ -9537,7 +9286,7 @@ GLOBAL	__end_ofi1___wmul
 ;; Defined at:
 ;;		line 96 in file "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c"
 ;; Parameters:    Size  Location     Type
-;;  valor           2    0[BANK0 ] int 
+;;  valor           2    0[COMMON] int 
 ;; Auto vars:     Size  Location     Type
 ;;		None
 ;; Return value:  Size  Location     Type
@@ -9549,10 +9298,10 @@ GLOBAL	__end_ofi1___wmul
 ;;		On exit  : 0/0
 ;;		Unchanged: 0/0
 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-;;      Params:         0       2       0       0       0
+;;      Params:         2       0       0       0       0
 ;;      Locals:         0       0       0       0       0
-;;      Temps:          0       2       0       0       0
-;;      Totals:         0       4       0       0       0
+;;      Temps:          2       0       0       0       0
+;;      Totals:         4       0       0       0       0
 ;;Total ram usage:        4 bytes
 ;; Hardware stack levels used:    1
 ;; This function calls:
@@ -9579,10 +9328,8 @@ i1_PWM_DutyCycle2:
 ; Regs used in i1_PWM_DutyCycle2: [wreg+status,2+status,0]
 	line	98
 	
-i1l2313:	
+i1l2294:	
 ;pwm.c: 98: CCPR2L = valor >> 2;
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
 	movf	(i1PWM_DutyCycle2@valor+1),w
 	movwf	(??i1_PWM_DutyCycle2+0)+0+1
 	movf	(i1PWM_DutyCycle2@valor),w
@@ -9594,27 +9341,29 @@ i1l2313:
 	rrf	(??i1_PWM_DutyCycle2+0)+1,f
 	rrf	(??i1_PWM_DutyCycle2+0)+0,f
 	movf	0+(??i1_PWM_DutyCycle2+0)+0,w
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
 	movwf	(27)	;volatile
 	line	99
 	
-i1l2315:	
+i1l2296:	
 ;pwm.c: 99: CCP2CON = (valor << 4)|0X0C;
 	movf	(i1PWM_DutyCycle2@valor),w
 	movwf	(??i1_PWM_DutyCycle2+0)+0
 	movlw	(04h)-1
-u222_25:
+u217_25:
 	clrc
 	rlf	(??i1_PWM_DutyCycle2+0)+0,f
 	addlw	-1
 	skipz
-	goto	u222_25
+	goto	u217_25
 	clrc
 	rlf	(??i1_PWM_DutyCycle2+0)+0,w
 	iorlw	0Ch
 	movwf	(29)	;volatile
 	line	100
 	
-i1l447:	
+i1l444:	
 	return
 	opt stack 0
 GLOBAL	__end_ofi1_PWM_DutyCycle2
@@ -9671,73 +9420,73 @@ _trimf:
 ; Regs used in _trimf: [wreg+status,2+status,0+pclath+cstack]
 	line	80
 	
-i1l2081:	
+i1l2062:	
 ;main.c: 80: unsigned int ua = 0;
 	clrf	(trimf@ua)
 	clrf	(trimf@ua+1)
 	line	82
 	
-i1l2083:	
+i1l2064:	
 ;main.c: 82: if (x <= a)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(trimf@x+1),w
 	subwf	(trimf@a+1),w
 	skipz
-	goto	u171_25
+	goto	u166_25
 	movf	(trimf@x),w
 	subwf	(trimf@a),w
-u171_25:
+u166_25:
 	skipc
-	goto	u171_21
-	goto	u171_20
-u171_21:
-	goto	i1l2087
-u171_20:
+	goto	u166_21
+	goto	u166_20
+u166_21:
+	goto	i1l2068
+u166_20:
 	line	83
 	
-i1l2085:	
+i1l2066:	
 ;main.c: 83: ua = 0;
 	clrf	(trimf@ua)
 	clrf	(trimf@ua+1)
-	goto	i1l2103
+	goto	i1l2084
 	line	84
 	
 i1l131:	
 	
-i1l2087:	
+i1l2068:	
 ;main.c: 84: else if ((a < x) && (x <= b))
 	movf	(trimf@x+1),w
 	subwf	(trimf@a+1),w
 	skipz
-	goto	u172_25
+	goto	u167_25
 	movf	(trimf@x),w
 	subwf	(trimf@a),w
-u172_25:
+u167_25:
 	skipnc
-	goto	u172_21
-	goto	u172_20
-u172_21:
-	goto	i1l2093
-u172_20:
+	goto	u167_21
+	goto	u167_20
+u167_21:
+	goto	i1l2074
+u167_20:
 	
-i1l2089:	
+i1l2070:	
 	movf	(trimf@x+1),w
 	subwf	(trimf@b+1),w
 	skipz
-	goto	u173_25
+	goto	u168_25
 	movf	(trimf@x),w
 	subwf	(trimf@b),w
-u173_25:
+u168_25:
 	skipc
-	goto	u173_21
-	goto	u173_20
-u173_21:
-	goto	i1l2093
-u173_20:
+	goto	u168_21
+	goto	u168_20
+u168_21:
+	goto	i1l2074
+u168_20:
 	line	85
 	
-i1l2091:	
+i1l2072:	
 ;main.c: 85: ua = ((x - a) / (b - a));
 	comf	(trimf@a),w
 	movwf	(??_trimf+0)+0
@@ -9777,46 +9526,46 @@ i1l2091:
 	clrf	(trimf@ua)
 	addwf	(trimf@ua)
 
-	goto	i1l2103
+	goto	i1l2084
 	line	86
 	
 i1l133:	
 	
-i1l2093:	
+i1l2074:	
 ;main.c: 86: else if ((b < x) && (x <= c))
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(trimf@x+1),w
 	subwf	(trimf@b+1),w
 	skipz
-	goto	u174_25
+	goto	u169_25
 	movf	(trimf@x),w
 	subwf	(trimf@b),w
-u174_25:
+u169_25:
 	skipnc
-	goto	u174_21
-	goto	u174_20
-u174_21:
-	goto	i1l2099
-u174_20:
+	goto	u169_21
+	goto	u169_20
+u169_21:
+	goto	i1l2080
+u169_20:
 	
-i1l2095:	
+i1l2076:	
 	movf	(trimf@x+1),w
 	subwf	(trimf@c+1),w
 	skipz
-	goto	u175_25
+	goto	u170_25
 	movf	(trimf@x),w
 	subwf	(trimf@c),w
-u175_25:
+u170_25:
 	skipc
-	goto	u175_21
-	goto	u175_20
-u175_21:
-	goto	i1l2099
-u175_20:
+	goto	u170_21
+	goto	u170_20
+u170_21:
+	goto	i1l2080
+u170_20:
 	line	87
 	
-i1l2097:	
+i1l2078:	
 ;main.c: 87: ua = ((x - c) / (b - c));
 	comf	(trimf@c),w
 	movwf	(??_trimf+0)+0
@@ -9856,49 +9605,49 @@ i1l2097:
 	clrf	(trimf@ua)
 	addwf	(trimf@ua)
 
-	goto	i1l2103
+	goto	i1l2084
 	line	88
 	
 i1l135:	
 	
-i1l2099:	
+i1l2080:	
 ;main.c: 88: else if (x > c)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(trimf@x+1),w
 	subwf	(trimf@c+1),w
 	skipz
-	goto	u176_25
+	goto	u171_25
 	movf	(trimf@x),w
 	subwf	(trimf@c),w
-u176_25:
+u171_25:
 	skipnc
-	goto	u176_21
-	goto	u176_20
-u176_21:
-	goto	i1l2103
-u176_20:
+	goto	u171_21
+	goto	u171_20
+u171_21:
+	goto	i1l2084
+u171_20:
 	line	89
 	
-i1l2101:	
+i1l2082:	
 ;main.c: 89: ua = 0;
 	clrf	(trimf@ua)
 	clrf	(trimf@ua+1)
-	goto	i1l2103
+	goto	i1l2084
 	
 i1l137:	
-	goto	i1l2103
+	goto	i1l2084
 	line	91
 	
 i1l136:	
-	goto	i1l2103
+	goto	i1l2084
 	
 i1l134:	
-	goto	i1l2103
+	goto	i1l2084
 	
 i1l132:	
 	
-i1l2103:	
+i1l2084:	
 ;main.c: 91: return(ua);
 	movf	(trimf@ua+1),w
 	bcf	status, 5	;RP0=0, select bank0
@@ -9911,7 +9660,7 @@ i1l2103:
 
 	goto	i1l138
 	
-i1l2105:	
+i1l2086:	
 	line	92
 	
 i1l138:	
@@ -9971,73 +9720,73 @@ _trapmf:
 ; Regs used in _trapmf: [wreg+status,2+status,0+pclath+cstack]
 	line	99
 	
-i1l2107:	
+i1l2088:	
 ;main.c: 99: unsigned int ua = 0;
 	clrf	(trapmf@ua)
 	clrf	(trapmf@ua+1)
 	line	101
 	
-i1l2109:	
+i1l2090:	
 ;main.c: 101: if (x <= a)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(trapmf@x+1),w
 	subwf	(trapmf@a+1),w
 	skipz
-	goto	u177_25
+	goto	u172_25
 	movf	(trapmf@x),w
 	subwf	(trapmf@a),w
-u177_25:
+u172_25:
 	skipc
-	goto	u177_21
-	goto	u177_20
-u177_21:
-	goto	i1l2113
-u177_20:
+	goto	u172_21
+	goto	u172_20
+u172_21:
+	goto	i1l2094
+u172_20:
 	line	102
 	
-i1l2111:	
+i1l2092:	
 ;main.c: 102: ua = 0;
 	clrf	(trapmf@ua)
 	clrf	(trapmf@ua+1)
-	goto	i1l2135
+	goto	i1l2116
 	line	103
 	
 i1l141:	
 	
-i1l2113:	
+i1l2094:	
 ;main.c: 103: else if ((a < x) && (x <= b))
 	movf	(trapmf@x+1),w
 	subwf	(trapmf@a+1),w
 	skipz
-	goto	u178_25
+	goto	u173_25
 	movf	(trapmf@x),w
 	subwf	(trapmf@a),w
-u178_25:
+u173_25:
 	skipnc
-	goto	u178_21
-	goto	u178_20
-u178_21:
-	goto	i1l2119
-u178_20:
+	goto	u173_21
+	goto	u173_20
+u173_21:
+	goto	i1l2100
+u173_20:
 	
-i1l2115:	
+i1l2096:	
 	movf	(trapmf@x+1),w
 	subwf	(trapmf@b+1),w
 	skipz
-	goto	u179_25
+	goto	u174_25
 	movf	(trapmf@x),w
 	subwf	(trapmf@b),w
-u179_25:
+u174_25:
 	skipc
-	goto	u179_21
-	goto	u179_20
-u179_21:
-	goto	i1l2119
-u179_20:
+	goto	u174_21
+	goto	u174_20
+u174_21:
+	goto	i1l2100
+u174_20:
 	line	104
 	
-i1l2117:	
+i1l2098:	
 ;main.c: 104: ua = ((x - a) / (b - a));
 	comf	(trapmf@a),w
 	movwf	(??_trapmf+0)+0
@@ -10077,89 +9826,89 @@ i1l2117:
 	clrf	(trapmf@ua)
 	addwf	(trapmf@ua)
 
-	goto	i1l2135
+	goto	i1l2116
 	line	105
 	
 i1l143:	
 	
-i1l2119:	
+i1l2100:	
 ;main.c: 105: else if ((b <= x) && (x <= c))
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(trapmf@b+1),w
 	subwf	(trapmf@x+1),w
 	skipz
-	goto	u180_25
+	goto	u175_25
 	movf	(trapmf@b),w
 	subwf	(trapmf@x),w
-u180_25:
+u175_25:
 	skipc
-	goto	u180_21
-	goto	u180_20
-u180_21:
-	goto	i1l2125
-u180_20:
+	goto	u175_21
+	goto	u175_20
+u175_21:
+	goto	i1l2106
+u175_20:
 	
-i1l2121:	
+i1l2102:	
 	movf	(trapmf@x+1),w
 	subwf	(trapmf@c+1),w
 	skipz
-	goto	u181_25
+	goto	u176_25
 	movf	(trapmf@x),w
 	subwf	(trapmf@c),w
-u181_25:
+u176_25:
 	skipc
-	goto	u181_21
-	goto	u181_20
-u181_21:
-	goto	i1l2125
-u181_20:
+	goto	u176_21
+	goto	u176_20
+u176_21:
+	goto	i1l2106
+u176_20:
 	line	106
 	
-i1l2123:	
+i1l2104:	
 ;main.c: 106: ua = 1;
 	movlw	low(01h)
 	movwf	(trapmf@ua)
 	movlw	high(01h)
 	movwf	((trapmf@ua))+1
-	goto	i1l2135
+	goto	i1l2116
 	line	107
 	
 i1l145:	
 	
-i1l2125:	
+i1l2106:	
 ;main.c: 107: else if ((c < x) && (x <= d))
 	movf	(trapmf@x+1),w
 	subwf	(trapmf@c+1),w
 	skipz
-	goto	u182_25
+	goto	u177_25
 	movf	(trapmf@x),w
 	subwf	(trapmf@c),w
-u182_25:
+u177_25:
 	skipnc
-	goto	u182_21
-	goto	u182_20
-u182_21:
-	goto	i1l2131
-u182_20:
+	goto	u177_21
+	goto	u177_20
+u177_21:
+	goto	i1l2112
+u177_20:
 	
-i1l2127:	
+i1l2108:	
 	movf	(trapmf@x+1),w
 	subwf	(trapmf@d+1),w
 	skipz
-	goto	u183_25
+	goto	u178_25
 	movf	(trapmf@x),w
 	subwf	(trapmf@d),w
-u183_25:
+u178_25:
 	skipc
-	goto	u183_21
-	goto	u183_20
-u183_21:
-	goto	i1l2131
-u183_20:
+	goto	u178_21
+	goto	u178_20
+u178_21:
+	goto	i1l2112
+u178_20:
 	line	108
 	
-i1l2129:	
+i1l2110:	
 ;main.c: 108: ua = ((d - x) / (d - c));
 	comf	(trapmf@c),w
 	movwf	(??_trapmf+0)+0
@@ -10199,52 +9948,52 @@ i1l2129:
 	clrf	(trapmf@ua)
 	addwf	(trapmf@ua)
 
-	goto	i1l2135
+	goto	i1l2116
 	line	109
 	
 i1l147:	
 	
-i1l2131:	
+i1l2112:	
 ;main.c: 109: else if (x > d)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(trapmf@x+1),w
 	subwf	(trapmf@d+1),w
 	skipz
-	goto	u184_25
+	goto	u179_25
 	movf	(trapmf@x),w
 	subwf	(trapmf@d),w
-u184_25:
+u179_25:
 	skipnc
-	goto	u184_21
-	goto	u184_20
-u184_21:
-	goto	i1l2135
-u184_20:
+	goto	u179_21
+	goto	u179_20
+u179_21:
+	goto	i1l2116
+u179_20:
 	line	110
 	
-i1l2133:	
+i1l2114:	
 ;main.c: 110: ua = 0;
 	clrf	(trapmf@ua)
 	clrf	(trapmf@ua+1)
-	goto	i1l2135
+	goto	i1l2116
 	
 i1l149:	
-	goto	i1l2135
+	goto	i1l2116
 	line	112
 	
 i1l148:	
-	goto	i1l2135
+	goto	i1l2116
 	
 i1l146:	
-	goto	i1l2135
+	goto	i1l2116
 	
 i1l144:	
-	goto	i1l2135
+	goto	i1l2116
 	
 i1l142:	
 	
-i1l2135:	
+i1l2116:	
 ;main.c: 112: return(ua);
 	movf	(trapmf@ua+1),w
 	bcf	status, 5	;RP0=0, select bank0
@@ -10257,7 +10006,7 @@ i1l2135:
 
 	goto	i1l150
 	
-i1l2137:	
+i1l2118:	
 	line	113
 	
 i1l150:	
@@ -10318,97 +10067,97 @@ i1___lwdiv:
 ; Regs used in i1___lwdiv: [wreg+status,2+status,0]
 	line	14
 	
-i1l2055:	
+i1l2036:	
 	clrf	(i1___lwdiv@quotient)
 	clrf	(i1___lwdiv@quotient+1)
 	line	15
 	
-i1l2057:	
+i1l2038:	
 	movf	(i1___lwdiv@divisor+1),w
 	iorwf	(i1___lwdiv@divisor),w
 	skipnz
-	goto	u164_21
-	goto	u164_20
-u164_21:
-	goto	i1l2077
-u164_20:
+	goto	u159_21
+	goto	u159_20
+u159_21:
+	goto	i1l2058
+u159_20:
 	line	16
 	
-i1l2059:	
+i1l2040:	
 	clrf	(i1___lwdiv@counter)
 	incf	(i1___lwdiv@counter),f
 	line	17
-	goto	i1l2065
+	goto	i1l2046
 	
-i1l943:	
+i1l940:	
 	line	18
 	
-i1l2061:	
+i1l2042:	
 	movlw	01h
 	
-u165_25:
+u160_25:
 	clrc
 	rlf	(i1___lwdiv@divisor),f
 	rlf	(i1___lwdiv@divisor+1),f
 	addlw	-1
 	skipz
-	goto	u165_25
+	goto	u160_25
 	line	19
 	
-i1l2063:	
+i1l2044:	
 	movlw	(01h)
 	movwf	(??i1___lwdiv+0)+0
 	movf	(??i1___lwdiv+0)+0,w
 	addwf	(i1___lwdiv@counter),f
-	goto	i1l2065
+	goto	i1l2046
 	line	20
 	
-i1l942:	
+i1l939:	
 	line	17
 	
-i1l2065:	
+i1l2046:	
 	btfss	(i1___lwdiv@divisor+1),(15)&7
-	goto	u166_21
-	goto	u166_20
-u166_21:
-	goto	i1l2061
-u166_20:
-	goto	i1l2067
+	goto	u161_21
+	goto	u161_20
+u161_21:
+	goto	i1l2042
+u161_20:
+	goto	i1l2048
 	
-i1l944:	
-	goto	i1l2067
+i1l941:	
+	goto	i1l2048
 	line	21
 	
-i1l945:	
+i1l942:	
 	line	22
 	
-i1l2067:	
+i1l2048:	
 	movlw	01h
 	
-u167_25:
+u162_25:
 	clrc
 	rlf	(i1___lwdiv@quotient),f
 	rlf	(i1___lwdiv@quotient+1),f
 	addlw	-1
 	skipz
-	goto	u167_25
+	goto	u162_25
 	line	23
 	movf	(i1___lwdiv@divisor+1),w
 	subwf	(i1___lwdiv@dividend+1),w
 	skipz
-	goto	u168_25
+	goto	u163_25
 	movf	(i1___lwdiv@divisor),w
 	subwf	(i1___lwdiv@dividend),w
-u168_25:
+u163_25:
 	skipc
-	goto	u168_21
-	goto	u168_20
-u168_21:
-	goto	i1l2073
-u168_20:
+	goto	u163_21
+	goto	u163_20
+u163_21:
+	goto	i1l2054
+u163_20:
 	line	24
 	
-i1l2069:	
+i1l2050:	
 	movf	(i1___lwdiv@divisor),w
 	subwf	(i1___lwdiv@dividend),f
 	movf	(i1___lwdiv@divisor+1),w
@@ -10417,45 +10166,45 @@ i1l2069:
 	subwf	(i1___lwdiv@dividend+1),f
 	line	25
 	
-i1l2071:	
+i1l2052:	
 	bsf	(i1___lwdiv@quotient)+(0/8),(0)&7
-	goto	i1l2073
+	goto	i1l2054
 	line	26
 	
-i1l946:	
+i1l943:	
 	line	27
 	
-i1l2073:	
+i1l2054:	
 	movlw	01h
 	
-u169_25:
+u164_25:
 	clrc
 	rrf	(i1___lwdiv@divisor+1),f
 	rrf	(i1___lwdiv@divisor),f
 	addlw	-1
 	skipz
-	goto	u169_25
+	goto	u164_25
 	line	28
 	
-i1l2075:	
+i1l2056:	
 	movlw	low(01h)
 	subwf	(i1___lwdiv@counter),f
 	btfss	status,2
-	goto	u170_21
-	goto	u170_20
-u170_21:
-	goto	i1l2067
-u170_20:
-	goto	i1l2077
+	goto	u165_21
+	goto	u165_20
+u165_21:
+	goto	i1l2048
+u165_20:
+	goto	i1l2058
 	
-i1l947:	
-	goto	i1l2077
+i1l944:	
+	goto	i1l2058
 	line	29
 	
-i1l941:	
+i1l938:	
 	line	30
 	
-i1l2077:	
+i1l2058:	
 	movf	(i1___lwdiv@quotient+1),w
 	clrf	(?i1___lwdiv+1)
 	addwf	(?i1___lwdiv+1)
@@ -10463,12 +10212,12 @@ i1l2077:
 	clrf	(?i1___lwdiv)
 	addwf	(?i1___lwdiv)
 
-	goto	i1l948
+	goto	i1l945
 	
-i1l2079:	
+i1l2060:	
 	line	31
 	
-i1l948:	
+i1l945:	
 	return
 	opt stack 0
 GLOBAL	__end_ofi1___lwdiv
@@ -10522,35 +10271,35 @@ _max_val:
 ; Regs used in _max_val: [wreg+status,2+status,0]
 	line	129
 	
-i1l2139:	
+i1l2120:	
 ;main.c: 129: if (a > b)
 	movf	(max_val@a+1),w
 	subwf	(max_val@b+1),w
 	skipz
-	goto	u185_25
+	goto	u180_25
 	movf	(max_val@a),w
 	subwf	(max_val@b),w
-u185_25:
+u180_25:
 	skipnc
-	goto	u185_21
-	goto	u185_20
-u185_21:
-	goto	i1l2145
-u185_20:
+	goto	u180_21
+	goto	u180_20
+u180_21:
+	goto	i1l2126
+u180_20:
 	line	130
 	
-i1l2141:	
+i1l2122:	
 ;main.c: 130: return a;
 	goto	i1l159
 	
-i1l2143:	
+i1l2124:	
 	goto	i1l159
 	line	131
 	
 i1l158:	
 	line	132
 	
-i1l2145:	
+i1l2126:	
 ;main.c: 131: else
 ;main.c: 132: return b;
 	movf	(max_val@b+1),w
@@ -10562,7 +10311,7 @@ i1l2145:
 
 	goto	i1l159
 	
-i1l2147:	
+i1l2128:	
 	goto	i1l159
 	
 i1l160:	
@@ -10622,7 +10371,7 @@ ___lwtoft:
 ; Regs used in ___lwtoft: [wreg+status,2+status,0+pclath+cstack]
 	line	30
 	
-i1l2301:	
+i1l2282:	
 	movf	(___lwtoft@c),w
 	movwf	(___ftpack@arg)
 	movf	(___lwtoft@c+1),w
@@ -10640,12 +10389,12 @@ i1l2301:
 	movwf	(?___lwtoft+1)
 	movf	(2+(?___ftpack)),w
 	movwf	(?___lwtoft+2)
-	goto	i1l963
+	goto	i1l960
 	
-i1l2303:	
+i1l2284:	
 	line	31
 	
-i1l963:	
+i1l960:	
 	return
 	opt stack 0
 GLOBAL	__end_of___lwtoft
@@ -10700,95 +10449,95 @@ ___ftpack:
 ; Regs used in ___ftpack: [wreg+status,2+status,0]
 	line	64
 	
-i1l2021:	
+i1l2002:	
 	movf	(___ftpack@exp),w
 	skipz
-	goto	u152_20
-	goto	i1l2025
-u152_20:
+	goto	u147_20
+	goto	i1l2006
+u147_20:
 	
-i1l2023:	
+i1l2004:	
 	movf	(___ftpack@arg+2),w
 	iorwf	(___ftpack@arg+1),w
 	iorwf	(___ftpack@arg),w
 	skipz
-	goto	u153_21
-	goto	u153_20
-u153_21:
-	goto	i1l2031
-u153_20:
-	goto	i1l2025
+	goto	u148_21
+	goto	u148_20
+u148_21:
+	goto	i1l2012
+u148_20:
+	goto	i1l2006
 	
-i1l763:	
+i1l760:	
 	line	65
 	
-i1l2025:	
+i1l2006:	
 	movlw	0x0
 	movwf	(?___ftpack)
 	movlw	0x0
 	movwf	(?___ftpack+1)
 	movlw	0x0
 	movwf	(?___ftpack+2)
-	goto	i1l764
+	goto	i1l761
 	
-i1l2027:	
-	goto	i1l764
+i1l2008:	
+	goto	i1l761
 	
-i1l761:	
+i1l758:	
 	line	66
-	goto	i1l2031
+	goto	i1l2012
 	
-i1l766:	
+i1l763:	
 	line	67
 	
-i1l2029:	
+i1l2010:	
 	movlw	(01h)
 	movwf	(??___ftpack+0)+0
 	movf	(??___ftpack+0)+0,w
 	addwf	(___ftpack@exp),f
 	line	68
 	movlw	01h
-u154_25:
+u149_25:
 	clrc
 	rrf	(___ftpack@arg+2),f
 	rrf	(___ftpack@arg+1),f
 	rrf	(___ftpack@arg),f
 	addlw	-1
 	skipz
-	goto	u154_25
+	goto	u149_25
 
-	goto	i1l2031
+	goto	i1l2012
 	line	69
 	
-i1l765:	
+i1l762:	
 	line	66
 	
-i1l2031:	
+i1l2012:	
 	movlw	low highword(0FE0000h)
 	andwf	(___ftpack@arg+2),w
 	btfss	status,2
-	goto	u155_21
-	goto	u155_20
-u155_21:
-	goto	i1l2029
-u155_20:
-	goto	i1l768
+	goto	u150_21
+	goto	u150_20
+u150_21:
+	goto	i1l2010
+u150_20:
+	goto	i1l765
 	
-i1l767:	
+i1l764:	
 	line	70
-	goto	i1l768
+	goto	i1l765
 	
-i1l769:	
+i1l766:	
 	line	71
 	
-i1l2033:	
+i1l2014:	
 	movlw	(01h)
 	movwf	(??___ftpack+0)+0
 	movf	(??___ftpack+0)+0,w
 	addwf	(___ftpack@exp),f
 	line	72
 	
-i1l2035:	
+i1l2016:	
 	movlw	01h
 	addwf	(___ftpack@arg),f
 	movlw	0
@@ -10801,76 +10550,76 @@ movlw 1
 	addwf	(___ftpack@arg+2),f
 	line	73
 	
-i1l2037:	
+i1l2018:	
 	movlw	01h
-u156_25:
+u151_25:
 	clrc
 	rrf	(___ftpack@arg+2),f
 	rrf	(___ftpack@arg+1),f
 	rrf	(___ftpack@arg),f
 	addlw	-1
 	skipz
-	goto	u156_25
+	goto	u151_25
 
 	line	74
 	
-i1l768:	
+i1l765:	
 	line	70
 	movlw	low highword(0FF0000h)
 	andwf	(___ftpack@arg+2),w
 	btfss	status,2
-	goto	u157_21
-	goto	u157_20
-u157_21:
-	goto	i1l2033
-u157_20:
-	goto	i1l2041
+	goto	u152_21
+	goto	u152_20
+u152_21:
+	goto	i1l2014
+u152_20:
+	goto	i1l2022
 	
-i1l770:	
+i1l767:	
 	line	75
-	goto	i1l2041
+	goto	i1l2022
 	
-i1l772:	
+i1l769:	
 	line	76
 	
-i1l2039:	
+i1l2020:	
 	movlw	low(01h)
 	subwf	(___ftpack@exp),f
 	line	77
 	movlw	01h
-u158_25:
+u153_25:
 	clrc
 	rlf	(___ftpack@arg),f
 	rlf	(___ftpack@arg+1),f
 	rlf	(___ftpack@arg+2),f
 	addlw	-1
 	skipz
-	goto	u158_25
-	goto	i1l2041
+	goto	u153_25
+	goto	i1l2022
 	line	78
 	
-i1l771:	
+i1l768:	
 	line	75
 	
-i1l2041:	
+i1l2022:	
 	btfss	(___ftpack@arg+1),(15)&7
-	goto	u159_21
-	goto	u159_20
-u159_21:
-	goto	i1l2039
-u159_20:
+	goto	u154_21
+	goto	u154_20
+u154_21:
+	goto	i1l2020
+u154_20:
 	
-i1l773:	
+i1l770:	
 	line	79
 	btfsc	(___ftpack@exp),(0)&7
-	goto	u160_21
-	goto	u160_20
-u160_21:
-	goto	i1l774
-u160_20:
+	goto	u155_21
+	goto	u155_20
+u155_21:
+	goto	i1l771
+u155_20:
 	line	80
 	
-i1l2043:	
+i1l2024:	
 	movlw	0FFh
 	andwf	(___ftpack@arg),f
 	movlw	07Fh
@@ -10878,28 +10627,28 @@ i1l2043:
 	movlw	0FFh
 	andwf	(___ftpack@arg+2),f
 	
-i1l774:	
+i1l771:	
 	line	81
 	clrc
 	rrf	(___ftpack@exp),f
 
 	line	82
 	
-i1l2045:	
+i1l2026:	
 	movf	(___ftpack@exp),w
 	movwf	((??___ftpack+0)+0)
 	clrf	((??___ftpack+0)+0+1)
 	clrf	((??___ftpack+0)+0+2)
 	movlw	010h
-u161_25:
+u156_25:
 	clrc
 	rlf	(??___ftpack+0)+0,f
 	rlf	(??___ftpack+0)+1,f
 	rlf	(??___ftpack+0)+2,f
-u161_20:
+u156_20:
 	addlw	-1
 	skipz
-	goto	u161_25
+	goto	u156_25
 	movf	0+(??___ftpack+0)+0,w
 	iorwf	(___ftpack@arg),f
 	movf	1+(??___ftpack+0)+0,w
@@ -10908,22 +10657,22 @@ u161_20:
 	iorwf	(___ftpack@arg+2),f
 	line	83
 	
-i1l2047:	
+i1l2028:	
 	movf	(___ftpack@sign),w
 	skipz
-	goto	u162_20
-	goto	i1l775
-u162_20:
+	goto	u157_20
+	goto	i1l772
+u157_20:
 	line	84
 	
-i1l2049:	
+i1l2030:	
 	bsf	(___ftpack@arg)+(23/8),(23)&7
 	
-i1l775:	
+i1l772:	
 	line	85
 	line	86
 	
-i1l764:	
+i1l761:	
 	return
 	opt stack 0
 GLOBAL	__end_of___ftpack
@@ -10977,18 +10726,18 @@ ___ftge:
 ; Regs used in ___ftge: [wreg+status,2+status,0]
 	line	6
 	
-i1l2233:	
+i1l2214:	
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfss	(___ftge@ff1+2),(23)&7
-	goto	u203_21
-	goto	u203_20
-u203_21:
-	goto	i1l2237
-u203_20:
+	goto	u198_21
+	goto	u198_20
+u198_21:
+	goto	i1l2218
+u198_20:
 	line	7
 	
-i1l2235:	
+i1l2216:	
 	movlw	low(0800000h)
 	movwf	((??___ftge+0)+0)
 	movlw	high(0800000h)
@@ -11011,42 +10760,42 @@ i1l2235:
 	movf	1+(??___ftge+3)+0,w
 	skipnc
 	incfsz	1+(??___ftge+3)+0,w
-	goto	u204_21
-	goto	u204_22
-u204_21:
+	goto	u199_21
+	goto	u199_22
+u199_21:
 	addwf	(??___ftge+0)+1,f
 	
-u204_22:
+u199_22:
 	movf	2+(??___ftge+3)+0,w
 	skipnc
 	incfsz	2+(??___ftge+3)+0,w
-	goto	u204_23
-	goto	u204_24
-u204_23:
+	goto	u199_23
+	goto	u199_24
+u199_23:
 	addwf	(??___ftge+0)+2,f
 	
-u204_24:
+u199_24:
 	movf	0+(??___ftge+0)+0,w
 	movwf	(___ftge@ff1)
 	movf	1+(??___ftge+0)+0,w
 	movwf	(___ftge@ff1+1)
 	movf	2+(??___ftge+0)+0,w
 	movwf	(___ftge@ff1+2)
-	goto	i1l2237
+	goto	i1l2218
 	
-i1l821:	
+i1l818:	
 	line	8
 	
-i1l2237:	
+i1l2218:	
 	btfss	(___ftge@ff2+2),(23)&7
-	goto	u205_21
-	goto	u205_20
-u205_21:
-	goto	i1l2241
-u205_20:
+	goto	u200_21
+	goto	u200_20
+u200_21:
+	goto	i1l2222
+u200_20:
 	line	9
 	
-i1l2239:	
+i1l2220:	
 	movlw	low(0800000h)
 	movwf	((??___ftge+0)+0)
 	movlw	high(0800000h)
@@ -11069,80 +10818,80 @@ i1l2239:
 	movf	1+(??___ftge+3)+0,w
 	skipnc
 	incfsz	1+(??___ftge+3)+0,w
-	goto	u206_21
-	goto	u206_22
-u206_21:
+	goto	u201_21
+	goto	u201_22
+u201_21:
 	addwf	(??___ftge+0)+1,f
 	
-u206_22:
+u201_22:
 	movf	2+(??___ftge+3)+0,w
 	skipnc
 	incfsz	2+(??___ftge+3)+0,w
-	goto	u206_23
-	goto	u206_24
-u206_23:
+	goto	u201_23
+	goto	u201_24
+u201_23:
 	addwf	(??___ftge+0)+2,f
 	
-u206_24:
+u201_24:
 	movf	0+(??___ftge+0)+0,w
 	movwf	(___ftge@ff2)
 	movf	1+(??___ftge+0)+0,w
 	movwf	(___ftge@ff2+1)
 	movf	2+(??___ftge+0)+0,w
 	movwf	(___ftge@ff2+2)
-	goto	i1l2241
+	goto	i1l2222
 	
-i1l822:	
+i1l819:	
 	line	10
 	
-i1l2241:	
+i1l2222:	
 	movlw	080h
 	xorwf	(___ftge@ff1+2),f
 	line	11
 	
-i1l2243:	
+i1l2224:	
 	movlw	080h
 	xorwf	(___ftge@ff2+2),f
 	line	12
 	
-i1l2245:	
+i1l2226:	
 	movf	(___ftge@ff2+2),w
 	subwf	(___ftge@ff1+2),w
 	skipz
-	goto	u207_25
+	goto	u202_25
 	movf	(___ftge@ff2+1),w
 	subwf	(___ftge@ff1+1),w
 	skipz
-	goto	u207_25
+	goto	u202_25
 	movf	(___ftge@ff2),w
 	subwf	(___ftge@ff1),w
-u207_25:
+u202_25:
 	skipnc
-	goto	u207_21
-	goto	u207_20
-u207_21:
-	goto	i1l2249
-u207_20:
+	goto	u202_21
+	goto	u202_20
+u202_21:
+	goto	i1l2230
+u202_20:
 	
-i1l2247:	
+i1l2228:	
 	clrc
 	
-	goto	i1l823
+	goto	i1l820
 	
-i1l2017:	
+i1l1998:	
 	
-i1l2249:	
+i1l2230:	
 	setc
 	
-	goto	i1l823
+	goto	i1l820
 	
-i1l2019:	
-	goto	i1l823
+i1l2000:	
+	goto	i1l820
 	
-i1l2251:	
+i1l2232:	
 	line	13
 	
-i1l823:	
+i1l820:	
 	return
 	opt stack 0
 GLOBAL	__end_of___ftge
