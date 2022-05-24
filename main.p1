@@ -1374,18 +1374,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `ui
 ]
 [; ;main.c: 59: unsigned int fop_rule1 = 0;
-"60
-[v _fop_rule2 `ui ~T0 @X0 1 e ]
-[i _fop_rule2
--> -> 0 `i `ui
-]
-[; ;main.c: 60: unsigned int fop_rule2 = 0;
-"61
-[v _fop_rule3 `ui ~T0 @X0 1 e ]
-[i _fop_rule3
--> -> 0 `i `ui
-]
-[; ;main.c: 61: unsigned int fop_rule3 = 0;
 "64
 [v _sum `ui ~T0 @X0 1 e ]
 [i _sum
@@ -1728,9 +1716,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 196: fitemp = trimf(temp,2,5,8);
 "196
 [e = _fitemp ( _trimf (4 , , , _temp -> -> 2 `i `ui -> -> 5 `i `ui -> -> 8 `i `ui ]
-[; ;main.c: 199: fop_rule2 = max_val(fitemp,0.1);
+[; ;main.c: 199: fop_rule1 = max_val(fitemp,0.1);
 "199
-[e = _fop_rule2 ( _max_val (2 , _fitemp -> .0.1 `ui ]
+[e = _fop_rule1 ( _max_val (2 , _fitemp -> .0.1 `ui ]
 [; ;main.c: 202: x=0;
 "202
 [e = _x -> -> 0 `i `ui ]
@@ -1740,15 +1728,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 205: y = trimf(x,2,5,8);
 "205
 [e = _y ( _trimf (4 , , , _x -> -> 2 `i `ui -> -> 5 `i `ui -> -> 8 `i `ui ]
-[; ;main.c: 207: if (y >= fop_rule2)
+[; ;main.c: 207: if (y >= fop_rule1)
 "207
-[e $ ! >= _y _fop_rule2 134  ]
+[e $ ! >= _y _fop_rule1 134  ]
 [; ;main.c: 208: {
 "208
 {
-[; ;main.c: 209: tip_average = fop_rule2;
+[; ;main.c: 209: tip_average = fop_rule1;
 "209
-[e = _tip_average _fop_rule2 ]
+[e = _tip_average _fop_rule1 ]
 "210
 }
 [; ;main.c: 210: }
@@ -1779,9 +1767,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 224: fitemp = trapmf(temp,6,8.5,10,11);
 "224
 [e = _fitemp ( _trapmf (4 , , , , _temp -> -> 6 `i `ui -> .8.5 `ui -> -> 10 `i `ui -> -> 11 `i `ui ]
-[; ;main.c: 228: fop_rule3 = max_val(fitemp,0.1);
+[; ;main.c: 228: fop_rule1 = max_val(fitemp,0.1);
 "228
-[e = _fop_rule3 ( _max_val (2 , _fitemp -> .0.1 `ui ]
+[e = _fop_rule1 ( _max_val (2 , _fitemp -> .0.1 `ui ]
 [; ;main.c: 231: x=0;
 "231
 [e = _x -> -> 0 `i `ui ]
@@ -1791,15 +1779,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 234: y = trapmf(x,7,8.5,10,11);
 "234
 [e = _y ( _trapmf (4 , , , , _x -> -> 7 `i `ui -> .8.5 `ui -> -> 10 `i `ui -> -> 11 `i `ui ]
-[; ;main.c: 236: if (y >= fop_rule3)
+[; ;main.c: 236: if (y >= fop_rule1)
 "236
-[e $ ! >= _y _fop_rule3 137  ]
+[e $ ! >= _y _fop_rule1 137  ]
 [; ;main.c: 237: {
 "237
 {
-[; ;main.c: 238: tip_gorgeous = fop_rule3;
+[; ;main.c: 238: tip_gorgeous = fop_rule1;
 "238
-[e = _tip_gorgeous _fop_rule3 ]
+[e = _tip_gorgeous _fop_rule1 ]
 "239
 }
 [; ;main.c: 239: }
@@ -1918,9 +1906,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 144 ]
 [; ;main.c: 297: }
-[; ;main.c: 300: deltaV = ativa_fan*100;
+[; ;main.c: 300: deltaV = fop_rule1*100;
 "300
-[e = _deltaV * _ativa_fan -> -> 100 `i `ui ]
+[e = _deltaV * _fop_rule1 -> -> 100 `i `ui ]
 [; ;main.c: 301: if(ativa_fan*100 >= 0 && ativa_fan*100 < 1024 ){
 "301
 [e $ ! && >= * _ativa_fan -> -> 100 `i `ui -> -> 0 `i `ui < * _ativa_fan -> -> 100 `i `ui -> -> 1024 `i `ui 145  ]
@@ -1950,9 +1938,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "309
 [e :UE 125 ]
 }
-[v F1398 `(v ~T0 @X0 1 tf ]
+[v F1396 `(v ~T0 @X0 1 tf ]
 "321
-[v _ISR `IF1398 ~T0 @X0 1 e ]
+[v _ISR `IF1396 ~T0 @X0 1 e ]
 "322
 {
 [; ;main.c: 321: void interrupt ISR(void)

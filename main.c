@@ -57,8 +57,8 @@ unsigned int fitemp = 0;
 unsigned int fisetpoint    = 0;
 unsigned int foTip     = 0;
 unsigned int fop_rule1 = 0;
-unsigned int fop_rule2 = 0;
-unsigned int fop_rule3 = 0;
+//unsigned int fop_rule2 = 0;
+//unsigned int fop_rule3 = 0;
 
 // Variáveis de auxilio ao cálculo da centróide.
 unsigned int sum = 0;
@@ -196,7 +196,7 @@ void Fuzzy(unsigned int setpoint)
 		fitemp = trimf(temp,2,5,8);
 
 		// 2 - Aplicação dos operadores Fuzzy.
-		fop_rule2 = max_val(fitemp,0.1);
+		fop_rule1 = max_val(fitemp,0.1);
 
 		 // 3 - Aplicação do Método de Implicação (valores mínimos).
 		x=0;
@@ -204,9 +204,9 @@ void Fuzzy(unsigned int setpoint)
 
 		y = trimf(x,2,5,8);
 
-		if (y >= fop_rule2)
+		if (y >= fop_rule1)
 		{
-			tip_average  = fop_rule2;
+			tip_average  = fop_rule1;
 		}
 		else
 		{
@@ -225,7 +225,7 @@ void Fuzzy(unsigned int setpoint)
 //		fiFood    = trapmf(food,7,9,10,10);
 
 		// 2 - Aplicação dos operadores Fuzzy.
-		fop_rule3 = max_val(fitemp,0.1);
+		fop_rule1 = max_val(fitemp,0.1);
 
 		// 3 - Aplicação do Método de Implicação (valores mínimos).
 		x=0;
@@ -233,9 +233,9 @@ void Fuzzy(unsigned int setpoint)
 
 		y = trapmf(x,7,8.5,10,11);
 
-		if (y >= fop_rule3)
+		if (y >= fop_rule1)
 		{
-			tip_gorgeous  = fop_rule3;
+			tip_gorgeous  = fop_rule1;
 		}
 		else
 		{
@@ -297,15 +297,15 @@ void Fuzzy(unsigned int setpoint)
 	}
 
 	// Passa o resultado final para o pwm
-	deltaV = ativa_fan*100;
-	if(ativa_fan*100 >= 0 && ativa_fan*100 < 1024 ){
-		PWM_DutyCycle2(ativa_fan*100);
+	deltaV = fop_rule1*1000;
+	if(deltaV >= 0 && deltaV < 9000 ){
+		PWM_DutyCycle2(deltaV);
 	}else 
 	{
 		PWM_DutyCycle2(0);
 	}
 	
-	rpm = ativa_fan;
+	// rpm = ativa_fan;
 }
 
 
