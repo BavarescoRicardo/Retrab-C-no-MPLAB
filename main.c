@@ -179,11 +179,11 @@ void Fuzzy(unsigned int setpoint)
 
 		if (y > fop_rule1)
 		{
-			ideal  = fop_rule1;
+			tip  = fop_rule1;
 		}
 		else
 		{
-			ideal  = y;
+			tip  = y;
 		}		 
 
 	}
@@ -206,11 +206,11 @@ void Fuzzy(unsigned int setpoint)
 
 		if (y >= fop_rule1)
 		{
-			tip_average  = fop_rule1;
+			tip  = fop_rule1;
 		}
 		else
 		{
-			tip_average  = y;
+			tip  = y;
 		}
 
 		 	
@@ -235,11 +235,11 @@ void Fuzzy(unsigned int setpoint)
 
 		if (y >= fop_rule1)
 		{
-			tip_gorgeous  = fop_rule1;
+			tip  = fop_rule1;
 		}
 		else
 		{
-			tip_gorgeous  = y;
+			tip  = y;
 		}
 		 
 	}
@@ -265,7 +265,7 @@ void Fuzzy(unsigned int setpoint)
 	// Implicação dos antecedentes pelo consequente.
 	// 5 - defuzzificação da saida
 				total_area = 1;
-				tip = fop_rule1*1000;
+				// tip = fop_rule1*1000;
 				unsigned int sum = 0;
 
 				total_area = total_area + tip;
@@ -309,6 +309,7 @@ void Fuzzy(unsigned int setpoint)
 	
 	// rpm = ativa_fan;
 	// deltaV = ativa_fan*1000;
+	deltaV = tip*1000;
 }
 
 
