@@ -157,8 +157,6 @@ void Fuzzy(unsigned int setpoint)
 	}
 
 	deltaV = (setpoint - pwmAnt); 
-	pwm = temp;
-	rpm = temp;
 
    //Decide se valor é aumento ou reducao
    if (temp >10) temp = 10;
@@ -299,7 +297,14 @@ void Fuzzy(unsigned int setpoint)
 	}
 
 	// Passa o resultado final para o pwm
-	PWM_DutyCycle2(ativa_fan*100);
+	deltaV = ativa_fan*100;
+	if(ativa_fan*100 >= 0 && ativa_fan*100 < 1024 ){
+		PWM_DutyCycle2(ativa_fan*100);
+	}else 
+	{
+		PWM_DutyCycle2(0);
+	}
+	
 	rpm = ativa_fan;
 }
 

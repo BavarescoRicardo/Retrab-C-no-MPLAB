@@ -1748,8 +1748,6 @@ PORTBbits.RB2 = 0;
 }
 
 deltaV = (setpoint - pwmAnt);
-pwm = temp;
-rpm = temp;
 
 
 if (temp >10) temp = 10;
@@ -1890,11 +1888,18 @@ velocidade[0] = '9';
 }
 
 
+deltaV = ativa_fan*100;
+if(ativa_fan*100 >= 0 && ativa_fan*100 < 1024 ){
 PWM_DutyCycle2(ativa_fan*100);
+}else
+{
+PWM_DutyCycle2(0);
+}
+
 rpm = ativa_fan;
 }
 
-# 316
+# 321
 void interrupt ISR(void)
 {
 
