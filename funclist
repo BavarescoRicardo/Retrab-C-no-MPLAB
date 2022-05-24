@@ -1,11 +1,11 @@
-i1_TIMER0_Set: CODE, 2438 0 6
+i1_TIMER0_Set: CODE, 2430 0 6
 _LCD_Init: CODE, 3351 0 109
-___aldiv: CODE, 1758 0 187
+___aldiv: CODE, 1761 0 187
 __stringtab: STRCODE, 4096 0 18
 i1_PWM_DutyCycle2: CODE, 2598 0 27
 __stringdata: STRCODE, 4124 0 263
-_USART_WriteChar: CODE, 2458 0 8
-_ISR: CODE, 1373 0 385
+_USART_WriteChar: CODE, 2450 0 8
+_ISR: CODE, 1373 0 388
 _trimf: CODE, 3460 0 128
 _PWM_DutyCycle1: CODE, 2652 0 27
 _PWM_DutyCycle2: CODE, 2679 0 27
@@ -27,7 +27,7 @@ _isdigit: CODE, 2522 0 16
 _sprintf: CODE, 820 0 553
 ___lwmod: CODE, 3090 0 68
 i1_USART_WriteString: CODE, 2741 0 35
-_TIMER0_Set: CODE, 2444 0 6
+_TIMER0_Set: CODE, 2436 0 6
 _TIMER0_Init: CODE, 2466 0 11
 _USART_WriteString: CODE, 2849 0 37
 _Fuzzy: CODE, 68 0 752
@@ -35,8 +35,8 @@ ___wmul: CODE, 2886 0 37
 _LCD_WriteCmd: CODE, 2492 0 15
 _PWM_Init: CODE, 2776 0 36
 _ADC_Init: CODE, 2538 0 18
-i1_USART_WriteChar: CODE, 2450 0 8
-___ftge: CODE, 1945 0 95
+i1_USART_WriteChar: CODE, 2442 0 8
+___ftge: CODE, 1948 0 95
 _LCD_WriteData: CODE, 2507 0 15
 _USART_Init: CODE, 3158 0 89
-Total: 3964
+Total: 3967

@@ -4,7 +4,7 @@ Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+PIC16F877A.sym --cmf=PIC16F877A.cmf -z -Q16F877A \
-  -oC:\Users\Ninguem\AppData\Local\Temp\s8dk.6 -MPIC16F877A.map -E1 \
+  -oC:\Users\Ninguem\AppData\Local\Temp\s6jo.6 -MPIC16F877A.map -E1 \
   -ver=XC8 -ASTACK=0110h-016fh -pstack=STACK -ACONST=00h-0FFhx32 \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -AENTRY=00h-0FFhx32 \
   -ASTRING=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
@@ -30,7 +30,7 @@ startup.obj     end_init                             12       12        3       
                 config                             2007     2007        1     400E       0
 PIC16F877A.obj  cinit                                15       15       2F        8       0
                 intentry                              4        4        E        8       0
-                text36                              799      799       5F        8       0
+                text36                              79C      79C       5F        8       0
                 text35                              CAF      CAF       68     195E       0
                 text34                              9FC      9FC       14     13F8       0
                 text33                              9AD      9AD        F     135A       0
@@ -40,11 +40,11 @@ PIC16F877A.obj  cinit                                15       15       2F       
                 text29                              A26      A26       1B     144C       0
                 text28                              A92      A92       23     1524       0
                 text27                               44       44      2F0        8       0
-                text26                              992      992        8     1324       0
+                text26                              98A      98A        8     1314       0
                 text25                              AB5      AB5       23     156A       0
                 text24                              A41      A41       1B     1482       0
-                text23                              986      986        6     130C       0
-                text22                              55D      55D      181        8       0
+                text23                              97E      97E        6     12FC       0
+                text22                              55D      55D      184        8       0
                 text21                              9EA      9EA       12     13D4       0
                 text20                              9BC      9BC        F     1378       0
                 text19                              B6B      B6B       29     16D6       0
@@ -56,10 +56,10 @@ PIC16F877A.obj  cinit                                15       15       2F       
                 text13                              A77      A77       1B     14EE       0
                 text12                              AD8      AD8       24     15B0       0
                 text11                              9A2      9A2        B     1344       0
-                text10                              98C      98C        6     1318       0
-                text9                               6DE      6DE       BB        8       0
+                text10                              984      984        6     1308       0
+                text9                               6E1      6E1       BB        8       0
                 text8                               C56      C56       59     18AC       0
-                text7                               99A      99A        8     1334       0
+                text7                               992      992        8     1324       0
                 text6                               B21      B21       25     1642       0
                 text5                               BD2      BD2       40     17A4       0
                 text4                               C12      C12       44     1824       0
@@ -71,14 +71,14 @@ PIC16F877A.obj  cinit                                15       15       2F       
                 cstackCOMMON                         70       70        E       70       1
                 cstackBANK1                          D8       D8       16       A0       1
                 cstackBANK3                         190      190        3      190       1
-                clrtext                             7F8      7F8        8        8       0
+                clrtext                             99A      99A        8     1334       0
                 dataBANK1                            EE       EE        2       A0       1
                 bssBANK1                             A0       A0       38       A0       1
                 dataBANK0                            57       57        2       20       1
                 bssBANK0                             41       41       16       20       1
                 stringtext                         1000     1000      123       20       0
-                idataBANK1                          982      982        2     1304       0
-                idataBANK0                          984      984        2     1308       0
+                idataBANK1                          7FD      7FD        2        8       0
+                idataBANK0                          7FB      7FB        2        8       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -90,7 +90,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                15       15       2F         0
                 intentry                              4        4        E         0
                 reset_vec                             0        0        3         0
-                text36                              799      799       5F         0
+                text36                              79C      79C       5F         0
                 text35                              CAF      CAF       68         0
                 text34                              9FC      9FC       14         0
                 text33                              9AD      9AD        F         0
@@ -100,11 +100,11 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text29                              A26      A26       1B         0
                 text28                              A92      A92       23         0
                 text27                               44       44      2F0         0
-                text26                              992      992        8         0
+                text26                              98A      98A        8         0
                 text25                              AB5      AB5       23         0
                 text24                              A41      A41       1B         0
-                text23                              986      986        6         0
-                text22                              55D      55D      181         0
+                text23                              97E      97E        6         0
+                text22                              55D      55D      184         0
                 text21                              9EA      9EA       12         0
                 text20                              9BC      9BC        F         0
                 text19                              B6B      B6B       29         0
@@ -116,10 +116,10 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text13                              A77      A77       1B         0
                 text12                              AD8      AD8       24         0
                 text11                              9A2      9A2        B         0
-                text10                              98C      98C        6         0
-                text9                               6DE      6DE       BB         0
+                text10                              984      984        6         0
+                text9                               6E1      6E1       BB         0
                 text8                               C56      C56       59         0
-                text7                               99A      99A        8         0
+                text7                               992      992        8         0
                 text6                               B21      B21       25         0
                 text5                               BD2      BD2       40         0
                 text4                               C12      C12       44         0
@@ -127,9 +127,9 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text2                               9DA      9DA       10         0
                 text1                               334      334      229         0
                 maintext                            EA3      EA3      15D         0
-                clrtext                             7F8      7F8        8         0
-                idataBANK1                          982      982        2         0
-                idataBANK0                          984      984        2         0
+                clrtext                             99A      99A        8         0
+                idataBANK1                          7FD      7FD        2         0
+                idataBANK0                          7FB      7FB        2         0
 
         CLASS   STRCODE        
                 stringtext                         1000     1000      123         0
@@ -181,17 +181,16 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  0007FC  000800         8       0  CODE        2
+                intentry                       000004  0007FB  0007FF         8       0  CODE        2
                 cstackBANK0                    000020  000039  000059        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
                 bssBANK1                       0000A0  000050  0000F0        A0       1  BANK1       1
                 cstackBANK3                    000190  000003  000193       190       1  BANK3       1
-                idataBANK1                     000982  000002  000984      1304       0  CODE        2
-                idataBANK0                     000984  000002  000986      1308       0  CODE        2
-                text23                         000986  000006  00098C      130C       0  CODE        2
-                text10                         00098C  000006  000992      1318       0  CODE        2
-                text26                         000992  000008  00099A      1324       0  CODE        2
-                text7                          00099A  000008  0009A2      1334       0  CODE        2
+                text23                         00097E  000006  000984      12FC       0  CODE        2
+                text10                         000984  000006  00098A      1308       0  CODE        2
+                text26                         00098A  000008  000992      1314       0  CODE        2
+                text7                          000992  000008  00099A      1324       0  CODE        2
+                clrtext                        00099A  000008  0009A2      1334       0  CODE        2
                 text11                         0009A2  00000B  0009AD      1344       0  CODE        2
                 text33                         0009AD  00000F  0009BC      135A       0  CODE        2
                 text20                         0009BC  00000F  0009CB      1378       0  CODE        2
@@ -231,14 +230,14 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0193-01EF             5D           1
         CODE             0003-0003              1           2
-                         0800-0981            182
+                         07FF-097D              1
                          1123-1FFF            6DD
         CONST            0003-0003              1           2
-                         0800-0981            100
+                         07FF-097D            100
                          1123-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         0800-0981            100
+                         07FF-097D            100
                          1123-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0059-006F             17           1
@@ -250,10 +249,10 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         0800-0981            182
+                         07FF-097D            17F
                          1123-1FFF            EDD
         STRING           0003-0003              1           2
-                         0800-0981            100
+                         07FF-097D            100
                          1123-1FFF            100
 
                                   Symbol Table
@@ -340,7 +339,7 @@ _T1CON                        (abs)        0010
 _T1CONbits                    (abs)        0010
 _T2CONbits                    (abs)        0012
 _TIMER0_Init                  text11       09A2
-_TIMER0_Set                   text10       098C
+_TIMER0_Set                   text10       0984
 _TMR0                         (abs)        0001
 _TMR1                         (abs)        000E
 _TMR1H                        (abs)        000F
@@ -354,7 +353,7 @@ _TXREG                        (abs)        0019
 _TXSTAbits                    (abs)        0098
 _USART_Init                   text8        0C56
 _USART_ReceiveChar            text24       0A41
-_USART_WriteChar              text7        099A
+_USART_WriteChar              text7        0992
 _USART_WriteString            text6        0B21
 __CFG_BOREN$OFF               (abs)        0000
 __CFG_CP$OFF                  (abs)        0000
@@ -451,13 +450,13 @@ __S0                          (abs)        2008
 __S1                          (abs)        0193
 __S2                          (abs)        0000
 __S3                          (abs)        0000
-___aldiv                      text9        06DE
+___aldiv                      text9        06E1
 ___aldiv@counter              cstackBANK1  00D8
 ___aldiv@dividend             cstackBANK0  003B
 ___aldiv@divisor              cstackBANK0  0037
 ___aldiv@quotient             cstackBANK1  00DA
 ___aldiv@sign                 cstackBANK1  00D9
-___ftge                       text36       0799
+___ftge                       text36       079C
 ___ftge@ff1                   cstackBANK0  0020
 ___ftge@ff2                   cstackBANK0  0023
 ___ftpack                     text35       0CAF
@@ -484,7 +483,7 @@ ___wmul@multiplier            cstackBANK0  0037
 ___wmul@product               cstackBANK0  003B
 __end_of_ADC_Init             text21       09FC
 __end_of_Fuzzy                text27       0334
-__end_of_ISR                  text22       06DE
+__end_of_ISR                  text22       06E1
 __end_of_LCD_Clear            text19       0B94
 __end_of_LCD_Cursor           text18       0A26
 __end_of_LCD_Init             text17       0D84
@@ -495,13 +494,13 @@ __end_of_PWM_DutyCycle1       text14       0A77
 __end_of_PWM_DutyCycle2       text13       0A92
 __end_of_PWM_Init             text12       0AFC
 __end_of_TIMER0_Init          text11       09AD
-__end_of_TIMER0_Set           text10       0992
+__end_of_TIMER0_Set           text10       098A
 __end_of_USART_Init           text8        0CAF
 __end_of_USART_ReceiveChar    text24       0A5C
-__end_of_USART_WriteChar      text7        09A2
+__end_of_USART_WriteChar      text7        099A
 __end_of_USART_WriteString    text6        0B46
-__end_of___aldiv              text9        0799
-__end_of___ftge               text36       07F8
+__end_of___aldiv              text9        079C
+__end_of___ftge               text36       07FB
 __end_of___ftpack             text35       0D17
 __end_of___lwdiv              text5        0C12
 __end_of___lwmod              text4        0C56
@@ -518,8 +517,8 @@ __end_of_sprintf              text1        055D
 __end_of_trapmf               text31       0EA3
 __end_of_trimf                text30       0E04
 __end_ofi1_PWM_DutyCycle2     text29       0A41
-__end_ofi1_TIMER0_Set         text23       098C
-__end_ofi1_USART_WriteChar    text26       099A
+__end_ofi1_TIMER0_Set         text23       0984
+__end_ofi1_USART_WriteChar    text26       0992
 __end_ofi1_USART_WriteString  text25       0AD8
 __end_ofi1___lwdiv            text32       0BD2
 __end_ofi1___wmul             text28       0AB5
@@ -532,13 +531,13 @@ __pcstackBANK3                cstackBANK3  0190
 __pcstackCOMMON               cstackCOMMON 0070
 __pdataBANK0                  dataBANK0    0057
 __pdataBANK1                  dataBANK1    00EE
-__pidataBANK0                 idataBANK0   0984
-__pidataBANK1                 idataBANK1   0982
+__pidataBANK0                 idataBANK0   07FB
+__pidataBANK1                 idataBANK1   07FD
 __pintentry                   intentry     0004
 __pmaintext                   maintext     0EA3
 __pstringtext                 stringtext   1000
 __ptext1                      text1        0334
-__ptext10                     text10       098C
+__ptext10                     text10       0984
 __ptext11                     text11       09A2
 __ptext12                     text12       0AD8
 __ptext13                     text13       0A77
@@ -552,10 +551,10 @@ __ptext2                      text2        09DA
 __ptext20                     text20       09BC
 __ptext21                     text21       09EA
 __ptext22                     text22       055D
-__ptext23                     text23       0986
+__ptext23                     text23       097E
 __ptext24                     text24       0A41
 __ptext25                     text25       0AB5
-__ptext26                     text26       0992
+__ptext26                     text26       098A
 __ptext27                     text27       0044
 __ptext28                     text28       0A92
 __ptext29                     text29       0A26
@@ -566,13 +565,13 @@ __ptext32                     text32       0B94
 __ptext33                     text33       09AD
 __ptext34                     text34       09FC
 __ptext35                     text35       0CAF
-__ptext36                     text36       0799
+__ptext36                     text36       079C
 __ptext4                      text4        0C12
 __ptext5                      text5        0BD2
 __ptext6                      text6        0B21
-__ptext7                      text7        099A
+__ptext7                      text7        0992
 __ptext8                      text8        0C56
-__ptext9                      text9        06DE
+__ptext9                      text9        06E1
 __size_of_ADC_Init            (abs)        0000
 __size_of_Fuzzy               (abs)        0000
 __size_of_ISR                 (abs)        0000
@@ -654,15 +653,15 @@ _trimf                        text30       0D84
 _x                            bssBANK0     0053
 _y                            bssBANK0     0055
 btemp                         (abs)        007E
-clear_ram0                    clrtext      07F8
+clear_ram0                    clrtext      099A
 end_of_initialization         cinit        0040
 i1PWM_DutyCycle2@valor        cstackCOMMON 0070
 i1TIMER0_Set@contagens        cstackCOMMON 0070
 i1USART_WriteChar@byte        cstackCOMMON 0070
 i1USART_WriteString@str       cstackCOMMON 0071
 i1_PWM_DutyCycle2             text29       0A26
-i1_TIMER0_Set                 text23       0986
-i1_USART_WriteChar            text26       0992
+i1_TIMER0_Set                 text23       097E
+i1_USART_WriteChar            text26       098A
 i1_USART_WriteString          text25       0AB5
 i1___lwdiv                    text32       0B94
 i1___lwdiv@counter            cstackCOMMON 0077
@@ -1916,7 +1915,7 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c
-		___ftge        		CODE           	0799	0000	95
+		___ftge        		CODE           	079C	0000	95
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c estimated size: 95
 
@@ -1941,14 +1940,14 @@ C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c estimated size: 37
 
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c
-		_ISR           		CODE           	055D	0000	385
+		_ISR           		CODE           	055D	0000	388
 		_trimf         		CODE           	0D84	0000	128
 		_main          		CODE           	0EA3	0000	349
 		_trapmf        		CODE           	0E04	0000	159
 		_max_val       		CODE           	09AD	0000	15
 		_Fuzzy         		CODE           	0044	0000	752
 
-C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c estimated size: 1788
+C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c estimated size: 1791
 
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.c
 		_PWM_DutyCycle1		CODE           	0A5C	0000	27
@@ -1963,7 +1962,7 @@ C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPL
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c estimated size: 18
 
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c
-		_TIMER0_Set    		CODE           	098C	0000	6
+		_TIMER0_Set    		CODE           	0984	0000	6
 		_TIMER0_Init   		CODE           	09A2	0000	11
 
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c estimated size: 17
@@ -1974,7 +1973,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c estimated size: 64
 
 shared
-		i1_TIMER0_Set  		CODE           	0986	0000	6
+		i1_TIMER0_Set  		CODE           	097E	0000	6
 		__stringtab    		STRCODE        	1000	0000	18
 		i1_PWM_DutyCycl		CODE           	0A26	0000	27
 		__stringdata   		STRCODE        	101C	0000	263
@@ -1983,12 +1982,12 @@ shared
 		i1___wmul      		CODE           	0A92	0000	35
 		__initializatio		CODE           	0015	0000	43
 		i1_USART_WriteS		CODE           	0AB5	0000	35
-		i1_USART_WriteC		CODE           	0992	0000	8
+		i1_USART_WriteC		CODE           	098A	0000	8
 
 shared estimated size: 507
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c
-		___aldiv       		CODE           	06DE	0000	187
+		___aldiv       		CODE           	06E1	0000	187
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c estimated size: 187
 
@@ -2003,7 +2002,7 @@ C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPL
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c estimated size: 239
 
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c
-		_USART_WriteCha		CODE           	099A	0000	8
+		_USART_WriteCha		CODE           	0992	0000	8
 		_USART_ReceiveC		CODE           	0A41	0000	27
 		_USART_WriteStr		CODE           	0B21	0000	37
 		_USART_Init    		CODE           	0C56	0000	89

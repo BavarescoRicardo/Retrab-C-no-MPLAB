@@ -1932,6 +1932,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 334: PWM_DutyCycle2(pwm);
 "334
 [e ( _PWM_DutyCycle2 (1 -> _pwm `i ]
+[; ;main.c: 335: return;
+"335
+[e $UE 144  ]
 "336
 }
 [e :U 146 ]

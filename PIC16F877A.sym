@@ -23,7 +23,7 @@ _pwm 49 0 BANK0 1
 _contagens_tm0 A4 0 BANK1 1
 __CFG_PWRTE$ON 0 0 ABS 0
 _posicao_do_grafico_service B2 0 BANK1 1
-__end_ofi1_TIMER0_Set 98C 0 CODE 0
+__end_ofi1_TIMER0_Set 984 0 CODE 0
 _TMR0 1 0 ABS 0
 _TMR1 E 0 ABS 0
 __end_of_LCD_Init D84 0 CODE 0
@@ -37,7 +37,7 @@ ltemp 7E 0 ABS 0
 ttemp 7E 0 ABS 0
 wtemp 7E 0 ABS 0
 start 12 0 CODE 0
-__end_of___aldiv 799 0 CODE 0
+__end_of___aldiv 79C 0 CODE 0
 _TMR1H F 0 ABS 0
 _TMR1L E 0 ABS 0
 _RCREG 1A 0 ABS 0
@@ -91,11 +91,11 @@ __end_of__stringdata 1123 0 STRCODE 0
 ___ftge@ff1 20 0 BANK0 1
 _derro A6 0 BANK1 1
 ?_sprintf DC 0 BANK1 1
-__end_of_USART_WriteChar 9A2 0 CODE 0
+__end_of_USART_WriteChar 99A 0 CODE 0
 _ADC_Init 9EA 0 CODE 0
 _LCD_Init D17 0 CODE 0
 _Fuzzy 44 0 CODE 0
-__end_of_ISR 6DE 0 CODE 0
+__end_of_ISR 6E1 0 CODE 0
 _PWM_Init AD8 0 CODE 0
 __Hfunctab 0 0 CODE 0
 __Lfunctab 0 0 CODE 0
@@ -157,7 +157,7 @@ i1USART_WriteChar@byte 70 0 COMMON 1
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
 trimf@x 20 0 BANK0 1
-___ftge 799 0 CODE 0
+___ftge 79C 0 CODE 0
 stackhi 0 0 ABS 0
 ?_trimf 20 0 BANK0 1
 sprintf@sp EC 0 BANK1 1
@@ -245,13 +245,13 @@ __ptext2 9DA 0 CODE 0
 __ptext3 B46 0 CODE 0
 __ptext4 C12 0 CODE 0
 __ptext5 BD2 0 CODE 0
-_TIMER0_Set 98C 0 CODE 0
+_TIMER0_Set 984 0 CODE 0
 __ptext6 B21 0 CODE 0
-__ptext7 99A 0 CODE 0
+__ptext7 992 0 CODE 0
 __HcstackBANK1 0 0 ABS 0
 __LcstackBANK1 0 0 ABS 0
 __ptext8 C56 0 CODE 0
-__ptext9 6DE 0 CODE 0
+__ptext9 6E1 0 CODE 0
 __pcstackBANK1 D8 0 BANK1 1
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
@@ -261,7 +261,7 @@ trapmf@a 22 0 BANK0 1
 trapmf@b 24 0 BANK0 1
 trapmf@c 26 0 BANK0 1
 trapmf@d 28 0 BANK0 1
-_USART_WriteChar 99A 0 CODE 0
+_USART_WriteChar 992 0 CODE 0
 __end_of__initialization 40 0 CODE 0
 _CCP1CONbits 17 0 ABS 0
 _CCP2CONbits 1D 0 ABS 0
@@ -298,7 +298,7 @@ _isdigit 9DA 0 CODE 0
 __Hcinit 44 0 CODE 0
 __Lcinit 15 0 CODE 0
 __CFG_FOSC$HS 0 0 ABS 0
-___aldiv 6DE 0 CODE 0
+___aldiv 6E1 0 CODE 0
 _LCD_WriteString AFC 0 CODE 0
 _USART_WriteString B21 0 CODE 0
 __Hspace_3 0 0 ABS 0
@@ -310,7 +310,7 @@ __size_of_USART_WriteChar 0 0 ABS 0
 __end_of_max_val 9BC 0 CODE 0
 __HidataBANK0 0 0 ABS 0
 __LidataBANK0 0 0 ABS 0
-__pidataBANK0 984 0 CODE 0
+__pidataBANK0 7FB 0 CODE 0
 __end_of_LCD_Cursor A26 0 CODE 0
 __end_of_isdigit 9EA 0 CODE 0
 __size_of_LCD_Init 0 0 ABS 0
@@ -319,7 +319,7 @@ __size_of_max_val 0 0 ABS 0
 i1___lwdiv@divisor 70 0 COMMON 1
 _USART_Init C56 0 CODE 0
 _posicao_do_grafico AE 0 BANK1 1
-clear_ram0 7F8 0 CODE 0
+clear_ram0 99A 0 CODE 0
 ___ftpack@arg 70 0 COMMON 1
 _fop_rule1 47 0 BANK0 1
 _PWM_DutyCycle2 A77 0 CODE 0
@@ -338,7 +338,7 @@ i1___wmul@multiplier 78 0 COMMON 1
 __Hstringtext 0 0 ABS 0
 __Lstringtext 0 0 ABS 0
 __pstringtext 1000 0 STRCODE 0
-__ptext10 98C 0 CODE 0
+__ptext10 984 0 CODE 0
 _pas_cooler 57 0 BANK0 1
 __ptext20 9BC 0 CODE 0
 __ptext11 9A2 0 CODE 0
@@ -351,7 +351,7 @@ __ptext13 A77 0 CODE 0
 __ptext32 B94 0 CODE 0
 _ADCON0bits 1F 0 ABS 0
 _ADCON1bits 9F 0 ABS 0
-__ptext23 986 0 CODE 0
+__ptext23 97E 0 CODE 0
 _EECON1bits 18C 0 ABS 0
 sprintf@prec E4 0 BANK1 1
 __HidataBANK1 0 0 ABS 0
@@ -359,17 +359,17 @@ __LidataBANK1 0 0 ABS 0
 __ptext14 A5C 0 CODE 0
 __ptext33 9AD 0 CODE 0
 __size_ofi1_PWM_DutyCycle2 0 0 ABS 0
-__pidataBANK1 982 0 CODE 0
+__pidataBANK1 7FD 0 CODE 0
 __ptext24 A41 0 CODE 0
 __ptext15 AFC 0 CODE 0
 __ptext34 9FC 0 CODE 0
 __ptext25 AB5 0 CODE 0
 __ptext16 9CB 0 CODE 0
 __ptext35 CAF 0 CODE 0
-__ptext26 992 0 CODE 0
+__ptext26 98A 0 CODE 0
 __CFG_BOREN$OFF 0 0 ABS 0
 __ptext17 D17 0 CODE 0
-__ptext36 799 0 CODE 0
+__ptext36 79C 0 CODE 0
 __end_of___lwmod C56 0 CODE 0
 __ptext27 44 0 CODE 0
 ___lwmod@divisor D8 0 BANK1 1
@@ -385,7 +385,7 @@ __Lend_init 12 0 CODE 0
 ___aldiv@divisor 37 0 BANK0 1
 ___ftpack@exp 73 0 COMMON 1
 ___lwdiv@divisor 37 0 BANK0 1
-__end_of_TIMER0_Set 992 0 CODE 0
+__end_of_TIMER0_Set 98A 0 CODE 0
 __size_of_Fuzzy 0 0 ABS 0
 _tip_average C0 0 BANK1 1
 LCD_WriteCmd@Byte 38 0 BANK0 1
@@ -396,8 +396,8 @@ i1___wmul@multiplicand 7A 0 COMMON 1
 __size_of___wmul 0 0 ABS 0
 __Hreset_vec 3 0 CODE 0
 __Lreset_vec 0 0 CODE 0
-i1_USART_WriteChar 992 0 CODE 0
-i1_TIMER0_Set 986 0 CODE 0
+i1_USART_WriteChar 98A 0 CODE 0
+i1_TIMER0_Set 97E 0 CODE 0
 __HcstackBANK3 0 0 ABS 0
 __LcstackBANK3 0 0 ABS 0
 __pcstackBANK3 190 0 BANK3 1
@@ -438,7 +438,7 @@ ___lwdiv@quotient 3D 0 BANK0 1
 __size_of___ftge 0 0 ABS 0
 __end_of_PWM_Init AFC 0 CODE 0
 __end_of_ADC_Init 9FC 0 CODE 0
-__end_ofi1_USART_WriteChar 99A 0 CODE 0
+__end_ofi1_USART_WriteChar 992 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
 __pmaintext EA3 0 CODE 0
@@ -448,7 +448,7 @@ __size_of_sprintf 0 0 ABS 0
 i1___lwdiv@quotient 75 0 COMMON 1
 __size_ofi1_USART_WriteString 0 0 ABS 0
 __initialization 15 0 CODE 0
-__end_of___ftge 7F8 0 CODE 0
+__end_of___ftge 7FB 0 CODE 0
 __stringbase 1012 0 STRCODE 0
 __end_of_LCD_WriteData 9DA 0 CODE 0
 ___lwmod@dividend DA 0 BANK1 1
@@ -469,7 +469,7 @@ isdigit@c 38 0 BANK0 1
 i1USART_WriteString@str 71 0 COMMON 1
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 FFF CODE 8 0
+intentry 8 FFD CODE 8 0
 config 400E 400F CONFIG 400E 0
 cstackCOMMON 70 7D COMMON 70 1
 bssBANK1 A0 EF BANK1 A0 1
@@ -504,12 +504,11 @@ text16 1396 13B3 CODE 1396 0
 text20 1378 1395 CODE 1378 0
 text33 135A 1377 CODE 135A 0
 text11 1344 1359 CODE 1344 0
-text7 1334 1343 CODE 1334 0
-text26 1324 1333 CODE 1324 0
-text10 1318 1323 CODE 1318 0
-text23 130C 1317 CODE 130C 0
-idataBANK0 1308 130B CODE 1308 0
-idataBANK1 1304 1307 CODE 1304 0
+clrtext 1334 1343 CODE 1334 0
+text7 1324 1333 CODE 1324 0
+text26 1314 1323 CODE 1314 0
+text10 1308 1313 CODE 1308 0
+text23 12FC 1307 CODE 12FC 0
 %locals
 startup.obj
 startup.as
@@ -551,16 +550,16 @@ PIC16F877A.as
 1888 40 0 CODE 0
 1889 40 0 CODE 0
 1890 41 0 CODE 0
-1840 7F8 0 CODE 0
-1841 7F8 0 CODE 0
-1842 7F9 0 CODE 0
-1843 7F9 0 CODE 0
-1844 7FA 0 CODE 0
-1845 7FB 0 CODE 0
-1846 7FC 0 CODE 0
-1847 7FD 0 CODE 0
-1848 7FE 0 CODE 0
-1849 7FF 0 CODE 0
+1840 99A 0 CODE 0
+1841 99A 0 CODE 0
+1842 99B 0 CODE 0
+1843 99B 0 CODE 0
+1844 99C 0 CODE 0
+1845 99D 0 CODE 0
+1846 99E 0 CODE 0
+1847 99F 0 CODE 0
+1848 9A0 0 CODE 0
+1849 9A1 0 CODE 0
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c
 487 EA3 0 CODE 0
 489 EA3 0 CODE 0
@@ -704,10 +703,10 @@ C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPL
 56 B2F 0 CODE 0
 57 B3F 0 CODE 0
 54 B45 0 CODE 0
-44 99A 0 CODE 0
-46 99D 0 CODE 0
-47 99F 0 CODE 0
-48 9A1 0 CODE 0
+44 992 0 CODE 0
+46 995 0 CODE 0
+47 997 0 CODE 0
+48 999 0 CODE 0
 6 C56 0 CODE 0
 13 C56 0 CODE 0
 16 C91 0 CODE 0
@@ -731,35 +730,35 @@ C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPL
 39 CAB 0 CODE 0
 40 CAE 0 CODE 0
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c
-6 6DE 0 CODE 0
-14 6DE 0 CODE 0
-15 6E1 0 CODE 0
-16 6E5 0 CODE 0
-17 6F0 0 CODE 0
-18 6F4 0 CODE 0
-19 6F4 0 CODE 0
-20 6F7 0 CODE 0
-21 702 0 CODE 0
-23 708 0 CODE 0
-24 712 0 CODE 0
-25 71A 0 CODE 0
-26 71E 0 CODE 0
-27 722 0 CODE 0
-28 72C 0 CODE 0
-26 732 0 CODE 0
-31 733 0 CODE 0
-32 741 0 CODE 0
-33 751 0 CODE 0
-34 75F 0 CODE 0
-36 762 0 CODE 0
-37 76C 0 CODE 0
-39 772 0 CODE 0
-40 777 0 CODE 0
-41 782 0 CODE 0
+6 6E1 0 CODE 0
+14 6E1 0 CODE 0
+15 6E4 0 CODE 0
+16 6E8 0 CODE 0
+17 6F3 0 CODE 0
+18 6F7 0 CODE 0
+19 6F7 0 CODE 0
+20 6FA 0 CODE 0
+21 705 0 CODE 0
+23 70B 0 CODE 0
+24 715 0 CODE 0
+25 71D 0 CODE 0
+26 721 0 CODE 0
+27 725 0 CODE 0
+28 72F 0 CODE 0
+26 735 0 CODE 0
+31 736 0 CODE 0
+32 744 0 CODE 0
+33 754 0 CODE 0
+34 762 0 CODE 0
+36 765 0 CODE 0
+37 76F 0 CODE 0
+39 775 0 CODE 0
+40 77A 0 CODE 0
+41 785 0 CODE 0
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c
-20 98C 0 CODE 0
-22 98F 0 CODE 0
-23 991 0 CODE 0
+20 984 0 CODE 0
+22 987 0 CODE 0
+23 989 0 CODE 0
 6 9A2 0 CODE 0
 8 9A2 0 CODE 0
 9 9A5 0 CODE 0
@@ -879,68 +878,69 @@ C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPL
 332 56D 0 CODE 0
 333 576 0 CODE 0
 334 57A 0 CODE 0
-338 585 0 CODE 0
-340 58D 0 CODE 0
-341 596 0 CODE 0
-345 59C 0 CODE 0
-347 5A4 0 CODE 0
-348 5AD 0 CODE 0
-352 5B3 0 CODE 0
-354 5BB 0 CODE 0
-355 5C4 0 CODE 0
-357 5CA 0 CODE 0
-359 5CC 0 CODE 0
-360 5CD 0 CODE 0
-361 5CE 0 CODE 0
-365 5CF 0 CODE 0
-367 5D7 0 CODE 0
-368 5E0 0 CODE 0
-370 5E6 0 CODE 0
-372 5E8 0 CODE 0
-373 5E9 0 CODE 0
-374 5EA 0 CODE 0
-378 5EB 0 CODE 0
-380 5F3 0 CODE 0
-381 5FC 0 CODE 0
-385 602 0 CODE 0
-387 60A 0 CODE 0
-388 613 0 CODE 0
-392 619 0 CODE 0
-394 621 0 CODE 0
-395 62A 0 CODE 0
-399 630 0 CODE 0
-401 638 0 CODE 0
-402 641 0 CODE 0
-406 647 0 CODE 0
-408 64F 0 CODE 0
-409 658 0 CODE 0
-415 65E 0 CODE 0
-418 66B 0 CODE 0
-422 66E 0 CODE 0
-427 66F 0 CODE 0
-432 670 0 CODE 0
-435 672 0 CODE 0
-438 678 0 CODE 0
-441 681 0 CODE 0
-444 687 0 CODE 0
-445 68A 0 CODE 0
-449 68B 0 CODE 0
-452 68F 0 CODE 0
-453 69D 0 CODE 0
-456 6C9 0 CODE 0
-457 6CC 0 CODE 0
-460 6CD 0 CODE 0
-464 6CE 0 CODE 0
-468 6CF 0 CODE 0
-473 6D0 0 CODE 0
-477 6D1 0 CODE 0
-482 6D2 0 CODE 0
-484 6D3 0 CODE 0
+335 585 0 CODE 0
+338 586 0 CODE 0
+340 58E 0 CODE 0
+341 597 0 CODE 0
+345 59D 0 CODE 0
+347 5A5 0 CODE 0
+348 5AE 0 CODE 0
+352 5B4 0 CODE 0
+354 5BC 0 CODE 0
+355 5C5 0 CODE 0
+357 5CB 0 CODE 0
+359 5CD 0 CODE 0
+360 5CE 0 CODE 0
+361 5CF 0 CODE 0
+365 5D0 0 CODE 0
+367 5D8 0 CODE 0
+368 5E1 0 CODE 0
+370 5E7 0 CODE 0
+372 5E9 0 CODE 0
+373 5EA 0 CODE 0
+374 5EB 0 CODE 0
+378 5EC 0 CODE 0
+380 5F4 0 CODE 0
+381 5FD 0 CODE 0
+385 603 0 CODE 0
+387 60B 0 CODE 0
+388 614 0 CODE 0
+392 61A 0 CODE 0
+394 622 0 CODE 0
+395 62B 0 CODE 0
+399 631 0 CODE 0
+401 639 0 CODE 0
+402 642 0 CODE 0
+406 648 0 CODE 0
+408 650 0 CODE 0
+409 659 0 CODE 0
+415 65F 0 CODE 0
+418 66C 0 CODE 0
+422 66F 0 CODE 0
+427 670 0 CODE 0
+432 671 0 CODE 0
+435 673 0 CODE 0
+438 679 0 CODE 0
+441 682 0 CODE 0
+444 688 0 CODE 0
+445 68B 0 CODE 0
+449 68C 0 CODE 0
+452 690 0 CODE 0
+453 69E 0 CODE 0
+456 6CA 0 CODE 0
+457 6CD 0 CODE 0
+460 6CE 0 CODE 0
+464 6CF 0 CODE 0
+468 6D0 0 CODE 0
+473 6D1 0 CODE 0
+477 6D2 0 CODE 0
+482 6D3 0 CODE 0
+484 6D4 0 CODE 0
 324 4 0 CODE 0
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c
-20 986 0 CODE 0
-22 987 0 CODE 0
-23 98B 0 CODE 0
+20 97E 0 CODE 0
+22 97F 0 CODE 0
+23 983 0 CODE 0
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.c
 63 A41 0 CODE 0
 67 A41 0 CODE 0
@@ -956,10 +956,10 @@ C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPL
 56 AC3 0 CODE 0
 57 AD3 0 CODE 0
 54 AD7 0 CODE 0
-44 992 0 CODE 0
-46 993 0 CODE 0
-47 997 0 CODE 0
-48 999 0 CODE 0
+44 98A 0 CODE 0
+46 98B 0 CODE 0
+47 98F 0 CODE 0
+48 991 0 CODE 0
 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c
 136 44 0 CODE 0
 147 44 0 CODE 0
@@ -1099,11 +1099,11 @@ C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c
 84 D15 0 CODE 0
 86 D16 0 CODE 0
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c
-4 799 0 CODE 0
-6 799 0 CODE 0
-7 79D 0 CODE 0
-8 7C2 0 CODE 0
-9 7C4 0 CODE 0
-10 7E9 0 CODE 0
-11 7EB 0 CODE 0
-12 7ED 0 CODE 0
+4 79C 0 CODE 0
+6 79C 0 CODE 0
+7 7A0 0 CODE 0
+8 7C5 0 CODE 0
+9 7C7 0 CODE 0
+10 7EC 0 CODE 0
+11 7EE 0 CODE 0
+12 7F0 0 CODE 0

@@ -1895,7 +1895,7 @@ if (USART_ReceiveChar() == '0')
 USART_WriteString("\n\rdesligado\n\r");
 pwm = 0;
 PWM_DutyCycle2(pwm);
-
+return;
 }
 
 if (USART_ReceiveChar() == '1')
