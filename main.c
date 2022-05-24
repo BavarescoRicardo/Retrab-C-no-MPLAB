@@ -27,6 +27,7 @@ unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 0;
+unsigned int deltaV = 0;
 unsigned int pwmAnt = 0;
 
 
@@ -144,20 +145,26 @@ void Fuzzy(unsigned int setpoint)
 */
 
    fitemp =0;
-   //									setpoint = FmFuzzy->tbsetpoint->Position;
 
+   //  calculo delta diferenca setpoint e pwm antigo
+    temp = (setpoint - pwmAnt);//*0.1;
 
-   //  calculo do erro para o setpoint
-   
-    temp = (pwmAnt - setpoint);//*0.1;
+	if(PORTBbits.RB2 == 0)
+	{
+		PORTBbits.RB2 = 1;
+	}else{
+		PORTBbits.RB2 = 0;
+	}
+
+	deltaV = (setpoint - pwmAnt); 
 	pwm = temp;
 	rpm = temp;
-   //Limites (valores acima recebem o maximo...)
+
+   //Decide se valor é aumento ou reducao
    if (temp >10) temp = 10;
    if (temp <0) temp = 0;
-   //posicao_do_grafico_service = temp;
 
-	// 1ª regra - If temp is < (2.5 + setpoint)
+	// 1 regra - Reducao - Se delta eh < (2.5 + setpoint)
 	if (temp < 2.5)
 	{
 		// 1 - Fuzzificar as entradas.
@@ -184,7 +191,7 @@ void Fuzzy(unsigned int setpoint)
 	}
 
 
-	// 2ª regra - If temp is acima do ideal
+	// 2ª regra - If delta eh um pouco acima
 	if ((temp > 2) && (temp < 7))
 	{
 		// 1 - Fuzzificar as entradas.
@@ -212,7 +219,7 @@ void Fuzzy(unsigned int setpoint)
 	}
 
 
-	// 3ª regra - If temp is acima do toleravel
+	// 3ª regra - Se delta é bem acima
 	if (temp > 7 )
 	{
 		// 1 - Fuzzificar as entradas.
@@ -259,27 +266,17 @@ void Fuzzy(unsigned int setpoint)
 
 	// Implicação dos antecedentes pelo consequente.
 	// 5 - defuzzificação da saida
-				// total_area = 0;
-				// unsigned int sum = 0;
+				total_area = 1;
+				unsigned int sum = 0;
 
-				// total_area = total_area + tip ;
-				// sum = tip;
+				total_area = total_area + tip ;
+				sum = tip;
 				
 				
 
 				// // Cálculo da Centróide.
-				// ativa_fan = sum/total_area;	
+				ativa_fan = sum/total_area;	
 
-				
-
-	// //   6 - simulação da parte gráfica das funções e processos
-	// for (int a=0; a<=10; a++)
-	// {
-	// 	FmFuzzy->Chart4->Series[0]->YValues->Value[a] = tip ;
-	// }
-
-	// FmFuzzy->Chart3->Refresh();
-	// FmFuzzy->Chart4->Refresh();
 
 
 	char velocidade[1];
@@ -302,8 +299,8 @@ void Fuzzy(unsigned int setpoint)
 	}
 
 	// Passa o resultado final para o pwm
-	//PWM_DutyCycle2(fitemp*110);
-	//pwm = fitemp*110;
+	PWM_DutyCycle2(ativa_fan*100);
+	rpm = ativa_fan;
 }
 
 
@@ -407,7 +404,7 @@ void interrupt ISR(void)
 
 
 		// No fim das condições manda o sinal para a função fuzzy
-		//Fuzzy(pwm);
+		Fuzzy(pwm);
 
 		// Flag de status da Interrup��o do buffer de recep��o da USART.
 		PIR1bits.RCIF = 0;
@@ -531,7 +528,7 @@ void main(void)
 	while(1)
 	{
 		// Formata os dados de rota��o para apresenta��o.
-		sprintf(display_rpm,"%04d", rpm);
+		sprintf(display_rpm,"%04d", deltaV);
 		sprintf(display_pwm,"%04d", pwm);
 
 		// Apresenta as informa��es na USART.
@@ -542,7 +539,7 @@ void main(void)
      	// Apresenta as informa��es no LCD.
 		LCD_Clear();
 		LCD_Cursor(0,0);
-		LCD_WriteString("RPM: ");
+		LCD_WriteString("DlV: ");
 		LCD_Cursor(0,6);
 		LCD_WriteString(display_rpm);
 		LCD_Cursor(1,0);
