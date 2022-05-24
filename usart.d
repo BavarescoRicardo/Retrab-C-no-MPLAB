@@ -1,0 +1,1 @@
+ usart.d  usart.p1:  C:/Users/Ninguem/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Retrab\ C\ no\ MPLAB/usart.c C:/Users/Ninguem/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Retrab\ C\ no\ MPLAB/config.h C:/Users/Ninguem/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Retrab\ C\ no\ MPLAB/usart.h

@@ -1,0 +1,1 @@
+ lcd.d  lcd.p1:  C:/Users/Ninguem/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Retrab\ C\ no\ MPLAB/lcd.c C:/Users/Ninguem/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Retrab\ C\ no\ MPLAB/lcd.h C:/Users/Ninguem/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Retrab\ C\ no\ MPLAB/config.h

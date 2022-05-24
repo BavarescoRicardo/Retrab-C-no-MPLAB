@@ -1,0 +1,1 @@
+ spi.d  spi.p1:  C:/Users/Ninguem/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Retrab\ C\ no\ MPLAB/spi.c C:/Users/Ninguem/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Retrab\ C\ no\ MPLAB/config.h C:/Users/Ninguem/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Retrab\ C\ no\ MPLAB/spi.h
