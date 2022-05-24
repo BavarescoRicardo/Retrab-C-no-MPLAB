@@ -1737,8 +1737,9 @@ void Fuzzy(unsigned int setpoint)
 fitemp =0;
 
 # 152
-= (pwmAnt - setpoint);
-
+temp = (pwmAnt - setpoint);
+pwm = temp;
+rpm = temp;
 
 if (temp >10) temp = 10;
 if (temp <0) temp = 0;
@@ -1843,7 +1844,7 @@ if (temp >= 7.5 && temp <= 10)
 tip = tip_gorgeous;
 }
 
-# 284
+# 285
 char velocidade[1];
 
 if(ativa_fan <= 2.5 )
@@ -1868,7 +1869,7 @@ velocidade[0] = '9';
 
 }
 
-# 318
+# 319
 void interrupt ISR(void)
 {
 
@@ -1958,7 +1959,7 @@ pwm = 1023;
 
 }
 
-# 412
+# 413
 PIR1bits.RCIF = 0;
 }
 

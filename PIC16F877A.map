@@ -4,7 +4,7 @@ Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+PIC16F877A.sym --cmf=PIC16F877A.cmf -z -Q16F877A \
-  -oC:\Users\Ninguem\AppData\Local\Temp\sfs4.6 -MPIC16F877A.map -E1 \
+  -oC:\Users\Ninguem\AppData\Local\Temp\s5ig.6 -MPIC16F877A.map -E1 \
   -ver=XC8 -ASTACK=0110h-016fh -pstack=STACK -ACONST=00h-0FFhx32 \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -AENTRY=00h-0FFhx32 \
   -ASTRING=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
@@ -552,12 +552,12 @@ _display_pwm                  bssBANK1     00B6
 _display_rpm                  bssBANK1     00C0
 _dpowers                      stringtext   0512
 _fisetpoint                   bssBANK1     00A4
-_fitemp                       bssBANK0     0044
+_fitemp                       bssBANK0     0026
 _foTip                        bssBANK1     00A6
-_fop_rule1                    bssBANK0     0026
-_fop_rule2                    bssBANK0     0028
-_fop_rule3                    bssBANK0     002A
-_ideal                        bssBANK0     002C
+_fop_rule1                    bssBANK0     0028
+_fop_rule2                    bssBANK0     002A
+_fop_rule3                    bssBANK0     002C
+_ideal                        bssBANK0     002E
 _isdigit                      text2        0E70
 _isdigit$1449                 cstackBANK0  004A
 _main                         maintext     0379
@@ -565,23 +565,23 @@ _pas_cooler                   dataBANK0    006A
 _posicao_do_grafico           bssBANK1     00A8
 _posicao_do_grafico_food      bssBANK1     00AA
 _posicao_do_grafico_service   bssBANK1     00AC
-_pulsos                       bssBANK0     002E
-_pwm                          bssBANK0     0030
-_pwmAnt                       bssBANK0     0032
-_rpm                          bssBANK0     0034
+_pulsos                       bssBANK0     0030
+_pwm                          bssBANK0     0032
+_pwmAnt                       bssBANK0     0034
+_rpm                          bssBANK0     0036
 _sprintf                      text1        0044
-_status                       bssBANK0     0036
+_status                       bssBANK0     0038
 _sum                          bssBANK1     00AE
-_temp                         bssBANK0     0038
-_temp_lida                    bssBANK0     003A
+_temp                         bssBANK0     003A
+_temp_lida                    bssBANK0     003C
 _tempo_rb6                    bssBANK1     00B0
 _tf                           dataBANK1    00CD
 _tip                          bssBANK1     00B2
-_tip_average                  bssBANK0     003C
-_tip_gorgeous                 bssBANK0     003E
+_tip_average                  bssBANK0     003E
+_tip_gorgeous                 bssBANK0     0040
 _total_area                   bssBANK1     00B4
-_x                            bssBANK0     0040
-_y                            bssBANK0     0042
+_x                            bssBANK0     0042
+_y                            bssBANK0     0044
 btemp                         (abs)        007E
 clear_ram0                    clrtext      0E3F
 end_of_initialization         cinit        0040
@@ -649,7 +649,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 479 in file "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
+		line 482 in file "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -790,7 +790,6 @@ Total ram usage:        6 bytes
 		Nothing
  This function is called by:
 		_sprintf
-		_Fuzzy
  This function uses a non-reentrant model
 
 
@@ -1103,7 +1102,6 @@ Total ram usage:        4 bytes
 		Nothing
  This function is called by:
 		_main
-		_Fuzzy
  This function uses a non-reentrant model
 
 
@@ -1353,7 +1351,7 @@ Total ram usage:        0 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 316 in file "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
+		line 319 in file "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

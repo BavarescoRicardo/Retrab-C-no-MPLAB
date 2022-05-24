@@ -149,8 +149,9 @@ void Fuzzy(unsigned int setpoint)
 
    //  calculo do erro para o setpoint
    
-    = (pwmAnt - setpoint);//*0.1;
-
+    temp = (pwmAnt - setpoint);//*0.1;
+	pwm = temp;
+	rpm = temp;
    //Limites (valores acima recebem o maximo...)
    if (temp >10) temp = 10;
    if (temp <0) temp = 0;
