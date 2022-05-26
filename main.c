@@ -42,9 +42,9 @@ unsigned int tempo_rb6 = 0;
 
 // Vetores nebulosos
 
-// float ideal[11];
-// float tip_average[11];
-// float tip_gorgeous[11];
+// float mantem[11];
+// float reduz[11];
+// float aumenta[11];
 // float tip[11];
 
 
@@ -138,7 +138,7 @@ float max_val(float a, float b)
 //---------------------------------------------------------------------------
 
 
-void Fuzzy(unsigned int setpointF)
+void Fuzzy()
 {   // passos para a execução do problema
 /*passos
   1 - fuzzificação das entradas
@@ -146,36 +146,36 @@ void Fuzzy(unsigned int setpointF)
   3 - métodos de implicação
   4 - métodos de agregação
   5 - defuzzificação das saídas (centróide)
-  6 - simulação da parte gráfica das funções e processos
 
 */
 	// Converte variavel recebida de int para float
-	setpoint = (float)setpointF;
+	setpoint = (float)pwm;
 
-	float ideal;
-	float tip_average;
-	float tip_gorgeous;
+	float mantem;
+	float reduz;
+	float aumenta;
 	float tip;
 
    fitemp =0;
-   //setpoint = FmFuzzy->tbsetpoint->Position;
-   //mostra numero na tela
-   //FmFuzzy->ntemp->Caption =tf;
 
-   // FmFuzzy->Chart1->Refresh();
    //  calculo do erro para o setpoint
-   temp = (tf - setpoint);//*0.1;
-
+   temp = (setpoint - tf);//
+	deltaV = temp;
    //Limites (valores acima recebem o maximo...)
-   if (temp >10) temp = 10;
-   if (temp <0) temp = 0;
-   posicao_do_grafico_service = temp;
-
+    if (temp >40) 
+		temp = 40;
+    if (temp <30) 
+		temp = 30;
+	if (temp <20) 
+		temp = 10;
+    if (temp <0) 
+		temp = 0;
+	
 	// 1ª regra - If temp is < (2.5 + setpoint)
 	if (temp < 2.5)
 	{
 		// 1 - Fuzzificar as entradas.
-		fitemp 		= trapmf(temp,-1,0,1.5,3);
+		fitemp    = trapmf(temp,-1,0,1.5,3);
 
 		// 2 - Aplicação dos operadores Fuzzy.
 		fop_rule1 = max_val(fitemp,0.1);
@@ -189,11 +189,11 @@ void Fuzzy(unsigned int setpointF)
 
 			if (y > fop_rule1)
 			{
-				ideal += fop_rule1;
+				mantem += fop_rule1;
 			}
 			else
 			{
-				ideal += y;
+				mantem += y;
 			}
 
 			x=x+1;
@@ -203,8 +203,7 @@ void Fuzzy(unsigned int setpointF)
 
 
 
-
-	// 2ª regra - If temp is acima do ideal
+	// 2ª regra - If temp is acima do mantem
 	if ((temp > 2) && (temp < 7))
 	{
 		// 1 - Fuzzificar as entradas.
@@ -222,11 +221,11 @@ void Fuzzy(unsigned int setpointF)
 
 			if (y >= fop_rule2)
 			{
-				tip_average += fop_rule2;
+				reduz += fop_rule2;
 			}
 			else
 			{
-				tip_average += y;
+				reduz += y;
 			}
 
 			x=x+1;
@@ -255,11 +254,11 @@ void Fuzzy(unsigned int setpointF)
 
 			if (y >= fop_rule3)
 			{
-				tip_gorgeous += fop_rule3;
+				aumenta += fop_rule3;
 			}
 			else
 			{
-				tip_gorgeous += y;
+				aumenta += y;
 			}
 
 			x=x+1;
@@ -267,29 +266,23 @@ void Fuzzy(unsigned int setpointF)
 
 	}
 
-
-
 	// 4 - Aplicação do Método de Agregação.
 	for (int a=0; a<1; a++)
 	{
 		if (temp < 2.5)
 		{
-			tip = ideal;
-		}
-
+			tip = mantem;
+		}else
 		if (temp >= 2.5 && temp < 7.5)
 		{
-			tip = tip_average;
-		}
-
-		if (temp >= 7.5 && temp <= 10)
+			tip = reduz;
+		}else
 		{
-			tip = tip_gorgeous;
+			tip = aumenta;
 		}
 	}
 
-	// Implicação dos antecedentes pelo consequente.
-	// 5 - defuzzificação da saida
+	// 5 - desfuzifica
 	x = 0;
 	total_area = 0;
 	sum = 0;
@@ -305,45 +298,13 @@ void Fuzzy(unsigned int setpointF)
 	ativa_fan = sum/total_area;
 	posicao_do_grafico = ativa_fan;
 
-//   6 - simulação da parte gráfica das funções e processos
-	// for (int a=0; a<=10; a++)
-	// {
-	// 	FmFuzzy->Chart4->Series[0]->YValues->Value[a] = tip[a];
-	// }
-
-
-
-
-	 char velocidade[1];
-	// Controle dos eventos
-	if(ativa_fan <= 2.5 )
-	{
-		
-       	 velocidade[0] =  '0';
-	}
-	if(ativa_fan > 2.5 && ativa_fan < 7.5)
-	{
-		
-		 velocidade[0] =  '7';
-	}
-
-	if(ativa_fan >= 7.5)
-	{
-	 
-	 velocidade[0] =  '9';
-	}
-
 	// Envia o valor calculado para o duty cicle pwm
-	deltaV = (unsigned int)ativa_fan;
-	if (deltaV >0 && deltaV < 9000)
+	//deltaV = (unsigned int)sum*90;
+	if (deltaV >0 && deltaV < 1020)
 	{
 		PWM_DutyCycle2(deltaV);
 	}
 	
-	// if(FmFuzzy->modo->State == tssOn)
-	// {
-	//  PortaSerial->WriteABuffer(velocidade,1);
-	// }
 
 }
 
@@ -447,8 +408,8 @@ void interrupt ISR(void)
 
 
 		// No fim das condições manda o sinal para a função fuzzy
-		//Fuzzy(pwm);
-
+		Fuzzy();
+		tf = pwm;
 		// Flag de status da Interrup��o do buffer de recep��o da USART.
 		PIR1bits.RCIF = 0;
 	}
