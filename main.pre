@@ -1634,48 +1634,44 @@ unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 0;
 unsigned int deltaV = 0;
-unsigned int pwmAnt = 0;
 
 
 unsigned int contagens_tm0 = 0;
 unsigned int contador_rb6 = 0;
 unsigned int tempo_rb6 = 0;
 
-# 44
-unsigned int ideal;
-unsigned int tip_average;
-unsigned int tip_gorgeous;
-unsigned int tip;
-
-unsigned int x=0;
-unsigned int y=0;
-unsigned int posicao_do_grafico = 0;
-unsigned int posicao_do_grafico_food = 0;
-unsigned int posicao_do_grafico_service = 0;
+# 52
+float x=0;
+float y=0;
+float posicao_do_grafico = 0;
+float posicao_do_grafico_food = 0;
+float posicao_do_grafico_service = 0;
 
 
-unsigned int fitemp = 0;
-unsigned int fisetpoint = 0;
-unsigned int foTip = 0;
-unsigned int fop_rule1 = 0;
+float fitemp = 0;
+float fisetpoint = 0;
+float foTip = 0;
+float fop_rule1 = 0;
+float fop_rule2 = 0;
+float fop_rule3 = 0;
+
+
+float sum = 0;
+float total_area = 0;
+float ativa_fan = 0;
+
+
+float temp = 0;
+float tf = 20;
+float derro = 0;
+float setpoint = 20;
 
 
 
 
-unsigned int sum = 0;
-unsigned int total_area = 0;
-unsigned int ativa_fan = 0;
-
-
-
-unsigned int temp = 0;
-unsigned int tf = 20;
-unsigned int derro = 0;
-
-# 78
-unsigned int trimf(unsigned int x, unsigned int a, unsigned int b, unsigned int c)
+float trimf(float x, float a, float b, float c)
 {
-unsigned int ua = 0;
+float ua = 0;
 
 if (x <= a)
 ua = 0;
@@ -1692,9 +1688,9 @@ return(ua);
 
 
 
-unsigned int trapmf(unsigned int x, unsigned int a, unsigned int b, unsigned int c, unsigned int d)
+float trapmf(float x, float a, float b, float c, float d)
 {
-unsigned int ua = 0;
+float ua = 0;
 
 if (x <= a)
 ua = 0;
@@ -1712,7 +1708,7 @@ return(ua);
 
 
 
-unsigned int min_val(unsigned int a, unsigned int b)
+float min_val(float a, float b)
 {
 if (a < b)
 return a;
@@ -1722,7 +1718,7 @@ return b;
 
 
 
-unsigned int max_val(unsigned int a, unsigned int b)
+float max_val(float a, float b)
 {
 if (a > b)
 return a;
@@ -1730,28 +1726,27 @@ else
 return b;
 }
 
-
-void Fuzzy(unsigned int setpoint)
+# 141
+void Fuzzy(unsigned int setpointF)
 {
 
-# 147
+# 153
+setpoint = (float)setpointF;
+
+float ideal;
+float tip_average;
+float tip_gorgeous;
+float tip;
+
 fitemp =0;
 
-
-temp = (setpoint - pwmAnt);
-
-if(PORTBbits.RB2 == 0)
-{
-PORTBbits.RB2 = 1;
-}else{
-PORTBbits.RB2 = 0;
-}
-
-deltaV = (setpoint - pwmAnt);
+# 167
+temp = (tf - setpoint);
 
 
 if (temp >10) temp = 10;
 if (temp <0) temp = 0;
+posicao_do_grafico_service = temp;
 
 
 if (temp < 2.5)
@@ -1765,47 +1760,54 @@ fop_rule1 = max_val(fitemp,0.1);
 
 x=0;
 y=0;
-
+for (int a=0; a<=10; a++)
+{
 y = trapmf(x,-1,0,1.5,3);
 
 if (y > fop_rule1)
 {
-ideal = fop_rule1;
+ideal += fop_rule1;
 }
 else
 {
-ideal = y;
+ideal += y;
+}
+
+x=x+1;
 }
 
 }
 
-
-
+# 208
 if ((temp > 2) && (temp < 7))
 {
 
 fitemp = trimf(temp,2,5,8);
 
 
-fop_rule1 = max_val(fitemp,0.1);
+fop_rule2 = max_val(fitemp,0.1);
 
 
 x=0;
 y=0;
-
+for (int a=0; a<=10; a++)
+{
 y = trimf(x,2,5,8);
 
-if (y >= fop_rule1)
+if (y >= fop_rule2)
 {
-tip_average = fop_rule1;
+tip_average += fop_rule2;
 }
 else
 {
-tip_average = y;
+tip_average += y;
 }
 
+x=x+1;
+}
 
 }
+
 
 
 
@@ -1816,40 +1818,68 @@ fitemp = trapmf(temp,6,8.5,10,11);
 
 
 
-fop_rule1 = max_val(fitemp,0.1);
+fop_rule3 = max_val(fitemp,0.1);
 
 
 x=0;
 y=0;
-
+for (int a=0; a<=10; a++)
+{
 y = trapmf(x,7,8.5,10,11);
 
-if (y >= fop_rule1)
+if (y >= fop_rule3)
 {
-tip_gorgeous = fop_rule1;
+tip_gorgeous += fop_rule3;
 }
 else
 {
-tip_gorgeous = y;
+tip_gorgeous += y;
+}
+
+x=x+1;
 }
 
 }
 
-# 267
-total_area = 1;
-tip = fop_rule1*1000;
-unsigned int sum = 0;
 
+
+
+for (int a=0; a<1; a++)
+{
+if (temp < 2.5)
+{
+tip = ideal;
+}
+
+if (temp >= 2.5 && temp < 7.5)
+{
+tip = tip_average;
+}
+
+if (temp >= 7.5 && temp <= 10)
+{
+tip = tip_gorgeous;
+}
+}
+
+
+
+x = 0;
+total_area = 0;
+sum = 0;
+for (int a=0; a<1; a++)
+{
 total_area = total_area + tip;
-sum = tip;
+sum = sum + (x * tip);
 
-
+x=x+1;
+}
 
 
 ativa_fan = sum/total_area;
+posicao_do_grafico = ativa_fan;
 
-
-
+# 317
 char velocidade[1];
 
 if(ativa_fan <= 2.5 )
@@ -1870,26 +1900,21 @@ velocidade[0] = '9';
 }
 
 
-deltaV = fop_rule1*1000;
-
-if(deltaV >= 0 && deltaV < 9000 ){
-PWM_DutyCycle2(deltaV);
-}else
+deltaV = (unsigned int)ativa_fan;
+if (deltaV >0 && deltaV < 9000)
 {
-PWM_DutyCycle2(0);
+PWM_DutyCycle2(deltaV);
 }
 
-
-
+# 348
 }
 
-# 324
+# 359
 void interrupt ISR(void)
 {
 
 if (PIR1bits.RCIF)
 {
-pwmAnt = pwm;
 if (USART_ReceiveChar() == '0')
 {
 USART_WriteString("\n\rdesligado\n\r");
@@ -1929,13 +1954,14 @@ if (USART_ReceiveChar() == '4')
 {
 USART_WriteString("\n\rpwm = 256\n\r");
 pwm = 256;
-
+PWM_DutyCycle2(pwm);
 if(PORTBbits.RB1 == 0)
 {
 PORTBbits.RB1 = 1;
 }else{
 PORTBbits.RB1 = 0;
 }
+return;
 }
 
 if (USART_ReceiveChar() == '5')
@@ -1973,11 +1999,7 @@ pwm = 1023;
 
 }
 
-
-
-Fuzzy(pwm);
-
-
+# 453
 PIR1bits.RCIF = 0;
 }
 

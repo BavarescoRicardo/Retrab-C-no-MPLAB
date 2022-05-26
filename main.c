@@ -28,7 +28,6 @@ unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 0;
 unsigned int deltaV = 0;
-unsigned int pwmAnt = 0;
 
 
 unsigned int contagens_tm0 = 0;
@@ -41,43 +40,46 @@ unsigned int tempo_rb6 = 0;
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 
-unsigned int ideal;
-unsigned int tip_average;
-unsigned int tip_gorgeous;
-unsigned int tip;
+// Vetores nebulosos
 
-unsigned int x=0;
-unsigned int y=0;
-unsigned int posicao_do_grafico = 0;
-unsigned int posicao_do_grafico_food = 0;
-unsigned int posicao_do_grafico_service = 0;
+// float ideal[11];
+// float tip_average[11];
+// float tip_gorgeous[11];
+// float tip[11];
+
+
+
+float x=0;
+float y=0;
+float posicao_do_grafico = 0;
+float posicao_do_grafico_food = 0;
+float posicao_do_grafico_service = 0;
 
 // Variáveis Fuzzy.
-unsigned int fitemp = 0;
-unsigned int fisetpoint    = 0;
-unsigned int foTip     = 0;
-unsigned int fop_rule1 = 0;
-//unsigned int fop_rule2 = 0;
-//unsigned int fop_rule3 = 0;
+float fitemp = 0;
+float fisetpoint    = 0;
+float foTip     = 0;
+float fop_rule1 = 0;
+float fop_rule2 = 0;
+float fop_rule3 = 0;
 
 // Variáveis de auxilio ao cálculo da centróide.
-unsigned int sum = 0;
-unsigned int total_area = 0;
-unsigned int ativa_fan = 0;
-
+float sum = 0;
+float total_area = 0;
+float ativa_fan = 0;
 
 // Entradas para o sistema.
-unsigned int temp = 0;
-unsigned int tf = 20;
-unsigned int derro = 0;
-//unsigned int setpoint = 20;
+float temp = 0;
+float tf = 20;
+float derro = 0;
+float setpoint = 20;
 
 //---------------------------------------------------------------------
 
 // Função Triangular
-unsigned int trimf(unsigned int x, unsigned int a, unsigned int b, unsigned int c)
+float trimf(float x, float a, float b, float c)
 {
-	unsigned int ua = 0;
+	float ua = 0;
 
 	if (x <= a)
 		ua = 0;
@@ -94,9 +96,9 @@ unsigned int trimf(unsigned int x, unsigned int a, unsigned int b, unsigned int 
 //---------------------------------------------------------------------
 
 // Função Trapezoidal
-unsigned int trapmf(unsigned int x, unsigned int a, unsigned int b, unsigned int c, unsigned int d)
+float trapmf(float x, float a, float b, float c, float d)
 {
-	unsigned int ua = 0;
+	float ua = 0;
 
 	if (x <= a)
 		ua = 0;
@@ -114,7 +116,7 @@ unsigned int trapmf(unsigned int x, unsigned int a, unsigned int b, unsigned int
 
 //---------------------------------------------------------------------
 
-unsigned int min_val(unsigned int a, unsigned int b)
+float min_val(float a, float b)
 {
 	if (a < b)
 		return a;
@@ -124,16 +126,19 @@ unsigned int min_val(unsigned int a, unsigned int b)
 
 //---------------------------------------------------------------------
 
-unsigned int max_val(unsigned int a, unsigned int b)
+float max_val(float a, float b)
 {
 	if (a > b)
 		return a;
 	else
-		return b;		
+		return b;
 }
 
 
-void Fuzzy(unsigned int setpoint)
+//---------------------------------------------------------------------------
+
+
+void Fuzzy(unsigned int setpointF)
 {   // passos para a execução do problema
 /*passos
   1 - fuzzificação das entradas
@@ -142,31 +147,35 @@ void Fuzzy(unsigned int setpoint)
   4 - métodos de agregação
   5 - defuzzificação das saídas (centróide)
   6 - simulação da parte gráfica das funções e processos
+
 */
+	// Converte variavel recebida de int para float
+	setpoint = (float)setpointF;
+
+	float ideal;
+	float tip_average;
+	float tip_gorgeous;
+	float tip;
 
    fitemp =0;
+   //setpoint = FmFuzzy->tbsetpoint->Position;
+   //mostra numero na tela
+   //FmFuzzy->ntemp->Caption =tf;
 
-   //  calculo delta diferenca setpoint e pwm antigo
-    temp = (setpoint - pwmAnt);//*0.1;
+   // FmFuzzy->Chart1->Refresh();
+   //  calculo do erro para o setpoint
+   temp = (tf - setpoint);//*0.1;
 
-	if(PORTBbits.RB2 == 0)
-	{
-		PORTBbits.RB2 = 1;
-	}else{
-		PORTBbits.RB2 = 0;
-	}
-
-	deltaV = (setpoint - pwmAnt); 
-
-   //Decide se valor é aumento ou reducao
+   //Limites (valores acima recebem o maximo...)
    if (temp >10) temp = 10;
    if (temp <0) temp = 0;
+   posicao_do_grafico_service = temp;
 
-	// 1 regra - Reducao - Se delta eh < (2.5 + setpoint)
+	// 1ª regra - If temp is < (2.5 + setpoint)
 	if (temp < 2.5)
 	{
 		// 1 - Fuzzificar as entradas.
-		fitemp 	= trapmf(temp,-1,0,1.5,3);
+		fitemp 		= trapmf(temp,-1,0,1.5,3);
 
 		// 2 - Aplicação dos operadores Fuzzy.
 		fop_rule1 = max_val(fitemp,0.1);
@@ -174,50 +183,60 @@ void Fuzzy(unsigned int setpoint)
 		//3 - Aplicação do Método de Implicação (valores mínimos).
 		x=0;
 		y=0;
-
-		y = trapmf(x,-1,0,1.5,3);
-
-		if (y > fop_rule1)
+		for (int a=0; a<=10; a++)
 		{
-			tip  = fop_rule1;
+			y = trapmf(x,-1,0,1.5,3);
+
+			if (y > fop_rule1)
+			{
+				ideal += fop_rule1;
+			}
+			else
+			{
+				ideal += y;
+			}
+
+			x=x+1;
 		}
-		else
-		{
-			tip  = y;
-		}		 
 
 	}
 
 
-	// 2ª regra - If delta eh um pouco acima
+
+
+	// 2ª regra - If temp is acima do ideal
 	if ((temp > 2) && (temp < 7))
 	{
 		// 1 - Fuzzificar as entradas.
 		fitemp = trimf(temp,2,5,8);
 
 		// 2 - Aplicação dos operadores Fuzzy.
-		fop_rule1 = max_val(fitemp,0.1);
+		fop_rule2 = max_val(fitemp,0.1);
 
 		 // 3 - Aplicação do Método de Implicação (valores mínimos).
 		x=0;
 		y=0;
-
-		y = trimf(x,2,5,8);
-
-		if (y >= fop_rule1)
+		for (int a=0; a<=10; a++)
 		{
-			tip  = fop_rule1;
-		}
-		else
-		{
-			tip  = y;
+			y = trimf(x,2,5,8);
+
+			if (y >= fop_rule2)
+			{
+				tip_average += fop_rule2;
+			}
+			else
+			{
+				tip_average += y;
+			}
+
+			x=x+1;
 		}
 
-		 	
 	}
 
 
-	// 3ª regra - Se delta é bem acima
+
+	// 3ª regra - If temp is acima do toleravel
 	if (temp > 7 )
 	{
 		// 1 - Fuzzificar as entradas.
@@ -225,93 +244,108 @@ void Fuzzy(unsigned int setpoint)
 //		fiFood    = trapmf(food,7,9,10,10);
 
 		// 2 - Aplicação dos operadores Fuzzy.
-		fop_rule1 = max_val(fitemp,0.1);
+		fop_rule3 = max_val(fitemp,0.1);
 
 		// 3 - Aplicação do Método de Implicação (valores mínimos).
 		x=0;
 		y=0;
-
-		y = trapmf(x,7,8.5,10,11);
-
-		if (y >= fop_rule1)
+		for (int a=0; a<=10; a++)
 		{
-			tip  = fop_rule1;
+			y = trapmf(x,7,8.5,10,11);
+
+			if (y >= fop_rule3)
+			{
+				tip_gorgeous += fop_rule3;
+			}
+			else
+			{
+				tip_gorgeous += y;
+			}
+
+			x=x+1;
 		}
-		else
-		{
-			tip  = y;
-		}
-		 
+
 	}
+
 
 
 	// 4 - Aplicação do Método de Agregação.
-	// if (temp < 2.5)
-	// {
-	// 	tip  = ideal ;
-	// }
+	for (int a=0; a<1; a++)
+	{
+		if (temp < 2.5)
+		{
+			tip = ideal;
+		}
 
-	// if (temp >= 2.5 && temp < 7.5)
-	// {
-	// 	tip  = tip_average ;
-	// }
+		if (temp >= 2.5 && temp < 7.5)
+		{
+			tip = tip_average;
+		}
 
-	// if (temp >= 7.5 && temp <= 10)
-	// {
-	// 	tip  = tip_gorgeous;
-	// }
-	
+		if (temp >= 7.5 && temp <= 10)
+		{
+			tip = tip_gorgeous;
+		}
+	}
 
 	// Implicação dos antecedentes pelo consequente.
 	// 5 - defuzzificação da saida
-				total_area = 1;
-				// tip = fop_rule1*1000;
-				unsigned int sum = 0;
+	x = 0;
+	total_area = 0;
+	sum = 0;
+	for (int a=0; a<1; a++)
+	{
+		total_area = total_area + tip;
+		sum = sum + (x * tip);
 
-				total_area = total_area + tip;
-				sum = tip;
-				
-				
+		x=x+1;
+	}
 
-				// // Cálculo da Centróide.
-				ativa_fan = sum/total_area;	
+	// Cálculo da Centróide.
+	ativa_fan = sum/total_area;
+	posicao_do_grafico = ativa_fan;
+
+//   6 - simulação da parte gráfica das funções e processos
+	// for (int a=0; a<=10; a++)
+	// {
+	// 	FmFuzzy->Chart4->Series[0]->YValues->Value[a] = tip[a];
+	// }
 
 
 
-	char velocidade[1];
+
+	 char velocidade[1];
 	// Controle dos eventos
 	if(ativa_fan <= 2.5 )
 	{
-	// 	 FmFuzzy->fan->Caption = unsigned intToStrF(0,ffFixed,10,2);
-       	velocidade[0] =  '0';
+		
+       	 velocidade[0] =  '0';
 	}
 	if(ativa_fan > 2.5 && ativa_fan < 7.5)
 	{
-	// 	 FmFuzzy->fan->Caption = unsigned intToStrF(50,ffFixed,10,2);
-	 	velocidade[0] =  '7';
+		
+		 velocidade[0] =  '7';
 	}
 
 	if(ativa_fan >= 7.5)
 	{
-	//  FmFuzzy->fan->Caption = unsigned intToStrF(100,ffFixed,10,2);
-		velocidade[0] =  '9';
+	 
+	 velocidade[0] =  '9';
 	}
 
-	// Passa o resultado final para o pwm
-	deltaV = fop_rule1*1000;
-	//deltaV = ativa_fan*1000;
-	if(deltaV >= 0 && deltaV < 9000 ){
-		PWM_DutyCycle2(deltaV);
-	}else 
+	// Envia o valor calculado para o duty cicle pwm
+	deltaV = (unsigned int)ativa_fan;
+	if (deltaV >0 && deltaV < 9000)
 	{
-		PWM_DutyCycle2(0);
+		PWM_DutyCycle2(deltaV);
 	}
 	
-	// rpm = ativa_fan;
-	// deltaV = ativa_fan*1000;
-	deltaV = tip*1000;
-}
+	// if(FmFuzzy->modo->State == tssOn)
+	// {
+	//  PortaSerial->WriteABuffer(velocidade,1);
+	// }
 
+}
 
 //---------------------------------------------------------------------------
 
@@ -326,8 +360,7 @@ void interrupt ISR(void)
 {
 	// Tratamento da interrup��o do buffer de recep��o.
 	if (PIR1bits.RCIF)
-	{
-		pwmAnt = pwm;
+	{		
 		if (USART_ReceiveChar() == '0')
 		{
 			USART_WriteString("\n\rdesligado\n\r");
@@ -367,13 +400,14 @@ void interrupt ISR(void)
 		{
 			USART_WriteString("\n\rpwm = 256\n\r");
 			pwm = 256;
-			// PWM_DutyCycle2(pwm);
+			PWM_DutyCycle2(pwm);
 			if(PORTBbits.RB1 == 0)
 			{
 				PORTBbits.RB1 = 1;
 			}else{
 				PORTBbits.RB1 = 0;
 			}			
+			return;
 		}
 
 		if (USART_ReceiveChar() == '5')
@@ -413,7 +447,7 @@ void interrupt ISR(void)
 
 
 		// No fim das condições manda o sinal para a função fuzzy
-		Fuzzy(pwm);
+		//Fuzzy(pwm);
 
 		// Flag de status da Interrup��o do buffer de recep��o da USART.
 		PIR1bits.RCIF = 0;
