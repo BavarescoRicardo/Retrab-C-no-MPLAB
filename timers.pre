@@ -1,8 +1,8 @@
 
-# 1 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c"
+# 1 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.c"
 
 
-# 6 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\config.h"
+# 6 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -1435,13 +1435,13 @@ extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsi
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
-# 5 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.h"
+# 5 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.h"
 void TIMER0_Init();
 void TIMER0_Set(unsigned char);
 void TIMER1_Init();
 void TIMER1_Set(unsigned short);
 
-# 6 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.c"
+# 6 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.c"
 void TIMER0_Init()
 {
 OPTION_REGbits.T0CS = 0;

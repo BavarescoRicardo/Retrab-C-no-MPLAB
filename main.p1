@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"7 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.h
+"7 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.h
 [v _PWM_DutyCycle2 `(v ~T0 @X0 0 ef1`i ]
 "523 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
 [s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -9,7 +9,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S21 . . ]
 "534
 [v _PIR1bits `VS21 ~T0 @X0 0 e@12 ]
-"9 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.h
+"9 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.h
 [v _USART_ReceiveChar `(uc ~T0 @X0 0 ef ]
 "8
 [v _USART_WriteString `(v ~T0 @X0 0 ef1`*Cuc ]
@@ -32,7 +32,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S18 . . . ]
 "463
 [v _INTCONbits `VS18 ~T0 @X0 0 e@11 ]
-"6 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.h
+"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.h
 [v _TIMER0_Set `(v ~T0 @X0 0 ef1`uc ]
 "629 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
 [v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
@@ -61,21 +61,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTE `Vuc ~T0 @X0 0 e@9 ]
 "635
 [v _T1CON `Vuc ~T0 @X0 0 e@16 ]
-"6 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.h
+"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.h
 [v _USART_Init `(v ~T0 @X0 0 ef1`l ]
-"5 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.h
+"5 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.h
 [v _TIMER0_Init `(v ~T0 @X0 0 ef ]
-"6 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.h
+"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\adc.h
 [v _ADC_Init `(v ~T0 @X0 0 ef ]
-"5 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.h
+"5 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.h
 [v _PWM_Init `(v ~T0 @X0 0 ef ]
-"17 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.h
+"17 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.h
 [v _LCD_Init `(v ~T0 @X0 0 ef ]
 "12
 [v _LCD_Cursor `(v ~T0 @X0 0 ef2`uc`uc ]
 "15
 [v _LCD_WriteString `(v ~T0 @X0 0 ef1`*Cuc ]
-"6 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.h
+"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.h
 [v _PWM_DutyCycle1 `(v ~T0 @X0 0 ef1`i ]
 [v F1089 `(v ~T0 @X0 1 tf1`ul ]
 "154 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic.h
@@ -83,9 +83,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p i __delay ]
 "205 C:\Program Files (x86)\Microchip\xc8\v1.33\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"16 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.h
+"16 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.h
 [v _LCD_Clear `(v ~T0 @X0 0 ef ]
-"6 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\config.h
+"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h
 [p x FOSC=HS ]
 "7
 [p x WDTE=OFF ]
@@ -1230,7 +1230,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pwm.h: 5: void PWM_Init();
 [; ;pwm.h: 6: void PWM_DutyCycle1(int);
 [; ;pwm.h: 7: void PWM_DutyCycle2(int);
-"19 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c
+"19 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c
 [v _ADCResult `us ~T0 @X0 1 e ]
 [i _ADCResult
 -> -> 0 `i `us
@@ -1605,931 +1605,889 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 122 ]
 }
 "141
-[v _Fuzzy `(v ~T0 @X0 1 ef1`ui ]
+[v _Fuzzy `(v ~T0 @X0 1 ef ]
 "142
 {
-[; ;main.c: 141: void Fuzzy(unsigned int setpointF)
+[; ;main.c: 141: void Fuzzy()
 [; ;main.c: 142: {
 [e :U _Fuzzy ]
-"141
-[v _setpointF `ui ~T0 @X0 1 r1 ]
-"142
 [f ]
-[; ;main.c: 153: setpoint = (float)setpointF;
-"153
-[e = _setpoint -> _setpointF `f ]
+[; ;main.c: 152: setpoint = (float)pwm;
+"152
+[e = _setpoint -> _pwm `f ]
+"154
+[v _mantem `f ~T0 @X0 1 a ]
 "155
-[v _ideal `f ~T0 @X0 1 a ]
+[v _reduz `f ~T0 @X0 1 a ]
 "156
-[v _tip_average `f ~T0 @X0 1 a ]
+[v _aumenta `f ~T0 @X0 1 a ]
 "157
-[v _tip_gorgeous `f ~T0 @X0 1 a ]
-"158
 [v _tip `f ~T0 @X0 1 a ]
-[; ;main.c: 155: float ideal;
-[; ;main.c: 156: float tip_average;
-[; ;main.c: 157: float tip_gorgeous;
-[; ;main.c: 158: float tip;
-[; ;main.c: 160: fitemp =0;
-"160
+[; ;main.c: 154: float mantem;
+[; ;main.c: 155: float reduz;
+[; ;main.c: 156: float aumenta;
+[; ;main.c: 157: float tip;
+[; ;main.c: 159: fitemp =0;
+"159
 [e = _fitemp -> -> 0 `i `f ]
-[; ;main.c: 167: temp = (tf - setpoint);
-"167
+[; ;main.c: 162: temp = (tf - setpoint);
+"162
 [e = _temp - _tf _setpoint ]
-[; ;main.c: 170: if (temp >10) temp = 10;
-"170
+[; ;main.c: 163: deltaV = temp;
+"163
+[e = _deltaV -> _temp `ui ]
+[; ;main.c: 165: if (temp >10) temp = 10;
+"165
 [e $ ! > _temp -> -> 10 `i `f 126  ]
 [e = _temp -> -> 10 `i `f ]
 [e :U 126 ]
-[; ;main.c: 171: if (temp <0) temp = 0;
-"171
+[; ;main.c: 166: if (temp <0) temp = 0;
+"166
 [e $ ! < _temp -> -> 0 `i `f 127  ]
 [e = _temp -> -> 0 `i `f ]
 [e :U 127 ]
-[; ;main.c: 172: posicao_do_grafico_service = temp;
-"172
-[e = _posicao_do_grafico_service _temp ]
-[; ;main.c: 175: if (temp < 2.5)
-"175
+[; ;main.c: 169: if (temp < 2.5)
+"169
 [e $ ! < -> _temp `d .2.5 128  ]
-[; ;main.c: 176: {
-"176
+[; ;main.c: 170: {
+"170
 {
-[; ;main.c: 178: fitemp = trapmf(temp,-1,0,1.5,3);
-"178
+[; ;main.c: 172: fitemp = trapmf(temp,-1,0,1.5,3);
+"172
 [e = _fitemp ( _trapmf (4 , , , , _temp -> -U -> 1 `i `f -> -> 0 `i `f -> .1.5 `f -> -> 3 `i `f ]
-[; ;main.c: 181: fop_rule1 = max_val(fitemp,0.1);
-"181
+[; ;main.c: 175: fop_rule1 = max_val(fitemp,0.1);
+"175
 [e = _fop_rule1 ( _max_val (2 , _fitemp -> .0.1 `f ]
-[; ;main.c: 184: x=0;
-"184
+[; ;main.c: 178: x=0;
+"178
 [e = _x -> -> 0 `i `f ]
-[; ;main.c: 185: y=0;
-"185
+[; ;main.c: 179: y=0;
+"179
 [e = _y -> -> 0 `i `f ]
-[; ;main.c: 186: for (int a=0; a<=10; a++)
-"186
+[; ;main.c: 180: for (int a=0; a<=10; a++)
+"180
 {
 [v _a `i ~T0 @X0 1 a ]
 [e = _a -> 0 `i ]
 [e $ <= _a -> 10 `i 129  ]
 [e $U 130  ]
-"187
+"181
 [e :U 129 ]
-[; ;main.c: 187: {
+[; ;main.c: 181: {
 {
-[; ;main.c: 188: y = trapmf(x,-1,0,1.5,3);
-"188
+[; ;main.c: 182: y = trapmf(x,-1,0,1.5,3);
+"182
 [e = _y ( _trapmf (4 , , , , _x -> -U -> 1 `i `f -> -> 0 `i `f -> .1.5 `f -> -> 3 `i `f ]
-[; ;main.c: 190: if (y > fop_rule1)
-"190
+[; ;main.c: 184: if (y > fop_rule1)
+"184
 [e $ ! > _y _fop_rule1 132  ]
-[; ;main.c: 191: {
-"191
+[; ;main.c: 185: {
+"185
 {
-[; ;main.c: 192: ideal += fop_rule1;
-"192
-[e =+ _ideal _fop_rule1 ]
-"193
+[; ;main.c: 186: mantem += fop_rule1;
+"186
+[e =+ _mantem _fop_rule1 ]
+"187
 }
-[; ;main.c: 193: }
+[; ;main.c: 187: }
 [e $U 133  ]
-"194
+"188
 [e :U 132 ]
-[; ;main.c: 194: else
-[; ;main.c: 195: {
-"195
+[; ;main.c: 188: else
+[; ;main.c: 189: {
+"189
 {
-[; ;main.c: 196: ideal += y;
-"196
-[e =+ _ideal _y ]
-"197
+[; ;main.c: 190: mantem += y;
+"190
+[e =+ _mantem _y ]
+"191
 }
 [e :U 133 ]
-[; ;main.c: 197: }
-[; ;main.c: 199: x=x+1;
-"199
+[; ;main.c: 191: }
+[; ;main.c: 193: x=x+1;
+"193
 [e = _x + _x -> -> 1 `i `f ]
-"200
+"194
 }
-"186
+"180
 [e ++ _a -> 1 `i ]
 [e $ <= _a -> 10 `i 129  ]
 [e :U 130 ]
-"200
+"194
 }
-"202
+"196
 }
 [e :U 128 ]
-[; ;main.c: 200: }
-[; ;main.c: 202: }
-[; ;main.c: 208: if ((temp > 2) && (temp < 7))
-"208
+[; ;main.c: 194: }
+[; ;main.c: 196: }
+[; ;main.c: 201: if ((temp > 2) && (temp < 7))
+"201
 [e $ ! && > _temp -> -> 2 `i `f < _temp -> -> 7 `i `f 134  ]
-[; ;main.c: 209: {
-"209
+[; ;main.c: 202: {
+"202
 {
-[; ;main.c: 211: fitemp = trimf(temp,2,5,8);
-"211
+[; ;main.c: 204: fitemp = trimf(temp,2,5,8);
+"204
 [e = _fitemp ( _trimf (4 , , , _temp -> -> 2 `i `f -> -> 5 `i `f -> -> 8 `i `f ]
-[; ;main.c: 214: fop_rule2 = max_val(fitemp,0.1);
-"214
+[; ;main.c: 207: fop_rule2 = max_val(fitemp,0.1);
+"207
 [e = _fop_rule2 ( _max_val (2 , _fitemp -> .0.1 `f ]
-[; ;main.c: 217: x=0;
-"217
+[; ;main.c: 210: x=0;
+"210
 [e = _x -> -> 0 `i `f ]
-[; ;main.c: 218: y=0;
-"218
+[; ;main.c: 211: y=0;
+"211
 [e = _y -> -> 0 `i `f ]
-[; ;main.c: 219: for (int a=0; a<=10; a++)
-"219
+[; ;main.c: 212: for (int a=0; a<=10; a++)
+"212
 {
 [v _a `i ~T0 @X0 1 a ]
 [e = _a -> 0 `i ]
 [e $ <= _a -> 10 `i 135  ]
 [e $U 136  ]
-"220
+"213
 [e :U 135 ]
-[; ;main.c: 220: {
+[; ;main.c: 213: {
 {
-[; ;main.c: 221: y = trimf(x,2,5,8);
-"221
+[; ;main.c: 214: y = trimf(x,2,5,8);
+"214
 [e = _y ( _trimf (4 , , , _x -> -> 2 `i `f -> -> 5 `i `f -> -> 8 `i `f ]
-[; ;main.c: 223: if (y >= fop_rule2)
-"223
+[; ;main.c: 216: if (y >= fop_rule2)
+"216
 [e $ ! >= _y _fop_rule2 138  ]
-[; ;main.c: 224: {
-"224
+[; ;main.c: 217: {
+"217
 {
-[; ;main.c: 225: tip_average += fop_rule2;
-"225
-[e =+ _tip_average _fop_rule2 ]
-"226
+[; ;main.c: 218: reduz += fop_rule2;
+"218
+[e =+ _reduz _fop_rule2 ]
+"219
 }
-[; ;main.c: 226: }
+[; ;main.c: 219: }
 [e $U 139  ]
-"227
+"220
 [e :U 138 ]
-[; ;main.c: 227: else
-[; ;main.c: 228: {
-"228
+[; ;main.c: 220: else
+[; ;main.c: 221: {
+"221
 {
-[; ;main.c: 229: tip_average += y;
-"229
-[e =+ _tip_average _y ]
-"230
+[; ;main.c: 222: reduz += y;
+"222
+[e =+ _reduz _y ]
+"223
 }
 [e :U 139 ]
-[; ;main.c: 230: }
-[; ;main.c: 232: x=x+1;
-"232
+[; ;main.c: 223: }
+[; ;main.c: 225: x=x+1;
+"225
 [e = _x + _x -> -> 1 `i `f ]
-"233
+"226
 }
-"219
+"212
 [e ++ _a -> 1 `i ]
 [e $ <= _a -> 10 `i 135  ]
 [e :U 136 ]
-"233
+"226
 }
-"235
+"228
 }
 [e :U 134 ]
-[; ;main.c: 233: }
-[; ;main.c: 235: }
-[; ;main.c: 240: if (temp > 7 )
-"240
+[; ;main.c: 226: }
+[; ;main.c: 228: }
+[; ;main.c: 233: if (temp > 7 )
+"233
 [e $ ! > _temp -> -> 7 `i `f 140  ]
-[; ;main.c: 241: {
-"241
+[; ;main.c: 234: {
+"234
 {
-[; ;main.c: 243: fitemp = trapmf(temp,6,8.5,10,11);
-"243
+[; ;main.c: 236: fitemp = trapmf(temp,6,8.5,10,11);
+"236
 [e = _fitemp ( _trapmf (4 , , , , _temp -> -> 6 `i `f -> .8.5 `f -> -> 10 `i `f -> -> 11 `i `f ]
-[; ;main.c: 247: fop_rule3 = max_val(fitemp,0.1);
-"247
+[; ;main.c: 240: fop_rule3 = max_val(fitemp,0.1);
+"240
 [e = _fop_rule3 ( _max_val (2 , _fitemp -> .0.1 `f ]
-[; ;main.c: 250: x=0;
-"250
+[; ;main.c: 243: x=0;
+"243
 [e = _x -> -> 0 `i `f ]
-[; ;main.c: 251: y=0;
-"251
+[; ;main.c: 244: y=0;
+"244
 [e = _y -> -> 0 `i `f ]
-[; ;main.c: 252: for (int a=0; a<=10; a++)
-"252
+[; ;main.c: 245: for (int a=0; a<=10; a++)
+"245
 {
 [v _a `i ~T0 @X0 1 a ]
 [e = _a -> 0 `i ]
 [e $ <= _a -> 10 `i 141  ]
 [e $U 142  ]
-"253
+"246
 [e :U 141 ]
-[; ;main.c: 253: {
+[; ;main.c: 246: {
 {
-[; ;main.c: 254: y = trapmf(x,7,8.5,10,11);
-"254
+[; ;main.c: 247: y = trapmf(x,7,8.5,10,11);
+"247
 [e = _y ( _trapmf (4 , , , , _x -> -> 7 `i `f -> .8.5 `f -> -> 10 `i `f -> -> 11 `i `f ]
-[; ;main.c: 256: if (y >= fop_rule3)
-"256
+[; ;main.c: 249: if (y >= fop_rule3)
+"249
 [e $ ! >= _y _fop_rule3 144  ]
-[; ;main.c: 257: {
-"257
+[; ;main.c: 250: {
+"250
 {
-[; ;main.c: 258: tip_gorgeous += fop_rule3;
-"258
-[e =+ _tip_gorgeous _fop_rule3 ]
-"259
+[; ;main.c: 251: aumenta += fop_rule3;
+"251
+[e =+ _aumenta _fop_rule3 ]
+"252
 }
-[; ;main.c: 259: }
+[; ;main.c: 252: }
 [e $U 145  ]
-"260
+"253
 [e :U 144 ]
-[; ;main.c: 260: else
-[; ;main.c: 261: {
-"261
+[; ;main.c: 253: else
+[; ;main.c: 254: {
+"254
 {
-[; ;main.c: 262: tip_gorgeous += y;
-"262
-[e =+ _tip_gorgeous _y ]
-"263
+[; ;main.c: 255: aumenta += y;
+"255
+[e =+ _aumenta _y ]
+"256
 }
 [e :U 145 ]
-[; ;main.c: 263: }
-[; ;main.c: 265: x=x+1;
-"265
+[; ;main.c: 256: }
+[; ;main.c: 258: x=x+1;
+"258
 [e = _x + _x -> -> 1 `i `f ]
-"266
+"259
 }
-"252
+"245
 [e ++ _a -> 1 `i ]
 [e $ <= _a -> 10 `i 141  ]
 [e :U 142 ]
-"266
+"259
 }
-"268
+"261
 }
 [e :U 140 ]
-[; ;main.c: 266: }
-[; ;main.c: 268: }
-[; ;main.c: 273: for (int a=0; a<1; a++)
-"273
+[; ;main.c: 259: }
+[; ;main.c: 261: }
+[; ;main.c: 264: for (int a=0; a<1; a++)
+"264
 {
 [v _a `i ~T0 @X0 1 a ]
 [e = _a -> 0 `i ]
 [e $ < _a -> 1 `i 146  ]
 [e $U 147  ]
-"274
+"265
 [e :U 146 ]
-[; ;main.c: 274: {
+[; ;main.c: 265: {
 {
-[; ;main.c: 275: if (temp < 2.5)
-"275
+[; ;main.c: 266: if (temp < 2.5)
+"266
 [e $ ! < -> _temp `d .2.5 149  ]
-[; ;main.c: 276: {
-"276
+[; ;main.c: 267: {
+"267
 {
-[; ;main.c: 277: tip = ideal;
-"277
-[e = _tip _ideal ]
-"278
+[; ;main.c: 268: tip = mantem;
+"268
+[e = _tip _mantem ]
+"269
 }
+[; ;main.c: 269: }else
+[e $U 150  ]
 [e :U 149 ]
-[; ;main.c: 278: }
-[; ;main.c: 280: if (temp >= 2.5 && temp < 7.5)
-"280
-[e $ ! && >= -> _temp `d .2.5 < -> _temp `d .7.5 150  ]
-[; ;main.c: 281: {
-"281
+[; ;main.c: 270: if (temp >= 2.5 && temp < 7.5)
+"270
+[e $ ! && >= -> _temp `d .2.5 < -> _temp `d .7.5 151  ]
+[; ;main.c: 271: {
+"271
 {
-[; ;main.c: 282: tip = tip_average;
-"282
-[e = _tip _tip_average ]
-"283
-}
-[e :U 150 ]
-[; ;main.c: 283: }
-[; ;main.c: 285: if (temp >= 7.5 && temp <= 10)
-"285
-[e $ ! && >= -> _temp `d .7.5 <= _temp -> -> 10 `i `f 151  ]
-[; ;main.c: 286: {
-"286
-{
-[; ;main.c: 287: tip = tip_gorgeous;
-"287
-[e = _tip _tip_gorgeous ]
-"288
-}
-[e :U 151 ]
-"289
-}
+[; ;main.c: 272: tip = reduz;
+"272
+[e = _tip _reduz ]
 "273
+}
+[; ;main.c: 273: }else
+[e $U 152  ]
+[e :U 151 ]
+[; ;main.c: 274: {
+"274
+{
+[; ;main.c: 275: tip = aumenta;
+"275
+[e = _tip _aumenta ]
+"276
+}
+[e :U 152 ]
+[e :U 150 ]
+"277
+}
+"264
 [e ++ _a -> 1 `i ]
 [e $ < _a -> 1 `i 146  ]
 [e :U 147 ]
-"289
+"277
 }
-[; ;main.c: 288: }
-[; ;main.c: 289: }
-[; ;main.c: 293: x = 0;
-"293
+[; ;main.c: 276: }
+[; ;main.c: 277: }
+[; ;main.c: 280: x = 0;
+"280
 [e = _x -> -> 0 `i `f ]
-[; ;main.c: 294: total_area = 0;
-"294
+[; ;main.c: 281: total_area = 0;
+"281
 [e = _total_area -> -> 0 `i `f ]
-[; ;main.c: 295: sum = 0;
-"295
+[; ;main.c: 282: sum = 0;
+"282
 [e = _sum -> -> 0 `i `f ]
-[; ;main.c: 296: for (int a=0; a<1; a++)
-"296
+[; ;main.c: 283: for (int a=0; a<1; a++)
+"283
 {
 [v _a `i ~T0 @X0 1 a ]
 [e = _a -> 0 `i ]
-[e $ < _a -> 1 `i 152  ]
-[e $U 153  ]
-"297
-[e :U 152 ]
-[; ;main.c: 297: {
-{
-[; ;main.c: 298: total_area = total_area + tip;
-"298
-[e = _total_area + _total_area _tip ]
-[; ;main.c: 299: sum = sum + (x * tip);
-"299
-[e = _sum + _sum * _x _tip ]
-[; ;main.c: 301: x=x+1;
-"301
-[e = _x + _x -> -> 1 `i `f ]
-"302
-}
-"296
-[e ++ _a -> 1 `i ]
-[e $ < _a -> 1 `i 152  ]
+[e $ < _a -> 1 `i 153  ]
+[e $U 154  ]
+"284
 [e :U 153 ]
-"302
+[; ;main.c: 284: {
+{
+[; ;main.c: 285: total_area = total_area + tip;
+"285
+[e = _total_area + _total_area _tip ]
+[; ;main.c: 286: sum = sum + (x * tip);
+"286
+[e = _sum + _sum * _x _tip ]
+[; ;main.c: 288: x=x+1;
+"288
+[e = _x + _x -> -> 1 `i `f ]
+"289
 }
-[; ;main.c: 302: }
-[; ;main.c: 305: ativa_fan = sum/total_area;
-"305
+"283
+[e ++ _a -> 1 `i ]
+[e $ < _a -> 1 `i 153  ]
+[e :U 154 ]
+"289
+}
+[; ;main.c: 289: }
+[; ;main.c: 292: ativa_fan = sum/total_area;
+"292
 [e = _ativa_fan / _sum _total_area ]
-[; ;main.c: 306: posicao_do_grafico = ativa_fan;
-"306
+[; ;main.c: 293: posicao_do_grafico = ativa_fan;
+"293
 [e = _posicao_do_grafico _ativa_fan ]
-"317
-[v _velocidade `uc ~T0 @X0 -> -> 1 `i `ux a ]
-[; ;main.c: 317: char velocidade[1];
-[; ;main.c: 319: if(ativa_fan <= 2.5 )
-"319
-[e $ ! <= -> _ativa_fan `d .2.5 155  ]
-[; ;main.c: 320: {
-"320
+[; ;main.c: 297: if (deltaV >0 && deltaV < 120)
+"297
+[e $ ! && > _deltaV -> -> 0 `i `ui < _deltaV -> -> 120 `i `ui 156  ]
+[; ;main.c: 298: {
+"298
 {
-[; ;main.c: 322: velocidade[0] = '0';
-"322
-[e = *U + &U _velocidade * -> -> -> 0 `i `ui `ux -> -> # *U &U _velocidade `ui `ux -> -> 48 `ui `uc ]
-"323
-}
-[e :U 155 ]
-[; ;main.c: 323: }
-[; ;main.c: 324: if(ativa_fan > 2.5 && ativa_fan < 7.5)
-"324
-[e $ ! && > -> _ativa_fan `d .2.5 < -> _ativa_fan `d .7.5 156  ]
-[; ;main.c: 325: {
-"325
-{
-[; ;main.c: 327: velocidade[0] = '7';
-"327
-[e = *U + &U _velocidade * -> -> -> 0 `i `ui `ux -> -> # *U &U _velocidade `ui `ux -> -> 55 `ui `uc ]
-"328
+[; ;main.c: 299: PWM_DutyCycle2(deltaV);
+"299
+[e ( _PWM_DutyCycle2 (1 -> _deltaV `i ]
+"300
 }
 [e :U 156 ]
-[; ;main.c: 328: }
-[; ;main.c: 330: if(ativa_fan >= 7.5)
-"330
-[e $ ! >= -> _ativa_fan `d .7.5 157  ]
-[; ;main.c: 331: {
-"331
-{
-[; ;main.c: 333: velocidade[0] = '9';
-"333
-[e = *U + &U _velocidade * -> -> -> 0 `i `ui `ux -> -> # *U &U _velocidade `ui `ux -> -> 57 `ui `uc ]
-"334
+[; ;main.c: 300: }
+[; ;main.c: 307: }
+"307
+[e :UE 125 ]
 }
-[e :U 157 ]
-[; ;main.c: 334: }
-[; ;main.c: 337: deltaV = (unsigned int)ativa_fan;
-"337
-[e = _deltaV -> _ativa_fan `ui ]
-[; ;main.c: 338: if (deltaV >0 && deltaV < 9000)
+[v F1401 `(v ~T0 @X0 1 tf ]
+"318
+[v _ISR `IF1401 ~T0 @X0 1 e ]
+"319
+{
+[; ;main.c: 318: void interrupt ISR(void)
+[; ;main.c: 319: {
+[e :U _ISR ]
+[f ]
+[; ;main.c: 321: if (PIR1bits.RCIF)
+"321
+[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 158  ]
+[; ;main.c: 322: {
+"322
+{
+[; ;main.c: 323: if (USART_ReceiveChar() == '0')
+"323
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 48 `ui 159  ]
+[; ;main.c: 324: {
+"324
+{
+[; ;main.c: 325: USART_WriteString("\n\rdesligado\n\r");
+"325
+[e ( _USART_WriteString (1 :s 1C ]
+[; ;main.c: 326: pwm = 0;
+"326
+[e = _pwm -> -> 0 `i `ui ]
+[; ;main.c: 327: PWM_DutyCycle2(pwm);
+"327
+[e ( _PWM_DutyCycle2 (1 -> _pwm `i ]
+[; ;main.c: 328: return;
+"328
+[e $UE 157  ]
+"329
+}
+[e :U 159 ]
+[; ;main.c: 329: }
+[; ;main.c: 331: if (USART_ReceiveChar() == '1')
+"331
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 49 `ui 160  ]
+[; ;main.c: 332: {
+"332
+{
+[; ;main.c: 333: USART_WriteString("\n\rpwm = 32\n\r");
+"333
+[e ( _USART_WriteString (1 :s 2C ]
+[; ;main.c: 334: pwm = 32;
+"334
+[e = _pwm -> -> 32 `i `ui ]
+"336
+}
+[e :U 160 ]
+[; ;main.c: 336: }
+[; ;main.c: 338: if (USART_ReceiveChar() == '2')
 "338
-[e $ ! && > _deltaV -> -> 0 `i `ui < _deltaV -> -> 9000 `i `ui 158  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 50 `ui 161  ]
 [; ;main.c: 339: {
 "339
 {
-[; ;main.c: 340: PWM_DutyCycle2(deltaV);
+[; ;main.c: 340: USART_WriteString("\n\rpwm = 64\n\r");
 "340
-[e ( _PWM_DutyCycle2 (1 -> _deltaV `i ]
+[e ( _USART_WriteString (1 :s 3C ]
+[; ;main.c: 341: pwm = 64;
 "341
-}
-[e :U 158 ]
-[; ;main.c: 341: }
-[; ;main.c: 348: }
-"348
-[e :UE 125 ]
-}
-[v F1404 `(v ~T0 @X0 1 tf ]
-"359
-[v _ISR `IF1404 ~T0 @X0 1 e ]
-"360
-{
-[; ;main.c: 359: void interrupt ISR(void)
-[; ;main.c: 360: {
-[e :U _ISR ]
-[f ]
-[; ;main.c: 362: if (PIR1bits.RCIF)
-"362
-[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 160  ]
-[; ;main.c: 363: {
-"363
-{
-[; ;main.c: 364: if (USART_ReceiveChar() == '0')
-"364
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 48 `ui 161  ]
-[; ;main.c: 365: {
-"365
-{
-[; ;main.c: 366: USART_WriteString("\n\rdesligado\n\r");
-"366
-[e ( _USART_WriteString (1 :s 1C ]
-[; ;main.c: 367: pwm = 0;
-"367
-[e = _pwm -> -> 0 `i `ui ]
-[; ;main.c: 368: PWM_DutyCycle2(pwm);
-"368
-[e ( _PWM_DutyCycle2 (1 -> _pwm `i ]
-[; ;main.c: 369: return;
-"369
-[e $UE 159  ]
-"370
+[e = _pwm -> -> 64 `i `ui ]
+"343
 }
 [e :U 161 ]
+[; ;main.c: 343: }
+[; ;main.c: 345: if (USART_ReceiveChar() == '3')
+"345
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 51 `ui 162  ]
+[; ;main.c: 346: {
+"346
+{
+[; ;main.c: 347: USART_WriteString("\n\rpwm = 128\n\r");
+"347
+[e ( _USART_WriteString (1 :s 4C ]
+[; ;main.c: 348: pwm = 128;
+"348
+[e = _pwm -> -> 128 `i `ui ]
+[; ;main.c: 350: if(PORTBbits.RB0 == 0)
+"350
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 163  ]
+[; ;main.c: 351: {
+"351
+{
+[; ;main.c: 352: PORTBbits.RB0 = 1;
+"352
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+"353
+}
+[; ;main.c: 353: }else{
+[e $U 164  ]
+[e :U 163 ]
+{
+[; ;main.c: 354: PORTBbits.RB0 = 0;
+"354
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"355
+}
+[e :U 164 ]
+"356
+}
+[e :U 162 ]
+[; ;main.c: 355: }
+[; ;main.c: 356: }
+[; ;main.c: 358: if (USART_ReceiveChar() == '4')
+"358
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 52 `ui 165  ]
+[; ;main.c: 359: {
+"359
+{
+[; ;main.c: 360: USART_WriteString("\n\rpwm = 256\n\r");
+"360
+[e ( _USART_WriteString (1 :s 5C ]
+[; ;main.c: 361: pwm = 256;
+"361
+[e = _pwm -> -> 256 `i `ui ]
+[; ;main.c: 362: PWM_DutyCycle2(pwm);
+"362
+[e ( _PWM_DutyCycle2 (1 -> _pwm `i ]
+[; ;main.c: 363: if(PORTBbits.RB1 == 0)
+"363
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 166  ]
+[; ;main.c: 364: {
+"364
+{
+[; ;main.c: 365: PORTBbits.RB1 = 1;
+"365
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"366
+}
+[; ;main.c: 366: }else{
+[e $U 167  ]
+[e :U 166 ]
+{
+[; ;main.c: 367: PORTBbits.RB1 = 0;
+"367
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"368
+}
+[e :U 167 ]
+[; ;main.c: 368: }
+[; ;main.c: 369: return;
+"369
+[e $UE 157  ]
+"370
+}
+[e :U 165 ]
 [; ;main.c: 370: }
-[; ;main.c: 372: if (USART_ReceiveChar() == '1')
+[; ;main.c: 372: if (USART_ReceiveChar() == '5')
 "372
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 49 `ui 162  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 53 `ui 168  ]
 [; ;main.c: 373: {
 "373
 {
-[; ;main.c: 374: USART_WriteString("\n\rpwm = 32\n\r");
+[; ;main.c: 374: USART_WriteString("\n\rpwm = 512\n\r");
 "374
-[e ( _USART_WriteString (1 :s 2C ]
-[; ;main.c: 375: pwm = 32;
+[e ( _USART_WriteString (1 :s 6C ]
+[; ;main.c: 375: pwm = 512;
 "375
-[e = _pwm -> -> 32 `i `ui ]
+[e = _pwm -> -> 512 `i `ui ]
 "377
 }
-[e :U 162 ]
+[e :U 168 ]
 [; ;main.c: 377: }
-[; ;main.c: 379: if (USART_ReceiveChar() == '2')
+[; ;main.c: 379: if (USART_ReceiveChar() == '6')
 "379
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 50 `ui 163  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 54 `ui 169  ]
 [; ;main.c: 380: {
 "380
 {
-[; ;main.c: 381: USART_WriteString("\n\rpwm = 64\n\r");
+[; ;main.c: 381: USART_WriteString("\n\rpwm = 768\n\r");
 "381
-[e ( _USART_WriteString (1 :s 3C ]
-[; ;main.c: 382: pwm = 64;
+[e ( _USART_WriteString (1 :s 7C ]
+[; ;main.c: 382: pwm = 768;
 "382
-[e = _pwm -> -> 64 `i `ui ]
+[e = _pwm -> -> 768 `i `ui ]
 "384
 }
-[e :U 163 ]
+[e :U 169 ]
 [; ;main.c: 384: }
-[; ;main.c: 386: if (USART_ReceiveChar() == '3')
+[; ;main.c: 386: if (USART_ReceiveChar() == '7')
 "386
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 51 `ui 164  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 55 `ui 170  ]
 [; ;main.c: 387: {
 "387
 {
-[; ;main.c: 388: USART_WriteString("\n\rpwm = 128\n\r");
+[; ;main.c: 388: USART_WriteString("\n\rpwm = 896\n\r");
 "388
-[e ( _USART_WriteString (1 :s 4C ]
-[; ;main.c: 389: pwm = 128;
+[e ( _USART_WriteString (1 :s 8C ]
+[; ;main.c: 389: pwm = 896;
 "389
-[e = _pwm -> -> 128 `i `ui ]
-[; ;main.c: 391: if(PORTBbits.RB0 == 0)
+[e = _pwm -> -> 896 `i `ui ]
 "391
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 165  ]
-[; ;main.c: 392: {
-"392
-{
-[; ;main.c: 393: PORTBbits.RB0 = 1;
-"393
-[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"394
-}
-[; ;main.c: 394: }else{
-[e $U 166  ]
-[e :U 165 ]
-{
-[; ;main.c: 395: PORTBbits.RB0 = 0;
-"395
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"396
-}
-[e :U 166 ]
-"397
-}
-[e :U 164 ]
-[; ;main.c: 396: }
-[; ;main.c: 397: }
-[; ;main.c: 399: if (USART_ReceiveChar() == '4')
-"399
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 52 `ui 167  ]
-[; ;main.c: 400: {
-"400
-{
-[; ;main.c: 401: USART_WriteString("\n\rpwm = 256\n\r");
-"401
-[e ( _USART_WriteString (1 :s 5C ]
-[; ;main.c: 402: pwm = 256;
-"402
-[e = _pwm -> -> 256 `i `ui ]
-[; ;main.c: 403: PWM_DutyCycle2(pwm);
-"403
-[e ( _PWM_DutyCycle2 (1 -> _pwm `i ]
-[; ;main.c: 404: if(PORTBbits.RB1 == 0)
-"404
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 168  ]
-[; ;main.c: 405: {
-"405
-{
-[; ;main.c: 406: PORTBbits.RB1 = 1;
-"406
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"407
-}
-[; ;main.c: 407: }else{
-[e $U 169  ]
-[e :U 168 ]
-{
-[; ;main.c: 408: PORTBbits.RB1 = 0;
-"408
-[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-"409
-}
-[e :U 169 ]
-[; ;main.c: 409: }
-[; ;main.c: 410: return;
-"410
-[e $UE 159  ]
-"411
-}
-[e :U 167 ]
-[; ;main.c: 411: }
-[; ;main.c: 413: if (USART_ReceiveChar() == '5')
-"413
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 53 `ui 170  ]
-[; ;main.c: 414: {
-"414
-{
-[; ;main.c: 415: USART_WriteString("\n\rpwm = 512\n\r");
-"415
-[e ( _USART_WriteString (1 :s 6C ]
-[; ;main.c: 416: pwm = 512;
-"416
-[e = _pwm -> -> 512 `i `ui ]
-"418
 }
 [e :U 170 ]
-[; ;main.c: 418: }
-[; ;main.c: 420: if (USART_ReceiveChar() == '6')
-"420
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 54 `ui 171  ]
-[; ;main.c: 421: {
-"421
+[; ;main.c: 391: }
+[; ;main.c: 393: if (USART_ReceiveChar() == '8')
+"393
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 56 `ui 171  ]
+[; ;main.c: 394: {
+"394
 {
-[; ;main.c: 422: USART_WriteString("\n\rpwm = 768\n\r");
-"422
-[e ( _USART_WriteString (1 :s 7C ]
-[; ;main.c: 423: pwm = 768;
-"423
-[e = _pwm -> -> 768 `i `ui ]
-"425
+[; ;main.c: 395: USART_WriteString("\n\rpwm = 1000\n\r");
+"395
+[e ( _USART_WriteString (1 :s 9C ]
+[; ;main.c: 396: pwm = 1000;
+"396
+[e = _pwm -> -> 1000 `i `ui ]
+"398
 }
 [e :U 171 ]
-[; ;main.c: 425: }
-[; ;main.c: 427: if (USART_ReceiveChar() == '7')
-"427
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 55 `ui 172  ]
-[; ;main.c: 428: {
-"428
+[; ;main.c: 398: }
+[; ;main.c: 400: if (USART_ReceiveChar() == '9')
+"400
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 57 `ui 172  ]
+[; ;main.c: 401: {
+"401
 {
-[; ;main.c: 429: USART_WriteString("\n\rpwm = 896\n\r");
-"429
-[e ( _USART_WriteString (1 :s 8C ]
-[; ;main.c: 430: pwm = 896;
-"430
-[e = _pwm -> -> 896 `i `ui ]
-"432
+[; ;main.c: 402: USART_WriteString("\n\rpwm = 1023\n\r");
+"402
+[e ( _USART_WriteString (1 :s 10C ]
+[; ;main.c: 403: pwm = 1023;
+"403
+[e = _pwm -> -> 1023 `i `ui ]
+"405
 }
 [e :U 172 ]
-[; ;main.c: 432: }
-[; ;main.c: 434: if (USART_ReceiveChar() == '8')
-"434
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 56 `ui 173  ]
-[; ;main.c: 435: {
-"435
+[; ;main.c: 405: }
+[; ;main.c: 409: Fuzzy();
+"409
+[e ( _Fuzzy ..  ]
+[; ;main.c: 410: tf = pwm;
+"410
+[e = _tf -> _pwm `f ]
+[; ;main.c: 412: PIR1bits.RCIF = 0;
+"412
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"413
+}
+[e :U 158 ]
+[; ;main.c: 413: }
+[; ;main.c: 416: if (PIR1bits.ADIF)
+"416
+[e $ ! != -> . . _PIR1bits 0 6 `i -> -> -> 0 `i `Vuc `i 173  ]
+[; ;main.c: 417: {
+"417
 {
-[; ;main.c: 436: USART_WriteString("\n\rpwm = 1000\n\r");
-"436
-[e ( _USART_WriteString (1 :s 9C ]
-[; ;main.c: 437: pwm = 1000;
-"437
-[e = _pwm -> -> 1000 `i `ui ]
-"439
+[; ;main.c: 421: PIR1bits.ADIF = 0;
+"421
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"422
 }
 [e :U 173 ]
-[; ;main.c: 439: }
-[; ;main.c: 441: if (USART_ReceiveChar() == '9')
-"441
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 57 `ui 174  ]
-[; ;main.c: 442: {
-"442
+[; ;main.c: 422: }
+[; ;main.c: 426: if (INTCONbits.T0IF)
+"426
+[e $ ! != -> . . _INTCONbits 1 1 `i -> -> -> 0 `i `Vuc `i 174  ]
+[; ;main.c: 427: {
+"427
 {
-[; ;main.c: 443: USART_WriteString("\n\rpwm = 1023\n\r");
-"443
-[e ( _USART_WriteString (1 :s 10C ]
-[; ;main.c: 444: pwm = 1023;
-"444
-[e = _pwm -> -> 1023 `i `ui ]
-"446
-}
-[e :U 174 ]
-[; ;main.c: 446: }
-[; ;main.c: 453: PIR1bits.RCIF = 0;
-"453
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"454
-}
-[e :U 160 ]
-[; ;main.c: 454: }
-[; ;main.c: 457: if (PIR1bits.ADIF)
-"457
-[e $ ! != -> . . _PIR1bits 0 6 `i -> -> -> 0 `i `Vuc `i 175  ]
-[; ;main.c: 458: {
-"458
-{
-[; ;main.c: 462: PIR1bits.ADIF = 0;
-"462
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"463
-}
-[e :U 175 ]
-[; ;main.c: 463: }
-[; ;main.c: 467: if (INTCONbits.T0IF)
-"467
-[e $ ! != -> . . _INTCONbits 1 1 `i -> -> -> 0 `i `Vuc `i 176  ]
-[; ;main.c: 468: {
-"468
-{
-[; ;main.c: 470: TIMER0_Set(238);
-"470
+[; ;main.c: 429: TIMER0_Set(238);
+"429
 [e ( _TIMER0_Set (1 -> -> 238 `i `uc ]
-[; ;main.c: 473: if (contagens_tm0 < 499)
-"473
-[e $ ! < _contagens_tm0 -> -> 499 `i `ui 177  ]
-[; ;main.c: 474: {
-"474
+[; ;main.c: 432: if (contagens_tm0 < 499)
+"432
+[e $ ! < _contagens_tm0 -> -> 499 `i `ui 175  ]
+[; ;main.c: 433: {
+"433
 {
-[; ;main.c: 476: contagens_tm0++;
-"476
+[; ;main.c: 435: contagens_tm0++;
+"435
 [e ++ _contagens_tm0 -> -> 1 `i `ui ]
-[; ;main.c: 479: PORTBbits.RB6 = 1;
-"479
+[; ;main.c: 438: PORTBbits.RB6 = 1;
+"438
 [e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
-"480
+"439
 }
-[; ;main.c: 480: }
-[e $U 178  ]
-"481
-[e :U 177 ]
-[; ;main.c: 481: else
-[; ;main.c: 482: {
-"482
+[; ;main.c: 439: }
+[e $U 176  ]
+"440
+[e :U 175 ]
+[; ;main.c: 440: else
+[; ;main.c: 441: {
+"441
 {
-[; ;main.c: 484: contagens_tm0 = 0;
-"484
+[; ;main.c: 443: contagens_tm0 = 0;
+"443
 [e = _contagens_tm0 -> -> 0 `i `ui ]
-[; ;main.c: 487: pulsos = (TMR1H << 8) + TMR1L;
-"487
+[; ;main.c: 446: pulsos = (TMR1H << 8) + TMR1L;
+"446
 [e = _pulsos -> + << -> _TMR1H `i -> 8 `i -> _TMR1L `i `ui ]
-[; ;main.c: 488: rpm = ((pulsos / pas_cooler) * 120);
-"488
+[; ;main.c: 447: rpm = ((pulsos / pas_cooler) * 120);
+"447
 [e = _rpm * / _pulsos _pas_cooler -> -> 120 `i `ui ]
-[; ;main.c: 491: TMR1L = 0x00;
-"491
+[; ;main.c: 450: TMR1L = 0x00;
+"450
 [e = _TMR1L -> -> 0 `i `uc ]
-[; ;main.c: 492: TMR1H = 0x00;
-"492
+[; ;main.c: 451: TMR1H = 0x00;
+"451
 [e = _TMR1H -> -> 0 `i `uc ]
-[; ;main.c: 495: PORTBbits.RB6 = 0;
-"495
+[; ;main.c: 454: PORTBbits.RB6 = 0;
+"454
 [e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
-"496
-}
-[e :U 178 ]
-[; ;main.c: 496: }
-[; ;main.c: 499: INTCONbits.T0IF = 0;
-"499
-[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
-"500
+"455
 }
 [e :U 176 ]
-[; ;main.c: 500: }
-[; ;main.c: 503: if (PIR1bits.TMR1IF)
-"503
-[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 179  ]
-[; ;main.c: 504: {
-"504
+[; ;main.c: 455: }
+[; ;main.c: 458: INTCONbits.T0IF = 0;
+"458
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+"459
+}
+[e :U 174 ]
+[; ;main.c: 459: }
+[; ;main.c: 462: if (PIR1bits.TMR1IF)
+"462
+[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 177  ]
+[; ;main.c: 463: {
+"463
 {
-[; ;main.c: 508: PIR1bits.TMR1IF = 0;
-"508
+[; ;main.c: 467: PIR1bits.TMR1IF = 0;
+"467
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"509
+"468
 }
-[e :U 179 ]
-[; ;main.c: 509: }
-[; ;main.c: 512: if (PIR1bits.SSPIF)
-"512
-[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 180  ]
-[; ;main.c: 513: {
-"513
+[e :U 177 ]
+[; ;main.c: 468: }
+[; ;main.c: 471: if (PIR1bits.SSPIF)
+"471
+[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 178  ]
+[; ;main.c: 472: {
+"472
 {
-[; ;main.c: 517: PIR1bits.SSPIF = 0;
-"517
+[; ;main.c: 476: PIR1bits.SSPIF = 0;
+"476
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"518
+"477
 }
-[e :U 180 ]
-[; ;main.c: 518: }
-[; ;main.c: 519: }
-"519
-[e :UE 159 ]
+[e :U 178 ]
+[; ;main.c: 477: }
+[; ;main.c: 478: }
+"478
+[e :UE 157 ]
 }
-"522
+"481
 [v _main `(v ~T0 @X0 1 ef ]
-"523
+"482
 {
-[; ;main.c: 522: void main(void)
-[; ;main.c: 523: {
+[; ;main.c: 481: void main(void)
+[; ;main.c: 482: {
 [e :U _main ]
 [f ]
-[; ;main.c: 524: TRISA = 0b00000001;
-"524
+[; ;main.c: 483: TRISA = 0b00000001;
+"483
 [e = _TRISA -> -> 1 `i `uc ]
-[; ;main.c: 525: PORTA = 0b00000001;
-"525
+[; ;main.c: 484: PORTA = 0b00000001;
+"484
 [e = _PORTA -> -> 1 `i `uc ]
-[; ;main.c: 526: TRISB = 0b00000000;
-"526
+[; ;main.c: 485: TRISB = 0b00000000;
+"485
 [e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 527: PORTB = 0b00000000;
-"527
+[; ;main.c: 486: PORTB = 0b00000000;
+"486
 [e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 528: TRISC = 0b10000001;
-"528
+[; ;main.c: 487: TRISC = 0b10000001;
+"487
 [e = _TRISC -> -> 129 `i `uc ]
-[; ;main.c: 529: PORTC = 0b11000000;
-"529
+[; ;main.c: 488: PORTC = 0b11000000;
+"488
 [e = _PORTC -> -> 192 `i `uc ]
-[; ;main.c: 530: TRISD = 0b00000000;
-"530
+[; ;main.c: 489: TRISD = 0b00000000;
+"489
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 531: PORTD = 0b00000000;
-"531
+[; ;main.c: 490: PORTD = 0b00000000;
+"490
 [e = _PORTD -> -> 0 `i `uc ]
-[; ;main.c: 532: TRISE = 0b00000000;
-"532
+[; ;main.c: 491: TRISE = 0b00000000;
+"491
 [e = _TRISE -> -> 0 `i `uc ]
-[; ;main.c: 533: PORTE = 0b00000000;
-"533
+[; ;main.c: 492: PORTE = 0b00000000;
+"492
 [e = _PORTE -> -> 0 `i `uc ]
-[; ;main.c: 536: T1CON = 0x03;
-"536
+[; ;main.c: 495: T1CON = 0x03;
+"495
 [e = _T1CON -> -> 3 `i `uc ]
-[; ;main.c: 537: TMR1L = 0x00;
-"537
+[; ;main.c: 496: TMR1L = 0x00;
+"496
 [e = _TMR1L -> -> 0 `i `uc ]
-[; ;main.c: 538: TMR1H = 0x00;
-"538
+[; ;main.c: 497: TMR1H = 0x00;
+"497
 [e = _TMR1H -> -> 0 `i `uc ]
-[; ;main.c: 541: USART_Init(115200);
-"541
+[; ;main.c: 500: USART_Init(115200);
+"500
 [e ( _USART_Init (1 -> 115200 `l ]
-[; ;main.c: 542: TIMER0_Init();
-"542
+[; ;main.c: 501: TIMER0_Init();
+"501
 [e ( _TIMER0_Init ..  ]
-[; ;main.c: 543: ADC_Init();
-"543
+[; ;main.c: 502: ADC_Init();
+"502
 [e ( _ADC_Init ..  ]
-[; ;main.c: 544: PWM_Init();
-"544
+[; ;main.c: 503: PWM_Init();
+"503
 [e ( _PWM_Init ..  ]
-[; ;main.c: 545: LCD_Init();
-"545
+[; ;main.c: 504: LCD_Init();
+"504
 [e ( _LCD_Init ..  ]
-[; ;main.c: 548: INTCONbits.PEIE = 1;
-"548
+[; ;main.c: 507: INTCONbits.PEIE = 1;
+"507
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 549: INTCONbits.GIE = 1;
-"549
+[; ;main.c: 508: INTCONbits.GIE = 1;
+"508
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 552: USART_WriteString("Inicializando o PIC16F877A\n\r");
-"552
+[; ;main.c: 511: USART_WriteString("Inicializando o PIC16F877A\n\r");
+"511
 [e ( _USART_WriteString (1 :s 11C ]
-[; ;main.c: 553: USART_WriteString("USART: 115.200bps\n\r");
-"553
+[; ;main.c: 512: USART_WriteString("USART: 115.200bps\n\r");
+"512
 [e ( _USART_WriteString (1 :s 12C ]
-[; ;main.c: 556: LCD_Init();
-"556
+[; ;main.c: 515: LCD_Init();
+"515
 [e ( _LCD_Init ..  ]
-[; ;main.c: 557: LCD_Cursor(0,0);
-"557
+[; ;main.c: 516: LCD_Cursor(0,0);
+"516
 [e ( _LCD_Cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 558: LCD_WriteString("Inicializando...");
-"558
+[; ;main.c: 517: LCD_WriteString("Inicializando...");
+"517
 [e ( _LCD_WriteString (1 :s 13C ]
-[; ;main.c: 561: PWM_DutyCycle1(0);
-"561
+[; ;main.c: 520: PWM_DutyCycle1(0);
+"520
 [e ( _PWM_DutyCycle1 (1 -> 0 `i ]
-[; ;main.c: 562: PWM_DutyCycle2(0);
-"562
+[; ;main.c: 521: PWM_DutyCycle2(0);
+"521
 [e ( _PWM_DutyCycle2 (1 -> 0 `i ]
-[; ;main.c: 565: TIMER0_Set(238);
-"565
+[; ;main.c: 524: TIMER0_Set(238);
+"524
 [e ( _TIMER0_Set (1 -> -> 238 `i `uc ]
-[; ;main.c: 568: _delay((unsigned long)((1000)*(18432000/4000.0)));
-"568
+[; ;main.c: 527: _delay((unsigned long)((1000)*(18432000/4000.0)));
+"527
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 18432000 `l `d .4000.0 `ul ]
-[; ;main.c: 571: while(1)
-"571
-[e :U 183 ]
-[; ;main.c: 572: {
-"572
+[; ;main.c: 530: while(1)
+"530
+[e :U 181 ]
+[; ;main.c: 531: {
+"531
 {
-[; ;main.c: 574: sprintf(display_rpm,"%04d", deltaV);
-"574
+[; ;main.c: 533: sprintf(display_rpm,"%04d", deltaV);
+"533
 [e ( _sprintf (1 , (. , &U _display_rpm :s 14C _deltaV ]
-[; ;main.c: 575: sprintf(display_pwm,"%04d", pwm);
-"575
+[; ;main.c: 534: sprintf(display_pwm,"%04d", pwm);
+"534
 [e ( _sprintf (1 , (. , &U _display_pwm :s 15C _pwm ]
-[; ;main.c: 579: USART_WriteString(display_rpm);
-"579
+[; ;main.c: 538: USART_WriteString(display_rpm);
+"538
 [e ( _USART_WriteString (1 -> &U _display_rpm `*Cuc ]
-[; ;main.c: 580: USART_WriteString("\n\r");
-"580
+[; ;main.c: 539: USART_WriteString("\n\r");
+"539
 [e ( _USART_WriteString (1 :s 16C ]
-[; ;main.c: 583: LCD_Clear();
-"583
+[; ;main.c: 542: LCD_Clear();
+"542
 [e ( _LCD_Clear ..  ]
-[; ;main.c: 584: LCD_Cursor(0,0);
-"584
+[; ;main.c: 543: LCD_Cursor(0,0);
+"543
 [e ( _LCD_Cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 585: LCD_WriteString("DlV: ");
-"585
+[; ;main.c: 544: LCD_WriteString("DlV: ");
+"544
 [e ( _LCD_WriteString (1 :s 17C ]
-[; ;main.c: 586: LCD_Cursor(0,6);
-"586
+[; ;main.c: 545: LCD_Cursor(0,6);
+"545
 [e ( _LCD_Cursor (2 , -> -> 0 `i `uc -> -> 6 `i `uc ]
-[; ;main.c: 587: LCD_WriteString(display_rpm);
-"587
+[; ;main.c: 546: LCD_WriteString(display_rpm);
+"546
 [e ( _LCD_WriteString (1 -> &U _display_rpm `*Cuc ]
-[; ;main.c: 588: LCD_Cursor(1,0);
-"588
+[; ;main.c: 547: LCD_Cursor(1,0);
+"547
 [e ( _LCD_Cursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 589: LCD_WriteString("PWM: ");
-"589
+[; ;main.c: 548: LCD_WriteString("PWM: ");
+"548
 [e ( _LCD_WriteString (1 :s 18C ]
-[; ;main.c: 590: LCD_Cursor(1,6);
-"590
+[; ;main.c: 549: LCD_Cursor(1,6);
+"549
 [e ( _LCD_Cursor (2 , -> -> 1 `i `uc -> -> 6 `i `uc ]
-[; ;main.c: 591: LCD_WriteString(display_pwm);
-"591
+[; ;main.c: 550: LCD_WriteString(display_pwm);
+"550
 [e ( _LCD_WriteString (1 -> &U _display_pwm `*Cuc ]
-[; ;main.c: 593: _delay((unsigned long)((200)*(18432000/4000.0)));
-"593
+[; ;main.c: 552: _delay((unsigned long)((200)*(18432000/4000.0)));
+"552
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 18432000 `l `d .4000.0 `ul ]
-"594
+"553
 }
+[e :U 180 ]
+"530
+[e $U 181  ]
 [e :U 182 ]
-"571
-[e $U 183  ]
-[e :U 184 ]
-[; ;main.c: 594: }
-[; ;main.c: 595: }
-"595
-[e :UE 181 ]
+[; ;main.c: 553: }
+[; ;main.c: 554: }
+"554
+[e :UE 179 ]
 }
 [p f _sprintf 8421508 ]
 [a 14C 37 48 52 100 0 ]

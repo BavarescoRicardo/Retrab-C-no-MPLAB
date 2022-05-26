@@ -50,7 +50,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SSPCON2 `Vuc ~T0 @X0 0 e@145 ]
 "785
 [v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
-"6 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\config.h
+"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h
 [p x FOSC=HS ]
 "7
 [p x WDTE=OFF ]
@@ -1086,7 +1086,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c.h: 11: void I2C_Stop(void);
 [; ;i2c.h: 12: void I2C_ACK(void);
 [; ;i2c.h: 13: void I2C_NACK(void);
-"6 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\i2c.c
+"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\i2c.c
 [v _I2C_Init `(v ~T0 @X0 1 ef ]
 "7
 {

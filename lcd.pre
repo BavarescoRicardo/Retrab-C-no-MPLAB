@@ -1,8 +1,8 @@
 
-# 1 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c"
+# 1 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c"
 
 
-# 6 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\config.h"
+# 6 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -1435,7 +1435,7 @@ extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsi
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
-# 12 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.h"
+# 12 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.h"
 void LCD_Cursor(unsigned char, unsigned char);
 void LCD_WriteCmd(unsigned char);
 void LCD_WriteData(unsigned char);
@@ -1443,7 +1443,7 @@ void LCD_WriteString(const char *);
 void LCD_Clear();
 void LCD_Init();
 
-# 10 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.c"
+# 10 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c"
 void LCD_Cursor(unsigned char Row, unsigned char Col)
 {
 PORTEbits.RE0 = 0;

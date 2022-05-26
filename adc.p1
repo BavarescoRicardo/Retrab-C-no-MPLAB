@@ -51,7 +51,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 "2167
 [v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
-"6 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\config.h
+"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h
 [p x FOSC=HS ]
 "7
 [p x WDTE=OFF ]
@@ -1080,7 +1080,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 154: extern __nonreentrant void _delay(unsigned long);
 [; ;adc.h: 6: void ADC_Init();
 [; ;adc.h: 7: unsigned int ADC_Read(unsigned int channel);
-"6 C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.c
+"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\adc.c
 [v _ADC_Init `(v ~T0 @X0 1 ef ]
 "7
 {

@@ -1,8 +1,8 @@
 
-# 1 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
+# 1 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
 
 
-# 6 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\config.h"
+# 6 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -1571,23 +1571,23 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 6 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\usart.h"
+# 6 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.h"
 void USART_Init(long);
 void USART_WriteChar(unsigned char);
 void USART_WriteString(const char *);
 unsigned char USART_ReceiveChar(void);
 
-# 6 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\adc.h"
+# 6 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\adc.h"
 void ADC_Init();
 unsigned int ADC_Read(unsigned int channel);
 
-# 5 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\timers.h"
+# 5 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.h"
 void TIMER0_Init();
 void TIMER0_Set(unsigned char);
 void TIMER1_Init();
 void TIMER1_Set(unsigned short);
 
-# 12 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\lcd.h"
+# 12 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.h"
 void LCD_Cursor(unsigned char, unsigned char);
 void LCD_WriteCmd(unsigned char);
 void LCD_WriteData(unsigned char);
@@ -1595,7 +1595,7 @@ void LCD_WriteString(const char *);
 void LCD_Clear();
 void LCD_Init();
 
-# 5 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\i2c.h"
+# 5 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\i2c.h"
 void I2C_Init(void);
 void I2C_Idle(void);
 void I2C_Start(void);
@@ -1606,22 +1606,22 @@ void I2C_Stop(void);
 void I2C_ACK(void);
 void I2C_NACK(void);
 
-# 5 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\spi.h"
+# 5 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\spi.h"
 void SPI_Init(void);
 unsigned char SPI_Write(unsigned char);
 void SPI_Wait();
 
-# 5 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\eeprom.h"
+# 5 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\eeprom.h"
 unsigned char EEPROM_Read(unsigned char);
 void EEPROM_Write(unsigned char, unsigned char);
 void EEPROM_Erase();
 
-# 5 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\pwm.h"
+# 5 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.h"
 void PWM_Init();
 void PWM_DutyCycle1(int);
 void PWM_DutyCycle2(int);
 
-# 19 "C:\Users\Ninguem\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Retrab C no MPLAB\main.c"
+# 19 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
 unsigned short ADCResult = 0;
 unsigned int temp_lida = 0;
 
@@ -1727,26 +1727,25 @@ return b;
 }
 
 # 141
-void Fuzzy(unsigned int setpointF)
+void Fuzzy()
 {
 
-# 153
-setpoint = (float)setpointF;
+# 152
+setpoint = (float)pwm;
 
-float ideal;
-float tip_average;
-float tip_gorgeous;
+float mantem;
+float reduz;
+float aumenta;
 float tip;
 
 fitemp =0;
 
-# 167
-temp = (tf - setpoint);
 
+temp = (tf - setpoint);
+deltaV = temp;
 
 if (temp >10) temp = 10;
 if (temp <0) temp = 0;
-posicao_do_grafico_service = temp;
 
 
 if (temp < 2.5)
@@ -1766,11 +1765,11 @@ y = trapmf(x,-1,0,1.5,3);
 
 if (y > fop_rule1)
 {
-ideal += fop_rule1;
+mantem += fop_rule1;
 }
 else
 {
-ideal += y;
+mantem += y;
 }
 
 x=x+1;
@@ -1778,7 +1777,9 @@ x=x+1;
 
 }
 
-# 208
+
+
+
 if ((temp > 2) && (temp < 7))
 {
 
@@ -1796,11 +1797,11 @@ y = trimf(x,2,5,8);
 
 if (y >= fop_rule2)
 {
-tip_average += fop_rule2;
+reduz += fop_rule2;
 }
 else
 {
-tip_average += y;
+reduz += y;
 }
 
 x=x+1;
@@ -1829,11 +1830,11 @@ y = trapmf(x,7,8.5,10,11);
 
 if (y >= fop_rule3)
 {
-tip_gorgeous += fop_rule3;
+aumenta += fop_rule3;
 }
 else
 {
-tip_gorgeous += y;
+aumenta += y;
 }
 
 x=x+1;
@@ -1842,26 +1843,20 @@ x=x+1;
 }
 
 
-
-
 for (int a=0; a<1; a++)
 {
 if (temp < 2.5)
 {
-tip = ideal;
-}
-
+tip = mantem;
+}else
 if (temp >= 2.5 && temp < 7.5)
 {
-tip = tip_average;
-}
-
-if (temp >= 7.5 && temp <= 10)
+tip = reduz;
+}else
 {
-tip = tip_gorgeous;
+tip = aumenta;
 }
 }
-
 
 
 x = 0;
@@ -1879,37 +1874,17 @@ x=x+1;
 ativa_fan = sum/total_area;
 posicao_do_grafico = ativa_fan;
 
-# 317
-char velocidade[1];
-
-if(ativa_fan <= 2.5 )
-{
-
-velocidade[0] = '0';
-}
-if(ativa_fan > 2.5 && ativa_fan < 7.5)
-{
-
-velocidade[0] = '7';
-}
-
-if(ativa_fan >= 7.5)
-{
-
-velocidade[0] = '9';
-}
 
 
-deltaV = (unsigned int)ativa_fan;
-if (deltaV >0 && deltaV < 9000)
+if (deltaV >0 && deltaV < 120)
 {
 PWM_DutyCycle2(deltaV);
 }
 
-# 348
+# 307
 }
 
-# 359
+# 318
 void interrupt ISR(void)
 {
 
@@ -1999,7 +1974,11 @@ pwm = 1023;
 
 }
 
-# 453
+
+
+Fuzzy();
+tf = pwm;
+
 PIR1bits.RCIF = 0;
 }
 
