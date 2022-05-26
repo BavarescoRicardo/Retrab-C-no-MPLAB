@@ -162,14 +162,8 @@ void Fuzzy()
    temp = (setpoint - tf);//
 	deltaV = temp;
    //Limites (valores acima recebem o maximo...)
-    if (temp >40) 
-		temp = 40;
-    if (temp <30) 
-		temp = 30;
-	if (temp <20) 
-		temp = 10;
-    if (temp <0) 
-		temp = 0;
+   if (temp >10) temp = 10;
+   if (temp <0) temp = 0;
 	
 	// 1ª regra - If temp is < (2.5 + setpoint)
 	if (temp < 2.5)

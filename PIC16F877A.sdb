@@ -159,9 +159,9 @@
 [v _max_val max_val `(f  1 e 3 0 ]
 "141
 [v _Fuzzy Fuzzy `(v  1 e 0 0 ]
-"318
+"314
 [v _ISR ISR `II(v  1 e 0 0 ]
-"481
+"477
 [v _main main `(v  1 e 0 0 ]
 "5 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.c
 [v _PWM_Init PWM_Init `(v  1 e 0 0 ]
@@ -594,10 +594,10 @@
 [v _derro derro `f  1 e 3 0 ]
 "75
 [v _setpoint setpoint `f  1 e 3 0 ]
-"481
+"477
 [v _main main `(v  1 e 0 0 ]
 {
-"554
+"550
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -778,10 +778,10 @@
 {
 "44
 } 0
-"318 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c
+"314 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c
 [v _ISR ISR `II(v  1 e 0 0 ]
 {
-"478
+"474
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
 [v i1___wmul __wmul `(ui  1 e 2 0 ]
@@ -851,7 +851,7 @@
 [v Fuzzy@mantem mantem `f  1 a 3 70 ]
 "157
 [v Fuzzy@tip tip `f  1 a 3 67 ]
-"307
+"303
 } 0
 "96 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.c
 [v i1_PWM_DutyCycle2 PWM_DutyCycle2 `(v  1 e 0 0 ]

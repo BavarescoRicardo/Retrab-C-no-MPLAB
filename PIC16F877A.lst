@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Thu May 26 20:18:08 2022
+                                                                                               Thu May 26 20:41:27 2022
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1                           	processor	16F877A
@@ -1777,7 +1777,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1771 ;;
   1772 ;; *************** function _main *****************
   1773 ;; Defined at:
-  1774 ;;		line 481 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+  1774 ;;		line 477 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
   1775 ;; Parameters:    Size  Location     Type
   1776 ;;		None
   1777 ;; Auto vars:     Size  Location     Type
@@ -1820,7 +1820,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1814                           ;psect for function _main
   1815  09AD                     _main:	
   1816                           
-  1817                           ;main.c: 483: TRISA = 0b00000001;
+  1817                           ;main.c: 479: TRISA = 0b00000001;
   1818                           
   1819                           ;incstack = 0
   1820                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
@@ -1829,65 +1829,65 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1823  09AF  1303               	bcf	3,6	;RP1=0, select bank1
   1824  09B0  0085               	movwf	5	;volatile
   1825                           
-  1826                           ;main.c: 484: PORTA = 0b00000001;
+  1826                           ;main.c: 480: PORTA = 0b00000001;
   1827  09B1  3001               	movlw	1
   1828  09B2  1283               	bcf	3,5	;RP0=0, select bank0
   1829  09B3  1303               	bcf	3,6	;RP1=0, select bank0
   1830  09B4  0085               	movwf	5	;volatile
   1831                           
-  1832                           ;main.c: 485: TRISB = 0b00000000;
+  1832                           ;main.c: 481: TRISB = 0b00000000;
   1833  09B5  1683               	bsf	3,5	;RP0=1, select bank1
   1834  09B6  1303               	bcf	3,6	;RP1=0, select bank1
   1835  09B7  0186               	clrf	6	;volatile
   1836                           
-  1837                           ;main.c: 486: PORTB = 0b00000000;
+  1837                           ;main.c: 482: PORTB = 0b00000000;
   1838  09B8  1283               	bcf	3,5	;RP0=0, select bank0
   1839  09B9  1303               	bcf	3,6	;RP1=0, select bank0
   1840  09BA  0186               	clrf	6	;volatile
   1841                           
-  1842                           ;main.c: 487: TRISC = 0b10000001;
+  1842                           ;main.c: 483: TRISC = 0b10000001;
   1843  09BB  3081               	movlw	129
   1844  09BC  1683               	bsf	3,5	;RP0=1, select bank1
   1845  09BD  1303               	bcf	3,6	;RP1=0, select bank1
   1846  09BE  0087               	movwf	7	;volatile
   1847                           
-  1848                           ;main.c: 488: PORTC = 0b11000000;
+  1848                           ;main.c: 484: PORTC = 0b11000000;
   1849  09BF  30C0               	movlw	192
   1850  09C0  1283               	bcf	3,5	;RP0=0, select bank0
   1851  09C1  1303               	bcf	3,6	;RP1=0, select bank0
   1852  09C2  0087               	movwf	7	;volatile
   1853                           
-  1854                           ;main.c: 489: TRISD = 0b00000000;
+  1854                           ;main.c: 485: TRISD = 0b00000000;
   1855  09C3  1683               	bsf	3,5	;RP0=1, select bank1
   1856  09C4  1303               	bcf	3,6	;RP1=0, select bank1
   1857  09C5  0188               	clrf	8	;volatile
   1858                           
-  1859                           ;main.c: 490: PORTD = 0b00000000;
+  1859                           ;main.c: 486: PORTD = 0b00000000;
   1860  09C6  1283               	bcf	3,5	;RP0=0, select bank0
   1861  09C7  1303               	bcf	3,6	;RP1=0, select bank0
   1862  09C8  0188               	clrf	8	;volatile
   1863                           
-  1864                           ;main.c: 491: TRISE = 0b00000000;
+  1864                           ;main.c: 487: TRISE = 0b00000000;
   1865  09C9  1683               	bsf	3,5	;RP0=1, select bank1
   1866  09CA  1303               	bcf	3,6	;RP1=0, select bank1
   1867  09CB  0189               	clrf	9	;volatile
   1868                           
-  1869                           ;main.c: 492: PORTE = 0b00000000;
+  1869                           ;main.c: 488: PORTE = 0b00000000;
   1870  09CC  1283               	bcf	3,5	;RP0=0, select bank0
   1871  09CD  1303               	bcf	3,6	;RP1=0, select bank0
   1872  09CE  0189               	clrf	9	;volatile
   1873                           
-  1874                           ;main.c: 495: T1CON = 0x03;
+  1874                           ;main.c: 491: T1CON = 0x03;
   1875  09CF  3003               	movlw	3
   1876  09D0  0090               	movwf	16	;volatile
   1877                           
-  1878                           ;main.c: 496: TMR1L = 0x00;
+  1878                           ;main.c: 492: TMR1L = 0x00;
   1879  09D1  018E               	clrf	14	;volatile
   1880                           
-  1881                           ;main.c: 497: TMR1H = 0x00;
+  1881                           ;main.c: 493: TMR1H = 0x00;
   1882  09D2  018F               	clrf	15	;volatile
   1883                           
-  1884                           ;main.c: 500: USART_Init(115200);
+  1884                           ;main.c: 496: USART_Init(115200);
   1885  09D3  3000               	movlw	0
   1886  09D4  1683               	bsf	3,5	;RP0=1, select bank1
   1887  09D5  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1900,25 +1900,25 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1894  09DC  00D9               	movwf	USART_Init@BaudRate^(0+128)
   1895  09DD  160A  118A  2416  120A  158A  	fcall	_USART_Init
   1896                           
-  1897                           ;main.c: 501: TIMER0_Init();
+  1897                           ;main.c: 497: TIMER0_Init();
   1898  09E2  160A  118A  2165  120A  158A  	fcall	_TIMER0_Init
   1899                           
-  1900                           ;main.c: 502: ADC_Init();
+  1900                           ;main.c: 498: ADC_Init();
   1901  09E7  160A  118A  218D  120A  158A  	fcall	_ADC_Init
   1902                           
-  1903                           ;main.c: 503: PWM_Init();
+  1903                           ;main.c: 499: PWM_Init();
   1904  09EC  160A  118A  22BF  120A  158A  	fcall	_PWM_Init
   1905                           
-  1906                           ;main.c: 504: LCD_Init();
+  1906                           ;main.c: 500: LCD_Init();
   1907  09F1  120A  158A  201E  120A  158A  	fcall	_LCD_Init
   1908                           
-  1909                           ;main.c: 507: INTCONbits.PEIE = 1;
+  1909                           ;main.c: 503: INTCONbits.PEIE = 1;
   1910  09F6  170B               	bsf	11,6	;volatile
   1911                           
-  1912                           ;main.c: 508: INTCONbits.GIE = 1;
+  1912                           ;main.c: 504: INTCONbits.GIE = 1;
   1913  09F7  178B               	bsf	11,7	;volatile
   1914                           
-  1915                           ;main.c: 511: USART_WriteString("Inicializando o PIC16F877A\n\r");
+  1915                           ;main.c: 507: USART_WriteString("Inicializando o PIC16F877A\n\r");
   1916  09F8  3044               	movlw	low (STR_11| (0+32768))
   1917  09F9  1683               	bsf	3,5	;RP0=1, select bank1
   1918  09FA  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1927,7 +1927,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1921  09FD  00CC               	movwf	(USART_WriteString@str^(0+128)+1)
   1922  09FE  120A  118A  27CF  120A  158A  	fcall	_USART_WriteString
   1923                           
-  1924                           ;main.c: 512: USART_WriteString("USART: 115.200bps\n\r");
+  1924                           ;main.c: 508: USART_WriteString("USART: 115.200bps\n\r");
   1925  0A03  3061               	movlw	low (STR_12| (0+32768))
   1926  0A04  1683               	bsf	3,5	;RP0=1, select bank1
   1927  0A05  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1936,17 +1936,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1930  0A08  00CC               	movwf	(USART_WriteString@str^(0+128)+1)
   1931  0A09  120A  118A  27CF  120A  158A  	fcall	_USART_WriteString
   1932                           
-  1933                           ;main.c: 515: LCD_Init();
+  1933                           ;main.c: 511: LCD_Init();
   1934  0A0E  120A  158A  201E  120A  158A  	fcall	_LCD_Init
   1935                           
-  1936                           ;main.c: 516: LCD_Cursor(0,0);
+  1936                           ;main.c: 512: LCD_Cursor(0,0);
   1937  0A13  1683               	bsf	3,5	;RP0=1, select bank1
   1938  0A14  1303               	bcf	3,6	;RP1=0, select bank1
   1939  0A15  01CA               	clrf	LCD_Cursor@Col^(0+128)
   1940  0A16  3000               	movlw	0
   1941  0A17  160A  118A  2217  120A  158A  	fcall	_LCD_Cursor
   1942                           
-  1943                           ;main.c: 517: LCD_WriteString("Inicializando...");
+  1943                           ;main.c: 513: LCD_WriteString("Inicializando...");
   1944  0A1C  3075               	movlw	low (STR_13| (0+32768))
   1945  0A1D  1683               	bsf	3,5	;RP0=1, select bank1
   1946  0A1E  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1955,7 +1955,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1949  0A21  00CD               	movwf	(LCD_WriteString@Str^(0+128)+1)
   1950  0A22  160A  118A  2331  120A  158A  	fcall	_LCD_WriteString
   1951                           
-  1952                           ;main.c: 520: PWM_DutyCycle1(0);
+  1952                           ;main.c: 516: PWM_DutyCycle1(0);
   1953  0A27  3000               	movlw	0
   1954  0A28  1683               	bsf	3,5	;RP0=1, select bank1
   1955  0A29  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1964,7 +1964,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1958  0A2C  00CB               	movwf	(PWM_DutyCycle1@valor^(0+128)+1)
   1959  0A2D  160A  118A  2237  120A  158A  	fcall	_PWM_DutyCycle1
   1960                           
-  1961                           ;main.c: 521: PWM_DutyCycle2(0);
+  1961                           ;main.c: 517: PWM_DutyCycle2(0);
   1962  0A32  3000               	movlw	0
   1963  0A33  1683               	bsf	3,5	;RP0=1, select bank1
   1964  0A34  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1973,11 +1973,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1967  0A37  00CB               	movwf	(PWM_DutyCycle2@valor^(0+128)+1)
   1968  0A38  160A  118A  2258  120A  158A  	fcall	_PWM_DutyCycle2
   1969                           
-  1970                           ;main.c: 524: TIMER0_Set(238);
+  1970                           ;main.c: 520: TIMER0_Set(238);
   1971  0A3D  30EE               	movlw	238
   1972  0A3E  160A  118A  2155  120A  158A  	fcall	_TIMER0_Set
   1973                           
-  1974                           ;main.c: 527: _delay((unsigned long)((1000)*(18432000/4000.0)));
+  1974                           ;main.c: 523: _delay((unsigned long)((1000)*(18432000/4000.0)));
   1975  0A43  3018               	movlw	24
   1976  0A44  1683               	bsf	3,5	;RP0=1, select bank3
   1977  0A45  1703               	bsf	3,6	;RP1=1, select bank3
@@ -1995,11 +1995,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   1989  0A50  2A4B               	goto	u4147
   1990  0A51  0000               	nop
   1991  0A52                     l212:	
-  1992                           ;main.c: 530: while(1)
+  1992                           ;main.c: 526: while(1)
   1993                           
   1994                           
-  1995                           ;main.c: 531: {
-  1996                           ;main.c: 533: sprintf(display_rpm,"%04d", deltaV);
+  1995                           ;main.c: 527: {
+  1996                           ;main.c: 529: sprintf(display_rpm,"%04d", deltaV);
   1997  0A52  301E               	movlw	low (STR_14| (0+32768))
   1998  0A53  1683               	bsf	3,5	;RP0=1, select bank1
   1999  0A54  1303               	bcf	3,6	;RP1=0, select bank1
@@ -2015,7 +2015,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2009  0A5E  30B8               	movlw	_display_rpm& (0+255)
   2010  0A5F  120A  158A  25ED  120A  158A  	fcall	_sprintf
   2011                           
-  2012                           ;main.c: 534: sprintf(display_pwm,"%04d", pwm);
+  2012                           ;main.c: 530: sprintf(display_pwm,"%04d", pwm);
   2013  0A64  301E               	movlw	low (STR_14| (0+32768))
   2014  0A65  1683               	bsf	3,5	;RP0=1, select bank1
   2015  0A66  1303               	bcf	3,6	;RP1=0, select bank1
@@ -2031,7 +2031,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2025  0A70  30AE               	movlw	_display_pwm& (0+255)
   2026  0A71  120A  158A  25ED  120A  158A  	fcall	_sprintf
   2027                           
-  2028                           ;main.c: 538: USART_WriteString(display_rpm);
+  2028                           ;main.c: 534: USART_WriteString(display_rpm);
   2029  0A76  30B8               	movlw	_display_rpm& (0+255)
   2030  0A77  1683               	bsf	3,5	;RP0=1, select bank1
   2031  0A78  1303               	bcf	3,6	;RP1=0, select bank1
@@ -2040,7 +2040,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2034  0A7B  00CC               	movwf	(USART_WriteString@str+1)^(0+128)
   2035  0A7C  120A  118A  27CF  120A  158A  	fcall	_USART_WriteString
   2036                           
-  2037                           ;main.c: 539: USART_WriteString("\n\r");
+  2037                           ;main.c: 535: USART_WriteString("\n\r");
   2038  0A81  3092               	movlw	low ((STR_9+12)| (0+32768))
   2039  0A82  1683               	bsf	3,5	;RP0=1, select bank1
   2040  0A83  1303               	bcf	3,6	;RP1=0, select bank1
@@ -2049,17 +2049,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2043  0A86  00CC               	movwf	(USART_WriteString@str^(0+128)+1)
   2044  0A87  120A  118A  27CF  120A  158A  	fcall	_USART_WriteString
   2045                           
-  2046                           ;main.c: 542: LCD_Clear();
+  2046                           ;main.c: 538: LCD_Clear();
   2047  0A8C  160A  118A  2308  120A  158A  	fcall	_LCD_Clear
   2048                           
-  2049                           ;main.c: 543: LCD_Cursor(0,0);
+  2049                           ;main.c: 539: LCD_Cursor(0,0);
   2050  0A91  1683               	bsf	3,5	;RP0=1, select bank1
   2051  0A92  1303               	bcf	3,6	;RP1=0, select bank1
   2052  0A93  01CA               	clrf	LCD_Cursor@Col^(0+128)
   2053  0A94  3000               	movlw	0
   2054  0A95  160A  118A  2217  120A  158A  	fcall	_LCD_Cursor
   2055                           
-  2056                           ;main.c: 544: LCD_WriteString("DlV: ");
+  2056                           ;main.c: 540: LCD_WriteString("DlV: ");
   2057  0A9A  3018               	movlw	low (STR_17| (0+32768))
   2058  0A9B  1683               	bsf	3,5	;RP0=1, select bank1
   2059  0A9C  1303               	bcf	3,6	;RP1=0, select bank1
@@ -2068,7 +2068,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2062  0A9F  00CD               	movwf	(LCD_WriteString@Str^(0+128)+1)
   2063  0AA0  160A  118A  2331  120A  158A  	fcall	_LCD_WriteString
   2064                           
-  2065                           ;main.c: 545: LCD_Cursor(0,6);
+  2065                           ;main.c: 541: LCD_Cursor(0,6);
   2066  0AA5  3006               	movlw	6
   2067  0AA6  1683               	bsf	3,5	;RP0=1, select bank3
   2068  0AA7  1703               	bsf	3,6	;RP1=1, select bank3
@@ -2080,7 +2080,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2074  0AAD  3000               	movlw	0
   2075  0AAE  160A  118A  2217  120A  158A  	fcall	_LCD_Cursor
   2076                           
-  2077                           ;main.c: 546: LCD_WriteString(display_rpm);
+  2077                           ;main.c: 542: LCD_WriteString(display_rpm);
   2078  0AB3  30B8               	movlw	_display_rpm& (0+255)
   2079  0AB4  1683               	bsf	3,5	;RP0=1, select bank1
   2080  0AB5  1303               	bcf	3,6	;RP1=0, select bank1
@@ -2089,14 +2089,14 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2083  0AB8  00CD               	movwf	(LCD_WriteString@Str+1)^(0+128)
   2084  0AB9  160A  118A  2331  120A  158A  	fcall	_LCD_WriteString
   2085                           
-  2086                           ;main.c: 547: LCD_Cursor(1,0);
+  2086                           ;main.c: 543: LCD_Cursor(1,0);
   2087  0ABE  1683               	bsf	3,5	;RP0=1, select bank1
   2088  0ABF  1303               	bcf	3,6	;RP1=0, select bank1
   2089  0AC0  01CA               	clrf	LCD_Cursor@Col^(0+128)
   2090  0AC1  3001               	movlw	1
   2091  0AC2  160A  118A  2217  120A  158A  	fcall	_LCD_Cursor
   2092                           
-  2093                           ;main.c: 548: LCD_WriteString("PWM: ");
+  2093                           ;main.c: 544: LCD_WriteString("PWM: ");
   2094  0AC7  3012               	movlw	low (STR_18| (0+32768))
   2095  0AC8  1683               	bsf	3,5	;RP0=1, select bank1
   2096  0AC9  1303               	bcf	3,6	;RP1=0, select bank1
@@ -2105,7 +2105,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2099  0ACC  00CD               	movwf	(LCD_WriteString@Str^(0+128)+1)
   2100  0ACD  160A  118A  2331  120A  158A  	fcall	_LCD_WriteString
   2101                           
-  2102                           ;main.c: 549: LCD_Cursor(1,6);
+  2102                           ;main.c: 545: LCD_Cursor(1,6);
   2103  0AD2  3006               	movlw	6
   2104  0AD3  1683               	bsf	3,5	;RP0=1, select bank3
   2105  0AD4  1703               	bsf	3,6	;RP1=1, select bank3
@@ -2117,7 +2117,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2111  0ADA  3001               	movlw	1
   2112  0ADB  160A  118A  2217  120A  158A  	fcall	_LCD_Cursor
   2113                           
-  2114                           ;main.c: 550: LCD_WriteString(display_pwm);
+  2114                           ;main.c: 546: LCD_WriteString(display_pwm);
   2115  0AE0  30AE               	movlw	_display_pwm& (0+255)
   2116  0AE1  1683               	bsf	3,5	;RP0=1, select bank1
   2117  0AE2  1303               	bcf	3,6	;RP1=0, select bank1
@@ -2126,7 +2126,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   2120  0AE5  00CD               	movwf	(LCD_WriteString@Str+1)^(0+128)
   2121  0AE6  160A  118A  2331  120A  158A  	fcall	_LCD_WriteString
   2122                           
-  2123                           ;main.c: 552: _delay((unsigned long)((200)*(18432000/4000.0)));
+  2123                           ;main.c: 548: _delay((unsigned long)((200)*(18432000/4000.0)));
   2124  0AEB  3005               	movlw	5
   2125  0AEC  1683               	bsf	3,5	;RP0=1, select bank3
   2126  0AED  1703               	bsf	3,6	;RP1=1, select bank3
@@ -4772,7 +4772,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   4766  0C50                     __ptext22:	
   4767 ;; *************** function _ISR *****************
   4768 ;; Defined at:
-  4769 ;;		line 318 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+  4769 ;;		line 314 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
   4770 ;; Parameters:    Size  Location     Type
   4771 ;;		None
   4772 ;; Auto vars:     Size  Location     Type
@@ -4811,34 +4811,34 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   4805                           ;psect for function _ISR
   4806  0C50                     _ISR:	
   4807                           
-  4808                           ;main.c: 321: if (PIR1bits.RCIF)
+  4808                           ;main.c: 317: if (PIR1bits.RCIF)
   4809  0C50  1283               	bcf	3,5	;RP0=0, select bank0
   4810  0C51  1303               	bcf	3,6	;RP1=0, select bank0
   4811  0C52  1E8C               	btfss	12,5	;volatile
   4812  0C53  2D7B               	goto	i1l3280
   4813                           
-  4814                           ;main.c: 322: {
-  4815                           ;main.c: 323: if (USART_ReceiveChar() == '0')
+  4814                           ;main.c: 318: {
+  4815                           ;main.c: 319: if (USART_ReceiveChar() == '0')
   4816  0C54  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   4817  0C59  3A30               	xorlw	48
   4818  0C5A  1D03               	skipz
   4819  0C5B  2C75               	goto	i1l3210
   4820                           
-  4821                           ;main.c: 324: {
-  4822                           ;main.c: 325: USART_WriteString("\n\rdesligado\n\r");
+  4821                           ;main.c: 320: {
+  4822                           ;main.c: 321: USART_WriteString("\n\rdesligado\n\r");
   4823  0C5C  30EA               	movlw	low (STR_1| (0+32768))
   4824  0C5D  00F1               	movwf	i1USART_WriteString@str
   4825  0C5E  3090               	movlw	high (STR_1| (0+32768))
   4826  0C5F  00F2               	movwf	i1USART_WriteString@str+1
   4827  0C60  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   4828                           
-  4829                           ;main.c: 326: pwm = 0;
+  4829                           ;main.c: 322: pwm = 0;
   4830  0C65  1683               	bsf	3,5	;RP0=1, select bank1
   4831  0C66  1303               	bcf	3,6	;RP1=0, select bank1
   4832  0C67  01C4               	clrf	_pwm^(0+128)
   4833  0C68  01C5               	clrf	(_pwm+1)^(0+128)
   4834                           
-  4835                           ;main.c: 327: PWM_DutyCycle2(pwm);
+  4835                           ;main.c: 323: PWM_DutyCycle2(pwm);
   4836  0C69  0845               	movf	(_pwm+1)^(0+128),w
   4837  0C6A  01F1               	clrf	i1PWM_DutyCycle2@valor+1
   4838  0C6B  07F1               	addwf	i1PWM_DutyCycle2@valor+1,f
@@ -4847,26 +4847,26 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   4841  0C6E  07F0               	addwf	i1PWM_DutyCycle2@valor,f
   4842  0C6F  160A  118A  21E1  120A  158A  	fcall	i1_PWM_DutyCycle2
   4843                           
-  4844                           ;main.c: 328: return;
+  4844                           ;main.c: 324: return;
   4845  0C74  2DDC               	goto	i1l190
   4846  0C75                     i1l3210:	
   4847                           
-  4848                           ;main.c: 329: }
-  4849                           ;main.c: 331: if (USART_ReceiveChar() == '1')
+  4848                           ;main.c: 325: }
+  4849                           ;main.c: 327: if (USART_ReceiveChar() == '1')
   4850  0C75  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   4851  0C7A  3A31               	xorlw	49
   4852  0C7B  1D03               	skipz
   4853  0C7C  2C8C               	goto	i1l3216
   4854                           
-  4855                           ;main.c: 332: {
-  4856                           ;main.c: 333: USART_WriteString("\n\rpwm = 32\n\r");
+  4855                           ;main.c: 328: {
+  4856                           ;main.c: 329: USART_WriteString("\n\rpwm = 32\n\r");
   4857  0C7D  30F8               	movlw	low (STR_2| (0+32768))
   4858  0C7E  00F1               	movwf	i1USART_WriteString@str
   4859  0C7F  3090               	movlw	high (STR_2| (0+32768))
   4860  0C80  00F2               	movwf	i1USART_WriteString@str+1
   4861  0C81  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   4862                           
-  4863                           ;main.c: 334: pwm = 32;
+  4863                           ;main.c: 330: pwm = 32;
   4864  0C86  3020               	movlw	32
   4865  0C87  1683               	bsf	3,5	;RP0=1, select bank1
   4866  0C88  1303               	bcf	3,6	;RP1=0, select bank1
@@ -4875,22 +4875,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   4869  0C8B  00C5               	movwf	(_pwm^(0+128)+1)
   4870  0C8C                     i1l3216:	
   4871                           
-  4872                           ;main.c: 336: }
-  4873                           ;main.c: 338: if (USART_ReceiveChar() == '2')
+  4872                           ;main.c: 332: }
+  4873                           ;main.c: 334: if (USART_ReceiveChar() == '2')
   4874  0C8C  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   4875  0C91  3A32               	xorlw	50
   4876  0C92  1D03               	skipz
   4877  0C93  2CA3               	goto	i1l3222
   4878                           
-  4879                           ;main.c: 339: {
-  4880                           ;main.c: 340: USART_WriteString("\n\rpwm = 64\n\r");
+  4879                           ;main.c: 335: {
+  4880                           ;main.c: 336: USART_WriteString("\n\rpwm = 64\n\r");
   4881  0C94  3005               	movlw	low (STR_3| (0+32768))
   4882  0C95  00F1               	movwf	i1USART_WriteString@str
   4883  0C96  3091               	movlw	high (STR_3| (0+32768))
   4884  0C97  00F2               	movwf	i1USART_WriteString@str+1
   4885  0C98  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   4886                           
-  4887                           ;main.c: 341: pwm = 64;
+  4887                           ;main.c: 337: pwm = 64;
   4888  0C9D  3040               	movlw	64
   4889  0C9E  1683               	bsf	3,5	;RP0=1, select bank1
   4890  0C9F  1303               	bcf	3,6	;RP1=0, select bank1
@@ -4899,22 +4899,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   4893  0CA2  00C5               	movwf	(_pwm^(0+128)+1)
   4894  0CA3                     i1l3222:	
   4895                           
-  4896                           ;main.c: 343: }
-  4897                           ;main.c: 345: if (USART_ReceiveChar() == '3')
+  4896                           ;main.c: 339: }
+  4897                           ;main.c: 341: if (USART_ReceiveChar() == '3')
   4898  0CA3  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   4899  0CA8  3A33               	xorlw	51
   4900  0CA9  1D03               	skipz
   4901  0CAA  2CC1               	goto	i1l3232
   4902                           
-  4903                           ;main.c: 346: {
-  4904                           ;main.c: 347: USART_WriteString("\n\rpwm = 128\n\r");
+  4903                           ;main.c: 342: {
+  4904                           ;main.c: 343: USART_WriteString("\n\rpwm = 128\n\r");
   4905  0CAB  30CE               	movlw	low (STR_4| (0+32768))
   4906  0CAC  00F1               	movwf	i1USART_WriteString@str
   4907  0CAD  3090               	movlw	high (STR_4| (0+32768))
   4908  0CAE  00F2               	movwf	i1USART_WriteString@str+1
   4909  0CAF  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   4910                           
-  4911                           ;main.c: 348: pwm = 128;
+  4911                           ;main.c: 344: pwm = 128;
   4912  0CB4  3080               	movlw	128
   4913  0CB5  1683               	bsf	3,5	;RP0=1, select bank1
   4914  0CB6  1303               	bcf	3,6	;RP1=0, select bank1
@@ -4922,41 +4922,41 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   4916  0CB8  3000               	movlw	0
   4917  0CB9  00C5               	movwf	(_pwm^(0+128)+1)
   4918                           
-  4919                           ;main.c: 350: if(PORTBbits.RB0 == 0)
+  4919                           ;main.c: 346: if(PORTBbits.RB0 == 0)
   4920  0CBA  1283               	bcf	3,5	;RP0=0, select bank0
   4921  0CBB  1303               	bcf	3,6	;RP1=0, select bank0
   4922  0CBC  1806               	btfsc	6,0	;volatile
   4923  0CBD  2CC0               	goto	i1l194
   4924                           
-  4925                           ;main.c: 351: {
-  4926                           ;main.c: 352: PORTBbits.RB0 = 1;
+  4925                           ;main.c: 347: {
+  4926                           ;main.c: 348: PORTBbits.RB0 = 1;
   4927  0CBE  1406               	bsf	6,0	;volatile
   4928                           
-  4929                           ;main.c: 353: }else{
+  4929                           ;main.c: 349: }else{
   4930  0CBF  2CC1               	goto	i1l3232
   4931  0CC0                     i1l194:	
   4932                           
-  4933                           ;main.c: 354: PORTBbits.RB0 = 0;
+  4933                           ;main.c: 350: PORTBbits.RB0 = 0;
   4934  0CC0  1006               	bcf	6,0	;volatile
   4935  0CC1                     i1l3232:	
   4936                           
-  4937                           ;main.c: 355: }
-  4938                           ;main.c: 356: }
-  4939                           ;main.c: 358: if (USART_ReceiveChar() == '4')
+  4937                           ;main.c: 351: }
+  4938                           ;main.c: 352: }
+  4939                           ;main.c: 354: if (USART_ReceiveChar() == '4')
   4940  0CC1  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   4941  0CC6  3A34               	xorlw	52
   4942  0CC7  1D03               	skipz
   4943  0CC8  2CEB               	goto	i1l3244
   4944                           
-  4945                           ;main.c: 359: {
-  4946                           ;main.c: 360: USART_WriteString("\n\rpwm = 256\n\r");
+  4945                           ;main.c: 355: {
+  4946                           ;main.c: 356: USART_WriteString("\n\rpwm = 256\n\r");
   4947  0CC9  30B2               	movlw	low (STR_5| (0+32768))
   4948  0CCA  00F1               	movwf	i1USART_WriteString@str
   4949  0CCB  3090               	movlw	high (STR_5| (0+32768))
   4950  0CCC  00F2               	movwf	i1USART_WriteString@str+1
   4951  0CCD  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   4952                           
-  4953                           ;main.c: 361: pwm = 256;
+  4953                           ;main.c: 357: pwm = 256;
   4954  0CD2  3000               	movlw	0
   4955  0CD3  1683               	bsf	3,5	;RP0=1, select bank1
   4956  0CD4  1303               	bcf	3,6	;RP1=0, select bank1
@@ -4964,7 +4964,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   4958  0CD6  3001               	movlw	1
   4959  0CD7  00C5               	movwf	(_pwm^(0+128)+1)
   4960                           
-  4961                           ;main.c: 362: PWM_DutyCycle2(pwm);
+  4961                           ;main.c: 358: PWM_DutyCycle2(pwm);
   4962  0CD8  0845               	movf	(_pwm+1)^(0+128),w
   4963  0CD9  01F1               	clrf	i1PWM_DutyCycle2@valor+1
   4964  0CDA  07F1               	addwf	i1PWM_DutyCycle2@valor+1,f
@@ -4973,44 +4973,44 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   4967  0CDD  07F0               	addwf	i1PWM_DutyCycle2@valor,f
   4968  0CDE  160A  118A  21E1  120A  158A  	fcall	i1_PWM_DutyCycle2
   4969                           
-  4970                           ;main.c: 363: if(PORTBbits.RB1 == 0)
+  4970                           ;main.c: 359: if(PORTBbits.RB1 == 0)
   4971  0CE3  1283               	bcf	3,5	;RP0=0, select bank0
   4972  0CE4  1303               	bcf	3,6	;RP1=0, select bank0
   4973  0CE5  1886               	btfsc	6,1	;volatile
   4974  0CE6  2CE9               	goto	i1l197
   4975                           
-  4976                           ;main.c: 364: {
-  4977                           ;main.c: 365: PORTBbits.RB1 = 1;
+  4976                           ;main.c: 360: {
+  4977                           ;main.c: 361: PORTBbits.RB1 = 1;
   4978  0CE7  1486               	bsf	6,1	;volatile
   4979                           
-  4980                           ;main.c: 366: }else{
+  4980                           ;main.c: 362: }else{
   4981  0CE8  2DDC               	goto	i1l190
   4982  0CE9                     i1l197:	
   4983                           
-  4984                           ;main.c: 367: PORTBbits.RB1 = 0;
+  4984                           ;main.c: 363: PORTBbits.RB1 = 0;
   4985  0CE9  1086               	bcf	6,1	;volatile
   4986                           
-  4987                           ;main.c: 368: }
-  4988                           ;main.c: 369: return;
+  4987                           ;main.c: 364: }
+  4988                           ;main.c: 365: return;
   4989  0CEA  2DDC               	goto	i1l190
   4990  0CEB                     i1l3244:	
   4991                           
-  4992                           ;main.c: 370: }
-  4993                           ;main.c: 372: if (USART_ReceiveChar() == '5')
+  4992                           ;main.c: 366: }
+  4993                           ;main.c: 368: if (USART_ReceiveChar() == '5')
   4994  0CEB  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   4995  0CF0  3A35               	xorlw	53
   4996  0CF1  1D03               	skipz
   4997  0CF2  2D02               	goto	i1l3250
   4998                           
-  4999                           ;main.c: 373: {
-  5000                           ;main.c: 374: USART_WriteString("\n\rpwm = 512\n\r");
+  4999                           ;main.c: 369: {
+  5000                           ;main.c: 370: USART_WriteString("\n\rpwm = 512\n\r");
   5001  0CF3  30A4               	movlw	low (STR_6| (0+32768))
   5002  0CF4  00F1               	movwf	i1USART_WriteString@str
   5003  0CF5  3090               	movlw	high (STR_6| (0+32768))
   5004  0CF6  00F2               	movwf	i1USART_WriteString@str+1
   5005  0CF7  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   5006                           
-  5007                           ;main.c: 375: pwm = 512;
+  5007                           ;main.c: 371: pwm = 512;
   5008  0CFC  3000               	movlw	0
   5009  0CFD  1683               	bsf	3,5	;RP0=1, select bank1
   5010  0CFE  1303               	bcf	3,6	;RP1=0, select bank1
@@ -5019,22 +5019,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5013  0D01  00C5               	movwf	(_pwm^(0+128)+1)
   5014  0D02                     i1l3250:	
   5015                           
-  5016                           ;main.c: 377: }
-  5017                           ;main.c: 379: if (USART_ReceiveChar() == '6')
+  5016                           ;main.c: 373: }
+  5017                           ;main.c: 375: if (USART_ReceiveChar() == '6')
   5018  0D02  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   5019  0D07  3A36               	xorlw	54
   5020  0D08  1D03               	skipz
   5021  0D09  2D19               	goto	i1l3256
   5022                           
-  5023                           ;main.c: 380: {
-  5024                           ;main.c: 381: USART_WriteString("\n\rpwm = 768\n\r");
+  5023                           ;main.c: 376: {
+  5024                           ;main.c: 377: USART_WriteString("\n\rpwm = 768\n\r");
   5025  0D0A  30DC               	movlw	low (STR_7| (0+32768))
   5026  0D0B  00F1               	movwf	i1USART_WriteString@str
   5027  0D0C  3090               	movlw	high (STR_7| (0+32768))
   5028  0D0D  00F2               	movwf	i1USART_WriteString@str+1
   5029  0D0E  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   5030                           
-  5031                           ;main.c: 382: pwm = 768;
+  5031                           ;main.c: 378: pwm = 768;
   5032  0D13  3000               	movlw	0
   5033  0D14  1683               	bsf	3,5	;RP0=1, select bank1
   5034  0D15  1303               	bcf	3,6	;RP1=0, select bank1
@@ -5043,22 +5043,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5037  0D18  00C5               	movwf	(_pwm^(0+128)+1)
   5038  0D19                     i1l3256:	
   5039                           
-  5040                           ;main.c: 384: }
-  5041                           ;main.c: 386: if (USART_ReceiveChar() == '7')
+  5040                           ;main.c: 380: }
+  5041                           ;main.c: 382: if (USART_ReceiveChar() == '7')
   5042  0D19  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   5043  0D1E  3A37               	xorlw	55
   5044  0D1F  1D03               	skipz
   5045  0D20  2D30               	goto	i1l3262
   5046                           
-  5047                           ;main.c: 387: {
-  5048                           ;main.c: 388: USART_WriteString("\n\rpwm = 896\n\r");
+  5047                           ;main.c: 383: {
+  5048                           ;main.c: 384: USART_WriteString("\n\rpwm = 896\n\r");
   5049  0D21  30C0               	movlw	low (STR_8| (0+32768))
   5050  0D22  00F1               	movwf	i1USART_WriteString@str
   5051  0D23  3090               	movlw	high (STR_8| (0+32768))
   5052  0D24  00F2               	movwf	i1USART_WriteString@str+1
   5053  0D25  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   5054                           
-  5055                           ;main.c: 389: pwm = 896;
+  5055                           ;main.c: 385: pwm = 896;
   5056  0D2A  3080               	movlw	128
   5057  0D2B  1683               	bsf	3,5	;RP0=1, select bank1
   5058  0D2C  1303               	bcf	3,6	;RP1=0, select bank1
@@ -5067,22 +5067,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5061  0D2F  00C5               	movwf	(_pwm^(0+128)+1)
   5062  0D30                     i1l3262:	
   5063                           
-  5064                           ;main.c: 391: }
-  5065                           ;main.c: 393: if (USART_ReceiveChar() == '8')
+  5064                           ;main.c: 387: }
+  5065                           ;main.c: 389: if (USART_ReceiveChar() == '8')
   5066  0D30  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   5067  0D35  3A38               	xorlw	56
   5068  0D36  1D03               	skipz
   5069  0D37  2D47               	goto	i1l3268
   5070                           
-  5071                           ;main.c: 394: {
-  5072                           ;main.c: 395: USART_WriteString("\n\rpwm = 1000\n\r");
+  5071                           ;main.c: 390: {
+  5072                           ;main.c: 391: USART_WriteString("\n\rpwm = 1000\n\r");
   5073  0D38  3086               	movlw	low (STR_9| (0+32768))
   5074  0D39  00F1               	movwf	i1USART_WriteString@str
   5075  0D3A  3090               	movlw	high (STR_9| (0+32768))
   5076  0D3B  00F2               	movwf	i1USART_WriteString@str+1
   5077  0D3C  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   5078                           
-  5079                           ;main.c: 396: pwm = 1000;
+  5079                           ;main.c: 392: pwm = 1000;
   5080  0D41  30E8               	movlw	232
   5081  0D42  1683               	bsf	3,5	;RP0=1, select bank1
   5082  0D43  1303               	bcf	3,6	;RP1=0, select bank1
@@ -5091,22 +5091,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5085  0D46  00C5               	movwf	(_pwm^(0+128)+1)
   5086  0D47                     i1l3268:	
   5087                           
-  5088                           ;main.c: 398: }
-  5089                           ;main.c: 400: if (USART_ReceiveChar() == '9')
+  5088                           ;main.c: 394: }
+  5089                           ;main.c: 396: if (USART_ReceiveChar() == '9')
   5090  0D47  160A  118A  21FC  120A  158A  	fcall	_USART_ReceiveChar
   5091  0D4C  3A39               	xorlw	57
   5092  0D4D  1D03               	skipz
   5093  0D4E  2D5E               	goto	i1l3274
   5094                           
-  5095                           ;main.c: 401: {
-  5096                           ;main.c: 402: USART_WriteString("\n\rpwm = 1023\n\r");
+  5095                           ;main.c: 397: {
+  5096                           ;main.c: 398: USART_WriteString("\n\rpwm = 1023\n\r");
   5097  0D4F  3095               	movlw	low (STR_10| (0+32768))
   5098  0D50  00F1               	movwf	i1USART_WriteString@str
   5099  0D51  3090               	movlw	high (STR_10| (0+32768))
   5100  0D52  00F2               	movwf	i1USART_WriteString@str+1
   5101  0D53  160A  118A  2279  120A  158A  	fcall	i1_USART_WriteString
   5102                           
-  5103                           ;main.c: 403: pwm = 1023;
+  5103                           ;main.c: 399: pwm = 1023;
   5104  0D58  30FF               	movlw	255
   5105  0D59  1683               	bsf	3,5	;RP0=1, select bank1
   5106  0D5A  1303               	bcf	3,6	;RP1=0, select bank1
@@ -5115,11 +5115,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5109  0D5D  00C5               	movwf	(_pwm^(0+128)+1)
   5110  0D5E                     i1l3274:	
   5111                           
-  5112                           ;main.c: 405: }
-  5113                           ;main.c: 409: Fuzzy();
+  5112                           ;main.c: 401: }
+  5113                           ;main.c: 405: Fuzzy();
   5114  0D5E  120A  118A  2061  120A  158A  	fcall	_Fuzzy
   5115                           
-  5116                           ;main.c: 410: tf = pwm;
+  5116                           ;main.c: 406: tf = pwm;
   5117  0D63  1683               	bsf	3,5	;RP0=1, select bank1
   5118  0D64  1303               	bcf	3,6	;RP1=0, select bank1
   5119  0D65  0845               	movf	(_pwm+1)^(0+128),w
@@ -5138,31 +5138,31 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5132  0D76  087A               	movf	?___lwtoft+2,w
   5133  0D77  00C7               	movwf	(_tf+2)^(0+384)
   5134                           
-  5135                           ;main.c: 412: PIR1bits.RCIF = 0;
+  5135                           ;main.c: 408: PIR1bits.RCIF = 0;
   5136  0D78  1283               	bcf	3,5	;RP0=0, select bank0
   5137  0D79  1303               	bcf	3,6	;RP1=0, select bank0
   5138  0D7A  128C               	bcf	12,5	;volatile
   5139  0D7B                     i1l3280:	
   5140                           
-  5141                           ;main.c: 413: }
-  5142                           ;main.c: 416: if (PIR1bits.ADIF)
+  5141                           ;main.c: 409: }
+  5142                           ;main.c: 412: if (PIR1bits.ADIF)
   5143  0D7B  1B0C               	btfsc	12,6	;volatile
   5144                           
-  5145                           ;main.c: 417: {
-  5146                           ;main.c: 421: PIR1bits.ADIF = 0;
+  5145                           ;main.c: 413: {
+  5146                           ;main.c: 417: PIR1bits.ADIF = 0;
   5147  0D7C  130C               	bcf	12,6	;volatile
   5148                           
-  5149                           ;main.c: 422: }
-  5150                           ;main.c: 426: if (INTCONbits.T0IF)
+  5149                           ;main.c: 418: }
+  5150                           ;main.c: 422: if (INTCONbits.T0IF)
   5151  0D7D  1D0B               	btfss	11,2	;volatile
   5152  0D7E  2DD8               	goto	i1l3306
   5153                           
-  5154                           ;main.c: 427: {
-  5155                           ;main.c: 429: TIMER0_Set(238);
+  5154                           ;main.c: 423: {
+  5155                           ;main.c: 425: TIMER0_Set(238);
   5156  0D7F  30EE               	movlw	238
   5157  0D80  160A  118A  2139  120A  158A  	fcall	i1_TIMER0_Set
   5158                           
-  5159                           ;main.c: 432: if (contagens_tm0 < 499)
+  5159                           ;main.c: 428: if (contagens_tm0 < 499)
   5160  0D85  3001               	movlw	1
   5161  0D86  1683               	bsf	3,5	;RP0=1, select bank1
   5162  0D87  1303               	bcf	3,6	;RP1=0, select bank1
@@ -5173,8 +5173,8 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5167  0D8C  1803               	skipnc
   5168  0D8D  2D98               	goto	i1l3292
   5169                           
-  5170                           ;main.c: 433: {
-  5171                           ;main.c: 435: contagens_tm0++;
+  5170                           ;main.c: 429: {
+  5171                           ;main.c: 431: contagens_tm0++;
   5172  0D8E  3001               	movlw	1
   5173  0D8F  07BE               	addwf	_contagens_tm0^(0+128),f
   5174  0D90  1803               	skipnc
@@ -5182,24 +5182,24 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5176  0D92  3000               	movlw	0
   5177  0D93  07BF               	addwf	(_contagens_tm0+1)^(0+128),f
   5178                           
-  5179                           ;main.c: 438: PORTBbits.RB6 = 1;
+  5179                           ;main.c: 434: PORTBbits.RB6 = 1;
   5180  0D94  1283               	bcf	3,5	;RP0=0, select bank0
   5181  0D95  1303               	bcf	3,6	;RP1=0, select bank0
   5182  0D96  1706               	bsf	6,6	;volatile
   5183                           
-  5184                           ;main.c: 439: }
+  5184                           ;main.c: 435: }
   5185  0D97  2DD7               	goto	i1l3304
   5186  0D98                     i1l3292:	
   5187                           
-  5188                           ;main.c: 440: else
-  5189                           ;main.c: 441: {
-  5190                           ;main.c: 443: contagens_tm0 = 0;
+  5188                           ;main.c: 436: else
+  5189                           ;main.c: 437: {
+  5190                           ;main.c: 439: contagens_tm0 = 0;
   5191  0D98  1683               	bsf	3,5	;RP0=1, select bank1
   5192  0D99  1303               	bcf	3,6	;RP1=0, select bank1
   5193  0D9A  01BE               	clrf	_contagens_tm0^(0+128)
   5194  0D9B  01BF               	clrf	(_contagens_tm0+1)^(0+128)
   5195                           
-  5196                           ;main.c: 446: pulsos = (TMR1H << 8) + TMR1L;
+  5196                           ;main.c: 442: pulsos = (TMR1H << 8) + TMR1L;
   5197  0D9C  1283               	bcf	3,5	;RP0=0, select bank0
   5198  0D9D  1303               	bcf	3,6	;RP1=0, select bank0
   5199  0D9E  080F               	movf	15,w	;volatile
@@ -5215,7 +5215,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5209  0DA8  01C2               	clrf	_pulsos^(0+128)
   5210  0DA9  07C2               	addwf	_pulsos^(0+128),f
   5211                           
-  5212                           ;main.c: 447: rpm = ((pulsos / pas_cooler) * 120);
+  5212                           ;main.c: 443: rpm = ((pulsos / pas_cooler) * 120);
   5213  0DAA  086B               	movf	(_pas_cooler+1)^(0+128),w
   5214  0DAB  01F1               	clrf	i1___lwdiv@divisor+1
   5215  0DAC  07F1               	addwf	i1___lwdiv@divisor+1,f
@@ -5249,37 +5249,37 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5243  0DD0  01A6               	clrf	_rpm^(0+384)
   5244  0DD1  07A6               	addwf	_rpm^(0+384),f
   5245                           
-  5246                           ;main.c: 450: TMR1L = 0x00;
+  5246                           ;main.c: 446: TMR1L = 0x00;
   5247  0DD2  1283               	bcf	3,5	;RP0=0, select bank0
   5248  0DD3  1303               	bcf	3,6	;RP1=0, select bank0
   5249  0DD4  018E               	clrf	14	;volatile
   5250                           
-  5251                           ;main.c: 451: TMR1H = 0x00;
+  5251                           ;main.c: 447: TMR1H = 0x00;
   5252  0DD5  018F               	clrf	15	;volatile
   5253                           
-  5254                           ;main.c: 454: PORTBbits.RB6 = 0;
+  5254                           ;main.c: 450: PORTBbits.RB6 = 0;
   5255  0DD6  1306               	bcf	6,6	;volatile
   5256  0DD7                     i1l3304:	
   5257                           
-  5258                           ;main.c: 455: }
-  5259                           ;main.c: 458: INTCONbits.T0IF = 0;
+  5258                           ;main.c: 451: }
+  5259                           ;main.c: 454: INTCONbits.T0IF = 0;
   5260  0DD7  110B               	bcf	11,2	;volatile
   5261  0DD8                     i1l3306:	
   5262                           
-  5263                           ;main.c: 459: }
-  5264                           ;main.c: 462: if (PIR1bits.TMR1IF)
+  5263                           ;main.c: 455: }
+  5264                           ;main.c: 458: if (PIR1bits.TMR1IF)
   5265  0DD8  180C               	btfsc	12,0	;volatile
   5266                           
-  5267                           ;main.c: 463: {
-  5268                           ;main.c: 467: PIR1bits.TMR1IF = 0;
+  5267                           ;main.c: 459: {
+  5268                           ;main.c: 463: PIR1bits.TMR1IF = 0;
   5269  0DD9  100C               	bcf	12,0	;volatile
   5270                           
-  5271                           ;main.c: 468: }
-  5272                           ;main.c: 471: if (PIR1bits.SSPIF)
+  5271                           ;main.c: 464: }
+  5272                           ;main.c: 467: if (PIR1bits.SSPIF)
   5273  0DDA  198C               	btfsc	12,3	;volatile
   5274                           
-  5275                           ;main.c: 472: {
-  5276                           ;main.c: 476: PIR1bits.SSPIF = 0;
+  5275                           ;main.c: 468: {
+  5276                           ;main.c: 472: PIR1bits.SSPIF = 0;
   5277  0DDB  118C               	bcf	12,3	;volatile
   5278  0DDC                     i1l190:	
   5279  0DDC  1683               	bsf	3,5	;RP0=1, select bank1
@@ -5875,32 +5875,32 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5868  007C  3000               	movlw	0
   5869  007D  00A5               	movwf	(_fitemp+2)^(0+128)
   5870                           
-  5871                           ;main.c: 162: temp = (tf - setpoint);
+  5871                           ;main.c: 162: temp = (setpoint - tf);
   5872  007E  1683               	bsf	3,5	;RP0=1, select bank3
   5873  007F  1703               	bsf	3,6	;RP1=1, select bank3
-  5874  0080  0845               	movf	_tf^(0+384),w
+  5874  0080  0842               	movf	_setpoint^(0+384),w
   5875  0081  1283               	bcf	3,5	;RP0=0, select bank0
   5876  0082  1303               	bcf	3,6	;RP1=0, select bank0
   5877  0083  00AA               	movwf	___ftadd@f1
   5878  0084  1683               	bsf	3,5	;RP0=1, select bank3
   5879  0085  1703               	bsf	3,6	;RP1=1, select bank3
-  5880  0086  0846               	movf	(_tf+1)^(0+384),w
+  5880  0086  0843               	movf	(_setpoint+1)^(0+384),w
   5881  0087  1283               	bcf	3,5	;RP0=0, select bank0
   5882  0088  1303               	bcf	3,6	;RP1=0, select bank0
   5883  0089  00AB               	movwf	___ftadd@f1+1
   5884  008A  1683               	bsf	3,5	;RP0=1, select bank3
   5885  008B  1703               	bsf	3,6	;RP1=1, select bank3
-  5886  008C  0847               	movf	(_tf+2)^(0+384),w
+  5886  008C  0844               	movf	(_setpoint+2)^(0+384),w
   5887  008D  1283               	bcf	3,5	;RP0=0, select bank0
   5888  008E  1303               	bcf	3,6	;RP1=0, select bank0
   5889  008F  00AC               	movwf	___ftadd@f1+2
   5890  0090  1683               	bsf	3,5	;RP0=1, select bank3
   5891  0091  1703               	bsf	3,6	;RP1=1, select bank3
-  5892  0092  0842               	movf	_setpoint^(0+384),w
+  5892  0092  0845               	movf	_tf^(0+384),w
   5893  0093  00F0               	movwf	___ftneg@f1
-  5894  0094  0843               	movf	(_setpoint+1)^(0+384),w
+  5894  0094  0846               	movf	(_tf+1)^(0+384),w
   5895  0095  00F1               	movwf	___ftneg@f1+1
-  5896  0096  0844               	movf	(_setpoint+2)^(0+384),w
+  5896  0096  0847               	movf	(_tf+2)^(0+384),w
   5897  0097  00F2               	movwf	___ftneg@f1+2
   5898  0098  160A  118A  2145  120A  118A  	fcall	___ftneg
   5899  009D  0870               	movf	?___ftneg,w
@@ -7553,16 +7553,16 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   7546  06E5  1703               	bsf	3,6	;RP1=1, select bank3
   7547  06E6  009B               	movwf	(_posicao_do_grafico+2)^(0+384)
   7548                           
-  7549                           ;main.c: 297: if (deltaV >0 && deltaV < 120)
+  7549                           ;main.c: 297: if (deltaV >0 && deltaV < 1020)
   7550  06E7  1683               	bsf	3,5	;RP0=1, select bank1
   7551  06E8  1303               	bcf	3,6	;RP1=0, select bank1
   7552  06E9  0841               	movf	(_deltaV+1)^(0+128),w
   7553  06EA  0440               	iorwf	_deltaV^(0+128),w
   7554  06EB  1903               	skipnz
   7555  06EC  0008               	return
-  7556  06ED  3000               	movlw	0
+  7556  06ED  3003               	movlw	3
   7557  06EE  0241               	subwf	(_deltaV+1)^(0+128),w
-  7558  06EF  3078               	movlw	120
+  7558  06EF  30FC               	movlw	252
   7559  06F0  1903               	skipnz
   7560  06F1  0240               	subwf	_deltaV^(0+128),w
   7561  06F2  1803               	skipnc
@@ -10278,7 +10278,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Thu May 26 20:18:08 2022
+Symbol Table                                                                                   Thu May 26 20:41:27 2022
 
            ?i1_PWM_DutyCycle2 0070                             _x 00B8                             _y 00BB  
                            pc 0002                   ?_LCD_Cursor 00CA       __size_of_PWM_DutyCycle1 0021  

@@ -1741,7 +1741,7 @@ float tip;
 fitemp =0;
 
 
-temp = (tf - setpoint);
+temp = (setpoint - tf);
 deltaV = temp;
 
 if (temp >10) temp = 10;
@@ -1876,15 +1876,15 @@ posicao_do_grafico = ativa_fan;
 
 
 
-if (deltaV >0 && deltaV < 120)
+if (deltaV >0 && deltaV < 1020)
 {
 PWM_DutyCycle2(deltaV);
 }
 
-# 307
+
 }
 
-# 318
+# 314
 void interrupt ISR(void)
 {
 

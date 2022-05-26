@@ -2737,7 +2737,7 @@ Fuzzy@aumenta:	; 3 bytes @ 0x4C
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 481 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+;;		line 477 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -2777,12 +2777,12 @@ Fuzzy@aumenta:	; 3 bytes @ 0x4C
 ;;
 psect	maintext,global,class=CODE,delta=2,split=1
 	file	"C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
-	line	481
+	line	477
 global __pmaintext
 __pmaintext:	;psect for function _main
 psect	maintext
 	file	"C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
-	line	481
+	line	477
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
 	
@@ -2790,92 +2790,92 @@ _main:
 ;incstack = 0
 	opt	stack 1
 ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
-	line	483
+	line	479
 	
 l3372:	
-;main.c: 483: TRISA = 0b00000001;
+;main.c: 479: TRISA = 0b00000001;
 	movlw	(01h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(133)^080h	;volatile
-	line	484
-;main.c: 484: PORTA = 0b00000001;
+	line	480
+;main.c: 480: PORTA = 0b00000001;
 	movlw	(01h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(5)	;volatile
-	line	485
+	line	481
 	
 l3374:	
-;main.c: 485: TRISB = 0b00000000;
+;main.c: 481: TRISB = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(134)^080h	;volatile
-	line	486
+	line	482
 	
 l3376:	
-;main.c: 486: PORTB = 0b00000000;
+;main.c: 482: PORTB = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(6)	;volatile
-	line	487
-;main.c: 487: TRISC = 0b10000001;
+	line	483
+;main.c: 483: TRISC = 0b10000001;
 	movlw	(081h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(135)^080h	;volatile
-	line	488
-;main.c: 488: PORTC = 0b11000000;
+	line	484
+;main.c: 484: PORTC = 0b11000000;
 	movlw	(0C0h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	489
+	line	485
 	
 l3378:	
-;main.c: 489: TRISD = 0b00000000;
+;main.c: 485: TRISD = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(136)^080h	;volatile
-	line	490
+	line	486
 	
 l3380:	
-;main.c: 490: PORTD = 0b00000000;
+;main.c: 486: PORTD = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(8)	;volatile
-	line	491
+	line	487
 	
 l3382:	
-;main.c: 491: TRISE = 0b00000000;
+;main.c: 487: TRISE = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(137)^080h	;volatile
-	line	492
+	line	488
 	
 l3384:	
-;main.c: 492: PORTE = 0b00000000;
+;main.c: 488: PORTE = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(9)	;volatile
-	line	495
-;main.c: 495: T1CON = 0x03;
+	line	491
+;main.c: 491: T1CON = 0x03;
 	movlw	(03h)
 	movwf	(16)	;volatile
-	line	496
+	line	492
 	
 l3386:	
-;main.c: 496: TMR1L = 0x00;
+;main.c: 492: TMR1L = 0x00;
 	clrf	(14)	;volatile
-	line	497
+	line	493
 	
 l3388:	
-;main.c: 497: TMR1H = 0x00;
+;main.c: 493: TMR1H = 0x00;
 	clrf	(15)	;volatile
-	line	500
+	line	496
 	
 l3390:	
-;main.c: 500: USART_Init(115200);
+;main.c: 496: USART_Init(115200);
 	movlw	0
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2888,36 +2888,36 @@ l3390:
 	movwf	(USART_Init@BaudRate)^080h
 
 	fcall	_USART_Init
-	line	501
-;main.c: 501: TIMER0_Init();
+	line	497
+;main.c: 497: TIMER0_Init();
 	fcall	_TIMER0_Init
-	line	502
-;main.c: 502: ADC_Init();
+	line	498
+;main.c: 498: ADC_Init();
 	fcall	_ADC_Init
-	line	503
+	line	499
 	
 l3392:	
-;main.c: 503: PWM_Init();
+;main.c: 499: PWM_Init();
 	fcall	_PWM_Init
-	line	504
+	line	500
 	
 l3394:	
-;main.c: 504: LCD_Init();
+;main.c: 500: LCD_Init();
 	fcall	_LCD_Init
-	line	507
+	line	503
 	
 l3396:	
-;main.c: 507: INTCONbits.PEIE = 1;
+;main.c: 503: INTCONbits.PEIE = 1;
 	bsf	(11),6	;volatile
-	line	508
+	line	504
 	
 l3398:	
-;main.c: 508: INTCONbits.GIE = 1;
+;main.c: 504: INTCONbits.GIE = 1;
 	bsf	(11),7	;volatile
-	line	511
+	line	507
 	
 l3400:	
-;main.c: 511: USART_WriteString("Inicializando o PIC16F877A\n\r");
+;main.c: 507: USART_WriteString("Inicializando o PIC16F877A\n\r");
 	movlw	low((STR_11)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2925,10 +2925,10 @@ l3400:
 	movlw	high((STR_11)|8000h)
 	movwf	((USART_WriteString@str)^080h)+1
 	fcall	_USART_WriteString
-	line	512
+	line	508
 	
 l3402:	
-;main.c: 512: USART_WriteString("USART: 115.200bps\n\r");
+;main.c: 508: USART_WriteString("USART: 115.200bps\n\r");
 	movlw	low((STR_12)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2936,24 +2936,24 @@ l3402:
 	movlw	high((STR_12)|8000h)
 	movwf	((USART_WriteString@str)^080h)+1
 	fcall	_USART_WriteString
-	line	515
+	line	511
 	
 l3404:	
-;main.c: 515: LCD_Init();
+;main.c: 511: LCD_Init();
 	fcall	_LCD_Init
-	line	516
+	line	512
 	
 l3406:	
-;main.c: 516: LCD_Cursor(0,0);
+;main.c: 512: LCD_Cursor(0,0);
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(LCD_Cursor@Col)^080h
 	movlw	(0)
 	fcall	_LCD_Cursor
-	line	517
+	line	513
 	
 l3408:	
-;main.c: 517: LCD_WriteString("Inicializando...");
+;main.c: 513: LCD_WriteString("Inicializando...");
 	movlw	low((STR_13)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2961,10 +2961,10 @@ l3408:
 	movlw	high((STR_13)|8000h)
 	movwf	((LCD_WriteString@Str)^080h)+1
 	fcall	_LCD_WriteString
-	line	520
+	line	516
 	
 l3410:	
-;main.c: 520: PWM_DutyCycle1(0);
+;main.c: 516: PWM_DutyCycle1(0);
 	movlw	low(0)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2972,10 +2972,10 @@ l3410:
 	movlw	high(0)
 	movwf	((PWM_DutyCycle1@valor)^080h)+1
 	fcall	_PWM_DutyCycle1
-	line	521
+	line	517
 	
 l3412:	
-;main.c: 521: PWM_DutyCycle2(0);
+;main.c: 517: PWM_DutyCycle2(0);
 	movlw	low(0)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2983,16 +2983,16 @@ l3412:
 	movlw	high(0)
 	movwf	((PWM_DutyCycle2@valor)^080h)+1
 	fcall	_PWM_DutyCycle2
-	line	524
+	line	520
 	
 l3414:	
-;main.c: 524: TIMER0_Set(238);
+;main.c: 520: TIMER0_Set(238);
 	movlw	(0EEh)
 	fcall	_TIMER0_Set
-	line	527
+	line	523
 	
 l3416:	
-;main.c: 527: _delay((unsigned long)((1000)*(18432000/4000.0)));
+;main.c: 523: _delay((unsigned long)((1000)*(18432000/4000.0)));
 	opt asmopt_off
 movlw  24
 	bsf	status, 5	;RP0=1, select bank3
@@ -3012,13 +3012,13 @@ u4147:
 	nop
 opt asmopt_on
 
-	line	530
-;main.c: 530: while(1)
+	line	526
+;main.c: 526: while(1)
 	
 l212:	
-	line	533
-;main.c: 531: {
-;main.c: 533: sprintf(display_rpm,"%04d", deltaV);
+	line	529
+;main.c: 527: {
+;main.c: 529: sprintf(display_rpm,"%04d", deltaV);
 	movlw	low((STR_14)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3034,8 +3034,8 @@ l212:
 
 	movlw	(_display_rpm)&0ffh
 	fcall	_sprintf
-	line	534
-;main.c: 534: sprintf(display_pwm,"%04d", pwm);
+	line	530
+;main.c: 530: sprintf(display_pwm,"%04d", pwm);
 	movlw	low((STR_15)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3051,8 +3051,8 @@ l212:
 
 	movlw	(_display_pwm)&0ffh
 	fcall	_sprintf
-	line	538
-;main.c: 538: USART_WriteString(display_rpm);
+	line	534
+;main.c: 534: USART_WriteString(display_rpm);
 	movlw	(_display_rpm&0ffh)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3060,8 +3060,8 @@ l212:
 	movlw	(0x1)
 	movwf	(USART_WriteString@str+1)^080h
 	fcall	_USART_WriteString
-	line	539
-;main.c: 539: USART_WriteString("\n\r");
+	line	535
+;main.c: 535: USART_WriteString("\n\r");
 	movlw	low((STR_16)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3069,22 +3069,22 @@ l212:
 	movlw	high((STR_16)|8000h)
 	movwf	((USART_WriteString@str)^080h)+1
 	fcall	_USART_WriteString
-	line	542
+	line	538
 	
 l3418:	
-;main.c: 542: LCD_Clear();
+;main.c: 538: LCD_Clear();
 	fcall	_LCD_Clear
-	line	543
+	line	539
 	
 l3420:	
-;main.c: 543: LCD_Cursor(0,0);
+;main.c: 539: LCD_Cursor(0,0);
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(LCD_Cursor@Col)^080h
 	movlw	(0)
 	fcall	_LCD_Cursor
-	line	544
-;main.c: 544: LCD_WriteString("DlV: ");
+	line	540
+;main.c: 540: LCD_WriteString("DlV: ");
 	movlw	low((STR_17)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3092,10 +3092,10 @@ l3420:
 	movlw	high((STR_17)|8000h)
 	movwf	((LCD_WriteString@Str)^080h)+1
 	fcall	_LCD_WriteString
-	line	545
+	line	541
 	
 l3422:	
-;main.c: 545: LCD_Cursor(0,6);
+;main.c: 541: LCD_Cursor(0,6);
 	movlw	(06h)
 	bsf	status, 5	;RP0=1, select bank3
 	bsf	status, 6	;RP1=1, select bank3
@@ -3106,10 +3106,10 @@ l3422:
 	movwf	(LCD_Cursor@Col)^080h
 	movlw	(0)
 	fcall	_LCD_Cursor
-	line	546
+	line	542
 	
 l3424:	
-;main.c: 546: LCD_WriteString(display_rpm);
+;main.c: 542: LCD_WriteString(display_rpm);
 	movlw	(_display_rpm&0ffh)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3117,17 +3117,17 @@ l3424:
 	movlw	(0x1)
 	movwf	(LCD_WriteString@Str+1)^080h
 	fcall	_LCD_WriteString
-	line	547
-;main.c: 547: LCD_Cursor(1,0);
+	line	543
+;main.c: 543: LCD_Cursor(1,0);
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(LCD_Cursor@Col)^080h
 	movlw	(01h)
 	fcall	_LCD_Cursor
-	line	548
+	line	544
 	
 l3426:	
-;main.c: 548: LCD_WriteString("PWM: ");
+;main.c: 544: LCD_WriteString("PWM: ");
 	movlw	low((STR_18)|8000h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3135,10 +3135,10 @@ l3426:
 	movlw	high((STR_18)|8000h)
 	movwf	((LCD_WriteString@Str)^080h)+1
 	fcall	_LCD_WriteString
-	line	549
+	line	545
 	
 l3428:	
-;main.c: 549: LCD_Cursor(1,6);
+;main.c: 545: LCD_Cursor(1,6);
 	movlw	(06h)
 	bsf	status, 5	;RP0=1, select bank3
 	bsf	status, 6	;RP1=1, select bank3
@@ -3149,8 +3149,8 @@ l3428:
 	movwf	(LCD_Cursor@Col)^080h
 	movlw	(01h)
 	fcall	_LCD_Cursor
-	line	550
-;main.c: 550: LCD_WriteString(display_pwm);
+	line	546
+;main.c: 546: LCD_WriteString(display_pwm);
 	movlw	(_display_pwm&0ffh)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -3158,10 +3158,10 @@ l3428:
 	movlw	(0x1)
 	movwf	(LCD_WriteString@Str+1)^080h
 	fcall	_LCD_WriteString
-	line	552
+	line	548
 	
 l3430:	
-;main.c: 552: _delay((unsigned long)((200)*(18432000/4000.0)));
+;main.c: 548: _delay((unsigned long)((200)*(18432000/4000.0)));
 	opt asmopt_off
 movlw  5
 	bsf	status, 5	;RP0=1, select bank3
@@ -3181,14 +3181,14 @@ u4157:
 opt asmopt_on
 
 	goto	l212
-	line	553
+	line	549
 	
 l213:	
-	line	530
+	line	526
 	goto	l212
 	
 l214:	
-	line	554
+	line	550
 	
 l215:	
 	global	start
@@ -6995,7 +6995,7 @@ GLOBAL	__end_of_ADC_Init
 
 ;; *************** function _ISR *****************
 ;; Defined at:
-;;		line 318 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+;;		line 314 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -7031,12 +7031,12 @@ GLOBAL	__end_of_ADC_Init
 ;;
 psect	text22,local,class=CODE,delta=2,merge=1
 	file	"C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
-	line	318
+	line	314
 global __ptext22
 __ptext22:	;psect for function _ISR
 psect	text22
 	file	"C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
-	line	318
+	line	314
 	global	__size_of_ISR
 	__size_of_ISR	equ	__end_of_ISR-_ISR
 	
@@ -7068,10 +7068,10 @@ interrupt_function:
 	movwf	(??_ISR+3)^080h
 	ljmp	_ISR
 psect	text22
-	line	321
+	line	317
 	
 i1l3198:	
-;main.c: 321: if (PIR1bits.RCIF)
+;main.c: 317: if (PIR1bits.RCIF)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfss	(12),5	;volatile
@@ -7080,11 +7080,11 @@ i1l3198:
 u396_21:
 	goto	i1l3280
 u396_20:
-	line	323
+	line	319
 	
 i1l3200:	
-;main.c: 322: {
-;main.c: 323: if (USART_ReceiveChar() == '0')
+;main.c: 318: {
+;main.c: 319: if (USART_ReceiveChar() == '0')
 	fcall	_USART_ReceiveChar
 	xorlw	030h
 	skipz
@@ -7093,28 +7093,28 @@ i1l3200:
 u397_21:
 	goto	i1l3210
 u397_20:
-	line	325
+	line	321
 	
 i1l3202:	
-;main.c: 324: {
-;main.c: 325: USART_WriteString("\n\rdesligado\n\r");
+;main.c: 320: {
+;main.c: 321: USART_WriteString("\n\rdesligado\n\r");
 	movlw	low((STR_1)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_1)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	326
+	line	322
 	
 i1l3204:	
-;main.c: 326: pwm = 0;
+;main.c: 322: pwm = 0;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(_pwm)^080h
 	clrf	(_pwm+1)^080h
-	line	327
+	line	323
 	
 i1l3206:	
-;main.c: 327: PWM_DutyCycle2(pwm);
+;main.c: 323: PWM_DutyCycle2(pwm);
 	movf	(_pwm+1)^080h,w
 	clrf	(i1PWM_DutyCycle2@valor+1)
 	addwf	(i1PWM_DutyCycle2@valor+1)
@@ -7124,19 +7124,19 @@ i1l3206:
 
 	fcall	i1_PWM_DutyCycle2
 	goto	i1l190
-	line	328
+	line	324
 	
 i1l3208:	
-;main.c: 328: return;
+;main.c: 324: return;
 	goto	i1l190
-	line	329
+	line	325
 	
 i1l189:	
-	line	331
+	line	327
 	
 i1l3210:	
-;main.c: 329: }
-;main.c: 331: if (USART_ReceiveChar() == '1')
+;main.c: 325: }
+;main.c: 327: if (USART_ReceiveChar() == '1')
 	fcall	_USART_ReceiveChar
 	xorlw	031h
 	skipz
@@ -7145,20 +7145,20 @@ i1l3210:
 u398_21:
 	goto	i1l3216
 u398_20:
-	line	333
+	line	329
 	
 i1l3212:	
-;main.c: 332: {
-;main.c: 333: USART_WriteString("\n\rpwm = 32\n\r");
+;main.c: 328: {
+;main.c: 329: USART_WriteString("\n\rpwm = 32\n\r");
 	movlw	low((STR_2)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_2)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	334
+	line	330
 	
 i1l3214:	
-;main.c: 334: pwm = 32;
+;main.c: 330: pwm = 32;
 	movlw	low(020h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -7166,14 +7166,14 @@ i1l3214:
 	movlw	high(020h)
 	movwf	((_pwm)^080h)+1
 	goto	i1l3216
-	line	336
+	line	332
 	
 i1l191:	
-	line	338
+	line	334
 	
 i1l3216:	
-;main.c: 336: }
-;main.c: 338: if (USART_ReceiveChar() == '2')
+;main.c: 332: }
+;main.c: 334: if (USART_ReceiveChar() == '2')
 	fcall	_USART_ReceiveChar
 	xorlw	032h
 	skipz
@@ -7182,20 +7182,20 @@ i1l3216:
 u399_21:
 	goto	i1l3222
 u399_20:
-	line	340
+	line	336
 	
 i1l3218:	
-;main.c: 339: {
-;main.c: 340: USART_WriteString("\n\rpwm = 64\n\r");
+;main.c: 335: {
+;main.c: 336: USART_WriteString("\n\rpwm = 64\n\r");
 	movlw	low((STR_3)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_3)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	341
+	line	337
 	
 i1l3220:	
-;main.c: 341: pwm = 64;
+;main.c: 337: pwm = 64;
 	movlw	low(040h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -7203,14 +7203,14 @@ i1l3220:
 	movlw	high(040h)
 	movwf	((_pwm)^080h)+1
 	goto	i1l3222
-	line	343
+	line	339
 	
 i1l192:	
-	line	345
+	line	341
 	
 i1l3222:	
-;main.c: 343: }
-;main.c: 345: if (USART_ReceiveChar() == '3')
+;main.c: 339: }
+;main.c: 341: if (USART_ReceiveChar() == '3')
 	fcall	_USART_ReceiveChar
 	xorlw	033h
 	skipz
@@ -7219,30 +7219,30 @@ i1l3222:
 u400_21:
 	goto	i1l3232
 u400_20:
-	line	347
+	line	343
 	
 i1l3224:	
-;main.c: 346: {
-;main.c: 347: USART_WriteString("\n\rpwm = 128\n\r");
+;main.c: 342: {
+;main.c: 343: USART_WriteString("\n\rpwm = 128\n\r");
 	movlw	low((STR_4)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_4)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	348
+	line	344
 	
 i1l3226:	
-;main.c: 348: pwm = 128;
+;main.c: 344: pwm = 128;
 	movlw	low(080h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(_pwm)^080h
 	movlw	high(080h)
 	movwf	((_pwm)^080h)+1
-	line	350
+	line	346
 	
 i1l3228:	
-;main.c: 350: if(PORTBbits.RB0 == 0)
+;main.c: 346: if(PORTBbits.RB0 == 0)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfsc	(6),0	;volatile
@@ -7251,34 +7251,34 @@ i1l3228:
 u401_21:
 	goto	i1l194
 u401_20:
-	line	352
+	line	348
 	
 i1l3230:	
-;main.c: 351: {
-;main.c: 352: PORTBbits.RB0 = 1;
+;main.c: 347: {
+;main.c: 348: PORTBbits.RB0 = 1;
 	bsf	(6),0	;volatile
-	line	353
-;main.c: 353: }else{
+	line	349
+;main.c: 349: }else{
 	goto	i1l3232
 	
 i1l194:	
-	line	354
-;main.c: 354: PORTBbits.RB0 = 0;
+	line	350
+;main.c: 350: PORTBbits.RB0 = 0;
 	bcf	(6),0	;volatile
 	goto	i1l3232
-	line	355
+	line	351
 	
 i1l195:	
 	goto	i1l3232
-	line	356
+	line	352
 	
 i1l193:	
-	line	358
+	line	354
 	
 i1l3232:	
-;main.c: 355: }
-;main.c: 356: }
-;main.c: 358: if (USART_ReceiveChar() == '4')
+;main.c: 351: }
+;main.c: 352: }
+;main.c: 354: if (USART_ReceiveChar() == '4')
 	fcall	_USART_ReceiveChar
 	xorlw	034h
 	skipz
@@ -7287,30 +7287,30 @@ i1l3232:
 u402_21:
 	goto	i1l3244
 u402_20:
-	line	360
+	line	356
 	
 i1l3234:	
-;main.c: 359: {
-;main.c: 360: USART_WriteString("\n\rpwm = 256\n\r");
+;main.c: 355: {
+;main.c: 356: USART_WriteString("\n\rpwm = 256\n\r");
 	movlw	low((STR_5)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_5)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	361
+	line	357
 	
 i1l3236:	
-;main.c: 361: pwm = 256;
+;main.c: 357: pwm = 256;
 	movlw	low(0100h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(_pwm)^080h
 	movlw	high(0100h)
 	movwf	((_pwm)^080h)+1
-	line	362
+	line	358
 	
 i1l3238:	
-;main.c: 362: PWM_DutyCycle2(pwm);
+;main.c: 358: PWM_DutyCycle2(pwm);
 	movf	(_pwm+1)^080h,w
 	clrf	(i1PWM_DutyCycle2@valor+1)
 	addwf	(i1PWM_DutyCycle2@valor+1)
@@ -7319,10 +7319,10 @@ i1l3238:
 	addwf	(i1PWM_DutyCycle2@valor)
 
 	fcall	i1_PWM_DutyCycle2
-	line	363
+	line	359
 	
 i1l3240:	
-;main.c: 363: if(PORTBbits.RB1 == 0)
+;main.c: 359: if(PORTBbits.RB1 == 0)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfsc	(6),1	;volatile
@@ -7331,36 +7331,36 @@ i1l3240:
 u403_21:
 	goto	i1l197
 u403_20:
-	line	365
+	line	361
 	
 i1l3242:	
-;main.c: 364: {
-;main.c: 365: PORTBbits.RB1 = 1;
+;main.c: 360: {
+;main.c: 361: PORTBbits.RB1 = 1;
 	bsf	(6),1	;volatile
-	line	366
-;main.c: 366: }else{
+	line	362
+;main.c: 362: }else{
 	goto	i1l190
 	
 i1l197:	
-	line	367
-;main.c: 367: PORTBbits.RB1 = 0;
+	line	363
+;main.c: 363: PORTBbits.RB1 = 0;
 	bcf	(6),1	;volatile
 	goto	i1l190
-	line	368
+	line	364
 	
 i1l198:	
-	line	369
-;main.c: 368: }
-;main.c: 369: return;
+	line	365
+;main.c: 364: }
+;main.c: 365: return;
 	goto	i1l190
-	line	370
+	line	366
 	
 i1l196:	
-	line	372
+	line	368
 	
 i1l3244:	
-;main.c: 370: }
-;main.c: 372: if (USART_ReceiveChar() == '5')
+;main.c: 366: }
+;main.c: 368: if (USART_ReceiveChar() == '5')
 	fcall	_USART_ReceiveChar
 	xorlw	035h
 	skipz
@@ -7369,20 +7369,20 @@ i1l3244:
 u404_21:
 	goto	i1l3250
 u404_20:
-	line	374
+	line	370
 	
 i1l3246:	
-;main.c: 373: {
-;main.c: 374: USART_WriteString("\n\rpwm = 512\n\r");
+;main.c: 369: {
+;main.c: 370: USART_WriteString("\n\rpwm = 512\n\r");
 	movlw	low((STR_6)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_6)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	375
+	line	371
 	
 i1l3248:	
-;main.c: 375: pwm = 512;
+;main.c: 371: pwm = 512;
 	movlw	low(0200h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -7390,14 +7390,14 @@ i1l3248:
 	movlw	high(0200h)
 	movwf	((_pwm)^080h)+1
 	goto	i1l3250
-	line	377
+	line	373
 	
 i1l199:	
-	line	379
+	line	375
 	
 i1l3250:	
-;main.c: 377: }
-;main.c: 379: if (USART_ReceiveChar() == '6')
+;main.c: 373: }
+;main.c: 375: if (USART_ReceiveChar() == '6')
 	fcall	_USART_ReceiveChar
 	xorlw	036h
 	skipz
@@ -7406,20 +7406,20 @@ i1l3250:
 u405_21:
 	goto	i1l3256
 u405_20:
-	line	381
+	line	377
 	
 i1l3252:	
-;main.c: 380: {
-;main.c: 381: USART_WriteString("\n\rpwm = 768\n\r");
+;main.c: 376: {
+;main.c: 377: USART_WriteString("\n\rpwm = 768\n\r");
 	movlw	low((STR_7)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_7)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	382
+	line	378
 	
 i1l3254:	
-;main.c: 382: pwm = 768;
+;main.c: 378: pwm = 768;
 	movlw	low(0300h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -7427,14 +7427,14 @@ i1l3254:
 	movlw	high(0300h)
 	movwf	((_pwm)^080h)+1
 	goto	i1l3256
-	line	384
+	line	380
 	
 i1l200:	
-	line	386
+	line	382
 	
 i1l3256:	
-;main.c: 384: }
-;main.c: 386: if (USART_ReceiveChar() == '7')
+;main.c: 380: }
+;main.c: 382: if (USART_ReceiveChar() == '7')
 	fcall	_USART_ReceiveChar
 	xorlw	037h
 	skipz
@@ -7443,20 +7443,20 @@ i1l3256:
 u406_21:
 	goto	i1l3262
 u406_20:
-	line	388
+	line	384
 	
 i1l3258:	
-;main.c: 387: {
-;main.c: 388: USART_WriteString("\n\rpwm = 896\n\r");
+;main.c: 383: {
+;main.c: 384: USART_WriteString("\n\rpwm = 896\n\r");
 	movlw	low((STR_8)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_8)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	389
+	line	385
 	
 i1l3260:	
-;main.c: 389: pwm = 896;
+;main.c: 385: pwm = 896;
 	movlw	low(0380h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -7464,14 +7464,14 @@ i1l3260:
 	movlw	high(0380h)
 	movwf	((_pwm)^080h)+1
 	goto	i1l3262
-	line	391
+	line	387
 	
 i1l201:	
-	line	393
+	line	389
 	
 i1l3262:	
-;main.c: 391: }
-;main.c: 393: if (USART_ReceiveChar() == '8')
+;main.c: 387: }
+;main.c: 389: if (USART_ReceiveChar() == '8')
 	fcall	_USART_ReceiveChar
 	xorlw	038h
 	skipz
@@ -7480,20 +7480,20 @@ i1l3262:
 u407_21:
 	goto	i1l3268
 u407_20:
-	line	395
+	line	391
 	
 i1l3264:	
-;main.c: 394: {
-;main.c: 395: USART_WriteString("\n\rpwm = 1000\n\r");
+;main.c: 390: {
+;main.c: 391: USART_WriteString("\n\rpwm = 1000\n\r");
 	movlw	low((STR_9)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_9)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	396
+	line	392
 	
 i1l3266:	
-;main.c: 396: pwm = 1000;
+;main.c: 392: pwm = 1000;
 	movlw	low(03E8h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -7501,14 +7501,14 @@ i1l3266:
 	movlw	high(03E8h)
 	movwf	((_pwm)^080h)+1
 	goto	i1l3268
-	line	398
+	line	394
 	
 i1l202:	
-	line	400
+	line	396
 	
 i1l3268:	
-;main.c: 398: }
-;main.c: 400: if (USART_ReceiveChar() == '9')
+;main.c: 394: }
+;main.c: 396: if (USART_ReceiveChar() == '9')
 	fcall	_USART_ReceiveChar
 	xorlw	039h
 	skipz
@@ -7517,20 +7517,20 @@ i1l3268:
 u408_21:
 	goto	i1l3274
 u408_20:
-	line	402
+	line	398
 	
 i1l3270:	
-;main.c: 401: {
-;main.c: 402: USART_WriteString("\n\rpwm = 1023\n\r");
+;main.c: 397: {
+;main.c: 398: USART_WriteString("\n\rpwm = 1023\n\r");
 	movlw	low((STR_10)|8000h)
 	movwf	(i1USART_WriteString@str)
 	movlw	high((STR_10)|8000h)
 	movwf	((i1USART_WriteString@str))+1
 	fcall	i1_USART_WriteString
-	line	403
+	line	399
 	
 i1l3272:	
-;main.c: 403: pwm = 1023;
+;main.c: 399: pwm = 1023;
 	movlw	low(03FFh)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -7538,19 +7538,19 @@ i1l3272:
 	movlw	high(03FFh)
 	movwf	((_pwm)^080h)+1
 	goto	i1l3274
-	line	405
+	line	401
 	
 i1l203:	
-	line	409
+	line	405
 	
 i1l3274:	
-;main.c: 405: }
-;main.c: 409: Fuzzy();
+;main.c: 401: }
+;main.c: 405: Fuzzy();
 	fcall	_Fuzzy
-	line	410
+	line	406
 	
 i1l3276:	
-;main.c: 410: tf = pwm;
+;main.c: 406: tf = pwm;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(_pwm+1)^080h,w
@@ -7569,57 +7569,57 @@ i1l3276:
 	movwf	(_tf+1)^0180h
 	movf	(2+(?___lwtoft)),w
 	movwf	(_tf+2)^0180h
-	line	412
+	line	408
 	
 i1l3278:	
-;main.c: 412: PIR1bits.RCIF = 0;
+;main.c: 408: PIR1bits.RCIF = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(12),5	;volatile
 	goto	i1l3280
-	line	413
+	line	409
 	
 i1l188:	
-	line	416
+	line	412
 	
 i1l3280:	
-;main.c: 413: }
-;main.c: 416: if (PIR1bits.ADIF)
+;main.c: 409: }
+;main.c: 412: if (PIR1bits.ADIF)
 	btfss	(12),6	;volatile
 	goto	u409_21
 	goto	u409_20
 u409_21:
 	goto	i1l204
 u409_20:
-	line	421
+	line	417
 	
 i1l3282:	
-;main.c: 417: {
-;main.c: 421: PIR1bits.ADIF = 0;
+;main.c: 413: {
+;main.c: 417: PIR1bits.ADIF = 0;
 	bcf	(12),6	;volatile
-	line	422
+	line	418
 	
 i1l204:	
-	line	426
-;main.c: 422: }
-;main.c: 426: if (INTCONbits.T0IF)
+	line	422
+;main.c: 418: }
+;main.c: 422: if (INTCONbits.T0IF)
 	btfss	(11),2	;volatile
 	goto	u410_21
 	goto	u410_20
 u410_21:
 	goto	i1l3306
 u410_20:
-	line	429
+	line	425
 	
 i1l3284:	
-;main.c: 427: {
-;main.c: 429: TIMER0_Set(238);
+;main.c: 423: {
+;main.c: 425: TIMER0_Set(238);
 	movlw	(0EEh)
 	fcall	i1_TIMER0_Set
-	line	432
+	line	428
 	
 i1l3286:	
-;main.c: 432: if (contagens_tm0 < 499)
+;main.c: 428: if (contagens_tm0 < 499)
 	movlw	high(01F3h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -7633,44 +7633,44 @@ i1l3286:
 u411_21:
 	goto	i1l3292
 u411_20:
-	line	435
+	line	431
 	
 i1l3288:	
-;main.c: 433: {
-;main.c: 435: contagens_tm0++;
+;main.c: 429: {
+;main.c: 431: contagens_tm0++;
 	movlw	low(01h)
 	addwf	(_contagens_tm0)^080h,f
 	skipnc
 	incf	(_contagens_tm0+1)^080h,f
 	movlw	high(01h)
 	addwf	(_contagens_tm0+1)^080h,f
-	line	438
+	line	434
 	
 i1l3290:	
-;main.c: 438: PORTBbits.RB6 = 1;
+;main.c: 434: PORTBbits.RB6 = 1;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(6),6	;volatile
-	line	439
-;main.c: 439: }
+	line	435
+;main.c: 435: }
 	goto	i1l3304
-	line	440
+	line	436
 	
 i1l206:	
-	line	443
+	line	439
 	
 i1l3292:	
-;main.c: 440: else
-;main.c: 441: {
-;main.c: 443: contagens_tm0 = 0;
+;main.c: 436: else
+;main.c: 437: {
+;main.c: 439: contagens_tm0 = 0;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(_contagens_tm0)^080h
 	clrf	(_contagens_tm0+1)^080h
-	line	446
+	line	442
 	
 i1l3294:	
-;main.c: 446: pulsos = (TMR1H << 8) + TMR1L;
+;main.c: 442: pulsos = (TMR1H << 8) + TMR1L;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(15),w	;volatile
@@ -7686,10 +7686,10 @@ i1l3294:
 	clrf	(_pulsos)^080h
 	addwf	(_pulsos)^080h
 
-	line	447
+	line	443
 	
 i1l3296:	
-;main.c: 447: rpm = ((pulsos / pas_cooler) * 120);
+;main.c: 443: rpm = ((pulsos / pas_cooler) * 120);
 	movf	(_pas_cooler+1)^080h,w
 	clrf	(i1___lwdiv@divisor+1)
 	addwf	(i1___lwdiv@divisor+1)
@@ -7726,77 +7726,77 @@ i1l3296:
 	clrf	(_rpm)^0180h
 	addwf	(_rpm)^0180h
 
-	line	450
+	line	446
 	
 i1l3298:	
-;main.c: 450: TMR1L = 0x00;
+;main.c: 446: TMR1L = 0x00;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(14)	;volatile
-	line	451
+	line	447
 	
 i1l3300:	
-;main.c: 451: TMR1H = 0x00;
+;main.c: 447: TMR1H = 0x00;
 	clrf	(15)	;volatile
-	line	454
+	line	450
 	
 i1l3302:	
-;main.c: 454: PORTBbits.RB6 = 0;
+;main.c: 450: PORTBbits.RB6 = 0;
 	bcf	(6),6	;volatile
 	goto	i1l3304
-	line	455
+	line	451
 	
 i1l207:	
-	line	458
+	line	454
 	
 i1l3304:	
-;main.c: 455: }
-;main.c: 458: INTCONbits.T0IF = 0;
+;main.c: 451: }
+;main.c: 454: INTCONbits.T0IF = 0;
 	bcf	(11),2	;volatile
 	goto	i1l3306
-	line	459
+	line	455
 	
 i1l205:	
-	line	462
+	line	458
 	
 i1l3306:	
-;main.c: 459: }
-;main.c: 462: if (PIR1bits.TMR1IF)
+;main.c: 455: }
+;main.c: 458: if (PIR1bits.TMR1IF)
 	btfss	(12),0	;volatile
 	goto	u412_21
 	goto	u412_20
 u412_21:
 	goto	i1l208
 u412_20:
-	line	467
+	line	463
 	
 i1l3308:	
-;main.c: 463: {
-;main.c: 467: PIR1bits.TMR1IF = 0;
+;main.c: 459: {
+;main.c: 463: PIR1bits.TMR1IF = 0;
 	bcf	(12),0	;volatile
-	line	468
+	line	464
 	
 i1l208:	
-	line	471
-;main.c: 468: }
-;main.c: 471: if (PIR1bits.SSPIF)
+	line	467
+;main.c: 464: }
+;main.c: 467: if (PIR1bits.SSPIF)
 	btfss	(12),3	;volatile
 	goto	u413_21
 	goto	u413_20
 u413_21:
 	goto	i1l190
 u413_20:
-	line	476
+	line	472
 	
 i1l3310:	
-;main.c: 472: {
-;main.c: 476: PIR1bits.SSPIF = 0;
+;main.c: 468: {
+;main.c: 472: PIR1bits.SSPIF = 0;
 	bcf	(12),3	;volatile
 	goto	i1l190
-	line	477
+	line	473
 	
 i1l209:	
-	line	478
+	line	474
 	
 i1l190:	
 	bsf	status, 5	;RP0=1, select bank1
@@ -8649,32 +8649,32 @@ i1l2746:
 	line	162
 	
 i1l2748:	
-;main.c: 162: temp = (tf - setpoint);
+;main.c: 162: temp = (setpoint - tf);
 	bsf	status, 5	;RP0=1, select bank3
 	bsf	status, 6	;RP1=1, select bank3
-	movf	(_tf)^0180h,w
+	movf	(_setpoint)^0180h,w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(___ftadd@f1)
 	bsf	status, 5	;RP0=1, select bank3
 	bsf	status, 6	;RP1=1, select bank3
-	movf	(_tf+1)^0180h,w
+	movf	(_setpoint+1)^0180h,w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(___ftadd@f1+1)
 	bsf	status, 5	;RP0=1, select bank3
 	bsf	status, 6	;RP1=1, select bank3
-	movf	(_tf+2)^0180h,w
+	movf	(_setpoint+2)^0180h,w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(___ftadd@f1+2)
 	bsf	status, 5	;RP0=1, select bank3
 	bsf	status, 6	;RP1=1, select bank3
-	movf	(_setpoint)^0180h,w
+	movf	(_tf)^0180h,w
 	movwf	(___ftneg@f1)
-	movf	(_setpoint+1)^0180h,w
+	movf	(_tf+1)^0180h,w
 	movwf	(___ftneg@f1+1)
-	movf	(_setpoint+2)^0180h,w
+	movf	(_tf+2)^0180h,w
 	movwf	(___ftneg@f1+2)
 	fcall	___ftneg
 	movf	(0+(?___ftneg)),w
@@ -10676,7 +10676,7 @@ i1l2870:
 	line	297
 	
 i1l2872:	
-;main.c: 297: if (deltaV >0 && deltaV < 120)
+;main.c: 297: if (deltaV >0 && deltaV < 1020)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(_deltaV+1)^080h,w
@@ -10689,9 +10689,9 @@ u357_21:
 u357_20:
 	
 i1l2874:	
-	movlw	high(078h)
+	movlw	high(03FCh)
 	subwf	(_deltaV+1)^080h,w
-	movlw	low(078h)
+	movlw	low(03FCh)
 	skipnz
 	subwf	(_deltaV)^080h,w
 	skipnc
@@ -10717,7 +10717,7 @@ i1l2876:
 	line	300
 	
 i1l184:	
-	line	307
+	line	303
 	
 i1l185:	
 	return
