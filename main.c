@@ -162,14 +162,15 @@ void Fuzzy()
    temp = (setpoint - tf);//
 	deltaV = temp;
    //Limites (valores acima recebem o maximo...)
-   if (temp >10) temp = 10;
+   if (temp >100) temp = 100;
    if (temp <0) temp = 0;
 	
 	// 1ª regra - If temp is < (2.5 + setpoint)
-	if (temp < 2.5)
+	if (temp < 25)
 	{
-		// 1 - Fuzzificar as entradas.
-		fitemp    = trapmf(temp,-1,0,1.5,3);
+		// 1 - Reduz as velocidades.
+		// [0 0 13 32.4]
+		fitemp    = trapmf(temp, 0,0,13,32);
 
 		// 2 - Aplicação dos operadores Fuzzy.
 		fop_rule1 = max_val(fitemp,0.1);
@@ -177,9 +178,9 @@ void Fuzzy()
 		//3 - Aplicação do Método de Implicação (valores mínimos).
 		x=0;
 		y=0;
-		for (int a=0; a<=10; a++)
+		for (int a=0; a<=90; a++)
 		{
-			y = trapmf(x,-1,0,1.5,3);
+			y = trapmf(x,0,0,13,32);
 
 			if (y > fop_rule1)
 			{
@@ -197,11 +198,12 @@ void Fuzzy()
 
 
 
-	// 2ª regra - If temp is acima do mantem
-	if ((temp > 2) && (temp < 7))
+	// 2ª regra - If temp is na faixa de diferenca media, mantem
+	//  [9 45 81]
+	if ((temp > 20) && (temp < 70))
 	{
 		// 1 - Fuzzificar as entradas.
-		fitemp = trimf(temp,2,5,8);
+		fitemp = trimf(temp, 9, 45, 81);
 
 		// 2 - Aplicação dos operadores Fuzzy.
 		fop_rule2 = max_val(fitemp,0.1);
@@ -209,9 +211,9 @@ void Fuzzy()
 		 // 3 - Aplicação do Método de Implicação (valores mínimos).
 		x=0;
 		y=0;
-		for (int a=0; a<=10; a++)
+		for (int a=0; a<=90; a++)
 		{
-			y = trimf(x,2,5,8);
+			y = trimf(x, 9, 45, 81);
 
 			if (y >= fop_rule2)
 			{
@@ -229,11 +231,12 @@ void Fuzzy()
 
 
 
-	// 3ª regra - If temp is acima do toleravel
-	if (temp > 7 )
+	// 3ª regra - If temp is acima aumentaa velocidade
+	// [62 79 90 90]
+	if (temp > 70 )
 	{
 		// 1 - Fuzzificar as entradas.
-		fitemp = trapmf(temp,6,8.5,10,11);
+		fitemp = trapmf(temp, 62, 79, 90, 90);
 //		fiFood    = trapmf(food,7,9,10,10);
 
 		// 2 - Aplicação dos operadores Fuzzy.
@@ -242,9 +245,9 @@ void Fuzzy()
 		// 3 - Aplicação do Método de Implicação (valores mínimos).
 		x=0;
 		y=0;
-		for (int a=0; a<=10; a++)
+		for (int a=0; a<=90; a++)
 		{
-			y = trapmf(x,7,8.5,10,11);
+			y = trapmf(x, 62, 79, 90, 90);
 
 			if (y >= fop_rule3)
 			{
@@ -263,11 +266,11 @@ void Fuzzy()
 	// 4 - Aplicação do Método de Agregação.
 	for (int a=0; a<1; a++)
 	{
-		if (temp < 2.5)
+		if (temp < 25)
 		{
 			tip = mantem;
 		}else
-		if (temp >= 2.5 && temp < 7.5)
+		if (temp >= 25 && temp < 75)
 		{
 			tip = reduz;
 		}else
@@ -355,7 +358,7 @@ void interrupt ISR(void)
 		{
 			USART_WriteString("\n\rpwm = 256\n\r");
 			pwm = 256;
-			PWM_DutyCycle2(pwm);
+			 PWM_DutyCycle2(pwm);
 			if(PORTBbits.RB1 == 0)
 			{
 				PORTBbits.RB1 = 1;
@@ -526,7 +529,9 @@ void main(void)
 	while(1)
 	{
 		// Formata os dados de rota��o para apresenta��o.
-		sprintf(display_rpm,"%04d", deltaV);
+		
+		//sprintf(display_rpm,"%04d", deltaV);
+		sprintf(display_rpm,"%04d", rpm);
 		sprintf(display_pwm,"%04d", pwm);
 
 		// Apresenta as informa��es na USART.
@@ -537,7 +542,7 @@ void main(void)
      	// Apresenta as informa��es no LCD.
 		LCD_Clear();
 		LCD_Cursor(0,0);
-		LCD_WriteString("DlV: ");
+		LCD_WriteString("RPM: ");
 		LCD_Cursor(0,6);
 		LCD_WriteString(display_rpm);
 		LCD_Cursor(1,0);

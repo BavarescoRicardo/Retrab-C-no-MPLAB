@@ -1744,14 +1744,15 @@ fitemp =0;
 temp = (setpoint - tf);
 deltaV = temp;
 
-if (temp >10) temp = 10;
+if (temp >100) temp = 100;
 if (temp <0) temp = 0;
 
 
-if (temp < 2.5)
+if (temp < 25)
 {
 
-fitemp = trapmf(temp,-1,0,1.5,3);
+
+fitemp = trapmf(temp, 0,0,13,32);
 
 
 fop_rule1 = max_val(fitemp,0.1);
@@ -1759,9 +1760,9 @@ fop_rule1 = max_val(fitemp,0.1);
 
 x=0;
 y=0;
-for (int a=0; a<=10; a++)
+for (int a=0; a<=90; a++)
 {
-y = trapmf(x,-1,0,1.5,3);
+y = trapmf(x,0,0,13,32);
 
 if (y > fop_rule1)
 {
@@ -1777,13 +1778,11 @@ x=x+1;
 
 }
 
-
-
-
-if ((temp > 2) && (temp < 7))
+# 203
+if ((temp > 20) && (temp < 70))
 {
 
-fitemp = trimf(temp,2,5,8);
+fitemp = trimf(temp, 9, 45, 81);
 
 
 fop_rule2 = max_val(fitemp,0.1);
@@ -1791,9 +1790,9 @@ fop_rule2 = max_val(fitemp,0.1);
 
 x=0;
 y=0;
-for (int a=0; a<=10; a++)
+for (int a=0; a<=90; a++)
 {
-y = trimf(x,2,5,8);
+y = trimf(x, 9, 45, 81);
 
 if (y >= fop_rule2)
 {
@@ -1809,13 +1808,11 @@ x=x+1;
 
 }
 
-
-
-
-if (temp > 7 )
+# 236
+if (temp > 70 )
 {
 
-fitemp = trapmf(temp,6,8.5,10,11);
+fitemp = trapmf(temp, 62, 79, 90, 90);
 
 
 
@@ -1824,9 +1821,9 @@ fop_rule3 = max_val(fitemp,0.1);
 
 x=0;
 y=0;
-for (int a=0; a<=10; a++)
+for (int a=0; a<=90; a++)
 {
-y = trapmf(x,7,8.5,10,11);
+y = trapmf(x, 62, 79, 90, 90);
 
 if (y >= fop_rule3)
 {
@@ -1845,11 +1842,11 @@ x=x+1;
 
 for (int a=0; a<1; a++)
 {
-if (temp < 2.5)
+if (temp < 25)
 {
 tip = mantem;
 }else
-if (temp >= 2.5 && temp < 7.5)
+if (temp >= 25 && temp < 75)
 {
 tip = reduz;
 }else
@@ -1884,7 +1881,7 @@ PWM_DutyCycle2(deltaV);
 
 }
 
-# 314
+# 317
 void interrupt ISR(void)
 {
 
@@ -2100,7 +2097,9 @@ _delay((unsigned long)((1000)*(18432000/4000.0)));
 while(1)
 {
 
-sprintf(display_rpm,"%04d", deltaV);
+
+
+sprintf(display_rpm,"%04d", rpm);
 sprintf(display_pwm,"%04d", pwm);
 
 
@@ -2111,7 +2110,7 @@ USART_WriteString("\n\r");
 
 LCD_Clear();
 LCD_Cursor(0,0);
-LCD_WriteString("DlV: ");
+LCD_WriteString("RPM: ");
 LCD_Cursor(0,6);
 LCD_WriteString(display_rpm);
 LCD_Cursor(1,0);
