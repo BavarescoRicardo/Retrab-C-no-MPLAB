@@ -317,21 +317,21 @@ void interrupt ISR(void)
 
 		if (USART_ReceiveChar() == '1')
 		{
-			USART_WriteString("\n\rpwm = 32\n\r");
+			USART_WriteString("\n\rpwm = \n\r");
 			pwm = 32;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '2')
 		{
-			USART_WriteString("\n\rpwm = 64\n\r");
+			USART_WriteString("\n\rpwm = \n\r");
 			pwm = 64;
 			// PWM_DutyCycle2(pwm);			
 		}
 
 		if (USART_ReceiveChar() == '3')
 		{
-			USART_WriteString("\n\rpwm = 128\n\r");
+			USART_WriteString("\n\rpwm = \n\r");
 			pwm = 128;
 			// PWM_DutyCycle2(pwm);
 			if(PORTBbits.RB0 == 0)
@@ -344,7 +344,7 @@ void interrupt ISR(void)
 		
 		if (USART_ReceiveChar() == '4')
 		{
-			USART_WriteString("\n\rpwm = 256\n\r");
+			USART_WriteString("\n\rpwm = \n\r");
 			pwm = 256;
 			PWM_DutyCycle2(pwm);
 			if(PORTBbits.RB1 == 0)
@@ -358,7 +358,7 @@ void interrupt ISR(void)
 
 		if (USART_ReceiveChar() == '5')
 		{
-			USART_WriteString("\n\rpwm = 512\n\r");
+			USART_WriteString("\n\rpwm = \n\r");
 			pwm = 512;
 			// PWM_DutyCycle2(pwm);
 		}
@@ -379,7 +379,7 @@ void interrupt ISR(void)
 
 		if (USART_ReceiveChar() == '8')
 		{
-			USART_WriteString("\n\rpwm = 1000\n\r");
+			USART_WriteString("\n\rpwm = \n\r");
 			pwm = 1000;
 			// PWM_DutyCycle2(pwm);
 		}

@@ -609,7 +609,7 @@
 [v sprintf@ap ap `[1]*.4v  1 a 1 0 ]
 "492
 [v sprintf@sp sp `*.5uc  1 a 1 wreg ]
-[v sprintf@f f `*.25DCCuc  1 p 2 18 ]
+[v sprintf@f f `*.24DCCuc  1 p 1 18 ]
 "542
 [v sprintf@sp sp `*.5uc  1 a 1 9 ]
 "1550

@@ -2001,7 +2001,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 319: {
 "319
 {
-[; ;main.c: 320: USART_WriteString("\n\rpwm = 32\n\r");
+[; ;main.c: 320: USART_WriteString("\n\rpwm = \n\r");
 "320
 [e ( _USART_WriteString (1 :s 2C ]
 [; ;main.c: 321: pwm = 32;
@@ -2017,7 +2017,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 326: {
 "326
 {
-[; ;main.c: 327: USART_WriteString("\n\rpwm = 64\n\r");
+[; ;main.c: 327: USART_WriteString("\n\rpwm = \n\r");
 "327
 [e ( _USART_WriteString (1 :s 3C ]
 [; ;main.c: 328: pwm = 64;
@@ -2033,7 +2033,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 333: {
 "333
 {
-[; ;main.c: 334: USART_WriteString("\n\rpwm = 128\n\r");
+[; ;main.c: 334: USART_WriteString("\n\rpwm = \n\r");
 "334
 [e ( _USART_WriteString (1 :s 4C ]
 [; ;main.c: 335: pwm = 128;
@@ -2071,7 +2071,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 346: {
 "346
 {
-[; ;main.c: 347: USART_WriteString("\n\rpwm = 256\n\r");
+[; ;main.c: 347: USART_WriteString("\n\rpwm = \n\r");
 "347
 [e ( _USART_WriteString (1 :s 5C ]
 [; ;main.c: 348: pwm = 256;
@@ -2115,7 +2115,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 360: {
 "360
 {
-[; ;main.c: 361: USART_WriteString("\n\rpwm = 512\n\r");
+[; ;main.c: 361: USART_WriteString("\n\rpwm = \n\r");
 "361
 [e ( _USART_WriteString (1 :s 6C ]
 [; ;main.c: 362: pwm = 512;
@@ -2163,7 +2163,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 381: {
 "381
 {
-[; ;main.c: 382: USART_WriteString("\n\rpwm = 1000\n\r");
+[; ;main.c: 382: USART_WriteString("\n\rpwm = \n\r");
 "382
 [e ( _USART_WriteString (1 :s 9C ]
 [; ;main.c: 383: pwm = 1000;
@@ -2469,12 +2469,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 1C 10 13 100 101 115 108 105 103 97 100 111 10 13 0 ]
 [a 11C 73 110 105 99 105 97 108 105 122 97 110 100 111 32 111 32 80 73 67 49 54 70 56 55 55 65 10 13 0 ]
 [a 7C 10 13 112 119 109 32 61 32 55 54 56 10 13 0 ]
-[a 4C 10 13 112 119 109 32 61 32 49 50 56 10 13 0 ]
 [a 8C 10 13 112 119 109 32 61 32 56 57 54 10 13 0 ]
-[a 5C 10 13 112 119 109 32 61 32 50 53 54 10 13 0 ]
-[a 3C 10 13 112 119 109 32 61 32 54 52 10 13 0 ]
 [a 10C 10 13 112 119 109 32 61 32 49 48 50 51 10 13 0 ]
-[a 2C 10 13 112 119 109 32 61 32 51 50 10 13 0 ]
-[a 6C 10 13 112 119 109 32 61 32 53 49 50 10 13 0 ]
-[a 9C 10 13 112 119 109 32 61 32 49 48 48 48 10 13 0 ]
+[a 2C 10 13 112 119 109 32 61 32 10 13 0 ]
+[a 3C 10 13 112 119 109 32 61 32 10 13 0 ]
+[a 4C 10 13 112 119 109 32 61 32 10 13 0 ]
+[a 5C 10 13 112 119 109 32 61 32 10 13 0 ]
+[a 6C 10 13 112 119 109 32 61 32 10 13 0 ]
+[a 9C 10 13 112 119 109 32 61 32 10 13 0 ]
 [a 16C 10 13 0 ]
