@@ -272,23 +272,20 @@ void Fuzzy()
 
 
 	// 5 - desfuzifica
-	x = 0;
 	total_area = 0;
 	sum = 0;
-	for (int a=0; a<1; a++)
-	{
-		total_area = total_area + tip;
-		sum = sum + (x * tip);
 
-		x=x+1;
-	}
+	total_area = total_area + tip;
+	sum = sum + tip;
+
+	x=x+1;	
 
 	// Cálculo da Centróide.
 	ativa_fan = sum/total_area;
 
 	// Envia o valor calculado para o duty cicle pwm
-	//deltaV = (unsigned int)sum*90;
-	deltaV = deltaV*10;
+	ativa_fan = ativa_fan*1000;
+	deltaV = (unsigned int)total_area;
 	if (deltaV >0 && deltaV < 1020)
 	{
 		PWM_DutyCycle2(deltaV);

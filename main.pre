@@ -1856,23 +1856,20 @@ tip = aumenta;
 
 
 
-x = 0;
 total_area = 0;
 sum = 0;
-for (int a=0; a<1; a++)
-{
+
 total_area = total_area + tip;
-sum = sum + (x * tip);
+sum = sum + tip;
 
 x=x+1;
-}
 
 
 ativa_fan = sum/total_area;
 
 
-
-deltaV = deltaV*10;
+ativa_fan = ativa_fan*1000;
+deltaV = (unsigned int)total_area;
 if (deltaV >0 && deltaV < 1020)
 {
 PWM_DutyCycle2(deltaV);
@@ -1881,7 +1878,7 @@ PWM_DutyCycle2(deltaV);
 
 }
 
-# 309
+# 306
 void interrupt ISR(void)
 {
 
