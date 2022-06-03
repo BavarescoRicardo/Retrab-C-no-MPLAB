@@ -284,7 +284,7 @@ void Fuzzy()
 
 	// Envia o valor calculado para o duty cicle pwm
 	ativa_fan = ativa_fan*20;
-	deltaV = (unsigned int)ativa_fan;
+	//deltaV = (unsigned int)ativa_fan;
 	if (deltaV >0 && deltaV < 1020)
 	{
 		PWM_DutyCycle2(deltaV);
@@ -304,7 +304,7 @@ void Fuzzy()
 //-----------------------------------------------------------------------------
 void interrupt ISR(void)
 {
-	// Tratamento da interrup��o do buffer de recep��o.
+	// Tratamento da interrupcao do buffer de recepcaoo.
 	if (PIR1bits.RCIF)
 	{		
 		if (USART_ReceiveChar() == '0')
