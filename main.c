@@ -155,7 +155,7 @@ void Fuzzy()
 	if (temp >90) temp = 90;
 	if (temp <0) temp = 0;
 
-	// 1ª regra - If delta é menor reduz 
+	// 1ª regra - If delta é menor e esta lento - fica mais lento 
 	if (temp < 25)
 	{
 
@@ -189,7 +189,7 @@ void Fuzzy()
 
 
 
-	// 2ª regra - If temp is na faixa de diferenca media, mantem
+	// 2ª regra - If temp is na faixa de diferenca é meida e esta lento - fica mais na mesma 
 	//  [9 45 81]
 	if ((temp > 20) && (temp < 70))
 	{
@@ -223,7 +223,7 @@ void Fuzzy()
 
 
 
-	// 3ª regra - If temp is acima aumentaa velocidade
+	// 3ª regra - If temp is acima  e esta lento - aumentaa velocidade
 	// [62 79 90 90]
 	if (temp > 70 )
 	{
