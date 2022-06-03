@@ -4,7 +4,7 @@ Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+PIC16F877A.sym --cmf=PIC16F877A.cmf -z -Q16F877A \
-  -oC:\Users\Ricardo\AppData\Local\Temp\s8r4.6 -MPIC16F877A.map -E1 \
+  -oC:\Users\Ninguem\AppData\Local\Temp\s64k.6 -MPIC16F877A.map -E1 \
   -ver=XC8 -ASTACK=0110h-016fh -pstack=STACK -ACONST=00h-0FFhx32 \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -AENTRY=00h-0FFhx32 \
   -ASTRING=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
@@ -36,17 +36,17 @@ PIC16F877A.obj  cinit                                19       19       48       
                 text38                             1113     1113       14     2226       0
                 text37                             13D9     13D9       5D     27B2       0
                 text36                             118B     118B       1E     2316       0
-                text35                              6F4      6F4      109        8       0
+                text35                              6EE      6EE      109        8       0
                 text34                             1624     1624       B8     2C48       0
-                text33                             10C1     10C1        8     2182       0
+                text33                             10C9     10C9        8     2192       0
                 text32                              A6C      A6C      156     14D8       0
                 text31                             16DC     16DC      124     2DB8       0
                 text30                             1155     1155       1B     22AA       0
-                text29                               61       61      693        8       0
-                text28                             10C9     10C9        8     2192       0
+                text29                               61       61      68D        8       0
+                text28                             10D1     10D1        8     21A2       0
                 text27                             120B     120B       23     2416       0
                 text26                             1170     1170       1B     22E0       0
-                text25                             10B5     10B5        6     216A       0
+                text25                             10BD     10BD        6     217A       0
                 text24                             135B     135B       3E     26B6       0
                 text23                             122E     122E       23     245C       0
                 text22                              BC2      BC2      19D     1784       0
@@ -61,7 +61,7 @@ PIC16F877A.obj  cinit                                19       19       48       
                 text13                             11EA     11EA       21     23D4       0
                 text12                             1251     1251       24     24A2       0
                 text11                             10D9     10D9        B     21B2       0
-                text10                             10D1     10D1        8     21A2       0
+                text10                              801      801        8     1002       0
                 text9                              1595     1595       8F     2B2A       0
                 text8                               809      809       49     1012       0
                 text7                              10E4     10E4        D     21C8       0
@@ -75,15 +75,15 @@ PIC16F877A.obj  cinit                                19       19       48       
                 cstackBANK0                          20       20       4F       20       1
                 cstackCOMMON                         70       70        E       70       1
                 cstackBANK1                          C7       C7       1E       A0       1
-                cstackBANK3                         1C1      1C1        B      190       1
-                clrtext                             801      801        8     1002       0
-                dataBANK3                           1CC      1CC        6      190       1
-                bssBANK3                            190      190       31      190       1
+                cstackBANK3                         1B2      1B2        B      190       1
+                clrtext                             7F7      7F7        8        8       0
+                dataBANK3                           1BD      1BD        6      190       1
+                bssBANK3                            190      190       22      190       1
                 dataBANK1                            E5       E5        2       A0       1
                 bssBANK1                             A0       A0       27       A0       1
                 stringtext                         1800     1800      123       30       0
-                idataBANK3                         10BB     10BB        6     2176       0
-                idataBANK1                          7FD      7FD        2        8       0
+                idataBANK3                         10C3     10C3        6     2186       0
+                idataBANK1                         10BB     10BB        2     2176       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -101,17 +101,17 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text38                             1113     1113       14         0
                 text37                             13D9     13D9       5D         0
                 text36                             118B     118B       1E         0
-                text35                              6F4      6F4      109         0
+                text35                              6EE      6EE      109         0
                 text34                             1624     1624       B8         0
-                text33                             10C1     10C1        8         0
+                text33                             10C9     10C9        8         0
                 text32                              A6C      A6C      156         0
                 text31                             16DC     16DC      124         0
                 text30                             1155     1155       1B         0
-                text29                               61       61      693         0
-                text28                             10C9     10C9        8         0
+                text29                               61       61      68D         0
+                text28                             10D1     10D1        8         0
                 text27                             120B     120B       23         0
                 text26                             1170     1170       1B         0
-                text25                             10B5     10B5        6         0
+                text25                             10BD     10BD        6         0
                 text24                             135B     135B       3E         0
                 text23                             122E     122E       23         0
                 text22                              BC2      BC2      19D         0
@@ -126,7 +126,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text13                             11EA     11EA       21         0
                 text12                             1251     1251       24         0
                 text11                             10D9     10D9        B         0
-                text10                             10D1     10D1        8         0
+                text10                              801      801        8         0
                 text9                              1595     1595       8F         0
                 text8                               809      809       49         0
                 text7                              10E4     10E4        D         0
@@ -137,9 +137,9 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text2                              10F1     10F1       10         0
                 text1                               D5F      D5F      2A1         0
                 maintext                            923      923      149         0
-                clrtext                             801      801        8         0
-                idataBANK3                         10BB     10BB        6         0
-                idataBANK1                          7FD      7FD        2         0
+                clrtext                             7F7      7F7        8         0
+                idataBANK3                         10C3     10C3        6         0
+                idataBANK1                         10BB     10BB        2         0
 
         CLASS   STRCODE        
                 stringtext                         1800     1800      123         0
@@ -162,9 +162,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   BANK2          
 
         CLASS   BANK3          
-                cstackBANK3                         1C1      1C1        B         1
-                dataBANK3                           1CC      1CC        6         1
-                bssBANK3                            190      190       31         1
+                cstackBANK3                         1B2      1B2        B         1
+                dataBANK3                           1BD      1BD        6         1
+                bssBANK3                            190      190       22         1
 
         CLASS   RAM            
 
@@ -195,19 +195,19 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackBANK0                    000020  00004F  00006F        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
                 bssBANK1                       0000A0  000047  0000E7        A0       1  BANK1       1
-                bssBANK3                       000190  000042  0001D2       190       1  BANK3       1
-                clrtext                        000801  000008  000809      1002       0  CODE        2
+                bssBANK3                       000190  000033  0001C3       190       1  BANK3       1
+                text10                         000801  000008  000809      1002       0  CODE        2
                 text8                          000809  000049  000852      1012       0  CODE        2
                 text40                         000852  0000D1  000923      10A4       0  CODE        2
                 maintext                       000923  000149  000A6C      1246       0  CODE        2
                 text32                         000A6C  000156  000BC2      14D8       0  CODE        2
                 text22                         000BC2  00019D  000D5F      1784       0  CODE        2
                 text1                          000D5F  0002A1  001000      1ABE       0  CODE        2
-                text25                         0010B5  000006  0010BB      216A       0  CODE        2
-                idataBANK3                     0010BB  000006  0010C1      2176       0  CODE        2
-                text33                         0010C1  000008  0010C9      2182       0  CODE        2
-                text28                         0010C9  000008  0010D1      2192       0  CODE        2
-                text10                         0010D1  000008  0010D9      21A2       0  CODE        2
+                idataBANK1                     0010BB  000002  0010BD      2176       0  CODE        2
+                text25                         0010BD  000006  0010C3      217A       0  CODE        2
+                idataBANK3                     0010C3  000006  0010C9      2186       0  CODE        2
+                text33                         0010C9  000008  0010D1      2192       0  CODE        2
+                text28                         0010D1  000008  0010D9      21A2       0  CODE        2
                 text11                         0010D9  00000B  0010E4      21B2       0  CODE        2
                 text7                          0010E4  00000D  0010F1      21C8       0  CODE        2
                 text2                          0010F1  000010  001101      21E2       0  CODE        2
@@ -248,25 +248,25 @@ UNUSED ADDRESS RANGES
         BANK0            006F-006F              1           1
         BANK1            00E7-00EF              9           1
         BANK2            0110-016F             60           1
-        BANK3            01D2-01EF             1E           1
+        BANK3            01C3-01EF             2D           1
         CODE             0003-0003              1           2
                          07FF-0800              1
-                         1000-10B4             B5
+                         1000-10BA             BB
                          1923-1FFF            6DD
         CONST            0003-0003              1           2
                          07FF-0800              1
-                         1000-10B4             B5
+                         1000-10BA             BB
                          1923-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
                          07FF-0800              1
-                         1000-10B4             B5
+                         1000-10BA             BB
                          1923-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              006F-006F              1           1
                          00E7-00EF              9
                          0110-016F             60
-                         01D2-01EF             1E
+                         01C3-01EF             2D
         SFR0             0000-001F             20           1
         SFR1             0080-009F             20           1
         SFR2             0100-010F             10           1
@@ -274,11 +274,11 @@ UNUSED ADDRESS RANGES
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
                          07FF-0800              2
-                         1000-10B4             B5
+                         1000-10BA             BB
                          1923-1FFF            6DD
         STRING           0003-0003              1           2
                          07FF-0800              1
-                         1000-10B4             B5
+                         1000-10BA             BB
                          1923-1FFF            100
 
                                   Symbol Table
@@ -301,10 +301,10 @@ UNUSED ADDRESS RANGES
 ?i1___lwdiv                   cstackCOMMON 0070
 ?i1___wmul                    cstackCOMMON 0078
 Fuzzy@a                       cstackBANK0  0059
-Fuzzy@a_237                   cstackBANK0  005B
-Fuzzy@a_238                   cstackBANK0  005D
-Fuzzy@a_239                   cstackBANK0  005F
-Fuzzy@a_240                   cstackBANK0  0061
+Fuzzy@a_232                   cstackBANK0  005B
+Fuzzy@a_233                   cstackBANK0  005D
+Fuzzy@a_234                   cstackBANK0  005F
+Fuzzy@a_235                   cstackBANK0  0061
 Fuzzy@aumenta                 cstackBANK0  006C
 Fuzzy@mantem                  cstackBANK0  0066
 Fuzzy@reduz                   cstackBANK0  0069
@@ -376,7 +376,7 @@ _T1CON                        (abs)        0010
 _T1CONbits                    (abs)        0010
 _T2CONbits                    (abs)        0012
 _TIMER0_Init                  text11       10D9
-_TIMER0_Set                   text10       10D1
+_TIMER0_Set                   text10       0801
 _TMR0                         (abs)        0001
 _TMR1                         (abs)        000E
 _TMR1H                        (abs)        000F
@@ -434,7 +434,7 @@ __Hsfr1                       sfr1         0000
 __Hsfr2                       sfr2         0000
 __Hsfr3                       sfr3         0000
 __Hspace_0                    (abs)        2008
-__Hspace_1                    (abs)        01D2
+__Hspace_1                    (abs)        01C3
 __Hspace_2                    (abs)        0000
 __Hspace_3                    (abs)        0000
 __Hstack                      stack        0000
@@ -484,7 +484,7 @@ __Lstrings                    strings      0000
 __Lstringtext                 stringtext   0000
 __Ltext                       text         0000
 __S0                          (abs)        2008
-__S1                          (abs)        01D2
+__S1                          (abs)        01C3
 __S2                          (abs)        0000
 __S3                          (abs)        0000
 ___aldiv                      text9        1595
@@ -493,7 +493,7 @@ ___aldiv@dividend             cstackBANK1  00CF
 ___aldiv@divisor              cstackBANK1  00CB
 ___aldiv@quotient             cstackBANK1  00D6
 ___aldiv@sign                 cstackBANK1  00D5
-___ftadd                      text35       06F4
+___ftadd                      text35       06EE
 ___ftadd@exp1                 cstackBANK0  0036
 ___ftadd@exp2                 cstackBANK0  0035
 ___ftadd@f1                   cstackBANK0  002A
@@ -516,7 +516,7 @@ ___ftmul@f1                   cstackCOMMON 0078
 ___ftmul@f2                   cstackCOMMON 007B
 ___ftmul@f3_as_product        cstackBANK0  0025
 ___ftmul@sign                 cstackBANK0  0029
-___ftneg                      text33       10C1
+___ftneg                      text33       10C9
 ___ftneg@f1                   cstackCOMMON 0070
 ___ftpack                     text41       1436
 ___ftpack@arg                 cstackCOMMON 0070
@@ -546,7 +546,7 @@ ___wmul@multiplicand          cstackBANK1  00CD
 ___wmul@multiplier            cstackBANK1  00CB
 ___wmul@product               cstackBANK1  00CF
 __end_of_ADC_Init             text21       1113
-__end_of_Fuzzy                text29       06F4
+__end_of_Fuzzy                text29       06EE
 __end_of_ISR                  text22       0D5F
 __end_of_LCD_Clear            text19       12C3
 __end_of_LCD_Cursor           text18       11C9
@@ -558,17 +558,17 @@ __end_of_PWM_DutyCycle1       text14       11EA
 __end_of_PWM_DutyCycle2       text13       120B
 __end_of_PWM_Init             text12       1275
 __end_of_TIMER0_Init          text11       10E4
-__end_of_TIMER0_Set           text10       10D9
+__end_of_TIMER0_Set           text10       0809
 __end_of_USART_Init           text8        0852
 __end_of_USART_ReceiveChar    text26       118B
 __end_of_USART_WriteChar      text7        10F1
 __end_of_USART_WriteString    text6        1325
 __end_of___aldiv              text9        1624
-__end_of___ftadd              text35       07FD
+__end_of___ftadd              text35       07F7
 __end_of___ftdiv              text34       16DC
 __end_of___ftge               text37       1436
 __end_of___ftmul              text40       0923
-__end_of___ftneg              text33       10C9
+__end_of___ftneg              text33       10D1
 __end_of___ftpack             text41       149E
 __end_of___fttol              text39       1595
 __end_of___lwdiv              text5        13D9
@@ -586,8 +586,8 @@ __end_of_sprintf              text1        1000
 __end_of_trapmf               text32       0BC2
 __end_of_trimf                text31       1800
 __end_ofi1_PWM_DutyCycle2     text30       1170
-__end_ofi1_TIMER0_Set         text25       10BB
-__end_ofi1_USART_WriteChar    text28       10D1
+__end_ofi1_TIMER0_Set         text25       10C3
+__end_ofi1_USART_WriteChar    text28       10D9
 __end_ofi1_USART_WriteString  text27       122E
 __end_ofi1___lwdiv            text24       1399
 __end_ofi1___wmul             text23       1251
@@ -596,17 +596,17 @@ __pbssBANK1                   bssBANK1     00A0
 __pbssBANK3                   bssBANK3     0190
 __pcstackBANK0                cstackBANK0  0020
 __pcstackBANK1                cstackBANK1  00C7
-__pcstackBANK3                cstackBANK3  01C1
+__pcstackBANK3                cstackBANK3  01B2
 __pcstackCOMMON               cstackCOMMON 0070
 __pdataBANK1                  dataBANK1    00E5
-__pdataBANK3                  dataBANK3    01CC
-__pidataBANK1                 idataBANK1   07FD
-__pidataBANK3                 idataBANK3   10BB
+__pdataBANK3                  dataBANK3    01BD
+__pidataBANK1                 idataBANK1   10BB
+__pidataBANK3                 idataBANK3   10C3
 __pintentry                   intentry     0004
 __pmaintext                   maintext     0923
 __pstringtext                 stringtext   1800
 __ptext1                      text1        0D5F
-__ptext10                     text10       10D1
+__ptext10                     text10       0801
 __ptext11                     text11       10D9
 __ptext12                     text12       1251
 __ptext13                     text13       11EA
@@ -622,18 +622,18 @@ __ptext21                     text21       1101
 __ptext22                     text22       0BC2
 __ptext23                     text23       122E
 __ptext24                     text24       135B
-__ptext25                     text25       10B5
+__ptext25                     text25       10BD
 __ptext26                     text26       1170
 __ptext27                     text27       120B
-__ptext28                     text28       10C9
+__ptext28                     text28       10D1
 __ptext29                     text29       0061
 __ptext3                      text3        1275
 __ptext30                     text30       1155
 __ptext31                     text31       16DC
 __ptext32                     text32       0A6C
-__ptext33                     text33       10C1
+__ptext33                     text33       10C9
 __ptext34                     text34       1624
-__ptext35                     text35       06F4
+__ptext35                     text35       06EE
 __ptext36                     text36       118B
 __ptext37                     text37       13D9
 __ptext38                     text38       1113
@@ -692,53 +692,48 @@ __stringbase                  stringtext   1812
 __stringdata                  stringtext   181C
 __stringtab                   stringtext   1800
 _ativa_fan                    bssBANK3     0190
-_contador_rb6                 bssBANK3     01A5
+_contador_rb6                 bssBANK3     0196
 _contagens_tm0                bssBANK1     00BD
 _deltaV                       bssBANK1     00BF
 _derro                        bssBANK3     0193
-_display_pwm                  bssBANK3     01AD
-_display_rpm                  bssBANK3     01B7
+_display_pwm                  bssBANK3     019E
+_display_rpm                  bssBANK3     01A8
 _dpowers                      stringtext   1812
-_fisetpoint                   bssBANK3     0196
 _fitemp                       bssBANK1     00A0
-_foTip                        bssBANK3     0199
 _fop_rule1                    bssBANK1     00A3
 _fop_rule2                    bssBANK1     00A6
 _fop_rule3                    bssBANK1     00A9
 _isdigit                      text2        10F1
-_isdigit$1454                 cstackBANK1  00CB
+_isdigit$1449                 cstackBANK1  00CB
 _main                         maintext     0923
 _max_val                      text36       118B
 _pas_cooler                   dataBANK1    00E5
-_posicao_do_grafico           bssBANK3     019C
-_posicao_do_grafico_food      bssBANK3     019F
-_posicao_do_grafico_service   bssBANK3     01A2
 _pulsos                       bssBANK1     00C1
 _pwm                          bssBANK1     00C3
 _rpm                          bssBANK1     00C5
-_setpoint                     dataBANK3    01CC
+_setpoint                     dataBANK3    01BD
 _sprintf                      text1        0D5F
-_status                       bssBANK3     01A7
+_status                       bssBANK3     0198
 _sum                          bssBANK1     00AC
 _temp                         bssBANK1     00AF
-_temp_lida                    bssBANK3     01A9
-_tempo_rb6                    bssBANK3     01AB
-_tf                           dataBANK3    01CF
+_temp_lida                    bssBANK3     019A
+_tempo_rb6                    bssBANK3     019C
+_tf                           dataBANK3    01C0
 _total_area                   bssBANK1     00B2
 _trapmf                       text32       0A6C
 _trimf                        text31       16DC
 _x                            bssBANK1     00B5
 _y                            bssBANK1     00B8
 btemp                         (abs)        007E
-clear_ram0                    clrtext      0801
+clear_ram0                    clrtext      07F7
 end_of_initialization         cinit        005D
 i1PWM_DutyCycle2@valor        cstackCOMMON 0070
 i1TIMER0_Set@contagens        cstackCOMMON 0070
 i1USART_WriteChar@byte        cstackCOMMON 0070
 i1USART_WriteString@str       cstackCOMMON 0071
 i1_PWM_DutyCycle2             text30       1155
-i1_TIMER0_Set                 text25       10B5
-i1_USART_WriteChar            text28       10C9
+i1_TIMER0_Set                 text25       10BD
+i1_USART_WriteChar            text28       10D1
 i1_USART_WriteString          text27       120B
 i1___lwdiv                    text24       135B
 i1___lwdiv@counter            cstackCOMMON 0077
@@ -766,14 +761,14 @@ max_val@a                     cstackBANK0  0020
 max_val@b                     cstackBANK0  0023
 reset_vec                     reset_vec    0000
 saved_w                       (abs)        007E
-sprintf@_val                  cstackBANK3  01C3
-sprintf@ap                    cstackBANK3  01C1
-sprintf@c                     cstackBANK3  01CB
+sprintf@_val                  cstackBANK3  01B4
+sprintf@ap                    cstackBANK3  01B2
+sprintf@c                     cstackBANK3  01BC
 sprintf@f                     cstackBANK1  00D9
-sprintf@flag                  cstackBANK3  01C7
-sprintf@prec                  cstackBANK3  01C2
-sprintf@sp                    cstackBANK3  01CA
-sprintf@width                 cstackBANK3  01C8
+sprintf@flag                  cstackBANK3  01B8
+sprintf@prec                  cstackBANK3  01B3
+sprintf@sp                    cstackBANK3  01BB
+sprintf@width                 cstackBANK3  01B9
 stackhi                       (abs)        0000
 stacklo                       (abs)        0000
 start                         init         0016
@@ -809,7 +804,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 480 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+		line 467 in file "R:\Note\Ultimo C no MPLAB\main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1018,7 +1013,7 @@ Total ram usage:        8 bytes
 
  *************** function _USART_WriteString *****************
  Defined at:
-		line 52 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.c"
+		line 52 in file "R:\Note\Ultimo C no MPLAB\usart.c"
  Parameters:    Size  Location     Type
   str             2    5[BANK1 ] PTR const unsigned char 
 		 -> STR_19(40), STR_16(3), display_rpm(10), STR_12(20), 
@@ -1052,7 +1047,7 @@ Total ram usage:        2 bytes
 
  *************** function _USART_WriteChar *****************
  Defined at:
-		line 44 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.c"
+		line 44 in file "R:\Note\Ultimo C no MPLAB\usart.c"
  Parameters:    Size  Location     Type
   byte            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1082,7 +1077,7 @@ Total ram usage:        1 bytes
 
  *************** function _USART_Init *****************
  Defined at:
-		line 6 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.c"
+		line 6 in file "R:\Note\Ultimo C no MPLAB\usart.c"
  Parameters:    Size  Location     Type
   BaudRate        4   19[BANK1 ] long 
  Auto vars:     Size  Location     Type
@@ -1145,7 +1140,7 @@ Total ram usage:       15 bytes
 
  *************** function _TIMER0_Set *****************
  Defined at:
-		line 20 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.c"
+		line 20 in file "R:\Note\Ultimo C no MPLAB\timers.c"
  Parameters:    Size  Location     Type
   contagens       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1175,7 +1170,7 @@ Total ram usage:        1 bytes
 
  *************** function _TIMER0_Init *****************
  Defined at:
-		line 6 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.c"
+		line 6 in file "R:\Note\Ultimo C no MPLAB\timers.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1205,7 +1200,7 @@ Total ram usage:        0 bytes
 
  *************** function _PWM_Init *****************
  Defined at:
-		line 5 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.c"
+		line 5 in file "R:\Note\Ultimo C no MPLAB\pwm.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1235,7 +1230,7 @@ Total ram usage:        0 bytes
 
  *************** function _PWM_DutyCycle2 *****************
  Defined at:
-		line 96 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.c"
+		line 96 in file "R:\Note\Ultimo C no MPLAB\pwm.c"
  Parameters:    Size  Location     Type
   valor           2    4[BANK1 ] int 
  Auto vars:     Size  Location     Type
@@ -1265,7 +1260,7 @@ Total ram usage:        4 bytes
 
  *************** function _PWM_DutyCycle1 *****************
  Defined at:
-		line 64 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.c"
+		line 64 in file "R:\Note\Ultimo C no MPLAB\pwm.c"
  Parameters:    Size  Location     Type
   valor           2    4[BANK1 ] int 
  Auto vars:     Size  Location     Type
@@ -1295,7 +1290,7 @@ Total ram usage:        4 bytes
 
  *************** function _LCD_WriteString *****************
  Defined at:
-		line 61 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c"
+		line 61 in file "R:\Note\Ultimo C no MPLAB\lcd.c"
  Parameters:    Size  Location     Type
   Str             2    6[BANK1 ] PTR const unsigned char 
 		 -> STR_18(6), STR_17(6), display_pwm(10), display_rpm(10), 
@@ -1327,7 +1322,7 @@ Total ram usage:        2 bytes
 
  *************** function _LCD_WriteData *****************
  Defined at:
-		line 47 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c"
+		line 47 in file "R:\Note\Ultimo C no MPLAB\lcd.c"
  Parameters:    Size  Location     Type
   Byte            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1357,7 +1352,7 @@ Total ram usage:        2 bytes
 
  *************** function _LCD_Init *****************
  Defined at:
-		line 87 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c"
+		line 87 in file "R:\Note\Ultimo C no MPLAB\lcd.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1387,7 +1382,7 @@ Total ram usage:        2 bytes
 
  *************** function _LCD_Cursor *****************
  Defined at:
-		line 10 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c"
+		line 10 in file "R:\Note\Ultimo C no MPLAB\lcd.c"
  Parameters:    Size  Location     Type
   Row             1    wreg     unsigned char 
   Col             1    4[BANK1 ] unsigned char 
@@ -1418,7 +1413,7 @@ Total ram usage:        3 bytes
 
  *************** function _LCD_Clear *****************
  Defined at:
-		line 71 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c"
+		line 71 in file "R:\Note\Ultimo C no MPLAB\lcd.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1448,7 +1443,7 @@ Total ram usage:        2 bytes
 
  *************** function _LCD_WriteCmd *****************
  Defined at:
-		line 32 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c"
+		line 32 in file "R:\Note\Ultimo C no MPLAB\lcd.c"
  Parameters:    Size  Location     Type
   Byte            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1479,7 +1474,7 @@ Total ram usage:        2 bytes
 
  *************** function _ADC_Init *****************
  Defined at:
-		line 6 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\adc.c"
+		line 6 in file "R:\Note\Ultimo C no MPLAB\adc.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1509,7 +1504,7 @@ Total ram usage:        0 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 317 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+		line 304 in file "R:\Note\Ultimo C no MPLAB\main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1607,7 +1602,7 @@ Total ram usage:        8 bytes
 
  *************** function i1_TIMER0_Set *****************
  Defined at:
-		line 20 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.c"
+		line 20 in file "R:\Note\Ultimo C no MPLAB\timers.c"
  Parameters:    Size  Location     Type
   contagens       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1636,7 +1631,7 @@ Total ram usage:        1 bytes
 
  *************** function _USART_ReceiveChar *****************
  Defined at:
-		line 63 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.c"
+		line 63 in file "R:\Note\Ultimo C no MPLAB\usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1666,7 +1661,7 @@ Total ram usage:        2 bytes
 
  *************** function i1_USART_WriteString *****************
  Defined at:
-		line 52 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.c"
+		line 52 in file "R:\Note\Ultimo C no MPLAB\usart.c"
  Parameters:    Size  Location     Type
   str             2    1[COMMON] PTR const unsigned char 
 		 -> STR_19(40), STR_16(3), display_rpm(10), STR_12(20), 
@@ -1701,7 +1696,7 @@ Total ram usage:        2 bytes
 
  *************** function i1_USART_WriteChar *****************
  Defined at:
-		line 44 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.c"
+		line 44 in file "R:\Note\Ultimo C no MPLAB\usart.c"
  Parameters:    Size  Location     Type
   byte            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1730,7 +1725,7 @@ Total ram usage:        1 bytes
 
  *************** function _Fuzzy *****************
  Defined at:
-		line 141 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+		line 129 in file "R:\Note\Ultimo C no MPLAB\main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1778,7 +1773,7 @@ Total ram usage:       22 bytes
 
  *************** function i1_PWM_DutyCycle2 *****************
  Defined at:
-		line 96 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.c"
+		line 96 in file "R:\Note\Ultimo C no MPLAB\pwm.c"
  Parameters:    Size  Location     Type
   valor           2    0[COMMON] int 
  Auto vars:     Size  Location     Type
@@ -1808,7 +1803,7 @@ Total ram usage:        4 bytes
 
  *************** function _trimf *****************
  Defined at:
-		line 80 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+		line 68 in file "R:\Note\Ultimo C no MPLAB\main.c"
  Parameters:    Size  Location     Type
   x               3   39[BANK0 ] float 
   a               3   42[BANK0 ] float 
@@ -1844,7 +1839,7 @@ Total ram usage:       15 bytes
 
  *************** function _trapmf *****************
  Defined at:
-		line 99 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+		line 87 in file "R:\Note\Ultimo C no MPLAB\main.c"
  Parameters:    Size  Location     Type
   x               3   39[BANK0 ] float 
   a               3   42[BANK0 ] float 
@@ -1983,7 +1978,7 @@ Total ram usage:       13 bytes
 
  *************** function _max_val *****************
  Defined at:
-		line 129 in file "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c"
+		line 117 in file "R:\Note\Ultimo C no MPLAB\main.c"
  Parameters:    Size  Location     Type
   a               3    0[BANK0 ] float 
   b               3    3[BANK0 ] float 
@@ -2181,7 +2176,7 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c
-		___ftneg       		CODE           	10C1	0000	8
+		___ftneg       		CODE           	10C9	0000	8
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c estimated size: 8
 
@@ -2189,6 +2184,13 @@ C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c
 		___ftge        		CODE           	13D9	0000	93
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c estimated size: 93
+
+R:\Note\Ultimo C no MPLAB\pwm.c
+		_PWM_DutyCycle1		CODE           	11C9	0000	33
+		_PWM_DutyCycle2		CODE           	11EA	0000	33
+		_PWM_Init      		CODE           	1251	0000	36
+
+R:\Note\Ultimo C no MPLAB\pwm.c estimated size: 102
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
 		_sprintf       		CODE           	0D5F	0000	673
@@ -2200,6 +2202,11 @@ C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c estimated size: 104
 
+R:\Note\Ultimo C no MPLAB\adc.c
+		_ADC_Init      		CODE           	1101	0000	18
+
+R:\Note\Ultimo C no MPLAB\adc.c estimated size: 18
+
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c
 		___lwmod       		CODE           	1325	0000	54
 
@@ -2210,22 +2217,34 @@ C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c estimated size: 37
 
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.c
-		_PWM_DutyCycle1		CODE           	11C9	0000	33
-		_PWM_DutyCycle2		CODE           	11EA	0000	33
-		_PWM_Init      		CODE           	1251	0000	36
+R:\Note\Ultimo C no MPLAB\usart.c
+		_USART_WriteCha		CODE           	10E4	0000	13
+		_USART_ReceiveC		CODE           	1170	0000	27
+		_USART_WriteStr		CODE           	12F4	0000	49
+		_USART_Init    		CODE           	0809	0000	73
 
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\pwm.c estimated size: 102
+R:\Note\Ultimo C no MPLAB\usart.c estimated size: 162
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftmul.c
 		___ftmul       		CODE           	0852	0000	209
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftmul.c estimated size: 209
 
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\adc.c
-		_ADC_Init      		CODE           	1101	0000	18
+R:\Note\Ultimo C no MPLAB\lcd.c
+		_LCD_Init      		CODE           	149E	0000	107
+		_LCD_WriteStrin		CODE           	12C3	0000	49
+		_LCD_Clear     		CODE           	129A	0000	41
+		_LCD_Cursor    		CODE           	11A9	0000	32
+		_LCD_WriteCmd  		CODE           	1127	0000	23
+		_LCD_WriteData 		CODE           	113E	0000	23
 
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\adc.c estimated size: 18
+R:\Note\Ultimo C no MPLAB\lcd.c estimated size: 275
+
+R:\Note\Ultimo C no MPLAB\timers.c
+		_TIMER0_Set    		CODE           	0801	0000	8
+		_TIMER0_Init   		CODE           	10D9	0000	11
+
+R:\Note\Ultimo C no MPLAB\timers.c estimated size: 19
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c
 		___lwdiv       		CODE           	1399	0000	64
@@ -2233,7 +2252,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c estimated size: 64
 
 shared
-		i1_TIMER0_Set  		CODE           	10B5	0000	6
+		i1_TIMER0_Set  		CODE           	10BD	0000	6
 		__stringtab    		STRCODE        	1800	0000	18
 		i1_PWM_DutyCycl		CODE           	1155	0000	27
 		__stringdata   		STRCODE        	181C	0000	263
@@ -2242,7 +2261,7 @@ shared
 		i1___wmul      		CODE           	122E	0000	35
 		__initializatio		CODE           	0019	0000	68
 		i1_USART_WriteS		CODE           	120B	0000	35
-		i1_USART_WriteC		CODE           	10C9	0000	8
+		i1_USART_WriteC		CODE           	10D1	0000	8
 
 shared estimated size: 532
 
@@ -2251,49 +2270,25 @@ C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c estimated size: 143
 
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c
-		_ISR           		CODE           	0BC2	0000	413
-		_trimf         		CODE           	16DC	0000	292
-		_main          		CODE           	0923	0000	329
-		_trapmf        		CODE           	0A6C	0000	342
-		_max_val       		CODE           	118B	0000	30
-		_Fuzzy         		CODE           	0061	0000	1683
-
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\main.c estimated size: 3089
-
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.c
-		_TIMER0_Set    		CODE           	10D1	0000	8
-		_TIMER0_Init   		CODE           	10D9	0000	11
-
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\timers.c estimated size: 19
-
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.c
-		_USART_WriteCha		CODE           	10E4	0000	13
-		_USART_ReceiveC		CODE           	1170	0000	27
-		_USART_WriteStr		CODE           	12F4	0000	49
-		_USART_Init    		CODE           	0809	0000	73
-
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\usart.c estimated size: 162
-
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fttol.c
 		___fttol       		CODE           	1509	0000	140
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fttol.c estimated size: 140
 
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c
-		_LCD_Init      		CODE           	149E	0000	107
-		_LCD_WriteStrin		CODE           	12C3	0000	49
-		_LCD_Clear     		CODE           	129A	0000	41
-		_LCD_Cursor    		CODE           	11A9	0000	32
-		_LCD_WriteCmd  		CODE           	1127	0000	23
-		_LCD_WriteData 		CODE           	113E	0000	23
-
-C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c estimated size: 275
-
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftadd.c
-		___ftadd       		CODE           	06F4	0000	265
+		___ftadd       		CODE           	06EE	0000	265
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftadd.c estimated size: 265
+
+R:\Note\Ultimo C no MPLAB\main.c
+		_ISR           		CODE           	0BC2	0000	413
+		_trimf         		CODE           	16DC	0000	292
+		_main          		CODE           	0923	0000	329
+		_trapmf        		CODE           	0A6C	0000	342
+		_max_val       		CODE           	118B	0000	30
+		_Fuzzy         		CODE           	0061	0000	1677
+
+R:\Note\Ultimo C no MPLAB\main.c estimated size: 3083
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic\ftdiv.c
 		___ftdiv       		CODE           	1624	0000	184

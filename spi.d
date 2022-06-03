@@ -1,1 +1,1 @@
- spi.d  spi.p1:  C:/Users/Ricardo/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Ultimo\ C\ no\ MPLAB/spi.c C:/Users/Ricardo/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Ultimo\ C\ no\ MPLAB/spi.h C:/Users/Ricardo/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Ultimo\ C\ no\ MPLAB/config.h
+ spi.d  spi.p1:  R:/Note/Ultimo\ C\ no\ MPLAB/spi.c R:/Note/Ultimo\ C\ no\ MPLAB/spi.h R:/Note/Ultimo\ C\ no\ MPLAB/config.h

@@ -1,1 +1,1 @@
- adc.d  adc.p1:  C:/Users/Ricardo/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Ultimo\ C\ no\ MPLAB/adc.c C:/Users/Ricardo/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Ultimo\ C\ no\ MPLAB/config.h C:/Users/Ricardo/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Ultimo\ C\ no\ MPLAB/adc.h
+ adc.d  adc.p1:  R:/Note/Ultimo\ C\ no\ MPLAB/adc.c R:/Note/Ultimo\ C\ no\ MPLAB/config.h R:/Note/Ultimo\ C\ no\ MPLAB/adc.h

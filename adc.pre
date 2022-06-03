@@ -1,8 +1,8 @@
 
-# 1 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\adc.c"
+# 1 "R:\Note\Ultimo C no MPLAB\adc.c"
 
 
-# 6 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h"
+# 6 "R:\Note\Ultimo C no MPLAB\config.h"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -1435,11 +1435,11 @@ extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsi
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
-# 6 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\adc.h"
+# 6 "R:\Note\Ultimo C no MPLAB\adc.h"
 void ADC_Init();
 unsigned int ADC_Read(unsigned int channel);
 
-# 6 "C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\adc.c"
+# 6 "R:\Note\Ultimo C no MPLAB\adc.c"
 void ADC_Init()
 {
 

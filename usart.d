@@ -1,1 +1,1 @@
- usart.d  usart.p1:  C:/Users/Ricardo/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Ultimo\ C\ no\ MPLAB/usart.c C:/Users/Ricardo/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Ultimo\ C\ no\ MPLAB/config.h C:/Users/Ricardo/Desktop/Trabalho\ Sistemas\ Inteligentes\ Cruzeiro/Ultimo\ C\ no\ MPLAB/usart.h
+ usart.d  usart.p1:  R:/Note/Ultimo\ C\ no\ MPLAB/usart.c R:/Note/Ultimo\ C\ no\ MPLAB/config.h R:/Note/Ultimo\ C\ no\ MPLAB/usart.h

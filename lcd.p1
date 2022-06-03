@@ -24,7 +24,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S91 . . . ]
 "2192
 [v _ADCON1bits `VS91 ~T0 @X0 0 e@159 ]
-"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h
+"6 R:\Note\Ultimo C no MPLAB\config.h
 [p x FOSC=HS ]
 "7
 [p x WDTE=OFF ]
@@ -1057,7 +1057,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 15: void LCD_WriteString(const char *);
 [; ;lcd.h: 16: void LCD_Clear();
 [; ;lcd.h: 17: void LCD_Init();
-"10 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\lcd.c
+"10 R:\Note\Ultimo C no MPLAB\lcd.c
 [v _LCD_Cursor `(v ~T0 @X0 1 ef2`uc`uc ]
 "11
 {

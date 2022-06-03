@@ -54,7 +54,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS21 ~T0 @X0 0 e@12 ]
 "785
 [v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
-"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h
+"6 R:\Note\Ultimo C no MPLAB\config.h
 [p x FOSC=HS ]
 "7
 [p x WDTE=OFF ]
@@ -1084,7 +1084,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.h: 5: void SPI_Init(void);
 [; ;spi.h: 6: unsigned char SPI_Write(unsigned char);
 [; ;spi.h: 7: void SPI_Wait();
-"5 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\spi.c
+"5 R:\Note\Ultimo C no MPLAB\spi.c
 [v _SPI_Init `(v ~T0 @X0 1 ef ]
 "6
 {

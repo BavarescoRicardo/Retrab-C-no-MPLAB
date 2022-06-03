@@ -24,7 +24,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS18 ~T0 @X0 0 e@11 ]
 "2299
 [v _EECON2 `Vuc ~T0 @X0 0 e@397 ]
-"6 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\config.h
+"6 R:\Note\Ultimo C no MPLAB\config.h
 [p x FOSC=HS ]
 "7
 [p x WDTE=OFF ]
@@ -1054,7 +1054,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom.h: 5: unsigned char EEPROM_Read(unsigned char);
 [; ;eeprom.h: 6: void EEPROM_Write(unsigned char, unsigned char);
 [; ;eeprom.h: 7: void EEPROM_Erase();
-"5 C:\Users\Ricardo\Desktop\Trabalho Sistemas Inteligentes Cruzeiro\Ultimo C no MPLAB\eeprom.c
+"5 R:\Note\Ultimo C no MPLAB\eeprom.c
 [v _EEPROM_Read `(uc ~T0 @X0 1 ef1`uc ]
 "6
 {
