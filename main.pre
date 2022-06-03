@@ -1634,7 +1634,7 @@ unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 0;
 unsigned int deltaV = 0;
-unsigned int setpointUI = 0;
+unsigned int setpointUI = 200;
 
 
 unsigned int contagens_tm0 = 0;
@@ -1728,20 +1728,19 @@ void Fuzzy()
 {
 
 # 141
-setpoint = (float)pwm;
+setpoint = (float)setpointUI;
 
-float mantem = 1100;
-float reduz = 2200;
-float aumenta = 3300;
+float mantem = 0;
+float reduz = 0;
+float aumenta = 0;
 float tip;
 fitemp =0;
 
 
 temp = (setpoint - tf);
-temp = (temp/100)*-1;
+temp = (temp/10);
 
 deltaV = temp;
-
 
 if (temp >90) temp = 90;
 if (temp <0) temp = 0;
@@ -1778,7 +1777,7 @@ x=x+1;
 
 }
 
-# 195
+# 194
 if ((temp > 20) && (temp < 70))
 {
 
@@ -1809,7 +1808,7 @@ x=x+1;
 
 }
 
-# 229
+# 228
 if (temp > 70 )
 {
 
@@ -1863,7 +1862,7 @@ sum = sum + tip;
 ativa_fan = sum/total_area;
 
 
-ativa_fan = ativa_fan*20;
+ativa_fan = ativa_fan*1000;
 deltaV = (unsigned int)ativa_fan;
 if (deltaV >0 && deltaV < 1020)
 {
@@ -1873,7 +1872,7 @@ PWM_DutyCycle2(deltaV);
 
 }
 
-# 301
+# 300
 void interrupt ISR(void)
 {
 
@@ -1925,21 +1924,21 @@ return;
 if (USART_ReceiveChar() == '5')
 {
 USART_WriteString("\n\rpwm = \n\r");
-setpointUI = 4512;
+setpointUI = 4510;
 
 }
 
 if (USART_ReceiveChar() == '6')
 {
 USART_WriteString("\n\rpwm = 768\n\r");
-setpointUI = 5768;
+setpointUI = 5760;
 
 }
 
 if (USART_ReceiveChar() == '7')
 {
 USART_WriteString("\n\rpwm = 896\n\r");
-setpointUI = 6896;
+setpointUI = 6890;
 
 }
 
@@ -1960,7 +1959,7 @@ setpointUI = 9000;
 
 
 Fuzzy();
-tf = setpointUI;
+tf = (setpointUI - 100);
 
 PIR1bits.RCIF = 0;
 }

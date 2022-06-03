@@ -28,7 +28,7 @@ unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 0;
 unsigned int deltaV = 0;
-unsigned int setpointUI = 0;
+unsigned int setpointUI = 200;
 
 
 unsigned int contagens_tm0 = 0;
@@ -138,20 +138,19 @@ void Fuzzy()
 
 */
 	// Converte variavel recebida de int para float
-	setpoint = (float)pwm;
+	setpoint = (float)setpointUI;
 
-	float mantem = 1100;
-	float reduz = 2200;
-	float aumenta = 3300;
+	float mantem = 0;
+	float reduz = 0;
+	float aumenta = 0;
 	float tip;
 	fitemp =0;
 
 	//  calculo do erro para o setpoint
 	temp = (setpoint - tf);//
-	temp = (temp/100)*-1;
-
-	//deltaV = temp;
-
+	temp = (temp/10);
+	
+	deltaV = temp;
 	//Limites (valores acima recebem o maximo...)
 	if (temp >90) temp = 90;
 	if (temp <0) temp = 0;
@@ -279,7 +278,7 @@ void Fuzzy()
 	ativa_fan = sum/total_area;
 
 	// Envia o valor calculado para o duty cicle pwm
-	ativa_fan = ativa_fan*20;
+	ativa_fan = ativa_fan*1000;
 	deltaV = (unsigned int)ativa_fan;
 	if (deltaV >0 && deltaV < 1020)
 	{
@@ -349,21 +348,21 @@ void interrupt ISR(void)
 		if (USART_ReceiveChar() == '5')
 		{
 			USART_WriteString("\n\rpwm = \n\r");
-			setpointUI = 4512;
+			setpointUI = 4510;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '6')
 		{
 			USART_WriteString("\n\rpwm = 768\n\r");
-			setpointUI = 5768;
+			setpointUI = 5760;
 			//PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '7')
 		{
 			USART_WriteString("\n\rpwm = 896\n\r");
-			setpointUI = 6896;
+			setpointUI = 6890;
 			// PWM_DutyCycle2(pwm);
 		}
 
@@ -384,7 +383,7 @@ void interrupt ISR(void)
 
 		// No fim das condições manda o sinal para a função fuzzy
 		Fuzzy();
-		tf = setpointUI;
+		tf = (setpointUI - 100);
 		// Flag de status da Interrup��o do buffer de recep��o da USART.
 		PIR1bits.RCIF = 0;
 	}
