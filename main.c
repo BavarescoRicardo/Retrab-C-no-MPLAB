@@ -28,6 +28,7 @@ unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 0;
 unsigned int deltaV = 0;
+unsigned int setpointUI = 0;
 
 
 unsigned int contagens_tm0 = 0;
@@ -147,9 +148,9 @@ void Fuzzy()
 
 	//  calculo do erro para o setpoint
 	temp = (setpoint - tf);//
-	temp = temp/10;
+	temp = (temp/100)*-1;
 
-	//deltaV = temp;
+	deltaV = temp;
 
 	//Limites (valores acima recebem o maximo...)
 	if (temp >100) temp = 100;
@@ -287,9 +288,10 @@ void Fuzzy()
 
 	// Envia o valor calculado para o duty cicle pwm
 	//deltaV = (unsigned int)sum*90;
+	deltaV = deltaV*10;
 	if (deltaV >0 && deltaV < 1020)
 	{
-		PWM_DutyCycle2(pwm);
+		PWM_DutyCycle2(deltaV);
 	}
 	
 
@@ -320,21 +322,21 @@ void interrupt ISR(void)
 		if (USART_ReceiveChar() == '1')
 		{
 			USART_WriteString("\n\rpwm = \n\r");
-			pwm = 32;
+			setpointUI = 720;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '2')
 		{
 			USART_WriteString("\n\rpwm = \n\r");
-			pwm = 64;
+			setpointUI = 1450;
 			// PWM_DutyCycle2(pwm);			
 		}
 
 		if (USART_ReceiveChar() == '3')
 		{
 			USART_WriteString("\n\rpwm = \n\r");
-			pwm = 128;
+			setpointUI = 2828;
 			// PWM_DutyCycle2(pwm);
 			if(PORTBbits.RB0 == 0)
 			{
@@ -347,7 +349,7 @@ void interrupt ISR(void)
 		if (USART_ReceiveChar() == '4')
 		{
 			USART_WriteString("\n\rpwm = \n\r");
-			pwm = 256;
+			pwm = 3256;
 			PWM_DutyCycle2(pwm);
 			if(PORTBbits.RB1 == 0)
 			{
@@ -361,42 +363,42 @@ void interrupt ISR(void)
 		if (USART_ReceiveChar() == '5')
 		{
 			USART_WriteString("\n\rpwm = \n\r");
-			pwm = 512;
+			setpointUI = 4512;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '6')
 		{
 			USART_WriteString("\n\rpwm = 768\n\r");
-			pwm = 768;
+			setpointUI = 5768;
 			//PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '7')
 		{
 			USART_WriteString("\n\rpwm = 896\n\r");
-			pwm = 896;
+			setpointUI = 6896;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '8')
 		{
 			USART_WriteString("\n\rpwm = \n\r");
-			pwm = 1000;
+			setpointUI = 8100;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '9')
 		{
 			USART_WriteString("\n\rpwm = 1023\n\r");
-			pwm = 1023;
+			setpointUI = 9000;
 			//PWM_DutyCycle2(pwm);
 		}
 
 
 		// No fim das condições manda o sinal para a função fuzzy
 		Fuzzy();
-		tf = rpm;
+		tf = setpointUI;
 		// Flag de status da Interrup��o do buffer de recep��o da USART.
 		PIR1bits.RCIF = 0;
 	}

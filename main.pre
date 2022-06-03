@@ -1634,13 +1634,14 @@ unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 0;
 unsigned int deltaV = 0;
+unsigned int setpointUI = 0;
 
 
 unsigned int contagens_tm0 = 0;
 unsigned int contador_rb6 = 0;
 unsigned int tempo_rb6 = 0;
 
-# 44
+# 45
 float x=0;
 float y=0;
 
@@ -1722,23 +1723,23 @@ else
 return b;
 }
 
-# 129
+# 130
 void Fuzzy()
 {
 
-# 140
+# 141
 setpoint = (float)pwm;
 
 float mantem = 1100;
 float reduz = 2200;
 float aumenta = 3300;
 float tip;
-
 fitemp =0;
 
 
 temp = (setpoint - tf);
-temp = temp/10;
+temp = (temp/100)*-1;
+
 deltaV = temp;
 
 
@@ -1776,7 +1777,7 @@ x=x+1;
 
 }
 
-# 193
+# 194
 if ((temp > 20) && (temp < 70))
 {
 
@@ -1806,7 +1807,7 @@ x=x+1;
 
 }
 
-# 226
+# 227
 if (temp > 70 )
 {
 
@@ -1871,15 +1872,16 @@ ativa_fan = sum/total_area;
 
 
 
+deltaV = deltaV*10;
 if (deltaV >0 && deltaV < 1020)
 {
-PWM_DutyCycle2(pwm);
+PWM_DutyCycle2(deltaV);
 }
 
 
 }
 
-# 307
+# 309
 void interrupt ISR(void)
 {
 
@@ -1896,21 +1898,21 @@ return;
 if (USART_ReceiveChar() == '1')
 {
 USART_WriteString("\n\rpwm = \n\r");
-pwm = 32;
+setpointUI = 720;
 
 }
 
 if (USART_ReceiveChar() == '2')
 {
 USART_WriteString("\n\rpwm = \n\r");
-pwm = 64;
+setpointUI = 1450;
 
 }
 
 if (USART_ReceiveChar() == '3')
 {
 USART_WriteString("\n\rpwm = \n\r");
-pwm = 128;
+setpointUI = 2828;
 
 if(PORTBbits.RB0 == 0)
 {
@@ -1923,7 +1925,7 @@ PORTBbits.RB0 = 0;
 if (USART_ReceiveChar() == '4')
 {
 USART_WriteString("\n\rpwm = \n\r");
-pwm = 256;
+pwm = 3256;
 PWM_DutyCycle2(pwm);
 if(PORTBbits.RB1 == 0)
 {
@@ -1937,42 +1939,42 @@ return;
 if (USART_ReceiveChar() == '5')
 {
 USART_WriteString("\n\rpwm = \n\r");
-pwm = 512;
+setpointUI = 4512;
 
 }
 
 if (USART_ReceiveChar() == '6')
 {
 USART_WriteString("\n\rpwm = 768\n\r");
-pwm = 768;
+setpointUI = 5768;
 
 }
 
 if (USART_ReceiveChar() == '7')
 {
 USART_WriteString("\n\rpwm = 896\n\r");
-pwm = 896;
+setpointUI = 6896;
 
 }
 
 if (USART_ReceiveChar() == '8')
 {
 USART_WriteString("\n\rpwm = \n\r");
-pwm = 1000;
+setpointUI = 8100;
 
 }
 
 if (USART_ReceiveChar() == '9')
 {
 USART_WriteString("\n\rpwm = 1023\n\r");
-pwm = 1023;
+setpointUI = 9000;
 
 }
 
 
 
 Fuzzy();
-tf = rpm;
+tf = setpointUI;
 
 PIR1bits.RCIF = 0;
 }
