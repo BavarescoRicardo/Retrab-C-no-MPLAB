@@ -58,7 +58,7 @@ float ativa_fan = 0;
 
 // Entradas para o sistema.
 float temp = 0;
-float tf = 20;
+float tf = 0;
 float derro = 0;
 float setpoint = 20;
 
@@ -137,7 +137,7 @@ void Fuzzy()
 
 */
 	// Converte variavel recebida de int para float
-	setpoint = (float)pwm;
+	setpoint = (float)rpm;
 
 	float mantem = 1100;
 	float reduz = 2200;
@@ -148,7 +148,9 @@ void Fuzzy()
 
    //  calculo do erro para o setpoint
    temp = (setpoint - tf);//
-	deltaV = temp;
+   temp = temp/10;
+   deltaV = temp;
+   
    //Limites (valores acima recebem o maximo...)
    if (temp >100) temp = 100;
    if (temp <0) temp = 0;
@@ -287,7 +289,7 @@ void Fuzzy()
 	//deltaV = (unsigned int)sum*90;
 	if (deltaV >0 && deltaV < 1020)
 	{
-		PWM_DutyCycle2(deltaV);
+		PWM_DutyCycle2(pwm);
 	}
 	
 
@@ -394,7 +396,7 @@ void interrupt ISR(void)
 
 		// No fim das condições manda o sinal para a função fuzzy
 		Fuzzy();
-		tf = pwm;
+		tf = rpm;
 		// Flag de status da Interrup��o do buffer de recep��o da USART.
 		PIR1bits.RCIF = 0;
 	}
@@ -520,7 +522,7 @@ void main(void)
 		
 		//sprintf(display_rpm,"%04d", deltaV);
 		sprintf(display_rpm,"%04d", rpm);
-		sprintf(display_pwm,"%04d", pwm);
+		sprintf(display_pwm,"%04d", deltaV);
 
 		// Apresenta as informa��es na USART.
 
@@ -534,7 +536,7 @@ void main(void)
 		LCD_Cursor(0,6);
 		LCD_WriteString(display_rpm);
 		LCD_Cursor(1,0);
-		LCD_WriteString("PWM: ");
+		LCD_WriteString("Delta: ");
 		LCD_Cursor(1,6);
 		LCD_WriteString(display_pwm);
 
