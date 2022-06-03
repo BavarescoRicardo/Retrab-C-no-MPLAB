@@ -137,24 +137,24 @@ void Fuzzy()
 
 */
 	// Converte variavel recebida de int para float
-	setpoint = (float)rpm;
+	setpoint = (float)pwm;
 
 	float mantem = 1100;
 	float reduz = 2200;
 	float aumenta = 3300;
 	float tip;
+	fitemp =0;
 
-   fitemp =0;
+	//  calculo do erro para o setpoint
+	temp = (setpoint - tf);//
+	temp = temp/10;
 
-   //  calculo do erro para o setpoint
-   temp = (setpoint - tf);//
-   temp = temp/10;
-   deltaV = temp;
-   
-   //Limites (valores acima recebem o maximo...)
-   if (temp >100) temp = 100;
-   if (temp <0) temp = 0;
-	
+	//deltaV = temp;
+
+	//Limites (valores acima recebem o maximo...)
+	if (temp >100) temp = 100;
+	if (temp <0) temp = 0;
+
 	// 1ª regra - If temp is < (2.5 + setpoint)
 	if (temp < 25)
 	{

@@ -8548,13 +8548,13 @@ _Fuzzy:
 	line	140
 	
 i1l2734:	
-;main.c: 140: setpoint = (float)rpm;
+;main.c: 140: setpoint = (float)pwm;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
-	movf	(_rpm+1)^080h,w
+	movf	(_pwm+1)^080h,w
 	clrf	(___lwtoft@c+1)
 	addwf	(___lwtoft@c+1)
-	movf	(_rpm)^080h,w
+	movf	(_pwm)^080h,w
 	clrf	(___lwtoft@c)
 	addwf	(___lwtoft@c)
 

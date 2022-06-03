@@ -1582,9 +1582,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 130: {
 [e :U _Fuzzy ]
 [f ]
-[; ;main.c: 140: setpoint = (float)rpm;
+[; ;main.c: 140: setpoint = (float)pwm;
 "140
-[e = _setpoint -> _rpm `f ]
+[e = _setpoint -> _pwm `f ]
 "142
 [v _mantem `f ~T0 @X0 1 a ]
 [; ;main.c: 142: float mantem = 1100;

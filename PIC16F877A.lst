@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Fri Jun 03 13:59:27 2022
+                                                                                               Fri Jun 03 14:02:15 2022
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1                           	processor	16F877A
@@ -5793,16 +5793,16 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
   5786                           ;psect for function _Fuzzy
   5787  004F                     _Fuzzy:	
   5788                           
-  5789                           ;main.c: 140: setpoint = (float)rpm;
+  5789                           ;main.c: 140: setpoint = (float)pwm;
   5790                           
   5791                           ;incstack = 0
   5792                           ; Regs used in _Fuzzy: [wreg+status,2+status,0+btemp+1+pclath+cstack]
   5793  004F  1683               	bsf	3,5	;RP0=1, select bank1
   5794  0050  1303               	bcf	3,6	;RP1=0, select bank1
-  5795  0051  0847               	movf	(_rpm+1)^(0+128),w
+  5795  0051  0845               	movf	(_pwm+1)^(0+128),w
   5796  0052  01F9               	clrf	___lwtoft@c+1
   5797  0053  07F9               	addwf	___lwtoft@c+1,f
-  5798  0054  0846               	movf	_rpm^(0+128),w
+  5798  0054  0844               	movf	_pwm^(0+128),w
   5799  0055  01F8               	clrf	___lwtoft@c
   5800  0056  07F8               	addwf	___lwtoft@c,f
   5801  0057  160A  118A  205D  120A  118A  	fcall	___lwtoft
@@ -10285,7 +10285,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Fri Jun 03 13:59:27 2022
+Symbol Table                                                                                   Fri Jun 03 14:02:15 2022
 
            ?i1_PWM_DutyCycle2 0070                             _x 00B8                             _y 00BB  
                            pc 0002                   ?_LCD_Cursor 00CC       __size_of_PWM_DutyCycle1 0021  
