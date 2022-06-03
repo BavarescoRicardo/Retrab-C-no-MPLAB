@@ -139,9 +139,9 @@ void Fuzzy()
 	// Converte variavel recebida de int para float
 	setpoint = (float)pwm;
 
-	float mantem;
-	float reduz;
-	float aumenta;
+	float mantem = 1100;
+	float reduz = 2200;
+	float aumenta = 3300;
 	float tip;
 
    fitemp =0;
@@ -267,6 +267,7 @@ void Fuzzy()
 		}
 	}
 
+
 	// 5 - desfuzifica
 	x = 0;
 	total_area = 0;
@@ -345,14 +346,14 @@ void interrupt ISR(void)
 		{
 			USART_WriteString("\n\rpwm = 256\n\r");
 			pwm = 256;
-			 PWM_DutyCycle2(pwm);
+			PWM_DutyCycle2(pwm);
 			if(PORTBbits.RB1 == 0)
 			{
 				PORTBbits.RB1 = 1;
 			}else{
 				PORTBbits.RB1 = 0;
-			}			
-			return;
+			}
+			return;			
 		}
 
 		if (USART_ReceiveChar() == '5')

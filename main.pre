@@ -1729,9 +1729,9 @@ void Fuzzy()
 # 140
 setpoint = (float)pwm;
 
-float mantem;
-float reduz;
-float aumenta;
+float mantem = 1100;
+float reduz = 2200;
+float aumenta = 3300;
 float tip;
 
 fitemp =0;
@@ -1852,6 +1852,7 @@ tip = aumenta;
 }
 
 
+
 x = 0;
 total_area = 0;
 sum = 0;
@@ -1876,7 +1877,7 @@ PWM_DutyCycle2(deltaV);
 
 }
 
-# 304
+# 305
 void interrupt ISR(void)
 {
 
