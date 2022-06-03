@@ -1749,6 +1749,12 @@ if (temp <0) temp = 0;
 
 if (temp < 25)
 {
+if(PORTBbits.RB0 == 0)
+{
+PORTBbits.RB0 = 1;
+}else{
+PORTBbits.RB0 = 0;
+}
 
 
 fitemp = trapmf(temp, 0,0,13,32);
@@ -1777,9 +1783,15 @@ x=x+1;
 
 }
 
-# 194
+# 200
 if ((temp > 20) && (temp < 70))
 {
+if(PORTBbits.RB1 == 0)
+{
+PORTBbits.RB1 = 1;
+}else{
+PORTBbits.RB1 = 0;
+}
 
 fitemp = trimf(temp, 9, 45, 81);
 
@@ -1807,9 +1819,15 @@ x=x+1;
 
 }
 
-# 227
+# 239
 if (temp > 70 )
 {
+if(PORTBbits.RB2 == 0)
+{
+PORTBbits.RB2 = 1;
+}else{
+PORTBbits.RB2 = 0;
+}
 
 fitemp = trapmf(temp, 62, 79, 90, 90);
 
@@ -1877,7 +1895,7 @@ PWM_DutyCycle2(deltaV);
 
 }
 
-# 305
+# 323
 void interrupt ISR(void)
 {
 
@@ -1910,12 +1928,6 @@ if (USART_ReceiveChar() == '3')
 USART_WriteString("\n\rpwm = \n\r");
 setpointUI = 2828;
 
-if(PORTBbits.RB0 == 0)
-{
-PORTBbits.RB0 = 1;
-}else{
-PORTBbits.RB0 = 0;
-}
 }
 
 if (USART_ReceiveChar() == '4')

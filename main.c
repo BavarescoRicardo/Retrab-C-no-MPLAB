@@ -159,6 +159,7 @@ void Fuzzy()
 	// 1ª regra - If temp is < (2.5 + setpoint)
 	if (temp < 25)
 	{
+
 		// 1 - Reduz as velocidades.
 		// [0 0 13 32.4]
 		fitemp    = trapmf(temp, 0,0,13,32);
@@ -193,6 +194,7 @@ void Fuzzy()
 	//  [9 45 81]
 	if ((temp > 20) && (temp < 70))
 	{
+
 		// 1 - Fuzzificar as entradas.
 		fitemp = trimf(temp, 9, 45, 81);
 
@@ -226,6 +228,7 @@ void Fuzzy()
 	// [62 79 90 90]
 	if (temp > 70 )
 	{
+	
 		// 1 - Fuzzificar as entradas.
 		fitemp = trapmf(temp, 62, 79, 90, 90);
 //		fiFood    = trapmf(food,7,9,10,10);
@@ -334,12 +337,6 @@ void interrupt ISR(void)
 			USART_WriteString("\n\rpwm = \n\r");
 			setpointUI = 2828;
 			// PWM_DutyCycle2(pwm);
-			if(PORTBbits.RB0 == 0)
-			{
-				PORTBbits.RB0 = 1;
-			}else{
-				PORTBbits.RB0 = 0;
-			}
 		}
 		
 		if (USART_ReceiveChar() == '4')
