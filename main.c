@@ -279,7 +279,7 @@ void Fuzzy()
 
 	// Envia o valor calculado para o duty cicle pwm
 	ativa_fan = ativa_fan*1000;
-	deltaV = (unsigned int)ativa_fan;
+	//deltaV = (unsigned int)ativa_fan;
 	if (deltaV >0 && deltaV < 1020)
 	{
 		PWM_DutyCycle2(deltaV);

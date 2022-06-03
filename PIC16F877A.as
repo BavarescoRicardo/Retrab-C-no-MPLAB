@@ -2413,7 +2413,7 @@ Fuzzy@aumenta:	; 3 bytes @ 0x38
 ;! ---------------------------------------------------------------------------------
 ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
 ;! ---------------------------------------------------------------------------------
-;! (3) _ISR                                                  4     4      0   54586
+;! (3) _ISR                                                  4     4      0   54522
 ;!                                             59 BANK0      4     4      0
 ;!                              _Fuzzy
 ;!                  _USART_ReceiveChar
@@ -2445,7 +2445,7 @@ Fuzzy@aumenta:	; 3 bytes @ 0x38
 ;! (5) i1_USART_WriteChar                                    1     1      0      22
 ;!                                              0 COMMON     1     1      0
 ;! ---------------------------------------------------------------------------------
-;! (4) _Fuzzy                                               18    18      0   51156
+;! (4) _Fuzzy                                               18    18      0   51092
 ;!                                             41 BANK0     18    18      0
 ;!                            ___ftadd
 ;!                            ___ftdiv
@@ -2502,7 +2502,7 @@ Fuzzy@aumenta:	; 3 bytes @ 0x38
 ;!                                              8 COMMON     4     1      3
 ;!                           ___ftpack
 ;! ---------------------------------------------------------------------------------
-;! (5) ___fttol                                             14    10      4     380
+;! (5) ___fttol                                             14    10      4     316
 ;!                                              0 COMMON    14    10      4
 ;! ---------------------------------------------------------------------------------
 ;! (5) ___ftmul                                             16    10      6    2502
@@ -9926,28 +9926,12 @@ i1l2814:
 	movwf	(_ativa_fan+1)^080h
 	movf	(2+(?___ftmul)),w
 	movwf	(_ativa_fan+2)^080h
-	line	282
+	line	283
 	
 i1l2816:	
-;main.c: 282: deltaV = (unsigned int)ativa_fan;
-	movf	(_ativa_fan)^080h,w
-	movwf	(___fttol@f1)
-	movf	(_ativa_fan+1)^080h,w
-	movwf	(___fttol@f1+1)
-	movf	(_ativa_fan+2)^080h,w
-	movwf	(___fttol@f1+2)
-	fcall	___fttol
-	movf	1+(((0+(?___fttol)))),w
+;main.c: 283: if (deltaV >0 && deltaV < 1020)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	clrf	(_deltaV+1)
-	addwf	(_deltaV+1)
-	movf	0+(((0+(?___fttol)))),w
-	clrf	(_deltaV)
-	addwf	(_deltaV)
-
-	line	283
-;main.c: 283: if (deltaV >0 && deltaV < 1020)
 	movf	(_deltaV+1),w
 	iorwf	(_deltaV),w
 	skipnz

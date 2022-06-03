@@ -1904,9 +1904,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 281: ativa_fan = ativa_fan*1000;
 "281
 [e = _ativa_fan * _ativa_fan -> -> 1000 `i `f ]
-[; ;main.c: 282: deltaV = (unsigned int)ativa_fan;
-"282
-[e = _deltaV -> _ativa_fan `ui ]
 [; ;main.c: 283: if (deltaV >0 && deltaV < 1020)
 "283
 [e $ ! && > _deltaV -> -> 0 `i `ui < _deltaV -> -> 1020 `i `ui 150  ]
@@ -1924,9 +1921,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "289
 [e :UE 125 ]
 }
-[v F1396 `(v ~T0 @X0 1 tf ]
+[v F1395 `(v ~T0 @X0 1 tf ]
 "300
-[v _ISR `IF1396 ~T0 @X0 1 e ]
+[v _ISR `IF1395 ~T0 @X0 1 e ]
 "301
 {
 [; ;main.c: 300: void interrupt ISR(void)

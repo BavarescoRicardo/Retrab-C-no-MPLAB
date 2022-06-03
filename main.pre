@@ -1863,7 +1863,7 @@ ativa_fan = sum/total_area;
 
 
 ativa_fan = ativa_fan*1000;
-deltaV = (unsigned int)ativa_fan;
+
 if (deltaV >0 && deltaV < 1020)
 {
 PWM_DutyCycle2(deltaV);
