@@ -272,10 +272,9 @@ void Fuzzy()
 
 
 	// 5 - desfuzifica
-	total_area = 0;
+	total_area = 90;
 	sum = 0;
-
-	total_area = total_area + tip;
+	
 	sum = sum + tip;
 
 	x=x+1;	
@@ -284,8 +283,8 @@ void Fuzzy()
 	ativa_fan = sum/total_area;
 
 	// Envia o valor calculado para o duty cicle pwm
-	ativa_fan = ativa_fan*1000;
-	deltaV = (unsigned int)total_area;
+	ativa_fan = ativa_fan*20;
+	deltaV = (unsigned int)ativa_fan;
 	if (deltaV >0 && deltaV < 1020)
 	{
 		PWM_DutyCycle2(deltaV);

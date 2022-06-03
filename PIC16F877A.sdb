@@ -159,9 +159,9 @@
 [v _max_val max_val `(f  1 e 3 0 ]
 "130
 [v _Fuzzy Fuzzy `(v  1 e 0 0 ]
-"306
+"305
 [v _ISR ISR `II(v  1 e 0 0 ]
-"469
+"468
 [v _main main `(v  1 e 0 0 ]
 "5 R:\Note\Ultimo C no MPLAB\pwm.c
 [v _PWM_Init PWM_Init `(v  1 e 0 0 ]
@@ -586,10 +586,10 @@
 [v _derro derro `f  1 e 3 0 ]
 "64
 [v _setpoint setpoint `f  1 e 3 0 ]
-"469
+"468
 [v _main main `(v  1 e 0 0 ]
 {
-"544
+"543
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -770,10 +770,10 @@
 {
 "44
 } 0
-"306 R:\Note\Ultimo C no MPLAB\main.c
+"305 R:\Note\Ultimo C no MPLAB\main.c
 [v _ISR ISR `II(v  1 e 0 0 ]
 {
-"466
+"465
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
 [v i1___wmul __wmul `(ui  1 e 2 0 ]
@@ -826,13 +826,13 @@
 [v _Fuzzy Fuzzy `(v  1 e 0 0 ]
 {
 "239
-[v Fuzzy@a_234 a `i  1 a 2 45 ]
+[v Fuzzy@a_234 a `i  1 a 2 48 ]
 "205
-[v Fuzzy@a_233 a `i  1 a 2 43 ]
+[v Fuzzy@a_233 a `i  1 a 2 46 ]
 "172
-[v Fuzzy@a a `i  1 a 2 41 ]
+[v Fuzzy@a a `i  1 a 2 44 ]
 "258
-[v Fuzzy@a_235 a `i  1 a 2 47 ]
+[v Fuzzy@a_235 a `i  1 a 2 50 ]
 "145
 [v Fuzzy@aumenta aumenta `f  1 a 3 58 ]
 "144
@@ -840,8 +840,8 @@
 "143
 [v Fuzzy@mantem mantem `f  1 a 3 52 ]
 "146
-[v Fuzzy@tip tip `f  1 a 3 49 ]
-"295
+[v Fuzzy@tip tip `f  1 a 3 41 ]
+"294
 } 0
 "96 R:\Note\Ultimo C no MPLAB\pwm.c
 [v i1_PWM_DutyCycle2 PWM_DutyCycle2 `(v  1 e 0 0 ]
