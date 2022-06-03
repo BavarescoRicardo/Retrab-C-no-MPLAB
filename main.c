@@ -148,9 +148,9 @@ void Fuzzy()
 
 	//  calculo do erro para o setpoint
 	temp = (setpoint - tf);//
-	temp = (temp/10);
+	temp = (temp/90);
 	
-	deltaV = temp;
+	//deltaV = temp;
 	//Limites (valores acima recebem o maximo...)
 	if (temp >90) temp = 90;
 	if (temp <0) temp = 0;
@@ -175,11 +175,11 @@ void Fuzzy()
 
 			if (y > fop_rule1)
 			{
-				mantem += fop_rule1;
+				reduz += fop_rule1;
 			}
 			else
 			{
-				mantem += y;
+				reduz += y;
 			}
 
 			x=x+1;
@@ -209,11 +209,11 @@ void Fuzzy()
 
 			if (y >= fop_rule2)
 			{
-				reduz += fop_rule2;
+				mantem += fop_rule2;
 			}
 			else
 			{
-				reduz += y;
+				mantem += y;
 			}
 
 			x=x+1;
@@ -259,11 +259,11 @@ void Fuzzy()
 	// 4 - Aplicação do Método de Agregação.
 	if (temp < 25)
 	{
-		tip = mantem;
+		tip = reduz;
 	}else
 	if (temp >= 25 && temp < 75)
 	{
-		tip = reduz;
+		tip = mantem;
 	}else
 	{
 		tip = aumenta;
@@ -279,7 +279,7 @@ void Fuzzy()
 
 	// Envia o valor calculado para o duty cicle pwm
 	ativa_fan = ativa_fan*1000;
-	//deltaV = (unsigned int)ativa_fan;
+	deltaV = (unsigned int)ativa_fan;
 	if (deltaV >0 && deltaV < 1020)
 	{
 		PWM_DutyCycle2(deltaV);

@@ -1738,9 +1738,9 @@ fitemp =0;
 
 
 temp = (setpoint - tf);
-temp = (temp/10);
+temp = (temp/90);
 
-deltaV = temp;
+
 
 if (temp >90) temp = 90;
 if (temp <0) temp = 0;
@@ -1765,11 +1765,11 @@ y = trapmf(x,0,0,13,32);
 
 if (y > fop_rule1)
 {
-mantem += fop_rule1;
+reduz += fop_rule1;
 }
 else
 {
-mantem += y;
+reduz += y;
 }
 
 x=x+1;
@@ -1796,11 +1796,11 @@ y = trimf(x, 9, 45, 81);
 
 if (y >= fop_rule2)
 {
-reduz += fop_rule2;
+mantem += fop_rule2;
 }
 else
 {
-reduz += y;
+mantem += y;
 }
 
 x=x+1;
@@ -1843,11 +1843,11 @@ x=x+1;
 
 if (temp < 25)
 {
-tip = mantem;
+tip = reduz;
 }else
 if (temp >= 25 && temp < 75)
 {
-tip = reduz;
+tip = mantem;
 }else
 {
 tip = aumenta;
@@ -1863,7 +1863,7 @@ ativa_fan = sum/total_area;
 
 
 ativa_fan = ativa_fan*1000;
-
+deltaV = (unsigned int)ativa_fan;
 if (deltaV >0 && deltaV < 1020)
 {
 PWM_DutyCycle2(deltaV);

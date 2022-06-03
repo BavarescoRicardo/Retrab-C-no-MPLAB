@@ -1612,12 +1612,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 150: temp = (setpoint - tf);
 "150
 [e = _temp - _setpoint _tf ]
-[; ;main.c: 151: temp = (temp/10);
+[; ;main.c: 151: temp = (temp/90);
 "151
-[e = _temp / _temp -> -> 10 `i `f ]
-[; ;main.c: 153: deltaV = temp;
-"153
-[e = _deltaV -> _temp `ui ]
+[e = _temp / _temp -> -> 90 `i `f ]
 [; ;main.c: 155: if (temp >90) temp = 90;
 "155
 [e $ ! > _temp -> -> 90 `i `f 126  ]
@@ -1666,9 +1663,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 177: {
 "177
 {
-[; ;main.c: 178: mantem += fop_rule1;
+[; ;main.c: 178: reduz += fop_rule1;
 "178
-[e =+ _mantem _fop_rule1 ]
+[e =+ _reduz _fop_rule1 ]
 "179
 }
 [; ;main.c: 179: }
@@ -1679,9 +1676,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 181: {
 "181
 {
-[; ;main.c: 182: mantem += y;
+[; ;main.c: 182: reduz += y;
 "182
-[e =+ _mantem _y ]
+[e =+ _reduz _y ]
 "183
 }
 [e :U 133 ]
@@ -1740,9 +1737,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 211: {
 "211
 {
-[; ;main.c: 212: reduz += fop_rule2;
+[; ;main.c: 212: mantem += fop_rule2;
 "212
-[e =+ _reduz _fop_rule2 ]
+[e =+ _mantem _fop_rule2 ]
 "213
 }
 [; ;main.c: 213: }
@@ -1753,9 +1750,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 215: {
 "215
 {
-[; ;main.c: 216: reduz += y;
+[; ;main.c: 216: mantem += y;
 "216
-[e =+ _reduz _y ]
+[e =+ _mantem _y ]
 "217
 }
 [e :U 139 ]
@@ -1856,9 +1853,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 261: {
 "261
 {
-[; ;main.c: 262: tip = mantem;
+[; ;main.c: 262: tip = reduz;
 "262
-[e = _tip _mantem ]
+[e = _tip _reduz ]
 "263
 }
 [; ;main.c: 263: }else
@@ -1870,9 +1867,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 265: {
 "265
 {
-[; ;main.c: 266: tip = reduz;
+[; ;main.c: 266: tip = mantem;
 "266
-[e = _tip _reduz ]
+[e = _tip _mantem ]
 "267
 }
 [; ;main.c: 267: }else
@@ -1904,6 +1901,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 281: ativa_fan = ativa_fan*1000;
 "281
 [e = _ativa_fan * _ativa_fan -> -> 1000 `i `f ]
+[; ;main.c: 282: deltaV = (unsigned int)ativa_fan;
+"282
+[e = _deltaV -> _ativa_fan `ui ]
 [; ;main.c: 283: if (deltaV >0 && deltaV < 1020)
 "283
 [e $ ! && > _deltaV -> -> 0 `i `ui < _deltaV -> -> 1020 `i `ui 150  ]
@@ -1921,9 +1921,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "289
 [e :UE 125 ]
 }
-[v F1395 `(v ~T0 @X0 1 tf ]
+[v F1396 `(v ~T0 @X0 1 tf ]
 "300
-[v _ISR `IF1395 ~T0 @X0 1 e ]
+[v _ISR `IF1396 ~T0 @X0 1 e ]
 "301
 {
 [; ;main.c: 300: void interrupt ISR(void)

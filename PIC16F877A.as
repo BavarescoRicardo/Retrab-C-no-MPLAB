@@ -8475,12 +8475,12 @@ i1l2716:
 	movf	(2+(?___ftadd)),w
 	movwf	(_temp+2)
 	line	151
-;main.c: 151: temp = (temp/10);
+;main.c: 151: temp = (temp/90);
 	movlw	0x0
 	movwf	(___ftdiv@f2)
-	movlw	0x20
+	movlw	0xb4
 	movwf	(___ftdiv@f2+1)
-	movlw	0x41
+	movlw	0x42
 	movwf	(___ftdiv@f2+2)
 	movf	(_temp),w
 	movwf	(___ftdiv@f1)
@@ -8497,24 +8497,6 @@ i1l2716:
 	movwf	(_temp+1)
 	movf	(2+(?___ftdiv)),w
 	movwf	(_temp+2)
-	line	153
-;main.c: 153: deltaV = temp;
-	movf	(_temp),w
-	movwf	(___fttol@f1)
-	movf	(_temp+1),w
-	movwf	(___fttol@f1+1)
-	movf	(_temp+2),w
-	movwf	(___fttol@f1+2)
-	fcall	___fttol
-	movf	1+(((0+(?___fttol)))),w
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	clrf	(_deltaV+1)
-	addwf	(_deltaV+1)
-	movf	0+(((0+(?___fttol)))),w
-	clrf	(_deltaV)
-	addwf	(_deltaV)
-
 	line	155
 ;main.c: 155: if (temp >90) temp = 90;
 	movlw	0x0
@@ -8820,7 +8802,7 @@ u334_20:
 	
 i1l2740:	
 ;main.c: 177: {
-;main.c: 178: mantem += fop_rule1;
+;main.c: 178: reduz += fop_rule1;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(_fop_rule1)^080h,w
@@ -8831,21 +8813,21 @@ i1l2740:
 	movwf	(___ftadd@f1+2)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	movf	(Fuzzy@mantem),w
+	movf	(Fuzzy@reduz),w
 	movwf	(___ftadd@f2)
-	movf	(Fuzzy@mantem+1),w
+	movf	(Fuzzy@reduz+1),w
 	movwf	(___ftadd@f2+1)
-	movf	(Fuzzy@mantem+2),w
+	movf	(Fuzzy@reduz+2),w
 	movwf	(___ftadd@f2+2)
 	fcall	___ftadd
 	movf	(0+(?___ftadd)),w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	movwf	(Fuzzy@mantem)
+	movwf	(Fuzzy@reduz)
 	movf	(1+(?___ftadd)),w
-	movwf	(Fuzzy@mantem+1)
+	movwf	(Fuzzy@reduz+1)
 	movf	(2+(?___ftadd)),w
-	movwf	(Fuzzy@mantem+2)
+	movwf	(Fuzzy@reduz+2)
 	line	179
 ;main.c: 179: }
 	goto	i1l157
@@ -8857,7 +8839,7 @@ i1l156:
 i1l2742:	
 ;main.c: 180: else
 ;main.c: 181: {
-;main.c: 182: mantem += y;
+;main.c: 182: reduz += y;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(_y),w
@@ -8866,21 +8848,21 @@ i1l2742:
 	movwf	(___ftadd@f1+1)
 	movf	(_y+2),w
 	movwf	(___ftadd@f1+2)
-	movf	(Fuzzy@mantem),w
+	movf	(Fuzzy@reduz),w
 	movwf	(___ftadd@f2)
-	movf	(Fuzzy@mantem+1),w
+	movf	(Fuzzy@reduz+1),w
 	movwf	(___ftadd@f2+1)
-	movf	(Fuzzy@mantem+2),w
+	movf	(Fuzzy@reduz+2),w
 	movwf	(___ftadd@f2+2)
 	fcall	___ftadd
 	movf	(0+(?___ftadd)),w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	movwf	(Fuzzy@mantem)
+	movwf	(Fuzzy@reduz)
 	movf	(1+(?___ftadd)),w
-	movwf	(Fuzzy@mantem+1)
+	movwf	(Fuzzy@reduz+1)
 	movf	(2+(?___ftadd)),w
-	movwf	(Fuzzy@mantem+2)
+	movwf	(Fuzzy@reduz+2)
 	line	183
 	
 i1l157:	
@@ -9187,7 +9169,7 @@ u339_20:
 	
 i1l2766:	
 ;main.c: 211: {
-;main.c: 212: reduz += fop_rule2;
+;main.c: 212: mantem += fop_rule2;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movf	(_fop_rule2)^080h,w
@@ -9198,21 +9180,21 @@ i1l2766:
 	movwf	(___ftadd@f1+2)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	movf	(Fuzzy@reduz),w
+	movf	(Fuzzy@mantem),w
 	movwf	(___ftadd@f2)
-	movf	(Fuzzy@reduz+1),w
+	movf	(Fuzzy@mantem+1),w
 	movwf	(___ftadd@f2+1)
-	movf	(Fuzzy@reduz+2),w
+	movf	(Fuzzy@mantem+2),w
 	movwf	(___ftadd@f2+2)
 	fcall	___ftadd
 	movf	(0+(?___ftadd)),w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	movwf	(Fuzzy@reduz)
+	movwf	(Fuzzy@mantem)
 	movf	(1+(?___ftadd)),w
-	movwf	(Fuzzy@reduz+1)
+	movwf	(Fuzzy@mantem+1)
 	movf	(2+(?___ftadd)),w
-	movwf	(Fuzzy@reduz+2)
+	movwf	(Fuzzy@mantem+2)
 	line	213
 ;main.c: 213: }
 	goto	i1l162
@@ -9224,7 +9206,7 @@ i1l161:
 i1l2768:	
 ;main.c: 214: else
 ;main.c: 215: {
-;main.c: 216: reduz += y;
+;main.c: 216: mantem += y;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movf	(_y),w
@@ -9233,21 +9215,21 @@ i1l2768:
 	movwf	(___ftadd@f1+1)
 	movf	(_y+2),w
 	movwf	(___ftadd@f1+2)
-	movf	(Fuzzy@reduz),w
+	movf	(Fuzzy@mantem),w
 	movwf	(___ftadd@f2)
-	movf	(Fuzzy@reduz+1),w
+	movf	(Fuzzy@mantem+1),w
 	movwf	(___ftadd@f2+1)
-	movf	(Fuzzy@reduz+2),w
+	movf	(Fuzzy@mantem+2),w
 	movwf	(___ftadd@f2+2)
 	fcall	___ftadd
 	movf	(0+(?___ftadd)),w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	movwf	(Fuzzy@reduz)
+	movwf	(Fuzzy@mantem)
 	movf	(1+(?___ftadd)),w
-	movwf	(Fuzzy@reduz+1)
+	movwf	(Fuzzy@mantem+1)
 	movf	(2+(?___ftadd)),w
-	movwf	(Fuzzy@reduz+2)
+	movwf	(Fuzzy@mantem+2)
 	line	217
 	
 i1l162:	
@@ -9697,14 +9679,14 @@ u345_20:
 	
 i1l2800:	
 ;main.c: 261: {
-;main.c: 262: tip = mantem;
+;main.c: 262: tip = reduz;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	movf	(Fuzzy@mantem),w
+	movf	(Fuzzy@reduz),w
 	movwf	(Fuzzy@tip)
-	movf	(Fuzzy@mantem+1),w
+	movf	(Fuzzy@reduz+1),w
 	movwf	(Fuzzy@tip+1)
-	movf	(Fuzzy@mantem+2),w
+	movf	(Fuzzy@reduz+2),w
 	movwf	(Fuzzy@tip+2)
 	line	263
 ;main.c: 263: }else
@@ -9763,14 +9745,14 @@ u347_20:
 	
 i1l2806:	
 ;main.c: 265: {
-;main.c: 266: tip = reduz;
+;main.c: 266: tip = mantem;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	movf	(Fuzzy@reduz),w
+	movf	(Fuzzy@mantem),w
 	movwf	(Fuzzy@tip)
-	movf	(Fuzzy@reduz+1),w
+	movf	(Fuzzy@mantem+1),w
 	movwf	(Fuzzy@tip+1)
-	movf	(Fuzzy@reduz+2),w
+	movf	(Fuzzy@mantem+2),w
 	movwf	(Fuzzy@tip+2)
 	line	267
 ;main.c: 267: }else
@@ -9926,12 +9908,28 @@ i1l2814:
 	movwf	(_ativa_fan+1)^080h
 	movf	(2+(?___ftmul)),w
 	movwf	(_ativa_fan+2)^080h
-	line	283
+	line	282
 	
 i1l2816:	
-;main.c: 283: if (deltaV >0 && deltaV < 1020)
+;main.c: 282: deltaV = (unsigned int)ativa_fan;
+	movf	(_ativa_fan)^080h,w
+	movwf	(___fttol@f1)
+	movf	(_ativa_fan+1)^080h,w
+	movwf	(___fttol@f1+1)
+	movf	(_ativa_fan+2)^080h,w
+	movwf	(___fttol@f1+2)
+	fcall	___fttol
+	movf	1+(((0+(?___fttol)))),w
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
+	clrf	(_deltaV+1)
+	addwf	(_deltaV+1)
+	movf	0+(((0+(?___fttol)))),w
+	clrf	(_deltaV)
+	addwf	(_deltaV)
+
+	line	283
+;main.c: 283: if (deltaV >0 && deltaV < 1020)
 	movf	(_deltaV+1),w
 	iorwf	(_deltaV),w
 	skipnz
