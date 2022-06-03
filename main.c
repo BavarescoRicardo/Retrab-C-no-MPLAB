@@ -150,13 +150,13 @@ void Fuzzy()
 	temp = (setpoint - tf);//
 	temp = (temp/100)*-1;
 
-	deltaV = temp;
+	//deltaV = temp;
 
 	//Limites (valores acima recebem o maximo...)
-	if (temp >100) temp = 100;
+	if (temp >90) temp = 90;
 	if (temp <0) temp = 0;
 
-	// 1ª regra - If temp is < (2.5 + setpoint)
+	// 1ª regra - If delta é menor reduz 
 	if (temp < 25)
 	{
 
@@ -258,36 +258,29 @@ void Fuzzy()
 	}
 
 	// 4 - Aplicação do Método de Agregação.
-	for (int a=0; a<1; a++)
+	if (temp < 25)
 	{
-		if (temp < 25)
-		{
-			tip = mantem;
-		}else
-		if (temp >= 25 && temp < 75)
-		{
-			tip = reduz;
-		}else
-		{
-			tip = aumenta;
-		}
+		tip = mantem;
+	}else
+	if (temp >= 25 && temp < 75)
+	{
+		tip = reduz;
+	}else
+	{
+		tip = aumenta;
 	}
-
 
 	// 5 - desfuzifica
 	total_area = 90;
-	sum = 0;
-	
+	sum = 0;	
 	sum = sum + tip;
-
-	x=x+1;	
 
 	// Cálculo da Centróide.
 	ativa_fan = sum/total_area;
 
 	// Envia o valor calculado para o duty cicle pwm
 	ativa_fan = ativa_fan*20;
-	//deltaV = (unsigned int)ativa_fan;
+	deltaV = (unsigned int)ativa_fan;
 	if (deltaV >0 && deltaV < 1020)
 	{
 		PWM_DutyCycle2(deltaV);

@@ -1743,18 +1743,13 @@ temp = (temp/100)*-1;
 deltaV = temp;
 
 
-if (temp >100) temp = 100;
+if (temp >90) temp = 90;
 if (temp <0) temp = 0;
 
 
 if (temp < 25)
 {
-if(PORTBbits.RB0 == 0)
-{
-PORTBbits.RB0 = 1;
-}else{
-PORTBbits.RB0 = 0;
-}
+
 
 
 fitemp = trapmf(temp, 0,0,13,32);
@@ -1783,15 +1778,10 @@ x=x+1;
 
 }
 
-# 200
+# 195
 if ((temp > 20) && (temp < 70))
 {
-if(PORTBbits.RB1 == 0)
-{
-PORTBbits.RB1 = 1;
-}else{
-PORTBbits.RB1 = 0;
-}
+
 
 fitemp = trimf(temp, 9, 45, 81);
 
@@ -1819,15 +1809,10 @@ x=x+1;
 
 }
 
-# 239
+# 229
 if (temp > 70 )
 {
-if(PORTBbits.RB2 == 0)
-{
-PORTBbits.RB2 = 1;
-}else{
-PORTBbits.RB2 = 0;
-}
+
 
 fitemp = trapmf(temp, 62, 79, 90, 90);
 
@@ -1857,8 +1842,6 @@ x=x+1;
 }
 
 
-for (int a=0; a<1; a++)
-{
 if (temp < 25)
 {
 tip = mantem;
@@ -1870,23 +1853,18 @@ tip = reduz;
 {
 tip = aumenta;
 }
-}
-
 
 
 total_area = 90;
 sum = 0;
-
 sum = sum + tip;
-
-x=x+1;
 
 
 ativa_fan = sum/total_area;
 
 
 ativa_fan = ativa_fan*20;
-
+deltaV = (unsigned int)ativa_fan;
 if (deltaV >0 && deltaV < 1020)
 {
 PWM_DutyCycle2(deltaV);
@@ -1895,7 +1873,7 @@ PWM_DutyCycle2(deltaV);
 
 }
 
-# 323
+# 301
 void interrupt ISR(void)
 {
 
