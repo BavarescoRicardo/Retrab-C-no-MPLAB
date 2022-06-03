@@ -51,14 +51,10 @@ unsigned int tempo_rb6 = 0;
 
 float x=0;
 float y=0;
-float posicao_do_grafico = 0;
-float posicao_do_grafico_food = 0;
-float posicao_do_grafico_service = 0;
+
 
 // Variáveis Fuzzy.
 float fitemp = 0;
-float fisetpoint    = 0;
-float foTip     = 0;
 float fop_rule1 = 0;
 float fop_rule2 = 0;
 float fop_rule3 = 0;
@@ -293,7 +289,6 @@ void Fuzzy()
 
 	// Cálculo da Centróide.
 	ativa_fan = sum/total_area;
-	posicao_do_grafico = ativa_fan;
 
 	// Envia o valor calculado para o duty cicle pwm
 	//deltaV = (unsigned int)sum*90;
