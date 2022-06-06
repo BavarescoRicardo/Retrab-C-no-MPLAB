@@ -26,7 +26,7 @@ int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
-unsigned int pwm = 0;
+unsigned int pwm = 50;
 unsigned int deltaV = 0;
 unsigned int setpointUI = 200;
 
@@ -58,8 +58,7 @@ float total_area = 0;
 float ativa_fan = 0;
 
 // Entradas para o sistema.
-float temp = 0;
-float tf = 0;
+float tf = 50;
 float derro = 0;
 float setpoint = 20;
 
@@ -139,29 +138,42 @@ void Fuzzy()
 */
 	// Converte variavel recebida de int para float
 	setpoint = (float)setpointUI;
+	float deltaRpm = 0;
+
+	// Variavel para indicar se esta reduzindo ou aumentando
+	unsigned int freio = 0;
+	// Variaveis de fuzzy
+		// setpoint	--- Definido
+		// deltaRpm	--- Diferença
+		// rpm		--- Atual
 
 	float mantem = 0;
 	float reduz = 0;
 	float aumenta = 0;
 	float tip;
-	fitemp =0;
+	fitemp = 0;
 
 	//  calculo do erro para o setpoint
-	temp = (setpoint - tf);//
-	temp = (temp/90);
+	deltaRpm = (setpoint - tf);//
+	deltaRpm = (deltaRpm/100);
 	
-	//deltaV = temp;
+	//deltaV = deltaRpm;
+	
+	if (deltaRpm <0)
+	{
+		 deltaRpm = deltaRpm*-1;
+		 freio = 1;
+	}
 	//Limites (valores acima recebem o maximo...)
-	if (temp >90) temp = 90;
-	if (temp <0) temp = 0;
+	if (deltaRpm >90) deltaRpm = 90;
 
-	// 1ª regra - If delta é menor e esta lento - fica mais lento 
-	if (temp < 25)
+	// 1ª regra - If delta é menor e esta lento - fica mais pouco lento 
+	if (deltaRpm < 25)
 	{
 
 		// 1 - Reduz as velocidades.
 		// [0 0 13 32.4]
-		fitemp    = trapmf(temp, 0,0,13,32);
+		fitemp = trapmf(deltaRpm, 0,0,13,32);
 
 		// 2 - Aplicação dos operadores Fuzzy.
 		fop_rule1 = max_val(fitemp,0.1);
@@ -189,13 +201,13 @@ void Fuzzy()
 
 
 
-	// 2ª regra - If temp is na faixa de diferenca é meida e esta lento - fica mais na mesma 
+	// 2ª regra - If deltaRpm is na faixa de diferenca é meida e esta lento - fica mais na mesma 
 	//  [9 45 81]
-	if ((temp > 20) && (temp < 70))
+	if ((deltaRpm > 20) && (deltaRpm < 70))
 	{
 
 		// 1 - Fuzzificar as entradas.
-		fitemp = trimf(temp, 9, 45, 81);
+		fitemp = trimf(deltaRpm, 9, 45, 81);
 
 		// 2 - Aplicação dos operadores Fuzzy.
 		fop_rule2 = max_val(fitemp,0.1);
@@ -223,13 +235,13 @@ void Fuzzy()
 
 
 
-	// 3ª regra - If temp is acima  e esta lento - aumentaa velocidade
+	// 3ª regra - If deltaRpm is acima  e esta lento - aumentaa velocidade
 	// [62 79 90 90]
-	if (temp > 70 )
+	if (deltaRpm > 70 )
 	{
 	
 		// 1 - Fuzzificar as entradas.
-		fitemp = trapmf(temp, 62, 79, 90, 90);
+		fitemp = trapmf(deltaRpm, 62, 79, 90, 90);
 //		fiFood    = trapmf(food,7,9,10,10);
 
 		// 2 - Aplicação dos operadores Fuzzy.
@@ -257,11 +269,11 @@ void Fuzzy()
 	}
 
 	// 4 - Aplicação do Método de Agregação.
-	if (temp < 25)
+	if (deltaRpm < 25)
 	{
 		tip = reduz;
 	}else
-	if (temp >= 25 && temp < 75)
+	if (deltaRpm >= 25 && deltaRpm < 75)
 	{
 		tip = mantem;
 	}else
@@ -277,12 +289,23 @@ void Fuzzy()
 	// Cálculo da Centróide.
 	ativa_fan = sum/total_area;
 
-	// Envia o valor calculado para o duty cicle pwm
-	ativa_fan = ativa_fan*1000;
+	// Normaliza valores para o duty_cicle
+	ativa_fan = ativa_fan*100;
 	deltaV = (unsigned int)ativa_fan;
-	if (deltaV >0 && deltaV < 1020)
+	setpointUI = (setpointUI / 20);
+	// Envia o valor calculado para o duty cicle pwm
+	if (freio = 1)
+	{	
+		if ((tf + deltaV) >0 && (tf + deltaV) < 1020)
+		{
+			PWM_DutyCycle2(tf + deltaV);
+		}
+	}else 
 	{
-		PWM_DutyCycle2(deltaV);
+		if ((tf - deltaV) >0 && (tf - deltaV) < 1020)
+		{
+			PWM_DutyCycle2(tf - deltaV);
+		}
 	}
 	
 
@@ -305,8 +328,8 @@ void interrupt ISR(void)
 		if (USART_ReceiveChar() == '0')
 		{
 			USART_WriteString("\n\rdesligado\n\r");
-			pwm = 0;
-			PWM_DutyCycle2(pwm);
+			//pwm = 0;
+			PWM_DutyCycle2(0);
 			return;
 		}
 

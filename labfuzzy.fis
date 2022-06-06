@@ -1,0 +1,48 @@
+[System]
+Name='labfuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='delta'
+Range=[0 90]
+NumMFs=3
+MF1='baixo':'trimf',[0 0 36]
+MF2='medio':'trimf',[9 45 81]
+MF3='alto':'trimf',[54 90 90]
+
+[Input2]
+Name='velAtual'
+Range=[0 90]
+NumMFs=3
+MF1='lento':'trimf',[0 0 36]
+MF2='pouco_rapido':'trimf',[9 45 81]
+MF3='rapido':'trimf',[54 90 90]
+
+[Output1]
+Name='resultado'
+Range=[0 90]
+NumMFs=4
+MF1='fica_lento':'trimf',[0 0 12.0238095238095]
+MF2='fica_poucorapido':'trimf',[35.3333333333333 59.3333333333333 79.3333333333333]
+MF3='fica_rapido':'trimf',[62 90 90]
+MF4='fica_poucolento':'trapmf',[9.33333333333334 20.3333333333333 32.7333333333333 49.3333333333333]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 4 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+3 1, 4 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
