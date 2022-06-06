@@ -292,7 +292,7 @@ void Fuzzy()
 	// Normaliza valores para o duty_cicle
 	ativa_fan = ativa_fan*100;
 	deltaV = (unsigned int)ativa_fan;
-	setpointUI = (setpointUI / 20);
+
 	// Envia o valor calculado para o duty cicle pwm
 	if (freio = 1)
 	{	
