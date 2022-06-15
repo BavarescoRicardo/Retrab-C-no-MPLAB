@@ -157,10 +157,17 @@ void Fuzzy()
 	deltaRpm = (setpoint - tf);//
 	deltaRpm = (deltaRpm/100);
 	
-	//deltaV = deltaRpm;
+	deltaV = deltaRpm;
 	
 	if (deltaRpm <0)
 	{
+			if(PORTBbits.RB1 == 0)
+			{
+				PORTBbits.RB1 = 1;
+			}else{
+				PORTBbits.RB1 = 0;
+			}
+
 		 deltaRpm = deltaRpm*-1;
 		 freio = 1;
 	}
@@ -291,7 +298,7 @@ void Fuzzy()
 
 	// Normaliza valores para o duty_cicle
 	ativa_fan = ativa_fan*100;
-	deltaV = (unsigned int)ativa_fan;
+	// deltaV = (unsigned int)ativa_fan;
 
 	// Envia o valor calculado para o duty cicle pwm
 	if (freio = 1)
@@ -357,15 +364,8 @@ void interrupt ISR(void)
 		if (USART_ReceiveChar() == '4')
 		{
 			USART_WriteString("\n\rpwm = \n\r");
-			pwm = 3256;
-			PWM_DutyCycle2(pwm);
-			if(PORTBbits.RB1 == 0)
-			{
-				PORTBbits.RB1 = 1;
-			}else{
-				PORTBbits.RB1 = 0;
-			}
-			return;			
+			setpointUI = 3256;
+			//PWM_DutyCycle2(setpointUI);			
 		}
 
 		if (USART_ReceiveChar() == '5')

@@ -16,61 +16,63 @@ end_init CODE 0 12 12 3 2
 reset_vec CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 1 2
 $PIC16F877A.obj
-cinit CODE 0 15 15 24 2
+cinit CODE 0 15 15 32 2
 intentry CODE 0 4 4 E 2
 text41 CODE 0 140D 140D 68 2
 text40 CODE 0 1626 1626 D1 2
 text39 CODE 0 14E0 14E0 8E 2
-text38 CODE 0 109F 109F 14 2
+text38 CODE 0 10DF 10DF 14 2
 text37 CODE 0 13AE 13AE 5F 2
-text36 CODE 0 1117 1117 1E 2
+text36 CODE 0 113C 113C 1E 2
 text35 CODE 0 16F7 16F7 109 2
 text34 CODE 0 156E 156E B8 2
-text33 CODE 0 1057 1057 A 2
-text32 CODE 0 B5F B5F 156 2
-text31 CODE 0 8EA 8EA 124 2
-text30 CODE 0 10E1 10E1 1B 2
-text29 CODE 0 12E7 12E7 3E 2
-text28 CODE 0 39 39 72C 2
-text27 CODE 0 103F 103F 8 2
-text26 CODE 0 1197 1197 23 2
-text25 CODE 0 10FC 10FC 1B 2
-text24 CODE 0 1039 1039 6 2
-text23 CODE 0 11BA 11BA 23 2
-text22 CODE 0 CB5 CB5 194 2
-text21 CODE 0 108D 108D 12 2
-text20 CODE 0 10B3 10B3 17 2
+text33 CODE 0 1080 1080 A 2
+text32 CODE 0 B78 B78 156 2
+text31 CODE 0 903 903 124 2
+text30 CODE 0 1121 1121 1B 2
+text29 CODE 0 47 47 70E 2
+text28 CODE 0 1068 1068 8 2
+text27 CODE 0 11BC 11BC 23 2
+text26 CODE 0 7E4 7E4 1B 2
+text25 CODE 0 1062 1062 6 2
+text24 CODE 0 12E7 12E7 3E 2
+text23 CODE 0 11DF 11DF 23 2
+text22 CODE 0 CCE CCE 17B 2
+text21 CODE 0 10CD 10CD 12 2
+text20 CODE 0 10F3 10F3 17 2
 text19 CODE 0 1226 1226 29 2
-text18 CODE 0 1135 1135 20 2
+text18 CODE 0 115A 115A 20 2
 text17 CODE 0 1475 1475 6B 2
-text16 CODE 0 10CA 10CA 17 2
+text16 CODE 0 110A 110A 17 2
 text15 CODE 0 124F 124F 31 2
-text14 CODE 0 1155 1155 21 2
-text13 CODE 0 1176 1176 21 2
-text12 CODE 0 11DD 11DD 24 2
-text11 CODE 0 1061 1061 B 2
-text10 CODE 0 1047 1047 8 2
-text9 CODE 0 765 765 8F 2
+text14 CODE 0 117A 117A 21 2
+text13 CODE 0 119B 119B 21 2
+text12 CODE 0 1202 1202 24 2
+text11 CODE 0 1094 1094 B 2
+text10 CODE 0 1070 1070 8 2
+text9 CODE 0 755 755 8F 2
 text8 CODE 0 1365 1365 49 2
-text7 CODE 0 8DD 8DD D 2
+text7 CODE 0 109F 109F D 2
 text6 CODE 0 1280 1280 31 2
 text5 CODE 0 1325 1325 40 2
 text4 CODE 0 12B1 12B1 36 2
-text3 CODE 0 1201 1201 25 2
-text2 CODE 0 106C 106C 10 2
+text3 CODE 0 8DE 8DE 25 2
+text2 CODE 0 10AC 10AC 10 2
 text1 CODE 0 E49 E49 1B7 2
-maintext CODE 0 A0E A0E 151 2
+maintext CODE 0 A27 A27 151 2
 cstackBANK0 BANK0 1 20 20 4D 1
 cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK1 BANK1 1 A0 A0 22 1
-inittext CODE 0 107C 107C 11 2
-clrtext CODE 0 104F 104F 8 2
-bssBANK3 BANK3 1 190 190 21 1
-dataBANK1 BANK1 1 E3 E3 C 1
-bssBANK1 BANK1 1 C2 C2 21 1
+cstackBANK1 BANK1 1 C3 C3 22 1
+inittext CODE 0 10BC 10BC 11 2
+clrtext CODE 0 1078 1078 8 2
+dataBANK3 BANK3 1 1AF 1AF 2 1
+bssBANK3 BANK3 1 190 190 1F 1
+dataBANK1 BANK1 1 E5 E5 A 1
+bssBANK1 BANK1 1 A0 A0 23 1
 bssBANK0 BANK0 1 6D 6D 2 1
 strings STRING 0 800 800 DB 2
-idataBANK1 CODE 0 7F4 7F4 C 2
+idataBANK3 CODE 0 8DC 8DC 2 2
+idataBANK1 CODE 0 108A 108A A 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -82,17 +84,20 @@ BANK1 00EF-00EF 1
 BANK2 0110-016F 1
 BANK3 01B1-01EF 1
 CODE 0003-0003 2
-CODE 08DB-08DC 2
-CODE 1000-1038 2
+CODE 07FF-07FF 2
+CODE 08DB-08DB 2
+CODE 1000-1061 2
 CODE 1800-1FFF 2
 CONST 0003-0003 2
-CONST 08DB-08DC 2
-CONST 1000-1038 2
+CONST 07FF-07FF 2
+CONST 08DB-08DB 2
+CONST 1000-1061 2
 CONST 1800-1FFF 2
 EEDATA 2100-21FF 2
 ENTRY 0003-0003 2
-ENTRY 08DB-08DC 2
-ENTRY 1000-1038 2
+ENTRY 07FF-07FF 2
+ENTRY 08DB-08DB 2
+ENTRY 1000-1061 2
 ENTRY 1800-1FFF 2
 IDLOC 2000-2003 2
 RAM 006F-006F 1
@@ -105,12 +110,14 @@ SFR2 0100-010F 1
 SFR3 0180-018F 1
 STACK 0110-016F 1
 STRCODE 0003-0003 2
-STRCODE 08DB-08DC 2
-STRCODE 1000-1038 2
+STRCODE 07FF-07FF 2
+STRCODE 08DB-08DB 2
+STRCODE 1000-1061 2
 STRCODE 1800-1FFF 2
 STRING 0003-0003 2
-STRING 08DB-08DC 2
-STRING 1000-1038 2
+STRING 07FF-07FF 2
+STRING 08DB-08DB 2
+STRING 1000-1061 2
 STRING 1800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -126,221 +133,237 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $PIC16F877A.obj
-"R:\Note\Ultimo C no MPLAB\main.c":323 4 intentry CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1659 15 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1662 15 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1786 15 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1787 16 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1790 17 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1791 18 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1792 19 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1793 1A cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1794 1B cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1797 20 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1798 21 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1799 22 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1800 23 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1801 24 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1833 29 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1834 2A cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1835 2B cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1836 2C cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1837 2D cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1838 2E cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1839 2F cinit CODE
+"R:\Note\Ultimo C no MPLAB\main.c":330 4 intentry CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1661 15 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1664 15 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1790 15 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1791 16 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1794 17 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1795 18 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1796 19 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1797 1A cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1798 1B cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1801 20 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1802 21 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1803 22 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1804 23 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1805 24 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1837 29 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1838 2A cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1839 2B cinit CODE
 "R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1840 30 cinit CODE
 "R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1841 31 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1842 32 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1848 35 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1849 35 cinit CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1850 36 cinit CODE
-"R:\Note\Ultimo C no MPLAB\main.c":129 39 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":140 39 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":141 4E text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":144 56 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":150 58 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":151 5E text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":152 64 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":154 6A text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":157 72 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":158 AE text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":162 C7 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":164 DA text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":165 F5 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":168 F9 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":171 116 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":176 12B text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":179 162 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":182 18F text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":183 195 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":184 19B text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":186 1AA text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":188 1EB text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":190 214 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":194 224 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":197 249 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":184 278 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":206 28B text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":210 2B5 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":213 2E6 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":216 313 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":217 319 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":218 31F text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":220 32E text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":222 369 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":224 392 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":228 3A2 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":231 3C7 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":218 3F6 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":240 409 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":244 41E text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":248 455 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":251 482 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":252 488 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":253 48E text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":255 49D text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":257 4DE text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":259 507 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":263 517 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":266 53C text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":253 56B text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":272 57E text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":274 593 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":276 59B text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":278 5C5 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":281 5CD text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":285 5D5 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":286 5DD text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":287 5E3 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":290 614 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":293 64D text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":294 666 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":295 683 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":297 69C text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":299 6A2 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":301 720 text28 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":303 764 text28 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":6 765 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":14 765 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":15 768 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":16 76A text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":17 775 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":18 777 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":19 777 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":20 779 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":21 784 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":23 788 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":24 790 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":25 796 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":26 798 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":27 79A text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":28 7A3 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":26 7A7 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":31 7A8 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":32 7B1 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":33 7C1 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":34 7CF text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":36 7D0 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":37 7D9 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":39 7DD text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":40 7E0 text9 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":41 7EB text9 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":44 8DD text7 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":46 8E0 text7 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":47 8E3 text7 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":48 8E9 text7 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":68 8EA text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":70 8EA text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":72 8F2 text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":74 905 text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":75 92F text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":76 963 text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":77 98D text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":78 9E8 text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":79 9FD text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":81 A05 text31 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":480 A0E maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":482 A0E maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":483 A12 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":484 A16 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":485 A19 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":486 A1C maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":487 A20 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":488 A24 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":489 A27 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":490 A2A maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":491 A2D maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":494 A30 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":495 A32 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":496 A33 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":499 A34 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":500 A43 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":501 A48 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":502 A4D maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":503 A52 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":506 A57 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":507 A58 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":510 A59 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":511 A64 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":514 A6F maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":515 A74 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":516 A7D maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":519 A88 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":520 A93 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":523 A9E maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":526 AA4 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":529 AB3 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":534 AB3 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":535 AC5 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":539 ADF maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":540 AEA maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":543 AF5 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":544 AFA maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":545 B03 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":546 B0E maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":547 B1A maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":548 B25 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":549 B2E maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":550 B39 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":551 B45 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":553 B50 maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":529 B5E maintext CODE
-"R:\Note\Ultimo C no MPLAB\main.c":87 B5F text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":89 B5F text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":91 B67 text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":93 B7A text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":94 BA4 text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":95 BD8 text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":96 C02 text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":97 C0A text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":98 C34 text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":99 C8F text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":100 CA4 text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":102 CAC text32 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":323 CB5 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":326 CB5 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":328 CB7 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":330 CBF text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":332 CC8 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":333 CD3 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":336 CD4 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":338 CDC text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":339 CE5 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":343 CEB text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":345 CF3 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":346 CFC text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":350 D02 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":352 D0A text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":353 D13 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":357 D19 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":359 D21 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":360 D2A text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":361 D30 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":362 D41 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":364 D45 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":365 D46 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":366 D47 text22 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":368 D48 text22 CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1842 36 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1846 37 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1847 38 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1848 39 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1849 3A cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1850 3B cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1851 3C cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1852 3D cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1853 3E cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1854 3F cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1855 40 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1861 43 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1862 43 cinit CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1863 44 cinit CODE
+"R:\Note\Ultimo C no MPLAB\main.c":129 47 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":140 47 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":141 5C text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":144 64 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":150 66 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":151 6C text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":152 72 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":154 78 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":157 80 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":158 BC text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":160 D5 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":162 E8 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":164 FB text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":166 FF text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":167 100 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":168 101 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":171 102 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":172 11B text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":175 11F text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":178 13C text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":183 151 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":186 188 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":189 1B5 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":190 1BB text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":191 1C1 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":193 1D0 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":195 211 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":197 23A text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":201 24A text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":204 26F text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":191 29E text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":213 2B1 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":217 2DB text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":220 30C text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":223 339 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":224 33F text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":225 345 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":227 354 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":229 38F text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":231 3B8 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":235 3C8 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":238 3ED text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":225 41C text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":247 42F text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":251 444 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":255 47B text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":258 4A8 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":259 4AE text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":260 4B4 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":262 4C3 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":264 504 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":266 52D text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":270 53D text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":273 562 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":260 591 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":279 5A4 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":281 5B9 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":283 5C1 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":285 5EB text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":288 5F3 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":292 5FB text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":293 603 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":294 609 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":297 63A text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":300 673 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":304 68C text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":306 692 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":308 710 text29 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":310 754 text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":6 755 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":14 755 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":15 758 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":16 75A text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":17 765 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":18 767 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":19 767 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":20 769 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":21 774 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":23 778 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":24 780 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":25 786 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":26 788 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":27 78A text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":28 793 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":26 797 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":31 798 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":32 7A1 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":33 7B1 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":34 7BF text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":36 7C0 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":37 7C9 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":39 7CD text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":40 7D0 text9 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c":41 7DB text9 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":63 7E4 text26 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":67 7E4 text26 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":69 7E8 text26 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":74 7ED text26 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":76 7F4 text26 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":77 7F7 text26 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":78 7FB text26 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":79 7FC text26 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":82 7FD text26 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":15 8DE text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":43 8DE text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":45 8E2 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":46 8E4 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":47 8EA text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":48 8F1 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":49 8F8 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":52 8FC text3 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":68 903 text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":70 903 text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":72 90B text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":74 91E text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":75 948 text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":76 97C text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":77 9A6 text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":78 A01 text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":79 A16 text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":81 A1E text31 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":480 A27 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":482 A27 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":483 A2B maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":484 A2F maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":485 A32 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":486 A35 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":487 A39 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":488 A3D maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":489 A40 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":490 A43 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":491 A46 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":494 A49 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":495 A4B maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":496 A4C maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":499 A4D maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":500 A5C maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":501 A61 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":502 A66 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":503 A6B maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":506 A70 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":507 A71 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":510 A72 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":511 A7D maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":514 A88 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":515 A8D maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":516 A96 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":519 AA1 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":520 AAC maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":523 AB7 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":526 ABD maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":529 ACC maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":534 ACC maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":535 ADE maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":539 AF8 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":540 B03 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":543 B0E maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":544 B13 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":545 B1C maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":546 B27 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":547 B33 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":548 B3E maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":549 B47 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":550 B52 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":551 B5E maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":553 B69 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":529 B77 maintext CODE
+"R:\Note\Ultimo C no MPLAB\main.c":87 B78 text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":89 B78 text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":91 B80 text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":93 B93 text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":94 BBD text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":95 BF1 text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":96 C1B text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":97 C23 text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":98 C4D text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":99 CA8 text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":100 CBD text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":102 CC5 text32 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":330 CCE text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":333 CCE text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":335 CD0 text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":337 CD8 text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":339 CE1 text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":340 CEC text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":343 CED text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":345 CF5 text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":346 CFE text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":350 D04 text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":352 D0C text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":353 D15 text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":357 D1B text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":359 D23 text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":360 D2C text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":364 D32 text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":366 D3A text22 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":367 D43 text22 CODE
 "R:\Note\Ultimo C no MPLAB\main.c":371 D49 text22 CODE
 "R:\Note\Ultimo C no MPLAB\main.c":373 D51 text22 CODE
 "R:\Note\Ultimo C no MPLAB\main.c":374 D5A text22 CODE
@@ -427,162 +450,149 @@ $PIC16F877A.obj
 "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1533 FED text1 CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1483 FF8 text1 CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c":1547 FF9 text1 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":20 1039 text24 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":22 103A text24 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":23 103E text24 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":44 103F text27 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":46 1040 text27 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":47 1044 text27 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":48 1046 text27 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":20 1047 text10 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":22 104A text10 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":23 104E text10 CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1773 104F clrtext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1774 104F clrtext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1775 1050 clrtext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1776 1050 clrtext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1777 1051 clrtext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1778 1052 clrtext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1779 1053 clrtext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1780 1054 clrtext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1781 1055 clrtext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1782 1056 clrtext CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c":15 1057 text33 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c":17 1057 text33 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c":18 105E text33 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c":20 1060 text33 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":6 1061 text11 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":8 1061 text11 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":9 1064 text11 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":10 1065 text11 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":11 1066 text11 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":12 1067 text11 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":13 1068 text11 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":14 1069 text11 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":15 106A text11 CODE
-"R:\Note\Ultimo C no MPLAB\timers.c":16 106B text11 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c":8 106C text2 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c":14 106F text2 CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1807 107C inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1808 107C inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1809 107D inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1810 107E inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1811 107F inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1818 1080 inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1819 1080 inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1820 1083 inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1821 1084 inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1822 1085 inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1823 1086 inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1824 1087 inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1825 1088 inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1826 1089 inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1827 108A inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1828 108B inittext CODE
-"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1829 108C inittext CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":6 108D text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":9 108D text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":32 1090 text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":33 1091 text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":34 1092 text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":35 1093 text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":38 1094 text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":39 1097 text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":42 1098 text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":43 109B text21 CODE
-"R:\Note\Ultimo C no MPLAB\adc.c":44 109E text21 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c":28 109F text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c":30 109F text38 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":32 10B3 text20 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":34 10B6 text20 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":36 10B9 text20 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":39 10BF text20 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":41 10C0 text20 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":43 10C6 text20 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":44 10C9 text20 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":47 10CA text16 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":49 10CD text16 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":51 10D0 text16 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":53 10D6 text16 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":55 10D7 text16 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":57 10DD text16 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":58 10E0 text16 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":96 10E1 text30 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":98 10E1 text30 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":99 10EF text30 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":100 10FB text30 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":63 10FC text25 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":67 10FC text25 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":69 1100 text25 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":74 1105 text25 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":76 110C text25 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":77 110F text25 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":78 1113 text25 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":79 1114 text25 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":82 1115 text25 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":117 1117 text36 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":119 1117 text36 CODE
-"R:\Note\Ultimo C no MPLAB\main.c":122 112C text36 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":10 1135 text18 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":12 1138 text18 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":14 113B text18 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":16 1140 text18 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":20 1143 text18 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":24 114A text18 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":26 114B text18 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":28 1151 text18 CODE
-"R:\Note\Ultimo C no MPLAB\lcd.c":29 1154 text18 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":64 1155 text14 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":91 1155 text14 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":92 1165 text14 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":94 1175 text14 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":96 1176 text13 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":98 1176 text13 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":99 1186 text13 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":100 1196 text13 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":52 1197 text26 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":54 1197 text26 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":56 11A5 text26 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":57 11B5 text26 CODE
-"R:\Note\Ultimo C no MPLAB\usart.c":54 11B9 text26 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":15 11BA text23 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":43 11BA text23 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":45 11BC text23 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":46 11BE text23 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":47 11C4 text23 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":48 11CB text23 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":49 11D2 text23 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":52 11D6 text23 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":5 11DD text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":14 11DD text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":15 11E0 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":18 11E1 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":19 11E2 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":20 11E3 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":21 11E4 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":24 11E5 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":27 11E6 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":43 11EA text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":44 11ED text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":45 11EE text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":46 11EF text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":49 11F0 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":50 11F3 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":53 11F6 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":54 11F7 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":55 11F8 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":56 11F9 text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":59 11FA text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":60 11FD text12 CODE
-"R:\Note\Ultimo C no MPLAB\pwm.c":61 1200 text12 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":15 1201 text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":43 1201 text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":45 1205 text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":46 1207 text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":47 120D text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":48 1214 text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":49 121B text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":52 121F text3 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":20 1062 text25 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":22 1063 text25 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":23 1067 text25 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":44 1068 text28 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":46 1069 text28 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":47 106D text28 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":48 106F text28 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":20 1070 text10 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":22 1073 text10 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":23 1077 text10 CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1777 1078 clrtext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1778 1078 clrtext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1779 1079 clrtext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1780 1079 clrtext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1781 107A clrtext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1782 107B clrtext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1783 107C clrtext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1784 107D clrtext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1785 107E clrtext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1786 107F clrtext CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c":15 1080 text33 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c":17 1080 text33 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c":18 1087 text33 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c":20 1089 text33 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":6 1094 text11 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":8 1094 text11 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":9 1097 text11 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":10 1098 text11 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":11 1099 text11 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":12 109A text11 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":13 109B text11 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":14 109C text11 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":15 109D text11 CODE
+"R:\Note\Ultimo C no MPLAB\timers.c":16 109E text11 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":44 109F text7 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":46 10A2 text7 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":47 10A5 text7 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":48 10AB text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c":8 10AC text2 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c":14 10AF text2 CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1811 10BC inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1812 10BC inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1813 10BD inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1814 10BE inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1815 10BF inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1822 10C0 inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1823 10C0 inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1824 10C3 inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1825 10C4 inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1826 10C5 inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1827 10C6 inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1828 10C7 inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1829 10C8 inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1830 10C9 inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1831 10CA inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1832 10CB inittext CODE
+"R:\Note\Ultimo C no MPLAB\PIC16F877A.as":1833 10CC inittext CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":6 10CD text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":9 10CD text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":32 10D0 text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":33 10D1 text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":34 10D2 text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":35 10D3 text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":38 10D4 text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":39 10D7 text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":42 10D8 text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":43 10DB text21 CODE
+"R:\Note\Ultimo C no MPLAB\adc.c":44 10DE text21 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c":28 10DF text38 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c":30 10DF text38 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":32 10F3 text20 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":34 10F6 text20 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":36 10F9 text20 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":39 10FF text20 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":41 1100 text20 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":43 1106 text20 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":44 1109 text20 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":47 110A text16 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":49 110D text16 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":51 1110 text16 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":53 1116 text16 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":55 1117 text16 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":57 111D text16 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":58 1120 text16 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":96 1121 text30 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":98 1121 text30 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":99 112F text30 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":100 113B text30 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":117 113C text36 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":119 113C text36 CODE
+"R:\Note\Ultimo C no MPLAB\main.c":122 1151 text36 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":10 115A text18 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":12 115D text18 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":14 1160 text18 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":16 1165 text18 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":20 1168 text18 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":24 116F text18 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":26 1170 text18 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":28 1176 text18 CODE
+"R:\Note\Ultimo C no MPLAB\lcd.c":29 1179 text18 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":64 117A text14 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":91 117A text14 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":92 118A text14 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":94 119A text14 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":96 119B text13 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":98 119B text13 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":99 11AB text13 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":100 11BB text13 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":52 11BC text27 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":54 11BC text27 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":56 11CA text27 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":57 11DA text27 CODE
+"R:\Note\Ultimo C no MPLAB\usart.c":54 11DE text27 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":15 11DF text23 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":43 11DF text23 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":45 11E1 text23 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":46 11E3 text23 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":47 11E9 text23 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":48 11F0 text23 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":49 11F7 text23 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c":52 11FB text23 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":5 1202 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":14 1202 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":15 1205 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":18 1206 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":19 1207 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":20 1208 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":21 1209 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":24 120A text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":27 120B text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":43 120F text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":44 1212 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":45 1213 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":46 1214 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":49 1215 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":50 1218 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":53 121B text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":54 121C text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":55 121D text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":56 121E text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":59 121F text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":60 1222 text12 CODE
+"R:\Note\Ultimo C no MPLAB\pwm.c":61 1225 text12 CODE
 "R:\Note\Ultimo C no MPLAB\lcd.c":71 1226 text19 CODE
 "R:\Note\Ultimo C no MPLAB\lcd.c":73 1226 text19 CODE
 "R:\Note\Ultimo C no MPLAB\lcd.c":75 122C text19 CODE
@@ -613,21 +623,21 @@ $PIC16F877A.obj
 "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":22 12D5 text4 CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":23 12DC text4 CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c":25 12E0 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":6 12E7 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":14 12E7 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":15 12E9 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":16 12ED text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 12EF text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":18 12F1 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":19 12F8 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 12FC text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":22 12FD text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":23 1304 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":24 130C text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":25 1312 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":27 1313 text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":28 131A text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":30 131E text29 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":6 12E7 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":14 12E7 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":15 12E9 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":16 12ED text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 12EF text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":18 12F1 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":19 12F8 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":17 12FC text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":22 12FD text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":23 1304 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":24 130C text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":25 1312 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":27 1313 text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":28 131A text24 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":30 131E text24 CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":6 1325 text5 CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":14 1325 text5 CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c":15 1329 text5 CODE
@@ -849,32 +859,32 @@ $startup.obj
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-___lwdiv@dividend A2 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-___aldiv@counter A9 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-sprintf@f AE 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-_x D7 0 BANK1 1 bssBANK1 PIC16F877A.obj
-_y DA 0 BANK1 1 bssBANK1 PIC16F877A.obj
-___lwdiv@counter A7 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___lwdiv@dividend C5 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___aldiv@counter CC 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+sprintf@f D1 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+_x B5 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_y B8 0 BANK1 1 bssBANK1 PIC16F877A.obj
+___lwdiv@counter CA 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 ___lwtoft@c 78 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-__end_of___ftneg 20C2 0 CODE 0 text33 PIC16F877A.obj
-_tf E6 0 BANK1 1 dataBANK1 PIC16F877A.obj
+__end_of___ftneg 2114 0 CODE 0 text33 PIC16F877A.obj
+_tf E8 0 BANK1 1 dataBANK1 PIC16F877A.obj
 _PR2 92 0 ABS 0 - PIC16F877A.obj
 __S0 2008 0 ABS 0 - -
 __S1 1B1 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_ISR 196A 0 CODE 0 text22 PIC16F877A.obj
+_ISR 199C 0 CODE 0 text22 PIC16F877A.obj
 __Hintentry 24 0 CODE 0 intentry -
 __Lintentry 8 0 CODE 0 intentry -
 __size_of_USART_WriteString 0 0 ABS 0 - PIC16F877A.obj
 __pintentry 8 0 CODE 0 intentry PIC16F877A.obj
 ___ftadd@f1 23 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_rpm E1 0 BANK1 1 bssBANK1 PIC16F877A.obj
-_sum D1 0 BANK1 1 bssBANK1 PIC16F877A.obj
-_pwm EB 0 BANK1 1 dataBANK1 PIC16F877A.obj
-_contagens_tm0 DD 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_rpm C1 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_sum AF 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_pwm 1AF 0 BANK3 1 dataBANK3 PIC16F877A.obj
+_contagens_tm0 BD 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __CFG_PWRTE$ON 0 0 ABS 0 - PIC16F877A.obj
-__end_ofi1_TIMER0_Set 207E 0 CODE 0 text24 PIC16F877A.obj
+__end_ofi1_TIMER0_Set 20D0 0 CODE 0 text25 PIC16F877A.obj
 _TMR0 1 0 ABS 0 - PIC16F877A.obj
 _TMR1 E 0 ABS 0 - PIC16F877A.obj
 ___ftneg@f1 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
@@ -882,7 +892,7 @@ __end_of_LCD_Init 29C0 0 CODE 0 text17 PIC16F877A.obj
 _OERR C1 0 ABS 0 - PIC16F877A.obj
 ___ftadd@f2 26 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trapmf@ua 4F 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_main 141C 0 CODE 0 maintext PIC16F877A.obj
+_main 144E 0 CODE 0 maintext PIC16F877A.obj
 ___sp 0 0 STACK 2 stack startup.obj
 btemp 7E 0 ABS 0 - PIC16F877A.obj
 ltemp 7E 0 ABS 0 - PIC16F877A.obj
@@ -892,7 +902,7 @@ start 24 0 CODE 0 init startup.obj
 ?___ftadd 23 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___fttol@f1 30 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___ftmul@f1 78 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-__end_of___aldiv FE8 0 CODE 0 text9 PIC16F877A.obj
+__end_of___aldiv FC8 0 CODE 0 text9 PIC16F877A.obj
 ___fttol@lval 39 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___ftdiv@f1 33 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 _TMR1H F 0 ABS 0 - PIC16F877A.obj
@@ -937,26 +947,26 @@ __Lconfig 400E 0 CONFIG 0 config -
 ?___ftneg 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___ftpack 281A 0 CODE 0 text41 PIC16F877A.obj
 __end_of__stringtab 1020 0 STRING 0 strings PIC16F877A.obj
-?___lwmod A8 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+?___lwmod CB 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 ___ftdiv@f3 3B 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ?_max_val 3C 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-__end_ofi1_PWM_DutyCycle2 21F8 0 CODE 0 text30 PIC16F877A.obj
+__end_ofi1_PWM_DutyCycle2 2278 0 CODE 0 text30 PIC16F877A.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_trimf 11D4 0 CODE 0 text31 PIC16F877A.obj
-_temp_lida 199 0 BANK3 1 bssBANK3 PIC16F877A.obj
+_trimf 1206 0 CODE 0 text31 PIC16F877A.obj
+_temp_lida 197 0 BANK3 1 bssBANK3 PIC16F877A.obj
 __end_of__stringdata 11B6 0 STRING 0 strings PIC16F877A.obj
 ___ftge@ff1 30 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 _derro 190 0 BANK3 1 bssBANK3 PIC16F877A.obj
-?_sprintf AE 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-__end_of_USART_WriteChar 11D4 0 CODE 0 text7 PIC16F877A.obj
+?_sprintf D1 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+__end_of_USART_WriteChar 2158 0 CODE 0 text7 PIC16F877A.obj
 ___ftmul@cntr 28 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __size_of___ftadd 0 0 ABS 0 - PIC16F877A.obj
-_ADC_Init 211A 0 CODE 0 text21 PIC16F877A.obj
+_ADC_Init 219A 0 CODE 0 text21 PIC16F877A.obj
 _LCD_Init 28EA 0 CODE 0 text17 PIC16F877A.obj
-_Fuzzy 72 0 CODE 0 text28 PIC16F877A.obj
+_Fuzzy 8E 0 CODE 0 text29 PIC16F877A.obj
 __end_of_ISR 1C92 0 CODE 0 text22 PIC16F877A.obj
-_PWM_Init 23BA 0 CODE 0 text12 PIC16F877A.obj
+_PWM_Init 2404 0 CODE 0 text12 PIC16F877A.obj
 ___ftdiv@cntr 3A 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 Fuzzy@tip 54 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __Hfunctab 0 0 CODE 0 functab -
@@ -972,19 +982,19 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 _PIR1bits C 0 ABS 0 - PIC16F877A.obj
 _PIR2bits D 0 ABS 0 - PIC16F877A.obj
-i1___wmul 2374 0 CODE 0 text23 PIC16F877A.obj
+i1___wmul 23BE 0 CODE 0 text23 PIC16F877A.obj
 ?___ftmul 78 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-sprintf@ap B4 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+sprintf@ap D7 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 _SSPADD 93 0 ABS 0 - PIC16F877A.obj
 ___int_sp 0 0 STACK 2 stack startup.obj
-?___aldiv A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+?___aldiv C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 _CCPR1L 15 0 ABS 0 - PIC16F877A.obj
 _CCPR2L 1B 0 ABS 0 - PIC16F877A.obj
 _EEDATA 10C 0 ABS 0 - PIC16F877A.obj
 ?___ftdiv 30 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-__end_of_trimf 141C 0 CODE 0 text31 PIC16F877A.obj
-?___lwdiv A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-___lwtoft 213E 0 CODE 0 text38 PIC16F877A.obj
+__end_of_trimf 144E 0 CODE 0 text31 PIC16F877A.obj
+?___lwdiv C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___lwtoft 21BE 0 CODE 0 text38 PIC16F877A.obj
 _SSPBUF 13 0 ABS 0 - PIC16F877A.obj
 _ADRESH 1E 0 ABS 0 - PIC16F877A.obj
 __Habs1 0 0 ABS 0 abs1 -
@@ -993,7 +1003,7 @@ _ADRESL 9E 0 ABS 0 - PIC16F877A.obj
 __size_of_LCD_Clear 0 0 ABS 0 - PIC16F877A.obj
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Lsfr0 0 0 ABS 0 sfr0 -
-_setpoint E3 0 BANK1 1 dataBANK1 PIC16F877A.obj
+_setpoint E5 0 BANK1 1 dataBANK1 PIC16F877A.obj
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -1002,27 +1012,27 @@ __Hsfr3 0 0 ABS 0 sfr3 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 ___ftmul@f3_as_product 25 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 Fuzzy@mantem 5D 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-__end_of_PWM_DutyCycle1 22EC 0 CODE 0 text14 PIC16F877A.obj
-__end_of_PWM_DutyCycle2 232E 0 CODE 0 text13 PIC16F877A.obj
+__end_of_PWM_DutyCycle1 2336 0 CODE 0 text14 PIC16F877A.obj
+__end_of_PWM_DutyCycle2 2378 0 CODE 0 text13 PIC16F877A.obj
 __end_of___ftpack 28EA 0 CODE 0 text41 PIC16F877A.obj
 ?___ftpack 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-LCD_WriteData@Byte A1 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+LCD_WriteData@Byte C4 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 trimf@a 43 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_TIMER0_Init 20C2 0 CODE 0 text11 PIC16F877A.obj
+_TIMER0_Init 2128 0 CODE 0 text11 PIC16F877A.obj
 trimf@b 46 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_ativa_fan C2 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_ativa_fan A0 0 BANK1 1 bssBANK1 PIC16F877A.obj
 trimf@c 49 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 Fuzzy@a 57 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 _deltaV 6D 0 BANK0 1 bssBANK0 PIC16F877A.obj
 __size_of___ftpack 0 0 ABS 0 - PIC16F877A.obj
 __size_ofi1_USART_WriteChar 0 0 ABS 0 - PIC16F877A.obj
-__end_ofi1___lwdiv 264A 0 CODE 0 text29 PIC16F877A.obj
+__end_ofi1___lwdiv 264A 0 CODE 0 text24 PIC16F877A.obj
 __end_of_dpowers 1034 0 STRING 0 strings PIC16F877A.obj
 __size_ofi1_TIMER0_Set 0 0 ABS 0 - PIC16F877A.obj
 __size_of___fttol 0 0 ABS 0 - PIC16F877A.obj
 _LCD_Clear 244C 0 CODE 0 text19 PIC16F877A.obj
 ___ftadd@sign 2D 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-init_fetch0 20F8 0 CODE 0 inittext PIC16F877A.obj
+init_fetch0 2178 0 CODE 0 inittext PIC16F877A.obj
 i1USART_WriteChar@byte 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
@@ -1030,42 +1040,42 @@ trimf@x 40 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___ftge 275C 0 CODE 0 text37 PIC16F877A.obj
 stackhi 0 0 ABS 0 - startup.obj
 ?_trimf 40 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-sprintf@sp BD 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-_trapmf 16BE 0 CODE 0 text32 PIC16F877A.obj
+sprintf@sp E0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+_trapmf 16F0 0 CODE 0 text32 PIC16F877A.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 i1___wmul@product 7C 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 stacklo 0 0 ABS 0 - startup.obj
 saved_w 7E 0 ABS 0 - PIC16F877A.obj
-_fitemp C5 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_fitemp A3 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __Hinit 24 0 CODE 0 init -
 __Linit 24 0 CODE 0 init -
-___wmul 2402 0 CODE 0 text3 PIC16F877A.obj
-__end_of_main 16BE 0 CODE 0 maintext PIC16F877A.obj
+___wmul 11BC 0 CODE 0 text3 PIC16F877A.obj
+__end_of_main 16F0 0 CODE 0 maintext PIC16F877A.obj
 __size_of___lwtoft 0 0 ABS 0 - PIC16F877A.obj
 __Htext 0 0 ABS 0 text -
 __Ltext 0 0 ABS 0 text -
-_pulsos DF 0 BANK1 1 bssBANK1 PIC16F877A.obj
-_status 197 0 BANK3 1 bssBANK3 PIC16F877A.obj
+_pulsos BF 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_status 195 0 BANK3 1 bssBANK3 PIC16F877A.obj
 USART_ReceiveChar@byte 74 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-sprintf@width BB 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-___wmul@multiplier A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-USART_WriteChar@byte A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-_total_area D4 0 BANK1 1 bssBANK1 PIC16F877A.obj
+sprintf@width DE 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___wmul@multiplier C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+USART_WriteChar@byte C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+_total_area B2 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __size_of___ftneg 0 0 ABS 0 - PIC16F877A.obj
-_PWM_DutyCycle1 22AA 0 CODE 0 text14 PIC16F877A.obj
-__end_of___lwtoft 2166 0 CODE 0 text38 PIC16F877A.obj
+_PWM_DutyCycle1 22F4 0 CODE 0 text14 PIC16F877A.obj
+__end_of___lwtoft 21E6 0 CODE 0 text38 PIC16F877A.obj
 ___ftmul@sign 29 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-end_of_initialization 6A 0 CODE 0 cinit PIC16F877A.obj
-___aldiv@sign AA 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+end_of_initialization 86 0 CODE 0 cinit PIC16F877A.obj
+___aldiv@sign CD 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 ___ftdiv@sign 3F 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-LCD_Cursor@Row A2 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+LCD_Cursor@Row C5 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __size_of_ISR 0 0 ABS 0 - PIC16F877A.obj
 __size_of_LCD_WriteCmd 0 0 ABS 0 - PIC16F877A.obj
 i1___lwdiv@dividend 72 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __size_of_LCD_WriteString 0 0 ABS 0 - PIC16F877A.obj
-___wmul@multiplicand A2 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___wmul@multiplicand C5 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 _SSPCON2 91 0 ABS 0 - PIC16F877A.obj
 __stringtab 1000 0 STRING 0 strings PIC16F877A.obj
 Fuzzy@deltaRpm 66 0 BANK0 1 cstackBANK0 PIC16F877A.obj
@@ -1074,7 +1084,7 @@ __HdataBANK1 0 0 ABS 0 dataBANK1 -
 __LdataBANK1 0 0 ABS 0 dataBANK1 -
 __size_of_PWM_Init 0 0 ABS 0 - PIC16F877A.obj
 __size_of_ADC_Init 0 0 ABS 0 - PIC16F877A.obj
-__pdataBANK1 E3 0 BANK1 1 dataBANK1 PIC16F877A.obj
+__pdataBANK1 E5 0 BANK1 1 dataBANK1 PIC16F877A.obj
 ?i1___wmul 78 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 _RCSTAbits 18 0 ABS 0 - PIC16F877A.obj
 __end_of___ftadd 3000 0 CODE 0 text35 PIC16F877A.obj
@@ -1086,23 +1096,24 @@ _T2CONbits 12 0 ABS 0 - PIC16F877A.obj
 __Lstrings 0 0 ABS 0 strings -
 _PORTEbits 9 0 ABS 0 - PIC16F877A.obj
 __pstrings 1000 0 STRING 0 strings PIC16F877A.obj
-PWM_DutyCycle1@valor A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-i1___lwdiv 25CE 0 CODE 0 text29 PIC16F877A.obj
+PWM_DutyCycle1@valor C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+i1___lwdiv 25CE 0 CODE 0 text24 PIC16F877A.obj
 ?___lwtoft 78 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __size_of_trimf 0 0 ABS 0 - PIC16F877A.obj
 __end_of_LCD_WriteString 2500 0 CODE 0 text15 PIC16F877A.obj
-__end_of_trapmf 196A 0 CODE 0 text32 PIC16F877A.obj
-__end_ofi1___wmul 23BA 0 CODE 0 text23 PIC16F877A.obj
+__end_of_trapmf 199C 0 CODE 0 text32 PIC16F877A.obj
+__end_ofi1___wmul 2404 0 CODE 0 text23 PIC16F877A.obj
 _CCP1CON 17 0 ABS 0 - PIC16F877A.obj
 _CCP2CON 1D 0 ABS 0 - PIC16F877A.obj
-__end_of_USART_ReceiveChar 222E 0 CODE 0 text25 PIC16F877A.obj
+__end_of_USART_ReceiveChar FFE 0 CODE 0 text26 PIC16F877A.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Lbank0 0 0 ABS 0 bank0 -
+Fuzzy@a_242 59 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __Hbank1 0 0 ABS 0 bank1 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Lbank2 0 0 ABS 0 bank2 -
-_ADCResult 193 0 BANK3 1 bssBANK3 PIC16F877A.obj
+_ADCResult BB 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __Hbank3 0 0 ABS 0 bank3 -
 __Lbank3 0 0 ABS 0 bank3 -
 ___latbits 2 0 ABS 0 - PIC16F877A.obj
@@ -1111,75 +1122,77 @@ __size_of_LCD_Cursor 0 0 ABS 0 - PIC16F877A.obj
 ___ftdiv@exp 3E 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __Lpowerup 0 0 CODE 0 powerup -
-_display_rpm 1A7 0 BANK3 1 bssBANK3 PIC16F877A.obj
+Fuzzy@a_243 5B 0 BANK0 1 cstackBANK0 PIC16F877A.obj
+_display_rpm 1A5 0 BANK3 1 bssBANK3 PIC16F877A.obj
 _SSPCON2bits 91 0 ABS 0 - PIC16F877A.obj
 i1TIMER0_Set@contagens 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __ptext1 1C92 0 CODE 0 text1 PIC16F877A.obj
-__ptext2 20D8 0 CODE 0 text2 PIC16F877A.obj
-Fuzzy@a_234 59 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-__ptext3 2402 0 CODE 0 text3 PIC16F877A.obj
+__ptext2 2158 0 CODE 0 text2 PIC16F877A.obj
+__HdataBANK3 0 0 ABS 0 dataBANK3 -
+__LdataBANK3 0 0 ABS 0 dataBANK3 -
+__ptext3 11BC 0 CODE 0 text3 PIC16F877A.obj
+__pdataBANK3 1AF 0 BANK3 1 dataBANK3 PIC16F877A.obj
 __ptext4 2562 0 CODE 0 text4 PIC16F877A.obj
 __ptext5 264A 0 CODE 0 text5 PIC16F877A.obj
-_TIMER0_Set 208E 0 CODE 0 text10 PIC16F877A.obj
+_TIMER0_Set 20E0 0 CODE 0 text10 PIC16F877A.obj
 __ptext6 2500 0 CODE 0 text6 PIC16F877A.obj
-__ptext7 11BA 0 CODE 0 text7 PIC16F877A.obj
+__ptext7 213E 0 CODE 0 text7 PIC16F877A.obj
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __ptext8 26CA 0 CODE 0 text8 PIC16F877A.obj
-__ptext9 ECA 0 CODE 0 text9 PIC16F877A.obj
-__pcstackBANK1 A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+__ptext9 EAA 0 CODE 0 text9 PIC16F877A.obj
+__pcstackBANK1 C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
-Fuzzy@a_235 5B 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __size_of_LCD_WriteData 0 0 ABS 0 - PIC16F877A.obj
 i1PWM_DutyCycle2@valor 3E 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trapmf@a 43 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trapmf@b 46 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trapmf@c 49 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 trapmf@d 4C 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_USART_WriteChar 11BA 0 CODE 0 text7 PIC16F877A.obj
-__end_of__initialization 6A 0 CODE 0 cinit PIC16F877A.obj
+_USART_WriteChar 213E 0 CODE 0 text7 PIC16F877A.obj
+__end_of__initialization 86 0 CODE 0 cinit PIC16F877A.obj
 _CCP1CONbits 17 0 ABS 0 - PIC16F877A.obj
 _CCP2CONbits 1D 0 ABS 0 - PIC16F877A.obj
 __end_of___lwdiv 26CA 0 CODE 0 text5 PIC16F877A.obj
-_contador_rb6 195 0 BANK3 1 bssBANK3 PIC16F877A.obj
+_contador_rb6 193 0 BANK3 1 bssBANK3 PIC16F877A.obj
 __size_of_USART_Init 0 0 ABS 0 - PIC16F877A.obj
 _SSPSTATbits 94 0 ABS 0 - PIC16F877A.obj
 trimf@ua 4C 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___ftadd 2DEE 0 CODE 0 text35 PIC16F877A.obj
-USART_WriteString@str A1 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+USART_WriteString@str C4 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 trapmf@x 40 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_LCD_WriteData 2194 0 CODE 0 text16 PIC16F877A.obj
+_LCD_WriteData 2214 0 CODE 0 text16 PIC16F877A.obj
 __Hidloc 0 0 IDLOC 0 idloc -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
 __Lstack 0 0 STACK 2 stack -
-___ftneg 20AE 0 CODE 0 text33 PIC16F877A.obj
-_display_pwm 19D 0 BANK3 1 bssBANK3 PIC16F877A.obj
-PWM_DutyCycle2@valor A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___ftneg 2100 0 CODE 0 text33 PIC16F877A.obj
+_display_pwm 19B 0 BANK3 1 bssBANK3 PIC16F877A.obj
+PWM_DutyCycle2@valor C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 ?_trapmf 40 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___lwmod 2562 0 CODE 0 text4 PIC16F877A.obj
 __Hspace_0 2008 0 ABS 0 - -
 __Lspace_0 0 0 ABS 0 - -
-_isdigit$1449 A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-_max_val 222E 0 CODE 0 text36 PIC16F877A.obj
+_isdigit$1449 C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+_max_val 2278 0 CODE 0 text36 PIC16F877A.obj
 ___ftpack@sign 74 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 _sprintf 1C92 0 CODE 0 text1 PIC16F877A.obj
 __Hspace_1 1B1 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 ___ftadd@exp1 2F 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __end_of_LCD_Clear 249E 0 CODE 0 text19 PIC16F877A.obj
-i1_USART_WriteString 232E 0 CODE 0 text26 PIC16F877A.obj
+i1_USART_WriteString 2378 0 CODE 0 text27 PIC16F877A.obj
 __Hspace_2 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 ___fttol 29C0 0 CODE 0 text39 PIC16F877A.obj
-?___wmul A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-_isdigit 20D8 0 CODE 0 text2 PIC16F877A.obj
-__Hcinit 72 0 CODE 0 cinit -
+?___wmul C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+_isdigit 2158 0 CODE 0 text2 PIC16F877A.obj
+__Hcinit 8E 0 CODE 0 cinit -
 ___ftmul 2C4C 0 CODE 0 text40 PIC16F877A.obj
 __Lcinit 2A 0 CODE 0 cinit -
 __CFG_FOSC$HS 0 0 ABS 0 - PIC16F877A.obj
-___aldiv ECA 0 CODE 0 text9 PIC16F877A.obj
+___aldiv EAA 0 CODE 0 text9 PIC16F877A.obj
 _LCD_WriteString 249E 0 CODE 0 text15 PIC16F877A.obj
 ___ftdiv 2ADC 0 CODE 0 text34 PIC16F877A.obj
 _USART_WriteString 2500 0 CODE 0 text6 PIC16F877A.obj
@@ -1189,145 +1202,148 @@ __Lspace_3 0 0 ABS 0 - -
 __size_of_main 0 0 ABS 0 - PIC16F877A.obj
 _dpowers 1020 0 STRING 0 strings PIC16F877A.obj
 __size_of_USART_WriteChar 0 0 ABS 0 - PIC16F877A.obj
-__end_of_max_val 226A 0 CODE 0 text36 PIC16F877A.obj
+__end_of_max_val 22B4 0 CODE 0 text36 PIC16F877A.obj
 Fuzzy@freio 52 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 ___fttol@exp1 3D 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __size_of___ftdiv 0 0 ABS 0 - PIC16F877A.obj
-__end_of_LCD_Cursor 22AA 0 CODE 0 text18 PIC16F877A.obj
-__end_of_isdigit 20F8 0 CODE 0 text2 PIC16F877A.obj
+__end_of_LCD_Cursor 22F4 0 CODE 0 text18 PIC16F877A.obj
+__end_of_isdigit 2178 0 CODE 0 text2 PIC16F877A.obj
 __size_of_LCD_Init 0 0 ABS 0 - PIC16F877A.obj
 __end_of_sprintf 2000 0 CODE 0 text1 PIC16F877A.obj
 __size_of_max_val 0 0 ABS 0 - PIC16F877A.obj
 i1___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 _USART_Init 26CA 0 CODE 0 text8 PIC16F877A.obj
-clear_ram0 209E 0 CODE 0 clrtext PIC16F877A.obj
+clear_ram0 20F0 0 CODE 0 clrtext PIC16F877A.obj
 ___ftpack@arg 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-_fop_rule1 C8 0 BANK1 1 bssBANK1 PIC16F877A.obj
-_PWM_DutyCycle2 22EC 0 CODE 0 text13 PIC16F877A.obj
+_fop_rule1 A6 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_PWM_DutyCycle2 2336 0 CODE 0 text13 PIC16F877A.obj
 __size_of___lwdiv 0 0 ABS 0 - PIC16F877A.obj
 ___ftadd@exp2 2E 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __pbssBANK0 6D 0 BANK0 1 bssBANK0 PIC16F877A.obj
-_fop_rule2 CB 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_fop_rule2 A9 0 BANK1 1 bssBANK1 PIC16F877A.obj
 __size_of_isdigit 0 0 ABS 0 - PIC16F877A.obj
-_fop_rule3 CE 0 BANK1 1 bssBANK1 PIC16F877A.obj
-sprintf@flag BA 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+_fop_rule3 AC 0 BANK1 1 bssBANK1 PIC16F877A.obj
+sprintf@flag DD 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
-_tempo_rb6 19B 0 BANK3 1 bssBANK3 PIC16F877A.obj
-__pbssBANK1 C2 0 BANK1 1 bssBANK1 PIC16F877A.obj
+_tempo_rb6 199 0 BANK3 1 bssBANK3 PIC16F877A.obj
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 PIC16F877A.obj
 _setpointUI ED 0 BANK1 1 dataBANK1 PIC16F877A.obj
 i1___wmul@multiplier 78 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-__ptext10 208E 0 CODE 0 text10 PIC16F877A.obj
-_pas_cooler E9 0 BANK1 1 dataBANK1 PIC16F877A.obj
-__ptext20 2166 0 CODE 0 text20 PIC16F877A.obj
-__ptext11 20C2 0 CODE 0 text11 PIC16F877A.obj
-__ptext30 21C2 0 CODE 0 text30 PIC16F877A.obj
-__ptext21 211A 0 CODE 0 text21 PIC16F877A.obj
+__ptext10 20E0 0 CODE 0 text10 PIC16F877A.obj
+_pas_cooler EB 0 BANK1 1 dataBANK1 PIC16F877A.obj
+__ptext20 21E6 0 CODE 0 text20 PIC16F877A.obj
+__ptext11 2128 0 CODE 0 text11 PIC16F877A.obj
+__ptext30 2242 0 CODE 0 text30 PIC16F877A.obj
+__ptext21 219A 0 CODE 0 text21 PIC16F877A.obj
 __ptext40 2C4C 0 CODE 0 text40 PIC16F877A.obj
-__ptext12 23BA 0 CODE 0 text12 PIC16F877A.obj
-__ptext31 11D4 0 CODE 0 text31 PIC16F877A.obj
-__ptext22 196A 0 CODE 0 text22 PIC16F877A.obj
+__ptext12 2404 0 CODE 0 text12 PIC16F877A.obj
+__ptext31 1206 0 CODE 0 text31 PIC16F877A.obj
+__ptext22 199C 0 CODE 0 text22 PIC16F877A.obj
 __ptext41 281A 0 CODE 0 text41 PIC16F877A.obj
-__ptext13 22EC 0 CODE 0 text13 PIC16F877A.obj
-__ptext32 16BE 0 CODE 0 text32 PIC16F877A.obj
+__ptext13 2336 0 CODE 0 text13 PIC16F877A.obj
+__ptext32 16F0 0 CODE 0 text32 PIC16F877A.obj
 _ADCON0bits 1F 0 ABS 0 - PIC16F877A.obj
 _ADCON1bits 9F 0 ABS 0 - PIC16F877A.obj
-__ptext23 2374 0 CODE 0 text23 PIC16F877A.obj
+__ptext23 23BE 0 CODE 0 text23 PIC16F877A.obj
 _EECON1bits 18C 0 ABS 0 - PIC16F877A.obj
-sprintf@prec B5 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+sprintf@prec D8 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __HidataBANK1 0 0 ABS 0 idataBANK1 -
 __LidataBANK1 0 0 ABS 0 idataBANK1 -
-__ptext14 22AA 0 CODE 0 text14 PIC16F877A.obj
-__ptext33 20AE 0 CODE 0 text33 PIC16F877A.obj
+__ptext14 22F4 0 CODE 0 text14 PIC16F877A.obj
+__ptext33 2100 0 CODE 0 text33 PIC16F877A.obj
 __size_ofi1_PWM_DutyCycle2 0 0 ABS 0 - PIC16F877A.obj
-__pidataBANK1 FE8 0 CODE 0 idataBANK1 PIC16F877A.obj
-__ptext24 2072 0 CODE 0 text24 PIC16F877A.obj
+__pidataBANK1 2114 0 CODE 0 idataBANK1 PIC16F877A.obj
+__ptext24 25CE 0 CODE 0 text24 PIC16F877A.obj
 __ptext15 249E 0 CODE 0 text15 PIC16F877A.obj
 __ptext34 2ADC 0 CODE 0 text34 PIC16F877A.obj
-__ptext25 21F8 0 CODE 0 text25 PIC16F877A.obj
-__ptext16 2194 0 CODE 0 text16 PIC16F877A.obj
+__ptext25 20C4 0 CODE 0 text25 PIC16F877A.obj
+__ptext16 2214 0 CODE 0 text16 PIC16F877A.obj
 __ptext35 2DEE 0 CODE 0 text35 PIC16F877A.obj
 __HbssBANK3 0 0 ABS 0 bssBANK3 -
-__ptext26 232E 0 CODE 0 text26 PIC16F877A.obj
+__ptext26 FC8 0 CODE 0 text26 PIC16F877A.obj
 __LbssBANK3 0 0 ABS 0 bssBANK3 -
 __CFG_BOREN$OFF 0 0 ABS 0 - PIC16F877A.obj
 __ptext17 28EA 0 CODE 0 text17 PIC16F877A.obj
-__ptext36 222E 0 CODE 0 text36 PIC16F877A.obj
+__ptext36 2278 0 CODE 0 text36 PIC16F877A.obj
 __pbssBANK3 190 0 BANK3 1 bssBANK3 PIC16F877A.obj
 __end_of___lwmod 25CE 0 CODE 0 text4 PIC16F877A.obj
-__ptext27 207E 0 CODE 0 text27 PIC16F877A.obj
-___lwmod@divisor A8 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-__ptext18 226A 0 CODE 0 text18 PIC16F877A.obj
+__ptext27 2378 0 CODE 0 text27 PIC16F877A.obj
+___lwmod@divisor CB 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+__ptext18 22B4 0 CODE 0 text18 PIC16F877A.obj
 __ptext37 275C 0 CODE 0 text37 PIC16F877A.obj
-__ptext28 72 0 CODE 0 text28 PIC16F877A.obj
+__ptext28 20D0 0 CODE 0 text28 PIC16F877A.obj
 ___fttol@sign1 38 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __ptext19 244C 0 CODE 0 text19 PIC16F877A.obj
-__ptext38 213E 0 CODE 0 text38 PIC16F877A.obj
-__ptext29 25CE 0 CODE 0 text29 PIC16F877A.obj
+__ptext38 21BE 0 CODE 0 text38 PIC16F877A.obj
+__ptext29 8E 0 CODE 0 text29 PIC16F877A.obj
 __ptext39 29C0 0 CODE 0 text39 PIC16F877A.obj
 _INTCONbits B 0 ABS 0 - PIC16F877A.obj
 _SSPCONbits 14 0 ABS 0 - PIC16F877A.obj
-__end_ofi1_USART_WriteString 2374 0 CODE 0 text26 PIC16F877A.obj
+__end_ofi1_USART_WriteString 23BE 0 CODE 0 text27 PIC16F877A.obj
 __Hend_init 2A 0 CODE 0 end_init -
 __Lend_init 24 0 CODE 0 end_init -
-___aldiv@divisor A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___aldiv@divisor C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 ___ftpack@exp 73 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-___lwdiv@divisor A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-__end_of_TIMER0_Set 209E 0 CODE 0 text10 PIC16F877A.obj
+___lwdiv@divisor C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+__end_of_TIMER0_Set 20F0 0 CODE 0 text10 PIC16F877A.obj
 __size_of_Fuzzy 0 0 ABS 0 - PIC16F877A.obj
-LCD_WriteCmd@Byte A1 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+LCD_WriteCmd@Byte C4 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __end_of___ftmul 2DEE 0 CODE 0 text40 PIC16F877A.obj
 ?i1___lwdiv 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-__end_of_TIMER0_Init 20D8 0 CODE 0 text11 PIC16F877A.obj
-LCD_Cursor@Col A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+__end_of_TIMER0_Init 213E 0 CODE 0 text11 PIC16F877A.obj
+LCD_Cursor@Col C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 i1___wmul@multiplicand 7A 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 __size_of___wmul 0 0 ABS 0 - PIC16F877A.obj
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-i1_USART_WriteChar 207E 0 CODE 0 text27 PIC16F877A.obj
-i1_TIMER0_Set 2072 0 CODE 0 text24 PIC16F877A.obj
+i1_USART_WriteChar 20D0 0 CODE 0 text28 PIC16F877A.obj
+i1_TIMER0_Set 20C4 0 CODE 0 text25 PIC16F877A.obj
 __size_of_trapmf 0 0 ABS 0 - PIC16F877A.obj
 __stringdata 1034 0 STRING 0 strings PIC16F877A.obj
 __size_of___aldiv 0 0 ABS 0 - PIC16F877A.obj
-init_ram0 2100 0 CODE 0 inittext PIC16F877A.obj
-_LCD_Cursor 226A 0 CODE 0 text18 PIC16F877A.obj
+init_ram0 2180 0 CODE 0 inittext PIC16F877A.obj
+_LCD_Cursor 22B4 0 CODE 0 text18 PIC16F877A.obj
 __size_ofi1___wmul 0 0 ABS 0 - PIC16F877A.obj
-USART_Init@BaudRate AF 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+USART_Init@BaudRate D2 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 intlevel0 0 0 CODE 0 functab startup.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - PIC16F877A.obj
 __size_of_TIMER0_Set 0 0 ABS 0 - PIC16F877A.obj
 intlevel1 0 0 CODE 0 functab startup.obj
 intlevel2 0 0 CODE 0 functab startup.obj
-LCD_WriteString@Str A2 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-i1_PWM_DutyCycle2 21C2 0 CODE 0 text30 PIC16F877A.obj
+LCD_WriteString@Str C5 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+i1_PWM_DutyCycle2 2242 0 CODE 0 text30 PIC16F877A.obj
 intlevel3 0 0 CODE 0 functab startup.obj
 __size_of_PWM_DutyCycle1 0 0 ABS 0 - PIC16F877A.obj
 intlevel4 0 0 CODE 0 functab startup.obj
 __size_of_PWM_DutyCycle2 0 0 ABS 0 - PIC16F877A.obj
 intlevel5 0 0 CODE 0 functab startup.obj
 __end_of_USART_WriteString 2562 0 CODE 0 text6 PIC16F877A.obj
-_USART_ReceiveChar 21F8 0 CODE 0 text25 PIC16F877A.obj
+_USART_ReceiveChar FC8 0 CODE 0 text26 PIC16F877A.obj
 __size_of_TIMER0_Init 0 0 ABS 0 - PIC16F877A.obj
-__end_of_Fuzzy ECA 0 CODE 0 text28 PIC16F877A.obj
+__end_of_Fuzzy EAA 0 CODE 0 text29 PIC16F877A.obj
 __size_of___lwmod 0 0 ABS 0 - PIC16F877A.obj
+__HidataBANK3 0 0 ABS 0 idataBANK3 -
+__LidataBANK3 0 0 ABS 0 idataBANK3 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__pidataBANK3 11B8 0 CODE 0 idataBANK3 PIC16F877A.obj
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON PIC16F877A.obj
-__end_of___wmul 244C 0 CODE 0 text3 PIC16F877A.obj
-__end_of_LCD_WriteCmd 2194 0 CODE 0 text20 PIC16F877A.obj
+__end_of___wmul 1206 0 CODE 0 text3 PIC16F877A.obj
+__end_of_LCD_WriteCmd 2214 0 CODE 0 text20 PIC16F877A.obj
 __CFG_CPD$OFF 0 0 ABS 0 - PIC16F877A.obj
 start_initialization 2A 0 CODE 0 cinit PIC16F877A.obj
-___aldiv@quotient AB 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-___lwdiv@quotient A5 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___aldiv@quotient CE 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___lwdiv@quotient C8 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __size_of___ftge 0 0 ABS 0 - PIC16F877A.obj
-__end_of_PWM_Init 2402 0 CODE 0 text12 PIC16F877A.obj
-__end_of_ADC_Init 213E 0 CODE 0 text21 PIC16F877A.obj
-__end_ofi1_USART_WriteChar 208E 0 CODE 0 text27 PIC16F877A.obj
+__end_of_PWM_Init 244C 0 CODE 0 text12 PIC16F877A.obj
+__end_of_ADC_Init 21BE 0 CODE 0 text21 PIC16F877A.obj
+__end_ofi1_USART_WriteChar 20E0 0 CODE 0 text28 PIC16F877A.obj
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
-__pmaintext 141C 0 CODE 0 maintext PIC16F877A.obj
+__pmaintext 144E 0 CODE 0 maintext PIC16F877A.obj
 __end_of___fttol 2ADC 0 CODE 0 text39 PIC16F877A.obj
 _OPTION_REGbits 81 0 ABS 0 - PIC16F877A.obj
 __size_ofi1___lwdiv 0 0 ABS 0 - PIC16F877A.obj
@@ -1341,24 +1357,24 @@ __initialization 2A 0 CODE 0 cinit PIC16F877A.obj
 __end_of___ftge 281A 0 CODE 0 text37 PIC16F877A.obj
 __stringbase 101E 0 STRING 0 strings PIC16F877A.obj
 Fuzzy@reduz 60 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-__end_of_LCD_WriteData 21C2 0 CODE 0 text16 PIC16F877A.obj
-___lwmod@dividend AA 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-sprintf@_val B6 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-___wmul@product A4 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-___lwmod@counter AD 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+__end_of_LCD_WriteData 2242 0 CODE 0 text16 PIC16F877A.obj
+___lwmod@dividend CD 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+sprintf@_val D9 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___wmul@product C7 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___lwmod@counter D0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __CFG_CP$OFF 0 0 ABS 0 - PIC16F877A.obj
 __end_of_USART_Init 275C 0 CODE 0 text8 PIC16F877A.obj
 max_val@a 3C 0 BANK0 1 cstackBANK0 PIC16F877A.obj
 __size_of___ftmul 0 0 ABS 0 - PIC16F877A.obj
 max_val@b 3F 0 BANK0 1 cstackBANK0 PIC16F877A.obj
-_LCD_WriteCmd 2166 0 CODE 0 text20 PIC16F877A.obj
+_LCD_WriteCmd 21E6 0 CODE 0 text20 PIC16F877A.obj
 __CFG_LVP$OFF 0 0 ABS 0 - PIC16F877A.obj
-sprintf@c BE 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+sprintf@c E1 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __end_of___ftdiv 2C4C 0 CODE 0 text34 PIC16F877A.obj
-TIMER0_Set@contagens A0 0 BANK1 1 cstackBANK1 PIC16F877A.obj
-___aldiv@dividend A4 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+TIMER0_Set@contagens C3 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+___aldiv@dividend C7 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 __size_of_USART_ReceiveChar 0 0 ABS 0 - PIC16F877A.obj
-isdigit@c A1 0 BANK1 1 cstackBANK1 PIC16F877A.obj
+isdigit@c C4 0 BANK1 1 cstackBANK1 PIC16F877A.obj
 i1USART_WriteString@str 71 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -1386,17 +1402,17 @@ i1USART_WriteString@str 71 0 COMMON 1 cstackCOMMON PIC16F877A.obj
 # All other numeric quantities are in decimal.
 %SEGMENTS
 reset_vec 0 0 0 3 2
-intentry 0 4 8 7FC 2
+intentry 0 4 8 7FB 2
 config 0 2007 400E 1 2
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 20 20 4F 1
-cstackBANK1 1 A0 A0 4F 1
+bssBANK1 1 A0 A0 4F 1
 bssBANK3 1 190 190 21 1
 text1 0 E49 1C92 1B7 2
-text22 0 CB5 196A 194 2
-text32 0 B5F 16BE 156 2
-maintext 0 A0E 141C 151 2
-text31 0 8EA 11D4 124 2
+text22 0 CCE 199C 17B 2
+text32 0 B78 16F0 156 2
+maintext 0 A27 144E 151 2
+text31 0 903 1206 124 2
 text35 0 16F7 2DEE 109 2
 strings 0 800 1000 DB 2
 text40 0 1626 2C4C D1 2
@@ -1407,31 +1423,32 @@ text41 0 140D 281A 68 2
 text37 0 13AE 275C 5F 2
 text8 0 1365 26CA 49 2
 text5 0 1325 264A 40 2
-text29 0 12E7 25CE 3E 2
+text24 0 12E7 25CE 3E 2
 text4 0 12B1 2562 36 2
 text6 0 1280 2500 31 2
 text15 0 124F 249E 31 2
 text19 0 1226 244C 29 2
-text3 0 1201 2402 25 2
-text12 0 11DD 23BA 24 2
-text23 0 11BA 2374 23 2
-text26 0 1197 232E 23 2
-text13 0 1176 22EC 21 2
-text14 0 1155 22AA 21 2
-text18 0 1135 226A 20 2
-text36 0 1117 222E 1E 2
-text25 0 10FC 21F8 1B 2
-text30 0 10E1 21C2 1B 2
-text16 0 10CA 2194 17 2
-text20 0 10B3 2166 17 2
-text38 0 109F 213E 14 2
-text21 0 108D 211A 12 2
-inittext 0 107C 20F8 11 2
-text2 0 106C 20D8 10 2
-text7 0 8DD 11BA D 2
-text11 0 1061 20C2 B 2
-text33 0 1057 20AE A 2
-clrtext 0 104F 209E 8 2
-text10 0 1047 208E 8 2
-text27 0 103F 207E 8 2
-text24 0 1039 2072 6 2
+text3 0 8DE 11BC 25 2
+text12 0 1202 2404 24 2
+text23 0 11DF 23BE 23 2
+text27 0 11BC 2378 23 2
+text13 0 119B 2336 21 2
+text14 0 117A 22F4 21 2
+text18 0 115A 22B4 20 2
+text36 0 113C 2278 1E 2
+text30 0 1121 2242 1B 2
+text16 0 110A 2214 17 2
+text20 0 10F3 21E6 17 2
+text38 0 10DF 21BE 14 2
+text21 0 10CD 219A 12 2
+inittext 0 10BC 2178 11 2
+text2 0 10AC 2158 10 2
+text7 0 109F 213E D 2
+text11 0 1094 2128 B 2
+idataBANK1 0 108A 2114 A 2
+text33 0 1080 2100 A 2
+clrtext 0 1078 20F0 8 2
+text10 0 1070 20E0 8 2
+text28 0 1068 20D0 8 2
+text25 0 1062 20C4 6 2
+idataBANK3 0 8DC 11B8 2 2
