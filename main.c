@@ -102,12 +102,12 @@ float trapmf(float x, float a, float b, float c, float d)
 void send()
 {
 
-  //Formata��o do Pacote de dados.
+  //Monta pacote de dados buffer
   buffer[0] = '#';
   buffer[1] = '$';
   buffer[2] = ':';
 
-  // Medi��o
+  // Conversao para char
   buffer[3] = (rpm >> 8) & 0xFF;
   buffer[4] = rpm & 0xFF;
   buffer[5] = 0;
@@ -418,7 +418,7 @@ void interrupt ISR(void)
 		tf = (setpointUI - 100);		
 
 		// Apresenta as informacoes na USART.
-		if(USART_ReceiveChar() == 'A')
+		if(USART_ReceiveChar() == 'X')
 		{
 			send();
 		}
@@ -458,11 +458,12 @@ void interrupt ISR(void)
 
 			// C�lculo das rota��es por minuto.
 			pulsos = (TMR1H << 8) + TMR1L;
-			rpm = ((pulsos / pas_cooler) * 120);
+			// rpm = ((pulsos / pas_cooler) * 120);
+			rpm = ((pulsos / pas_cooler) * 3);
 
 			// Transforma rpm em km/h
 				// cada 40 rpm sera 1 km
-			//rpm = rpm / 40;
+			// rpm = rpm / 40;
 
 			// Limpa registrador para nova contagem.
 			TMR1L = 0x00;
@@ -547,10 +548,9 @@ void main(void)
 	// La�o principal do firmware.
 	while(1)
 	{
-		// Formata os dados de rota��o para apresenta��o.
 		
 		//sprintf(display_rpm,"%04d", deltaV);
-		sprintf(display_rpm,"%04d", rpm);		
+		sprintf(display_rpm,"%03d", rpm);		
 
      	// Apresenta as informa��es no LCD.
 		LCD_Clear();

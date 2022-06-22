@@ -1982,7 +1982,7 @@ Fuzzy();
 tf = (setpointUI - 100);
 
 
-if(USART_ReceiveChar() == 'A')
+if(USART_ReceiveChar() == 'X')
 {
 send();
 }
@@ -2022,9 +2022,10 @@ contagens_tm0 = 0;
 
 
 pulsos = (TMR1H << 8) + TMR1L;
-rpm = ((pulsos / pas_cooler) * 120);
 
-# 468
+rpm = ((pulsos / pas_cooler) * 3);
+
+# 469
 TMR1L = 0x00;
 TMR1H = 0x00;
 
@@ -2085,7 +2086,7 @@ LCD_Init();
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
 
-# 533
+# 534
 LCD_Init();
 LCD_Cursor(0,0);
 LCD_WriteString("Inicializando...");
@@ -2105,8 +2106,7 @@ while(1)
 {
 
 
-
-sprintf(display_rpm,"%04d", rpm);
+sprintf(display_rpm,"%03d", rpm);
 
 
 LCD_Clear();

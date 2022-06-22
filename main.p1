@@ -2182,9 +2182,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 418: tf = (setpointUI - 100);
 "418
 [e = _tf -> - _setpointUI -> -> 100 `i `ui `f ]
-[; ;main.c: 421: if(USART_ReceiveChar() == 'A')
+[; ;main.c: 421: if(USART_ReceiveChar() == 'X')
 "421
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 65 `ui 172  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 88 `ui 172  ]
 [; ;main.c: 422: {
 "422
 {
@@ -2252,155 +2252,155 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 460: pulsos = (TMR1H << 8) + TMR1L;
 "460
 [e = _pulsos -> + << -> _TMR1H `i -> 8 `i -> _TMR1L `i `ui ]
-[; ;main.c: 461: rpm = ((pulsos / pas_cooler) * 120);
-"461
-[e = _rpm * / _pulsos _pas_cooler -> -> 120 `i `ui ]
-[; ;main.c: 468: TMR1L = 0x00;
-"468
-[e = _TMR1L -> -> 0 `i `uc ]
-[; ;main.c: 469: TMR1H = 0x00;
+[; ;main.c: 462: rpm = ((pulsos / pas_cooler) * 3);
+"462
+[e = _rpm * / _pulsos _pas_cooler -> -> 3 `i `ui ]
+[; ;main.c: 469: TMR1L = 0x00;
 "469
+[e = _TMR1L -> -> 0 `i `uc ]
+[; ;main.c: 470: TMR1H = 0x00;
+"470
 [e = _TMR1H -> -> 0 `i `uc ]
-[; ;main.c: 472: PORTBbits.RB6 = 0;
-"472
-[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 473: PORTBbits.RB6 = 0;
 "473
+[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
+"474
 }
 [e :U 176 ]
-[; ;main.c: 473: }
-[; ;main.c: 476: INTCONbits.T0IF = 0;
-"476
-[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+[; ;main.c: 474: }
+[; ;main.c: 477: INTCONbits.T0IF = 0;
 "477
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+"478
 }
 [e :U 174 ]
-[; ;main.c: 477: }
-[; ;main.c: 480: if (PIR1bits.TMR1IF)
-"480
-[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 177  ]
-[; ;main.c: 481: {
+[; ;main.c: 478: }
+[; ;main.c: 481: if (PIR1bits.TMR1IF)
 "481
+[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 177  ]
+[; ;main.c: 482: {
+"482
 {
-[; ;main.c: 485: PIR1bits.TMR1IF = 0;
-"485
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 486: PIR1bits.TMR1IF = 0;
 "486
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"487
 }
 [e :U 177 ]
-[; ;main.c: 486: }
-[; ;main.c: 489: if (PIR1bits.SSPIF)
-"489
-[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 178  ]
-[; ;main.c: 490: {
+[; ;main.c: 487: }
+[; ;main.c: 490: if (PIR1bits.SSPIF)
 "490
+[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 178  ]
+[; ;main.c: 491: {
+"491
 {
-[; ;main.c: 494: PIR1bits.SSPIF = 0;
-"494
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 495: PIR1bits.SSPIF = 0;
 "495
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"496
 }
 [e :U 178 ]
-[; ;main.c: 495: }
 [; ;main.c: 496: }
-"496
+[; ;main.c: 497: }
+"497
 [e :UE 160 ]
 }
-"499
-[v _main `(v ~T0 @X0 1 ef ]
 "500
+[v _main `(v ~T0 @X0 1 ef ]
+"501
 {
-[; ;main.c: 499: void main(void)
-[; ;main.c: 500: {
+[; ;main.c: 500: void main(void)
+[; ;main.c: 501: {
 [e :U _main ]
 [f ]
-[; ;main.c: 501: TRISA = 0b00000001;
-"501
-[e = _TRISA -> -> 1 `i `uc ]
-[; ;main.c: 502: PORTA = 0b00000001;
+[; ;main.c: 502: TRISA = 0b00000001;
 "502
-[e = _PORTA -> -> 1 `i `uc ]
-[; ;main.c: 503: TRISB = 0b00000000;
+[e = _TRISA -> -> 1 `i `uc ]
+[; ;main.c: 503: PORTA = 0b00000001;
 "503
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 504: PORTB = 0b00000000;
+[e = _PORTA -> -> 1 `i `uc ]
+[; ;main.c: 504: TRISB = 0b00000000;
 "504
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 505: TRISC = 0b10000001;
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;main.c: 505: PORTB = 0b00000000;
 "505
-[e = _TRISC -> -> 129 `i `uc ]
-[; ;main.c: 506: PORTC = 0b11000000;
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 506: TRISC = 0b10000001;
 "506
-[e = _PORTC -> -> 192 `i `uc ]
-[; ;main.c: 507: TRISD = 0b00000000;
+[e = _TRISC -> -> 129 `i `uc ]
+[; ;main.c: 507: PORTC = 0b11000000;
 "507
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 508: PORTD = 0b00000000;
+[e = _PORTC -> -> 192 `i `uc ]
+[; ;main.c: 508: TRISD = 0b00000000;
 "508
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;main.c: 509: TRISE = 0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;main.c: 509: PORTD = 0b00000000;
 "509
-[e = _TRISE -> -> 0 `i `uc ]
-[; ;main.c: 510: PORTE = 0b00000000;
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;main.c: 510: TRISE = 0b00000000;
 "510
+[e = _TRISE -> -> 0 `i `uc ]
+[; ;main.c: 511: PORTE = 0b00000000;
+"511
 [e = _PORTE -> -> 0 `i `uc ]
-[; ;main.c: 513: T1CON = 0x03;
-"513
-[e = _T1CON -> -> 3 `i `uc ]
-[; ;main.c: 514: TMR1L = 0x00;
+[; ;main.c: 514: T1CON = 0x03;
 "514
-[e = _TMR1L -> -> 0 `i `uc ]
-[; ;main.c: 515: TMR1H = 0x00;
+[e = _T1CON -> -> 3 `i `uc ]
+[; ;main.c: 515: TMR1L = 0x00;
 "515
+[e = _TMR1L -> -> 0 `i `uc ]
+[; ;main.c: 516: TMR1H = 0x00;
+"516
 [e = _TMR1H -> -> 0 `i `uc ]
-[; ;main.c: 518: USART_Init(115200);
-"518
-[e ( _USART_Init (1 -> 115200 `l ]
-[; ;main.c: 519: TIMER0_Init();
+[; ;main.c: 519: USART_Init(115200);
 "519
-[e ( _TIMER0_Init ..  ]
-[; ;main.c: 520: ADC_Init();
+[e ( _USART_Init (1 -> 115200 `l ]
+[; ;main.c: 520: TIMER0_Init();
 "520
-[e ( _ADC_Init ..  ]
-[; ;main.c: 521: PWM_Init();
+[e ( _TIMER0_Init ..  ]
+[; ;main.c: 521: ADC_Init();
 "521
-[e ( _PWM_Init ..  ]
-[; ;main.c: 522: LCD_Init();
+[e ( _ADC_Init ..  ]
+[; ;main.c: 522: PWM_Init();
 "522
+[e ( _PWM_Init ..  ]
+[; ;main.c: 523: LCD_Init();
+"523
 [e ( _LCD_Init ..  ]
-[; ;main.c: 525: INTCONbits.PEIE = 1;
-"525
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 526: INTCONbits.GIE = 1;
+[; ;main.c: 526: INTCONbits.PEIE = 1;
 "526
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 527: INTCONbits.GIE = 1;
+"527
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 533: LCD_Init();
-"533
-[e ( _LCD_Init ..  ]
-[; ;main.c: 534: LCD_Cursor(0,0);
+[; ;main.c: 534: LCD_Init();
 "534
-[e ( _LCD_Cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 535: LCD_WriteString("Inicializando...");
+[e ( _LCD_Init ..  ]
+[; ;main.c: 535: LCD_Cursor(0,0);
 "535
+[e ( _LCD_Cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 536: LCD_WriteString("Inicializando...");
+"536
 [e ( _LCD_WriteString (1 :s 2C ]
-[; ;main.c: 538: PWM_DutyCycle1(0);
-"538
-[e ( _PWM_DutyCycle1 (1 -> 0 `i ]
-[; ;main.c: 539: PWM_DutyCycle2(0);
+[; ;main.c: 539: PWM_DutyCycle1(0);
 "539
+[e ( _PWM_DutyCycle1 (1 -> 0 `i ]
+[; ;main.c: 540: PWM_DutyCycle2(0);
+"540
 [e ( _PWM_DutyCycle2 (1 -> 0 `i ]
-[; ;main.c: 542: TIMER0_Set(238);
-"542
+[; ;main.c: 543: TIMER0_Set(238);
+"543
 [e ( _TIMER0_Set (1 -> -> 238 `i `uc ]
-[; ;main.c: 545: _delay((unsigned long)((1000)*(18432000/4000.0)));
-"545
+[; ;main.c: 546: _delay((unsigned long)((1000)*(18432000/4000.0)));
+"546
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 18432000 `l `d .4000.0 `ul ]
-[; ;main.c: 548: while(1)
-"548
-[e :U 181 ]
-[; ;main.c: 549: {
+[; ;main.c: 549: while(1)
 "549
+[e :U 181 ]
+[; ;main.c: 550: {
+"550
 {
-[; ;main.c: 553: sprintf(display_rpm,"%04d", rpm);
+[; ;main.c: 553: sprintf(display_rpm,"%03d", rpm);
 "553
 [e ( _sprintf (1 , (. , &U _display_rpm :s 3C _rpm ]
 [; ;main.c: 556: LCD_Clear();
@@ -2427,7 +2427,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "567
 }
 [e :U 180 ]
-"548
+"549
 [e $U 181  ]
 [e :U 182 ]
 [; ;main.c: 567: }
@@ -2436,7 +2436,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 179 ]
 }
 [p f _sprintf 8421508 ]
-[a 3C 37 48 52 100 0 ]
+[a 3C 37 48 51 100 0 ]
 [a 2C 73 110 105 99 105 97 108 105 122 97 110 100 111 46 46 46 0 ]
 [a 4C 107 109 72 58 32 0 ]
 [a 1C 10 13 100 101 115 108 105 103 97 100 111 10 13 0 ]
