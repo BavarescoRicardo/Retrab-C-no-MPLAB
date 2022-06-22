@@ -1617,18 +1617,16 @@ unsigned short ADCResult = 0;
 
 unsigned char display_rpm[10];
 
-unsigned char buffer[13];
+unsigned char buffer[16];
 int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 50;
-unsigned int deltaV = 0;
-unsigned int setpointUI = 0;
 
 unsigned int contagens_tm0 = 0;
 
-# 41
+# 39
 float x=0;
 float y=0;
 
@@ -1645,8 +1643,13 @@ float total_area = 0;
 float ativa_fan = 0;
 
 
-float tf = 50;
+float antigo = 50;
 float setpoint = 20;
+
+
+unsigned int deltaV = 0;
+unsigned int setpointUI = 0;
+unsigned int antigoUI = 0;
 
 
 
@@ -1713,14 +1716,19 @@ buffer[9] = (deltaV >> 8) & 0xFF;
 buffer[10] = deltaV & 0xFF;
 buffer[11] = 'S';
 
+
+buffer[12] = (antigoUI >> 8) & 0xFF;
+buffer[13] = antigoUI & 0xFF;
+buffer[14] = 'S';
+
 unsigned char checksum = 0x00;
-for (unsigned char index = 0; index < 12; index++)
+for (unsigned char index = 0; index < 15; index++)
 {
 USART_WriteChar(buffer[index]);
 checksum ^= buffer[index];
 }
-buffer[12] = checksum;
-USART_WriteChar(buffer[12]);
+buffer[15] = checksum;
+USART_WriteChar(buffer[15]);
 }
 
 float min_val(float a, float b)
@@ -1741,18 +1749,18 @@ else
 return b;
 }
 
-# 157
+# 165
 void Fuzzy()
 {
 
-# 168
+# 176
 setpoint = (float)setpointUI;
 float deltaRpm = 0;
 
 
 unsigned int freio = 0;
 
-# 178
+# 186
 float mantem = 0;
 float reduz = 0;
 float aumenta = 0;
@@ -1760,12 +1768,13 @@ float tip;
 fitemp = 0;
 
 
-deltaRpm = (setpoint - tf);
-deltaRpm = (deltaRpm/100);
+deltaRpm = (setpoint - antigo);
+antigoUI = antigo;
+
 
 deltaV = deltaRpm;
 
-if (deltaRpm <0)
+if (deltaRpm <=0)
 {
 if(PORTBbits.RB1 == 0)
 {
@@ -1812,7 +1821,7 @@ x=x+1;
 
 }
 
-# 241
+# 250
 if ((deltaRpm > 20) && (deltaRpm < 70))
 {
 
@@ -1843,7 +1852,7 @@ x=x+1;
 
 }
 
-# 275
+# 284
 if (deltaRpm > 70 )
 {
 
@@ -1903,22 +1912,22 @@ ativa_fan = ativa_fan*100;
 
 if (freio = 1)
 {
-if ((tf + deltaV) >0 && (tf + deltaV) < 1020)
+if ((antigo + deltaV) >0 && (antigo + deltaV) < 1020)
 {
-PWM_DutyCycle2(tf + deltaV);
+PWM_DutyCycle2(antigo + deltaV);
 }
 }else
 {
-if ((tf - deltaV) >0 && (tf - deltaV) < 1020)
+if ((antigo - deltaV) >0 && (antigo - deltaV) < 1020)
 {
-PWM_DutyCycle2(tf - deltaV);
+PWM_DutyCycle2(antigo - deltaV);
 }
 }
 
 
 }
 
-# 358
+# 367
 void interrupt ISR(void)
 {
 
@@ -1989,7 +1998,7 @@ setpointUI = 9000;
 
 
 Fuzzy();
-tf = (setpointUI - 100);
+antigo = setpointUI;
 
 
 if(USART_ReceiveChar() == 'X')
@@ -2099,7 +2108,7 @@ LCD_Init();
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
 
-# 543
+# 552
 LCD_Init();
 LCD_Cursor(0,0);
 LCD_WriteString("Inicializando...");
@@ -2118,7 +2127,7 @@ _delay((unsigned long)((1000)*(18432000/4000.0)));
 while(1)
 {
 
-# 565
+# 574
 LCD_Clear();
 LCD_Cursor(0,0);
 LCD_WriteString("kmH: ");

@@ -21,14 +21,12 @@ unsigned short ADCResult = 0;
 //Configuracoes para formatacao de dados de saida.
 unsigned char display_rpm[10];
 // unsigned char display_pwm[10];
-unsigned char buffer[13];
+unsigned char buffer[16];
 int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 50;
-unsigned int deltaV = 0;
-unsigned int setpointUI = 0;
 
 unsigned int contagens_tm0 = 0;
 
@@ -56,6 +54,11 @@ float ativa_fan = 0;
 // Entradas para o sistema.
 float antigo = 50;
 float setpoint = 20;
+
+// Entradas em int 
+unsigned int deltaV = 0;
+unsigned int setpointUI = 0;
+unsigned int antigoUI = 0;
 
 //---------------------------------------------------------------------
 
@@ -117,19 +120,24 @@ void send()
 	buffer[7] = setpointUI & 0xFF;
 	buffer[8] = 'S';
 
-	// Conversao para char	setpoint  
+	// Conversao para char	delta  
 	buffer[9] = (deltaV >> 8) & 0xFF;
 	buffer[10] = deltaV & 0xFF;
 	buffer[11] = 'S';
 
+	// Conversao para char	antigo  
+	buffer[12] = (antigoUI >> 8) & 0xFF;
+	buffer[13] = antigoUI & 0xFF;
+	buffer[14] = 'S';
+
 	unsigned char checksum = 0x00;
-	for (unsigned char index = 0; index < 12; index++)
+	for (unsigned char index = 0; index < 15; index++)
 	{
 	USART_WriteChar(buffer[index]);
 	checksum ^= buffer[index];
 	}
-	buffer[12] = checksum;
-	USART_WriteChar(buffer[12]);
+	buffer[15] = checksum;
+	USART_WriteChar(buffer[15]);
 }
 
 float min_val(float a, float b)
@@ -181,13 +189,14 @@ void Fuzzy()
 	float tip;
 	fitemp = 0;
 
-	//  calculo do erro para o setpoint
-	deltaRpm = (setpoint - antigo);//
-	deltaRpm = (deltaRpm/100);
+	// calculo do erro para o setpoint
+	deltaRpm = (setpoint - antigo);
+	antigoUI = antigo;
+	// deltaRpm = (deltaRpm/100);
 	
 	deltaV = deltaRpm;
 	
-	if (deltaRpm <0)
+	if (deltaRpm <=0)
 	{
 			if(PORTBbits.RB1 == 0)
 			{
@@ -425,7 +434,7 @@ void interrupt ISR(void)
 
 		// No fim das condições manda o sinal para a função fuzzy
 		Fuzzy();
-		antigo = (setpointUI - 100);		
+		antigo = setpointUI;		
 
 		// Apresenta as informacoes na USART.
 		if(USART_ReceiveChar() == 'X')
