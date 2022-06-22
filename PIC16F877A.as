@@ -1476,9 +1476,9 @@ STR_1:
 psect	strings
 	
 STR_4:	
-	retlw	82	;'R'
-	retlw	80	;'P'
-	retlw	77	;'M'
+	retlw	107	;'k'
+	retlw	109	;'m'
+	retlw	72	;'H'
 	retlw	58	;':'
 	retlw	32	;' '
 	retlw	0
@@ -2645,7 +2645,7 @@ Fuzzy@deltaRpm:	; 3 bytes @ 0x46
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 495 in file "R:\Note\Sistema I\Ultimo C no MPLAB\main.c"
+;;		line 499 in file "R:\Note\Sistema I\Ultimo C no MPLAB\main.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -2684,12 +2684,12 @@ Fuzzy@deltaRpm:	; 3 bytes @ 0x46
 ;;
 psect	maintext,global,class=CODE,delta=2,split=1
 	file	"R:\Note\Sistema I\Ultimo C no MPLAB\main.c"
-	line	495
+	line	499
 global __pmaintext
 __pmaintext:	;psect for function _main
 psect	maintext
 	file	"R:\Note\Sistema I\Ultimo C no MPLAB\main.c"
-	line	495
+	line	499
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
 	
@@ -2697,92 +2697,92 @@ _main:
 ;incstack = 0
 	opt	stack 1
 ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
-	line	497
+	line	501
 	
 l3279:	
-;main.c: 497: TRISA = 0b00000001;
+;main.c: 501: TRISA = 0b00000001;
 	movlw	(01h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(133)^080h	;volatile
-	line	498
-;main.c: 498: PORTA = 0b00000001;
+	line	502
+;main.c: 502: PORTA = 0b00000001;
 	movlw	(01h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(5)	;volatile
-	line	499
+	line	503
 	
 l3281:	
-;main.c: 499: TRISB = 0b00000000;
+;main.c: 503: TRISB = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(134)^080h	;volatile
-	line	500
+	line	504
 	
 l3283:	
-;main.c: 500: PORTB = 0b00000000;
+;main.c: 504: PORTB = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(6)	;volatile
-	line	501
-;main.c: 501: TRISC = 0b10000001;
+	line	505
+;main.c: 505: TRISC = 0b10000001;
 	movlw	(081h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(135)^080h	;volatile
-	line	502
-;main.c: 502: PORTC = 0b11000000;
+	line	506
+;main.c: 506: PORTC = 0b11000000;
 	movlw	(0C0h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(7)	;volatile
-	line	503
+	line	507
 	
 l3285:	
-;main.c: 503: TRISD = 0b00000000;
+;main.c: 507: TRISD = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(136)^080h	;volatile
-	line	504
+	line	508
 	
 l3287:	
-;main.c: 504: PORTD = 0b00000000;
+;main.c: 508: PORTD = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(8)	;volatile
-	line	505
+	line	509
 	
 l3289:	
-;main.c: 505: TRISE = 0b00000000;
+;main.c: 509: TRISE = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(137)^080h	;volatile
-	line	506
+	line	510
 	
 l3291:	
-;main.c: 506: PORTE = 0b00000000;
+;main.c: 510: PORTE = 0b00000000;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(9)	;volatile
-	line	509
-;main.c: 509: T1CON = 0x03;
+	line	513
+;main.c: 513: T1CON = 0x03;
 	movlw	(03h)
 	movwf	(16)	;volatile
-	line	510
-	
-l3293:	
-;main.c: 510: TMR1L = 0x00;
-	clrf	(14)	;volatile
-	line	511
-	
-l3295:	
-;main.c: 511: TMR1H = 0x00;
-	clrf	(15)	;volatile
 	line	514
 	
+l3293:	
+;main.c: 514: TMR1L = 0x00;
+	clrf	(14)	;volatile
+	line	515
+	
+l3295:	
+;main.c: 515: TMR1H = 0x00;
+	clrf	(15)	;volatile
+	line	518
+	
 l3297:	
-;main.c: 514: USART_Init(115200);
+;main.c: 518: USART_Init(115200);
 	movlw	0
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2795,50 +2795,50 @@ l3297:
 	movwf	(USART_Init@BaudRate)^080h
 
 	fcall	_USART_Init
-	line	515
-;main.c: 515: TIMER0_Init();
+	line	519
+;main.c: 519: TIMER0_Init();
 	fcall	_TIMER0_Init
-	line	516
-;main.c: 516: ADC_Init();
+	line	520
+;main.c: 520: ADC_Init();
 	fcall	_ADC_Init
-	line	517
-	
-l3299:	
-;main.c: 517: PWM_Init();
-	fcall	_PWM_Init
-	line	518
-	
-l3301:	
-;main.c: 518: LCD_Init();
-	fcall	_LCD_Init
 	line	521
 	
-l3303:	
-;main.c: 521: INTCONbits.PEIE = 1;
-	bsf	(11),6	;volatile
+l3299:	
+;main.c: 521: PWM_Init();
+	fcall	_PWM_Init
 	line	522
 	
+l3301:	
+;main.c: 522: LCD_Init();
+	fcall	_LCD_Init
+	line	525
+	
+l3303:	
+;main.c: 525: INTCONbits.PEIE = 1;
+	bsf	(11),6	;volatile
+	line	526
+	
 l3305:	
-;main.c: 522: INTCONbits.GIE = 1;
+;main.c: 526: INTCONbits.GIE = 1;
 	bsf	(11),7	;volatile
-	line	529
+	line	533
 	
 l3307:	
-;main.c: 529: LCD_Init();
+;main.c: 533: LCD_Init();
 	fcall	_LCD_Init
-	line	530
+	line	534
 	
 l3309:	
-;main.c: 530: LCD_Cursor(0,0);
+;main.c: 534: LCD_Cursor(0,0);
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(LCD_Cursor@Col)^080h
 	movlw	(0)
 	fcall	_LCD_Cursor
-	line	531
+	line	535
 	
 l3311:	
-;main.c: 531: LCD_WriteString("Inicializando...");
+;main.c: 535: LCD_WriteString("Inicializando...");
 	movlw	low((STR_2)-__stringbase)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2846,10 +2846,10 @@ l3311:
 	movlw	80h
 	movwf	(LCD_WriteString@Str+1)^080h
 	fcall	_LCD_WriteString
-	line	534
+	line	538
 	
 l3313:	
-;main.c: 534: PWM_DutyCycle1(0);
+;main.c: 538: PWM_DutyCycle1(0);
 	movlw	low(0)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2857,10 +2857,10 @@ l3313:
 	movlw	high(0)
 	movwf	((PWM_DutyCycle1@valor)^080h)+1
 	fcall	_PWM_DutyCycle1
-	line	535
+	line	539
 	
 l3315:	
-;main.c: 535: PWM_DutyCycle2(0);
+;main.c: 539: PWM_DutyCycle2(0);
 	movlw	low(0)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2868,16 +2868,16 @@ l3315:
 	movlw	high(0)
 	movwf	((PWM_DutyCycle2@valor)^080h)+1
 	fcall	_PWM_DutyCycle2
-	line	538
+	line	542
 	
 l3317:	
-;main.c: 538: TIMER0_Set(238);
+;main.c: 542: TIMER0_Set(238);
 	movlw	(0EEh)
 	fcall	_TIMER0_Set
-	line	541
+	line	545
 	
 l3319:	
-;main.c: 541: _delay((unsigned long)((1000)*(18432000/4000.0)));
+;main.c: 545: _delay((unsigned long)((1000)*(18432000/4000.0)));
 	opt asmopt_off
 movlw  24
 	bsf	status, 5	;RP0=1, select bank1
@@ -2897,13 +2897,13 @@ u4107:
 	nop
 opt asmopt_on
 
-	line	544
-;main.c: 544: while(1)
+	line	548
+;main.c: 548: while(1)
 	
 l199:	
-	line	549
-;main.c: 545: {
-;main.c: 549: sprintf(display_rpm,"%04d", rpm);
+	line	553
+;main.c: 549: {
+;main.c: 553: sprintf(display_rpm,"%04d", rpm);
 	movlw	((STR_3)-__stringbase)&0ffh
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2919,22 +2919,22 @@ l199:
 
 	movlw	(_display_rpm)&0ffh
 	fcall	_sprintf
-	line	552
+	line	556
 	
 l3321:	
-;main.c: 552: LCD_Clear();
+;main.c: 556: LCD_Clear();
 	fcall	_LCD_Clear
-	line	553
+	line	557
 	
 l3323:	
-;main.c: 553: LCD_Cursor(0,0);
+;main.c: 557: LCD_Cursor(0,0);
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(LCD_Cursor@Col)^080h
 	movlw	(0)
 	fcall	_LCD_Cursor
-	line	554
-;main.c: 554: LCD_WriteString("RPM: ");
+	line	558
+;main.c: 558: LCD_WriteString("kmH: ");
 	movlw	low((STR_4)-__stringbase)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2942,10 +2942,10 @@ l3323:
 	movlw	80h
 	movwf	(LCD_WriteString@Str+1)^080h
 	fcall	_LCD_WriteString
-	line	555
+	line	559
 	
 l3325:	
-;main.c: 555: LCD_Cursor(0,6);
+;main.c: 559: LCD_Cursor(0,6);
 	movlw	(06h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2954,10 +2954,10 @@ l3325:
 	movwf	(LCD_Cursor@Col)^080h
 	movlw	(0)
 	fcall	_LCD_Cursor
-	line	556
+	line	560
 	
 l3327:	
-;main.c: 556: LCD_WriteString(display_rpm);
+;main.c: 560: LCD_WriteString(display_rpm);
 	movlw	(_display_rpm&0ffh)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2965,8 +2965,8 @@ l3327:
 	movlw	(0x1)
 	movwf	(LCD_WriteString@Str+1)^080h
 	fcall	_LCD_WriteString
-	line	559
-;main.c: 559: LCD_Cursor(1,6);
+	line	563
+;main.c: 563: LCD_Cursor(1,6);
 	movlw	(06h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
@@ -2975,10 +2975,10 @@ l3327:
 	movwf	(LCD_Cursor@Col)^080h
 	movlw	(01h)
 	fcall	_LCD_Cursor
-	line	562
+	line	566
 	
 l3329:	
-;main.c: 562: _delay((unsigned long)((200)*(18432000/4000.0)));
+;main.c: 566: _delay((unsigned long)((200)*(18432000/4000.0)));
 	opt asmopt_off
 movlw  5
 	bsf	status, 5	;RP0=1, select bank1
@@ -2998,14 +2998,14 @@ u4117:
 opt asmopt_on
 
 	goto	l199
-	line	563
+	line	567
 	
 l200:	
-	line	544
+	line	548
 	goto	l199
 	
 l201:	
-	line	564
+	line	568
 	
 l202:	
 	global	start
@@ -7093,77 +7093,77 @@ i1l3263:
 	clrf	(_rpm)^080h
 	addwf	(_rpm)^080h
 
-	line	464
+	line	468
 	
 i1l3265:	
-;main.c: 464: TMR1L = 0x00;
+;main.c: 468: TMR1L = 0x00;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(14)	;volatile
-	line	465
-	
-i1l3267:	
-;main.c: 465: TMR1H = 0x00;
-	clrf	(15)	;volatile
-	line	468
-	
-i1l3269:	
-;main.c: 468: PORTBbits.RB6 = 0;
-	bcf	(6),6	;volatile
-	goto	i1l3271
 	line	469
 	
-i1l194:	
+i1l3267:	
+;main.c: 469: TMR1H = 0x00;
+	clrf	(15)	;volatile
 	line	472
 	
-i1l3271:	
-;main.c: 469: }
-;main.c: 472: INTCONbits.T0IF = 0;
-	bcf	(11),2	;volatile
-	goto	i1l3273
+i1l3269:	
+;main.c: 472: PORTBbits.RB6 = 0;
+	bcf	(6),6	;volatile
+	goto	i1l3271
 	line	473
 	
-i1l192:	
+i1l194:	
 	line	476
 	
-i1l3273:	
+i1l3271:	
 ;main.c: 473: }
-;main.c: 476: if (PIR1bits.TMR1IF)
+;main.c: 476: INTCONbits.T0IF = 0;
+	bcf	(11),2	;volatile
+	goto	i1l3273
+	line	477
+	
+i1l192:	
+	line	480
+	
+i1l3273:	
+;main.c: 477: }
+;main.c: 480: if (PIR1bits.TMR1IF)
 	btfss	(12),0	;volatile
 	goto	u408_21
 	goto	u408_20
 u408_21:
 	goto	i1l195
 u408_20:
-	line	481
+	line	485
 	
 i1l3275:	
-;main.c: 477: {
-;main.c: 481: PIR1bits.TMR1IF = 0;
+;main.c: 481: {
+;main.c: 485: PIR1bits.TMR1IF = 0;
 	bcf	(12),0	;volatile
-	line	482
+	line	486
 	
 i1l195:	
-	line	485
-;main.c: 482: }
-;main.c: 485: if (PIR1bits.SSPIF)
+	line	489
+;main.c: 486: }
+;main.c: 489: if (PIR1bits.SSPIF)
 	btfss	(12),3	;volatile
 	goto	u409_21
 	goto	u409_20
 u409_21:
 	goto	i1l180
 u409_20:
-	line	490
+	line	494
 	
 i1l3277:	
-;main.c: 486: {
-;main.c: 490: PIR1bits.SSPIF = 0;
+;main.c: 490: {
+;main.c: 494: PIR1bits.SSPIF = 0;
 	bcf	(12),3	;volatile
 	goto	i1l180
-	line	491
+	line	495
 	
 i1l196:	
-	line	492
+	line	496
 	
 i1l180:	
 	bcf	status, 5	;RP0=0, select bank0

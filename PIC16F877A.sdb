@@ -163,7 +163,7 @@
 [v _Fuzzy Fuzzy `(v  1 e 0 0 ]
 "348
 [v _ISR ISR `II(v  1 e 0 0 ]
-"495
+"499
 [v _main main `(v  1 e 0 0 ]
 "5 R:\Note\Sistema I\Ultimo C no MPLAB\pwm.c
 [v _PWM_Init PWM_Init `(v  1 e 0 0 ]
@@ -576,10 +576,10 @@
 [v _tf tf `f  1 e 3 0 ]
 "58
 [v _setpoint setpoint `f  1 e 3 0 ]
-"495
+"499
 [v _main main `(v  1 e 0 0 ]
 {
-"564
+"568
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -749,7 +749,7 @@
 "348 R:\Note\Sistema I\Ultimo C no MPLAB\main.c
 [v _ISR ISR `II(v  1 e 0 0 ]
 {
-"492
+"496
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
 [v i1___wmul __wmul `(ui  1 e 2 0 ]

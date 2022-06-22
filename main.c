@@ -415,7 +415,7 @@ void interrupt ISR(void)
 
 		// No fim das condições manda o sinal para a função fuzzy
 		Fuzzy();
-		tf = (setpointUI - 100);
+		tf = (setpointUI - 100);		
 
 		// Apresenta as informacoes na USART.
 		if(USART_ReceiveChar() == 'A')
@@ -459,6 +459,10 @@ void interrupt ISR(void)
 			// C�lculo das rota��es por minuto.
 			pulsos = (TMR1H << 8) + TMR1L;
 			rpm = ((pulsos / pas_cooler) * 120);
+
+			// Transforma rpm em km/h
+				// cada 40 rpm sera 1 km
+			//rpm = rpm / 40;
 
 			// Limpa registrador para nova contagem.
 			TMR1L = 0x00;
@@ -551,7 +555,7 @@ void main(void)
      	// Apresenta as informa��es no LCD.
 		LCD_Clear();
 		LCD_Cursor(0,0);
-		LCD_WriteString("RPM: ");
+		LCD_WriteString("kmH: ");
 		LCD_Cursor(0,6);
 		LCD_WriteString(display_rpm);
 		// LCD_Cursor(1,0);

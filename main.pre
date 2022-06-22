@@ -2024,7 +2024,7 @@ contagens_tm0 = 0;
 pulsos = (TMR1H << 8) + TMR1L;
 rpm = ((pulsos / pas_cooler) * 120);
 
-
+# 468
 TMR1L = 0x00;
 TMR1H = 0x00;
 
@@ -2085,7 +2085,7 @@ LCD_Init();
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
 
-# 529
+# 533
 LCD_Init();
 LCD_Cursor(0,0);
 LCD_WriteString("Inicializando...");
@@ -2111,7 +2111,7 @@ sprintf(display_rpm,"%04d", rpm);
 
 LCD_Clear();
 LCD_Cursor(0,0);
-LCD_WriteString("RPM: ");
+LCD_WriteString("kmH: ");
 LCD_Cursor(0,6);
 LCD_WriteString(display_rpm);
 
