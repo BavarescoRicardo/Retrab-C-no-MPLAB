@@ -1753,11 +1753,7 @@ return b;
 void Fuzzy()
 {
 
-# 176
-setpoint = (float)setpointUI;
-float deltaRpm = 0;
-
-
+# 180
 unsigned int freio = 0;
 
 # 186
@@ -1768,166 +1764,33 @@ float tip;
 fitemp = 0;
 
 
-deltaRpm = (setpoint - antigo);
+if (setpointUI == antigoUI)
+{
+return;
+}
+
+deltaV = (setpointUI - antigoUI);
 antigoUI = antigo;
 
-
-deltaV = deltaRpm;
-
-if (deltaRpm <=0)
-{
-if(PORTBbits.RB1 == 0)
-{
-PORTBbits.RB1 = 1;
-}else{
-PORTBbits.RB1 = 0;
-}
-
-deltaRpm = deltaRpm*-1;
-freio = 1;
-}
-
-if (deltaRpm >90) deltaRpm = 90;
-
-
-if (deltaRpm < 25)
-{
-
-
-
-fitemp = trapmf(deltaRpm, 0,0,13,32);
-
-
-fop_rule1 = max_val(fitemp,0.1);
-
-
-x=0;
-y=0;
-for (int a=0; a<=90; a++)
-{
-y = trapmf(x,0,0,13,32);
-
-if (y > fop_rule1)
-{
-reduz += fop_rule1;
-}
-else
-{
-reduz += y;
-}
-
-x=x+1;
-}
-
-}
-
-# 250
-if ((deltaRpm > 20) && (deltaRpm < 70))
-{
-
-
-fitemp = trimf(deltaRpm, 9, 45, 81);
-
-
-fop_rule2 = max_val(fitemp,0.1);
-
-
-x=0;
-y=0;
-for (int a=0; a<=90; a++)
-{
-y = trimf(x, 9, 45, 81);
-
-if (y >= fop_rule2)
-{
-mantem += fop_rule2;
-}
-else
-{
-mantem += y;
-}
-
-x=x+1;
-}
-
-}
-
-# 284
-if (deltaRpm > 70 )
-{
-
-
-fitemp = trapmf(deltaRpm, 62, 79, 90, 90);
-
-
-
-fop_rule3 = max_val(fitemp,0.1);
-
-
-x=0;
-y=0;
-for (int a=0; a<=90; a++)
-{
-y = trapmf(x, 62, 79, 90, 90);
-
-if (y >= fop_rule3)
-{
-aumenta += fop_rule3;
-}
-else
-{
-aumenta += y;
-}
-
-x=x+1;
-}
-
-}
-
-
-if (deltaRpm < 25)
-{
-tip = reduz;
-}else
-if (deltaRpm >= 25 && deltaRpm < 75)
-{
-tip = mantem;
-}else
-{
-tip = aumenta;
-}
-
-
-total_area = 90;
-sum = 0;
-sum = sum + tip;
-
-
-ativa_fan = sum/total_area;
-
-
-ativa_fan = ativa_fan*100;
-
-
-
+# 345
 if (freio = 1)
 {
-if ((antigo + deltaV) >0 && (antigo + deltaV) < 1020)
+if (deltaV >0 && deltaV < 1020)
 {
-PWM_DutyCycle2(antigo + deltaV);
+PWM_DutyCycle2(deltaV);
 }
 }else
 {
-if ((antigo - deltaV) >0 && (antigo - deltaV) < 1020)
+if (deltaV > 0 && deltaV < 1020)
 {
-PWM_DutyCycle2(antigo - deltaV);
+PWM_DutyCycle2(deltaV);
 }
 }
 
 
 }
 
-# 367
+# 371
 void interrupt ISR(void)
 {
 
@@ -1998,7 +1861,7 @@ setpointUI = 9000;
 
 
 Fuzzy();
-antigo = setpointUI;
+antigoUI = setpointUI;
 
 
 if(USART_ReceiveChar() == 'X')
@@ -2108,7 +1971,7 @@ LCD_Init();
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
 
-# 552
+# 556
 LCD_Init();
 LCD_Cursor(0,0);
 LCD_WriteString("Inicializando...");
@@ -2127,7 +1990,7 @@ _delay((unsigned long)((1000)*(18432000/4000.0)));
 while(1)
 {
 
-# 574
+# 578
 LCD_Clear();
 LCD_Cursor(0,0);
 LCD_WriteString("kmH: ");

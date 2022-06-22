@@ -163,8 +163,8 @@ float max_val(float a, float b)
 
 
 void Fuzzy()
-{   // passos para a execução do problema
-/*passos
+{   // Faz as coisas nebulosas
+/*
   1 - fuzzificação das entradas
   2 - operadores fuzzy
   3 - métodos de implicação
@@ -173,14 +173,14 @@ void Fuzzy()
 
 */
 	// Converte variavel recebida de int para float
-	setpoint = (float)setpointUI;
-	float deltaRpm = 0;
+	//setpoint = (float)setpointUI;
+	// float deltaRpm = 0;
 
 	// Variavel para indicar se esta reduzindo ou aumentando
 	unsigned int freio = 0;
 	// Variaveis de fuzzy
 		// setpoint	--- Definido
-		// deltaRpm	--- Diferença
+		// deltaV	--- Diferença
 		// rpm		--- Atual
 
 	float mantem = 0;
@@ -189,13 +189,17 @@ void Fuzzy()
 	float tip;
 	fitemp = 0;
 
-	// calculo do erro para o setpoint
-	deltaRpm = (setpoint - antigo);
+	// calculo do erro para o setpoint se nao forem iguais
+	if (setpointUI == antigoUI)
+	{
+		return;
+	}
+
+	deltaV = (setpointUI - antigoUI);	
 	antigoUI = antigo;
-	// deltaRpm = (deltaRpm/100);
 	
-	deltaV = deltaRpm;
-	
+	//deltaV = deltaRpm;
+/*	
 	if (deltaRpm <=0)
 	{
 			if(PORTBbits.RB1 == 0)
@@ -212,7 +216,7 @@ void Fuzzy()
 	if (deltaRpm >90) deltaRpm = 90;
 
 	// 1ª regra - If delta é menor e esta lento - fica mais pouco lento 
-	if (deltaRpm < 25)
+	if (deltaRpm < 20)
 	{
 
 		// 1 - Reduz as velocidades.
@@ -336,19 +340,19 @@ void Fuzzy()
 	// Normaliza valores para o duty_cicle
 	ativa_fan = ativa_fan*100;
 	// deltaV = (unsigned int)ativa_fan;
-
+*/
 	// Envia o valor calculado para o duty cicle pwm
 	if (freio = 1)
 	{	
-		if ((antigo + deltaV) >0 && (antigo + deltaV) < 1020)
+		if (deltaV >0 && deltaV < 1020)
 		{
-			PWM_DutyCycle2(antigo + deltaV);
+			PWM_DutyCycle2(deltaV);
 		}
 	}else 
 	{
-		if ((antigo - deltaV) >0 && (antigo - deltaV) < 1020)
+		if (deltaV > 0 && deltaV < 1020)
 		{
-			PWM_DutyCycle2(antigo - deltaV);
+			PWM_DutyCycle2(deltaV);
 		}
 	}
 	
@@ -434,7 +438,7 @@ void interrupt ISR(void)
 
 		// No fim das condições manda o sinal para a função fuzzy
 		Fuzzy();
-		antigo = setpointUI;		
+		antigoUI = setpointUI;		
 
 		// Apresenta as informacoes na USART.
 		if(USART_ReceiveChar() == 'X')
