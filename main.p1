@@ -2182,9 +2182,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 418: tf = (setpointUI - 100);
 "418
 [e = _tf -> - _setpointUI -> -> 100 `i `ui `f ]
-[; ;main.c: 421: if(setpointUI != 0)
+[; ;main.c: 421: if(USART_ReceiveChar() == 'A')
 "421
-[e $ ! != _setpointUI -> -> 0 `i `ui 172  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 65 `ui 172  ]
 [; ;main.c: 422: {
 "422
 {

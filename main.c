@@ -418,7 +418,7 @@ void interrupt ISR(void)
 		tf = (setpointUI - 100);
 
 		// Apresenta as informacoes na USART.
-		if(setpointUI != 0)
+		if(USART_ReceiveChar() == 'A')
 		{
 			send();
 		}

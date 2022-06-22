@@ -6916,12 +6916,10 @@ i1l3239:
 	line	421
 	
 i1l3241:	
-;main.c: 421: if(setpointUI != 0)
-	bsf	status, 5	;RP0=1, select bank1
-	bcf	status, 6	;RP1=0, select bank1
-	movf	(_setpointUI+1)^080h,w
-	iorwf	(_setpointUI)^080h,w
-	skipnz
+;main.c: 421: if(USART_ReceiveChar() == 'A')
+	fcall	_USART_ReceiveChar
+	xorlw	041h
+	skipz
 	goto	u404_21
 	goto	u404_20
 u404_21:
