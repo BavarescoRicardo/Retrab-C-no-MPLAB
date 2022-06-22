@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>		// comando ftoa().
 
-// Declara��o das bibliotecas com as configura��es e funcionalidades do PIC.
+// Declara��o das bibliotecas com as configuracoes e funcionalidades do PIC.
 #include "usart.h"
 #include "adc.h"
 #include "timers.h"
@@ -15,10 +15,10 @@
 // #include "eeprom.h"
 #include "pwm.h"
 
-//Vari�veis Globais de Controle.
+//Variaveis Globais de Controle.
 unsigned short ADCResult = 0;
 
-//Configura��es para formata��o de dados de sa�da.
+//Configuracoes para formatacao de dados de saida.
 unsigned char display_rpm[10];
 // unsigned char display_pwm[10];
 unsigned char buffer[7];
