@@ -108,8 +108,9 @@ void send()
   buffer[2] = ':';
 
   // Conversao para char
-  buffer[3] = (rpm >> 8) & 0xFF;
-  buffer[4] = rpm & 0xFF;
+  unsigned int velocidade = rpm * 40;
+  buffer[3] = (velocidade >> 8) & 0xFF;
+  buffer[4] = velocidade & 0xFF;
   buffer[5] = 0;
 
   unsigned char checksum = 0x00;
@@ -462,7 +463,7 @@ void interrupt ISR(void)
 			
 			// Transforma rpm em km/h
 				// cada 40 rpm sera 1 km
-			// rpm = rpm / 40;
+			rpm = rpm / 40;
 
 			// Limpa registrador para nova contagem.
 			TMR1L = 0x00;
@@ -509,12 +510,12 @@ void main(void)
     TRISE = 0b00000000;		// Configuracao dos canais do PORTE.
     PORTE = 0b00000000;  	// Inicializacao dos canais do PORTE.
 
-	// Configura��es do TIMER1 para contagem de pulsos externos.
+	// Configuracoes do TIMER1 para contagem de pulsos externos.
 	T1CON = 0x03;
 	TMR1L = 0x00;
 	TMR1H = 0x00;
 	
-	// Inicializa��o dos perif�ricos do microcontrolador.
+	// Inicializacao dos perifericos do microcontrolador.
 	USART_Init(115200);		// Inicializacao do  USART.
 	TIMER0_Init();			// Inicializacao do  do Timer0.
 	ADC_Init();				// Inicializacao do  do conversor A/D.
@@ -549,7 +550,7 @@ void main(void)
 	{
 		
 		//sprintf(display_rpm,"%04d", deltaV);
-		sprintf(display_rpm,"%03d", rpm);		
+		sprintf(display_rpm,"%04d", rpm);		
 
      	// Apresenta as informacoes no LCD.
 		LCD_Clear();
@@ -557,9 +558,9 @@ void main(void)
 		LCD_WriteString("kmH: ");
 		LCD_Cursor(0,6);
 		LCD_WriteString(display_rpm);
-		// LCD_Cursor(1,0);
+		LCD_Cursor(1,0);
 		// LCD_WriteString("Delta: ");
-		LCD_Cursor(1,6);
+		//LCD_Cursor(1,6);
 		// LCD_WriteString(display_pwm);
 
 		__delay_ms(200);

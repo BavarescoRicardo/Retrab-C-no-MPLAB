@@ -1699,8 +1699,9 @@ buffer[1] = '$';
 buffer[2] = ':';
 
 
-buffer[3] = (rpm >> 8) & 0xFF;
-buffer[4] = rpm & 0xFF;
+unsigned int velocidade = rpm * 40;
+buffer[3] = (velocidade >> 8) & 0xFF;
+buffer[4] = velocidade & 0xFF;
 buffer[5] = 0;
 
 unsigned char checksum = 0x00;
@@ -1731,18 +1732,18 @@ else
 return b;
 }
 
-# 147
+# 148
 void Fuzzy()
 {
 
-# 158
+# 159
 setpoint = (float)setpointUI;
 float deltaRpm = 0;
 
 
 unsigned int freio = 0;
 
-# 168
+# 169
 float mantem = 0;
 float reduz = 0;
 float aumenta = 0;
@@ -1802,7 +1803,7 @@ x=x+1;
 
 }
 
-# 231
+# 232
 if ((deltaRpm > 20) && (deltaRpm < 70))
 {
 
@@ -1833,7 +1834,7 @@ x=x+1;
 
 }
 
-# 265
+# 266
 if (deltaRpm > 70 )
 {
 
@@ -1908,7 +1909,7 @@ PWM_DutyCycle2(tf - deltaV);
 
 }
 
-# 348
+# 349
 void interrupt ISR(void)
 {
 
@@ -2022,10 +2023,13 @@ contagens_tm0 = 0;
 
 
 pulsos = (TMR1H << 8) + TMR1L;
+rpm = ((pulsos / pas_cooler) * 120);
 
-rpm = ((pulsos / pas_cooler) * 3);
 
-# 469
+
+rpm = rpm / 40;
+
+
 TMR1L = 0x00;
 TMR1H = 0x00;
 
@@ -2106,7 +2110,7 @@ while(1)
 {
 
 
-sprintf(display_rpm,"%03d", rpm);
+sprintf(display_rpm,"%04d", rpm);
 
 
 LCD_Clear();
@@ -2114,9 +2118,9 @@ LCD_Cursor(0,0);
 LCD_WriteString("kmH: ");
 LCD_Cursor(0,6);
 LCD_WriteString(display_rpm);
+LCD_Cursor(1,0);
 
 
-LCD_Cursor(1,6);
 
 
 _delay((unsigned long)((200)*(18432000/4000.0)));
