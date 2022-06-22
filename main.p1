@@ -1,6 +1,14 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "7 R:\Note\Sistema I\Ultimo C no MPLAB\usart.h
 [v _USART_WriteChar `(v ~T0 @X0 0 ef1`uc ]
+"213 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
+[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S9 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"212
+[u S8 `S9 1 ]
+[n S8 . . ]
+"224
+[v _PORTBbits `VS8 ~T0 @X0 0 e@6 ]
 "7 R:\Note\Sistema I\Ultimo C no MPLAB\pwm.h
 [v _PWM_DutyCycle2 `(v ~T0 @X0 0 ef1`i ]
 "523 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
@@ -28,15 +36,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS18 ~T0 @X0 0 e@11 ]
 "6 R:\Note\Sistema I\Ultimo C no MPLAB\timers.h
 [v _TIMER0_Set `(v ~T0 @X0 0 ef1`uc ]
-"213 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
-[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S9 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"212
-[u S8 `S9 1 ]
-[n S8 . . ]
-"224
-[v _PORTBbits `VS8 ~T0 @X0 0 e@6 ]
-"629
+"629 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
 [v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
 "623
 [v _TMR1L `Vuc ~T0 @X0 0 e@14 ]
@@ -1273,17 +1273,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;main.c: 31: unsigned int contagens_tm0 = 0;
 "39
-[v _x `f ~T0 @X0 1 e ]
+[v _x `i ~T0 @X0 1 e ]
 [i _x
--> -> 0 `i `f
+-> 0 `i
 ]
-[; ;main.c: 39: float x=0;
+[; ;main.c: 39: int x=0;
 "40
-[v _y `f ~T0 @X0 1 e ]
+[v _y `i ~T0 @X0 1 e ]
 [i _y
--> -> 0 `i `f
+-> 0 `i
 ]
-[; ;main.c: 40: float y=0;
+[; ;main.c: 40: int y=0;
 "44
 [v _fitemp `f ~T0 @X0 1 e ]
 [i _fitemp
@@ -1655,56 +1655,372 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 166: {
 [e :U _Fuzzy ]
 [f ]
-"180
+"178
 [v _freio `ui ~T0 @X0 1 a ]
-[; ;main.c: 180: unsigned int freio = 0;
+[; ;main.c: 178: unsigned int freio = 0;
 [e = _freio -> -> 0 `i `ui ]
-"186
+"179
+[v _deltaFuzzy `f ~T0 @X0 1 a ]
+"185
 [v _mantem `f ~T0 @X0 1 a ]
-[; ;main.c: 186: float mantem = 0;
+[; ;main.c: 179: float deltaFuzzy;
+[; ;main.c: 185: float mantem = 0;
 [e = _mantem -> -> 0 `i `f ]
-"187
+"186
 [v _reduz `f ~T0 @X0 1 a ]
-[; ;main.c: 187: float reduz = 0;
+[; ;main.c: 186: float reduz = 0;
 [e = _reduz -> -> 0 `i `f ]
-"188
+"187
 [v _aumenta `f ~T0 @X0 1 a ]
-[; ;main.c: 188: float aumenta = 0;
+[; ;main.c: 187: float aumenta = 0;
 [e = _aumenta -> -> 0 `i `f ]
-"189
+"188
 [v _tip `f ~T0 @X0 1 a ]
-[; ;main.c: 189: float tip;
-[; ;main.c: 190: fitemp = 0;
-"190
+[; ;main.c: 188: float tip;
+[; ;main.c: 189: fitemp = 0;
+"189
 [e = _fitemp -> -> 0 `i `f ]
-[; ;main.c: 193: if (setpointUI == antigoUI)
-"193
+[; ;main.c: 192: if (setpointUI == antigoUI)
+"192
 [e $ ! == _setpointUI _antigoUI 130  ]
-[; ;main.c: 194: {
-"194
+[; ;main.c: 193: {
+"193
 {
-[; ;main.c: 195: return;
-"195
+[; ;main.c: 194: return;
+"194
 [e $UE 129  ]
-"196
+"195
 }
 [e :U 130 ]
-[; ;main.c: 196: }
-[; ;main.c: 198: deltaV = (setpointUI - antigoUI);
-"198
-[e = _deltaV - _setpointUI _antigoUI ]
-[; ;main.c: 199: antigoUI = antigo;
-"199
-[e = _antigoUI -> _antigo `ui ]
+[; ;main.c: 195: }
+[; ;main.c: 197: deltaV = (setpointUI - antigoUI)/10;
+"197
+[e = _deltaV / - _setpointUI _antigoUI -> -> 10 `i `ui ]
+[; ;main.c: 200: if (setpointUI < antigoUI)
+"200
+[e $ ! < _setpointUI _antigoUI 131  ]
+[; ;main.c: 201: {
+"201
+{
+[; ;main.c: 202: if(PORTBbits.RB1 == 1)
+"202
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 132  ]
+[; ;main.c: 203: {
+"203
+{
+[; ;main.c: 204: PORTBbits.RB1 = 0;
+"204
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"205
+}
+[; ;main.c: 205: }else{
+[e $U 133  ]
+[e :U 132 ]
+{
+[; ;main.c: 206: PORTBbits.RB1 = 1;
+"206
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"207
+}
+[e :U 133 ]
+[; ;main.c: 207: }
+[; ;main.c: 209: freio = 1;
+"209
+[e = _freio -> -> 1 `i `ui ]
+"210
+}
+[e :U 131 ]
+[; ;main.c: 210: }
+[; ;main.c: 212: if (deltaV >90) deltaV = 90;
+"212
+[e $ ! > _deltaV -> -> 90 `i `ui 134  ]
+[e = _deltaV -> -> 90 `i `ui ]
+[e :U 134 ]
+[; ;main.c: 217: if (deltaV < 20)
+"217
+[e $ ! < _deltaV -> -> 20 `i `ui 135  ]
+[; ;main.c: 218: {
+"218
+{
+[; ;main.c: 222: fitemp = trapmf(deltaV, 0,0,13,32);
+"222
+[e = _fitemp ( _trapmf (4 , , , , -> _deltaV `f -> -> 0 `i `f -> -> 0 `i `f -> -> 13 `i `f -> -> 32 `i `f ]
+[; ;main.c: 225: fop_rule1 = max_val(fitemp,0.1);
+"225
+[e = _fop_rule1 ( _max_val (2 , _fitemp -> .0.1 `f ]
+[; ;main.c: 228: x=0;
+"228
+[e = _x -> 0 `i ]
+[; ;main.c: 229: y=0;
+"229
+[e = _y -> 0 `i ]
+[; ;main.c: 230: for (int a=0; a<=90; a++)
+"230
+{
+[v _a `i ~T0 @X0 1 a ]
+[e = _a -> 0 `i ]
+[e $ <= _a -> 90 `i 136  ]
+[e $U 137  ]
+"231
+[e :U 136 ]
+[; ;main.c: 231: {
+{
+[; ;main.c: 232: y = trapmf(x,0,0,13,32);
+"232
+[e = _y -> ( _trapmf (4 , , , , -> _x `f -> -> 0 `i `f -> -> 0 `i `f -> -> 13 `i `f -> -> 32 `i `f `i ]
+[; ;main.c: 234: if (y > fop_rule1)
+"234
+[e $ ! > -> _y `f _fop_rule1 139  ]
+[; ;main.c: 235: {
+"235
+{
+[; ;main.c: 236: reduz += fop_rule1;
+"236
+[e =+ _reduz _fop_rule1 ]
+"237
+}
+[; ;main.c: 237: }
+[e $U 140  ]
+"238
+[e :U 139 ]
+[; ;main.c: 238: else
+[; ;main.c: 239: {
+"239
+{
+[; ;main.c: 240: reduz += y;
+"240
+[e =+ _reduz -> _y `f ]
+"241
+}
+[e :U 140 ]
+[; ;main.c: 241: }
+[; ;main.c: 243: x=x+1;
+"243
+[e = _x + _x -> 1 `i ]
+"244
+}
+"230
+[e ++ _a -> 1 `i ]
+[e $ <= _a -> 90 `i 136  ]
+[e :U 137 ]
+"244
+}
+"246
+}
+[e :U 135 ]
+[; ;main.c: 244: }
+[; ;main.c: 246: }
+[; ;main.c: 252: if ((deltaV > 20) && (deltaV < 70))
+"252
+[e $ ! && > _deltaV -> -> 20 `i `ui < _deltaV -> -> 70 `i `ui 141  ]
+[; ;main.c: 253: {
+"253
+{
+[; ;main.c: 256: fitemp = trimf(deltaV, 9, 45, 81);
+"256
+[e = _fitemp ( _trimf (4 , , , -> _deltaV `f -> -> 9 `i `f -> -> 45 `i `f -> -> 81 `i `f ]
+[; ;main.c: 259: fop_rule2 = max_val(fitemp,0.1);
+"259
+[e = _fop_rule2 ( _max_val (2 , _fitemp -> .0.1 `f ]
+[; ;main.c: 262: x=0;
+"262
+[e = _x -> 0 `i ]
+[; ;main.c: 263: y=0;
+"263
+[e = _y -> 0 `i ]
+[; ;main.c: 264: for (int a=0; a<=90; a++)
+"264
+{
+[v _a `i ~T0 @X0 1 a ]
+[e = _a -> 0 `i ]
+[e $ <= _a -> 90 `i 142  ]
+[e $U 143  ]
+"265
+[e :U 142 ]
+[; ;main.c: 265: {
+{
+[; ;main.c: 266: y = trimf(x, 9, 45, 81);
+"266
+[e = _y -> ( _trimf (4 , , , -> _x `f -> -> 9 `i `f -> -> 45 `i `f -> -> 81 `i `f `i ]
+[; ;main.c: 268: if (y >= fop_rule2)
+"268
+[e $ ! >= -> _y `f _fop_rule2 145  ]
+[; ;main.c: 269: {
+"269
+{
+[; ;main.c: 270: mantem += fop_rule2;
+"270
+[e =+ _mantem _fop_rule2 ]
+"271
+}
+[; ;main.c: 271: }
+[e $U 146  ]
+"272
+[e :U 145 ]
+[; ;main.c: 272: else
+[; ;main.c: 273: {
+"273
+{
+[; ;main.c: 274: mantem += y;
+"274
+[e =+ _mantem -> _y `f ]
+"275
+}
+[e :U 146 ]
+[; ;main.c: 275: }
+[; ;main.c: 277: x=x+1;
+"277
+[e = _x + _x -> 1 `i ]
+"278
+}
+"264
+[e ++ _a -> 1 `i ]
+[e $ <= _a -> 90 `i 142  ]
+[e :U 143 ]
+"278
+}
+"280
+}
+[e :U 141 ]
+[; ;main.c: 278: }
+[; ;main.c: 280: }
+[; ;main.c: 286: if (deltaV > 70 )
+"286
+[e $ ! > _deltaV -> -> 70 `i `ui 147  ]
+[; ;main.c: 287: {
+"287
+{
+[; ;main.c: 290: fitemp = trapmf(deltaV, 62, 79, 90, 90);
+"290
+[e = _fitemp ( _trapmf (4 , , , , -> _deltaV `f -> -> 62 `i `f -> -> 79 `i `f -> -> 90 `i `f -> -> 90 `i `f ]
+[; ;main.c: 294: fop_rule3 = max_val(fitemp,0.1);
+"294
+[e = _fop_rule3 ( _max_val (2 , _fitemp -> .0.1 `f ]
+[; ;main.c: 297: x=0;
+"297
+[e = _x -> 0 `i ]
+[; ;main.c: 298: y=0;
+"298
+[e = _y -> 0 `i ]
+[; ;main.c: 299: for (int a=0; a<=90; a++)
+"299
+{
+[v _a `i ~T0 @X0 1 a ]
+[e = _a -> 0 `i ]
+[e $ <= _a -> 90 `i 148  ]
+[e $U 149  ]
+"300
+[e :U 148 ]
+[; ;main.c: 300: {
+{
+[; ;main.c: 301: y = trapmf(x, 62, 79, 90, 90);
+"301
+[e = _y -> ( _trapmf (4 , , , , -> _x `f -> -> 62 `i `f -> -> 79 `i `f -> -> 90 `i `f -> -> 90 `i `f `i ]
+[; ;main.c: 303: if (y >= fop_rule3)
+"303
+[e $ ! >= -> _y `f _fop_rule3 151  ]
+[; ;main.c: 304: {
+"304
+{
+[; ;main.c: 305: aumenta += fop_rule3;
+"305
+[e =+ _aumenta _fop_rule3 ]
+"306
+}
+[; ;main.c: 306: }
+[e $U 152  ]
+"307
+[e :U 151 ]
+[; ;main.c: 307: else
+[; ;main.c: 308: {
+"308
+{
+[; ;main.c: 309: aumenta += y;
+"309
+[e =+ _aumenta -> _y `f ]
+"310
+}
+[e :U 152 ]
+[; ;main.c: 310: }
+[; ;main.c: 312: x=x+1;
+"312
+[e = _x + _x -> 1 `i ]
+"313
+}
+"299
+[e ++ _a -> 1 `i ]
+[e $ <= _a -> 90 `i 148  ]
+[e :U 149 ]
+"313
+}
+"315
+}
+[e :U 147 ]
+[; ;main.c: 313: }
+[; ;main.c: 315: }
+[; ;main.c: 318: if (deltaV < 25)
+"318
+[e $ ! < _deltaV -> -> 25 `i `ui 153  ]
+[; ;main.c: 319: {
+"319
+{
+[; ;main.c: 320: tip = reduz;
+"320
+[e = _tip _reduz ]
+"321
+}
+[; ;main.c: 321: }else
+[e $U 154  ]
+[e :U 153 ]
+[; ;main.c: 322: if (deltaV >= 25 && deltaV < 75)
+"322
+[e $ ! && >= _deltaV -> -> 25 `i `ui < _deltaV -> -> 75 `i `ui 155  ]
+[; ;main.c: 323: {
+"323
+{
+[; ;main.c: 324: tip = mantem;
+"324
+[e = _tip _mantem ]
+"325
+}
+[; ;main.c: 325: }else
+[e $U 156  ]
+[e :U 155 ]
+[; ;main.c: 326: {
+"326
+{
+[; ;main.c: 327: tip = aumenta;
+"327
+[e = _tip _aumenta ]
+"328
+}
+[e :U 156 ]
+[e :U 154 ]
+[; ;main.c: 328: }
+[; ;main.c: 331: total_area = 90;
+"331
+[e = _total_area -> -> 90 `i `f ]
+[; ;main.c: 332: sum = 0;
+"332
+[e = _sum -> -> 0 `i `f ]
+[; ;main.c: 333: sum = sum + tip;
+"333
+[e = _sum + _sum _tip ]
+[; ;main.c: 336: ativa_fan = sum/total_area;
+"336
+[e = _ativa_fan / _sum _total_area ]
+[; ;main.c: 339: ativa_fan = ativa_fan*100;
+"339
+[e = _ativa_fan * _ativa_fan -> -> 100 `i `f ]
 [; ;main.c: 345: if (freio = 1)
 "345
-[e $ ! != = _freio -> -> 1 `i `ui -> -> 0 `i `ui 131  ]
+[e $ ! != = _freio -> -> 1 `i `ui -> -> 0 `i `ui 157  ]
 [; ;main.c: 346: {
 "346
 {
 [; ;main.c: 347: if (deltaV >0 && deltaV < 1020)
 "347
-[e $ ! && > _deltaV -> -> 0 `i `ui < _deltaV -> -> 1020 `i `ui 132  ]
+[e $ ! && > _deltaV -> -> 0 `i `ui < _deltaV -> -> 1020 `i `ui 158  ]
 [; ;main.c: 348: {
 "348
 {
@@ -1713,19 +2029,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _PWM_DutyCycle2 (1 -> _deltaV `i ]
 "350
 }
-[e :U 132 ]
+[e :U 158 ]
 "351
 }
 [; ;main.c: 350: }
 [; ;main.c: 351: }else
-[e $U 133  ]
-[e :U 131 ]
+[e $U 159  ]
+[e :U 157 ]
 [; ;main.c: 352: {
 "352
 {
 [; ;main.c: 353: if (deltaV > 0 && deltaV < 1020)
 "353
-[e $ ! && > _deltaV -> -> 0 `i `ui < _deltaV -> -> 1020 `i `ui 134  ]
+[e $ ! && > _deltaV -> -> 0 `i `ui < _deltaV -> -> 1020 `i `ui 160  ]
 [; ;main.c: 354: {
 "354
 {
@@ -1734,19 +2050,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _PWM_DutyCycle2 (1 -> _deltaV `i ]
 "356
 }
-[e :U 134 ]
+[e :U 160 ]
 "357
 }
-[e :U 133 ]
+[e :U 159 ]
 [; ;main.c: 356: }
 [; ;main.c: 357: }
 [; ;main.c: 360: }
 "360
 [e :UE 129 ]
 }
-[v F1381 `(v ~T0 @X0 1 tf ]
+[v F1385 `(v ~T0 @X0 1 tf ]
 "371
-[v _ISR `IF1381 ~T0 @X0 1 e ]
+[v _ISR `IF1385 ~T0 @X0 1 e ]
 "372
 {
 [; ;main.c: 371: void interrupt ISR(void)
@@ -1755,13 +2071,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;main.c: 374: if (PIR1bits.RCIF)
 "374
-[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 136  ]
+[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 162  ]
 [; ;main.c: 375: {
 "375
 {
 [; ;main.c: 376: if (USART_ReceiveChar() == '0')
 "376
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 48 `ui 137  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 48 `ui 163  ]
 [; ;main.c: 377: {
 "377
 {
@@ -1773,14 +2089,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _PWM_DutyCycle2 (1 -> 0 `i ]
 [; ;main.c: 381: return;
 "381
-[e $UE 135  ]
+[e $UE 161  ]
 "382
 }
-[e :U 137 ]
+[e :U 163 ]
 [; ;main.c: 382: }
 [; ;main.c: 384: if (USART_ReceiveChar() == '1')
 "384
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 49 `ui 138  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 49 `ui 164  ]
 [; ;main.c: 385: {
 "385
 {
@@ -1789,11 +2105,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _setpointUI -> -> 720 `i `ui ]
 "388
 }
-[e :U 138 ]
+[e :U 164 ]
 [; ;main.c: 388: }
 [; ;main.c: 390: if (USART_ReceiveChar() == '2')
 "390
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 50 `ui 139  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 50 `ui 165  ]
 [; ;main.c: 391: {
 "391
 {
@@ -1802,11 +2118,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _setpointUI -> -> 1450 `i `ui ]
 "394
 }
-[e :U 139 ]
+[e :U 165 ]
 [; ;main.c: 394: }
 [; ;main.c: 396: if (USART_ReceiveChar() == '3')
 "396
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 51 `ui 140  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 51 `ui 166  ]
 [; ;main.c: 397: {
 "397
 {
@@ -1815,11 +2131,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _setpointUI -> -> 2828 `i `ui ]
 "400
 }
-[e :U 140 ]
+[e :U 166 ]
 [; ;main.c: 400: }
 [; ;main.c: 402: if (USART_ReceiveChar() == '4')
 "402
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 52 `ui 141  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 52 `ui 167  ]
 [; ;main.c: 403: {
 "403
 {
@@ -1828,11 +2144,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _setpointUI -> -> 3256 `i `ui ]
 "406
 }
-[e :U 141 ]
+[e :U 167 ]
 [; ;main.c: 406: }
 [; ;main.c: 408: if (USART_ReceiveChar() == '5')
 "408
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 53 `ui 142  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 53 `ui 168  ]
 [; ;main.c: 409: {
 "409
 {
@@ -1841,11 +2157,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _setpointUI -> -> 4510 `i `ui ]
 "412
 }
-[e :U 142 ]
+[e :U 168 ]
 [; ;main.c: 412: }
 [; ;main.c: 414: if (USART_ReceiveChar() == '6')
 "414
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 54 `ui 143  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 54 `ui 169  ]
 [; ;main.c: 415: {
 "415
 {
@@ -1854,11 +2170,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _setpointUI -> -> 5760 `i `ui ]
 "418
 }
-[e :U 143 ]
+[e :U 169 ]
 [; ;main.c: 418: }
 [; ;main.c: 420: if (USART_ReceiveChar() == '7')
 "420
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 55 `ui 144  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 55 `ui 170  ]
 [; ;main.c: 421: {
 "421
 {
@@ -1867,11 +2183,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _setpointUI -> -> 6890 `i `ui ]
 "424
 }
-[e :U 144 ]
+[e :U 170 ]
 [; ;main.c: 424: }
 [; ;main.c: 426: if (USART_ReceiveChar() == '8')
 "426
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 56 `ui 145  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 56 `ui 171  ]
 [; ;main.c: 427: {
 "427
 {
@@ -1880,11 +2196,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _setpointUI -> -> 8100 `i `ui ]
 "430
 }
-[e :U 145 ]
+[e :U 171 ]
 [; ;main.c: 430: }
 [; ;main.c: 432: if (USART_ReceiveChar() == '9')
 "432
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 57 `ui 146  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 57 `ui 172  ]
 [; ;main.c: 433: {
 "433
 {
@@ -1893,7 +2209,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _setpointUI -> -> 9000 `i `ui ]
 "436
 }
-[e :U 146 ]
+[e :U 172 ]
 [; ;main.c: 436: }
 [; ;main.c: 440: Fuzzy();
 "440
@@ -1903,7 +2219,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _antigoUI _setpointUI ]
 [; ;main.c: 444: if(USART_ReceiveChar() == 'X')
 "444
-[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 88 `ui 147  ]
+[e $ ! == -> ( _USART_ReceiveChar ..  `ui -> 88 `ui 173  ]
 [; ;main.c: 445: {
 "445
 {
@@ -1912,18 +2228,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _send ..  ]
 "447
 }
-[e :U 147 ]
+[e :U 173 ]
 [; ;main.c: 447: }
 [; ;main.c: 449: PIR1bits.RCIF = 0;
 "449
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
 "450
 }
-[e :U 136 ]
+[e :U 162 ]
 [; ;main.c: 450: }
 [; ;main.c: 453: if (PIR1bits.ADIF)
 "453
-[e $ ! != -> . . _PIR1bits 0 6 `i -> -> -> 0 `i `Vuc `i 148  ]
+[e $ ! != -> . . _PIR1bits 0 6 `i -> -> -> 0 `i `Vuc `i 174  ]
 [; ;main.c: 454: {
 "454
 {
@@ -1932,11 +2248,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "459
 }
-[e :U 148 ]
+[e :U 174 ]
 [; ;main.c: 459: }
 [; ;main.c: 463: if (INTCONbits.T0IF)
 "463
-[e $ ! != -> . . _INTCONbits 1 1 `i -> -> -> 0 `i `Vuc `i 149  ]
+[e $ ! != -> . . _INTCONbits 1 1 `i -> -> -> 0 `i `Vuc `i 175  ]
 [; ;main.c: 464: {
 "464
 {
@@ -1945,7 +2261,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _TIMER0_Set (1 -> -> 238 `i `uc ]
 [; ;main.c: 469: if (contagens_tm0 < 499)
 "469
-[e $ ! < _contagens_tm0 -> -> 499 `i `ui 150  ]
+[e $ ! < _contagens_tm0 -> -> 499 `i `ui 176  ]
 [; ;main.c: 470: {
 "470
 {
@@ -1958,9 +2274,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "476
 }
 [; ;main.c: 476: }
-[e $U 151  ]
+[e $U 177  ]
 "477
-[e :U 150 ]
+[e :U 176 ]
 [; ;main.c: 477: else
 [; ;main.c: 478: {
 "478
@@ -1988,18 +2304,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
 "496
 }
-[e :U 151 ]
+[e :U 177 ]
 [; ;main.c: 496: }
 [; ;main.c: 499: INTCONbits.T0IF = 0;
 "499
 [e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
 "500
 }
-[e :U 149 ]
+[e :U 175 ]
 [; ;main.c: 500: }
 [; ;main.c: 503: if (PIR1bits.TMR1IF)
 "503
-[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 152  ]
+[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 178  ]
 [; ;main.c: 504: {
 "504
 {
@@ -2008,11 +2324,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 "509
 }
-[e :U 152 ]
+[e :U 178 ]
 [; ;main.c: 509: }
 [; ;main.c: 512: if (PIR1bits.SSPIF)
 "512
-[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 153  ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 179  ]
 [; ;main.c: 513: {
 "513
 {
@@ -2021,11 +2337,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "518
 }
-[e :U 153 ]
+[e :U 179 ]
 [; ;main.c: 518: }
 [; ;main.c: 519: }
 "519
-[e :UE 135 ]
+[e :UE 161 ]
 }
 "522
 [v _main `(v ~T0 @X0 1 ef ]
@@ -2118,7 +2434,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 18432000 `l `d .4000.0 `ul ]
 [; ;main.c: 571: while(1)
 "571
-[e :U 156 ]
+[e :U 182 ]
 [; ;main.c: 572: {
 "572
 {
@@ -2145,14 +2461,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 18432000 `l `d .4000.0 `ul ]
 "589
 }
-[e :U 155 ]
+[e :U 181 ]
 "571
-[e $U 156  ]
-[e :U 157 ]
+[e $U 182  ]
+[e :U 183 ]
 [; ;main.c: 589: }
 [; ;main.c: 590: }
 "590
-[e :UE 154 ]
+[e :UE 180 ]
 }
 [a 2C 73 110 105 99 105 97 108 105 122 97 110 100 111 46 46 46 0 ]
 [a 3C 107 109 72 58 32 0 ]
