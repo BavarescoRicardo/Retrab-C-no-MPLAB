@@ -1770,7 +1770,7 @@ if (setpointUI == antigoUI)
 return;
 }
 
-deltaV = (setpointUI - antigoUI)/10;
+deltaV = (setpointUI - antigoUI)/50;
 
 
 if (setpointUI < antigoUI)

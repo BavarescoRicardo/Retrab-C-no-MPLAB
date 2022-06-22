@@ -1693,9 +1693,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 130 ]
 [; ;main.c: 195: }
-[; ;main.c: 197: deltaV = (setpointUI - antigoUI)/10;
+[; ;main.c: 197: deltaV = (setpointUI - antigoUI)/50;
 "197
-[e = _deltaV / - _setpointUI _antigoUI -> -> 10 `i `ui ]
+[e = _deltaV / - _setpointUI _antigoUI -> -> 50 `i `ui ]
 [; ;main.c: 200: if (setpointUI < antigoUI)
 "200
 [e $ ! < _setpointUI _antigoUI 131  ]

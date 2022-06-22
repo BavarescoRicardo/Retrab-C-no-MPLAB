@@ -6460,10 +6460,10 @@ i1l148:
 	
 i1l2550:	
 ;main.c: 195: }
-;main.c: 197: deltaV = (setpointUI - antigoUI)/10;
-	movlw	low(0Ah)
+;main.c: 197: deltaV = (setpointUI - antigoUI)/50;
+	movlw	low(032h)
 	movwf	(___lwdiv@divisor)
-	movlw	high(0Ah)
+	movlw	high(032h)
 	movwf	((___lwdiv@divisor))+1
 	comf	(_antigoUI),w
 	movwf	(??_Fuzzy+0)+0

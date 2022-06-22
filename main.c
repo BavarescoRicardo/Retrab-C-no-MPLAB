@@ -194,7 +194,8 @@ void Fuzzy()
 		return;
 	}
 
-	deltaV = (setpointUI - antigoUI)/10;	
+	// Normaliza os valores de diferenca
+	deltaV = (setpointUI - antigoUI)/80;	
 	//float deltaF = (float)(setpointUI - antigoUI);	
 	
 	if (setpointUI < antigoUI)
@@ -213,7 +214,7 @@ void Fuzzy()
 
 
 	
-	// 1ª regra - If delta é menor e esta lento - fica mais pouco lento 
+	// 1ª regra - If delta é menor e esta lento - fica pouco lento 
 	if (deltaV < 20)
 	{
 
@@ -247,7 +248,7 @@ void Fuzzy()
 
 
 
-	// 2ª regra - If deltaRpm is na faixa de diferenca é meida e esta lento - fica mais na mesma 
+	// 2ª regra - If deltaRpm is na faixa de diferenca é meida e esta lento - muda pouco
 	//  [9 45 81]
 	if ((deltaV > 20) && (deltaV < 70))
 	{
