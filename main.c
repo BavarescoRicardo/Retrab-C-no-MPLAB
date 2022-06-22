@@ -21,7 +21,7 @@ unsigned short ADCResult = 0;
 //Configuracoes para formatacao de dados de saida.
 unsigned char display_rpm[10];
 // unsigned char display_pwm[10];
-unsigned char buffer[10];
+unsigned char buffer[13];
 int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
@@ -54,7 +54,7 @@ float total_area = 0;
 float ativa_fan = 0;
 
 // Entradas para o sistema.
-float tf = 50;
+float antigo = 50;
 float setpoint = 20;
 
 //---------------------------------------------------------------------
@@ -101,31 +101,35 @@ float trapmf(float x, float a, float b, float c, float d)
 // Montagem do buffer de dados 
 void send()
 {
+	//Monta pacote de dados buffer
+	buffer[0] = '#';
+	buffer[1] = '$';
+	buffer[2] = ':';
 
-  //Monta pacote de dados buffer
-  buffer[0] = '#';
-  buffer[1] = '$';
-  buffer[2] = ':';
+	unsigned int velocidade = rpm * 40;
+	// Conversao para char	rpm  
+	buffer[3] = (velocidade >> 8) & 0xFF;
+	buffer[4] = velocidade & 0xFF;
+	buffer[5] = 'V';
 
-  unsigned int velocidade = rpm * 40;
-  // Conversao para char	rpm  
-  buffer[3] = (velocidade >> 8) & 0xFF;
-  buffer[4] = velocidade & 0xFF;
-  buffer[5] = 0;
+	// Conversao para char	setpoint  
+	buffer[6] = (setpointUI >> 8) & 0xFF;
+	buffer[7] = setpointUI & 0xFF;
+	buffer[8] = 'S';
 
-  // Conversao para char	setpoint  
-  buffer[6] = (velocidade >> 8) & 0xFF;
-  buffer[7] = velocidade & 0xFF;
-  buffer[8] = 0;
+	// Conversao para char	setpoint  
+	buffer[9] = (deltaV >> 8) & 0xFF;
+	buffer[10] = deltaV & 0xFF;
+	buffer[11] = 'S';
 
-  unsigned char checksum = 0x00;
-  for (unsigned char index = 0; index < 9; index++)
-  {
-    USART_WriteChar(buffer[index]);
-    checksum ^= buffer[index];
-  }
-  buffer[9] = checksum;
-  USART_WriteChar(buffer[9]);
+	unsigned char checksum = 0x00;
+	for (unsigned char index = 0; index < 12; index++)
+	{
+	USART_WriteChar(buffer[index]);
+	checksum ^= buffer[index];
+	}
+	buffer[12] = checksum;
+	USART_WriteChar(buffer[12]);
 }
 
 float min_val(float a, float b)
@@ -178,7 +182,7 @@ void Fuzzy()
 	fitemp = 0;
 
 	//  calculo do erro para o setpoint
-	deltaRpm = (setpoint - tf);//
+	deltaRpm = (setpoint - antigo);//
 	deltaRpm = (deltaRpm/100);
 	
 	deltaV = deltaRpm;
@@ -327,15 +331,15 @@ void Fuzzy()
 	// Envia o valor calculado para o duty cicle pwm
 	if (freio = 1)
 	{	
-		if ((tf + deltaV) >0 && (tf + deltaV) < 1020)
+		if ((antigo + deltaV) >0 && (antigo + deltaV) < 1020)
 		{
-			PWM_DutyCycle2(tf + deltaV);
+			PWM_DutyCycle2(antigo + deltaV);
 		}
 	}else 
 	{
-		if ((tf - deltaV) >0 && (tf - deltaV) < 1020)
+		if ((antigo - deltaV) >0 && (antigo - deltaV) < 1020)
 		{
-			PWM_DutyCycle2(tf - deltaV);
+			PWM_DutyCycle2(antigo - deltaV);
 		}
 	}
 	
@@ -421,7 +425,7 @@ void interrupt ISR(void)
 
 		// No fim das condições manda o sinal para a função fuzzy
 		Fuzzy();
-		tf = (setpointUI - 100);		
+		antigo = (setpointUI - 100);		
 
 		// Apresenta as informacoes na USART.
 		if(USART_ReceiveChar() == 'X')

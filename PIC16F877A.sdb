@@ -149,15 +149,15 @@
 [v _trapmf trapmf `(f  1 e 3 0 ]
 "102
 [v _send send `(v  1 e 0 0 ]
-"131
+"135
 [v _min_val min_val `(f  1 e 3 0 ]
-"141
+"145
 [v _max_val max_val `(f  1 e 3 0 ]
-"153
+"157
 [v _Fuzzy Fuzzy `(v  1 e 0 0 ]
-"354
+"358
 [v _ISR ISR `II(v  1 e 0 0 ]
-"505
+"509
 [v _main main `(v  1 e 0 0 ]
 "5 R:\Note\Sistema I\Ultimo C no MPLAB\pwm.c
 [v _PWM_Init PWM_Init `(v  1 e 0 0 ]
@@ -529,7 +529,7 @@
 "22
 [v _display_rpm display_rpm `[10]uc  1 e 10 0 ]
 "24
-[v _buffer buffer `[10]uc  1 e 10 0 ]
+[v _buffer buffer `[13]uc  1 e 13 0 ]
 "25
 [v _status status `i  1 e 2 0 ]
 "26
@@ -568,10 +568,10 @@
 [v _tf tf `f  1 e 3 0 ]
 "58
 [v _setpoint setpoint `f  1 e 3 0 ]
-"505
+"509
 [v _main main `(v  1 e 0 0 ]
 {
-"573
+"577
 } 0
 "6 R:\Note\Sistema I\Ultimo C no MPLAB\usart.c
 [v _USART_Init USART_Init `(v  1 e 0 0 ]
@@ -672,10 +672,10 @@
 {
 "44
 } 0
-"354 R:\Note\Sistema I\Ultimo C no MPLAB\main.c
+"358 R:\Note\Sistema I\Ultimo C no MPLAB\main.c
 [v _ISR ISR `II(v  1 e 0 0 ]
 {
-"502
+"506
 } 0
 "20 R:\Note\Sistema I\Ultimo C no MPLAB\timers.c
 [v i1_TIMER0_Set TIMER0_Set `(v  1 e 0 0 ]
@@ -689,13 +689,13 @@
 "102 R:\Note\Sistema I\Ultimo C no MPLAB\main.c
 [v _send send `(v  1 e 0 0 ]
 {
-"122
+"126
 [v send@index index `uc  1 a 1 4 ]
-"110
+"109
 [v send@velocidade velocidade `ui  1 a 2 2 ]
-"121
+"125
 [v send@checksum checksum `uc  1 a 1 1 ]
-"129
+"133
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -742,28 +742,28 @@
 [v USART_WriteChar@byte byte `uc  1 a 1 0 ]
 "48
 } 0
-"153 R:\Note\Sistema I\Ultimo C no MPLAB\main.c
+"157 R:\Note\Sistema I\Ultimo C no MPLAB\main.c
 [v _Fuzzy Fuzzy `(v  1 e 0 0 ]
 {
-"284
+"288
 [v Fuzzy@a_242 a `i  1 a 2 59 ]
-"249
+"253
 [v Fuzzy@a_241 a `i  1 a 2 57 ]
-"215
+"219
 [v Fuzzy@a a `i  1 a 2 55 ]
-"165
+"169
 [v Fuzzy@deltaRpm deltaRpm `f  1 a 3 70 ]
-"176
+"180
 [v Fuzzy@aumenta aumenta `f  1 a 3 67 ]
-"175
+"179
 [v Fuzzy@reduz reduz `f  1 a 3 64 ]
-"174
+"178
 [v Fuzzy@mantem mantem `f  1 a 3 61 ]
-"177
+"181
 [v Fuzzy@tip tip `f  1 a 3 52 ]
-"168
+"172
 [v Fuzzy@freio freio `ui  1 a 2 50 ]
-"343
+"347
 } 0
 "96 R:\Note\Sistema I\Ultimo C no MPLAB\pwm.c
 [v i1_PWM_DutyCycle2 PWM_DutyCycle2 `(v  1 e 0 0 ]
@@ -830,12 +830,12 @@
 [v ___ftadd@f2 f2 `f  1 p 3 6 ]
 "148
 } 0
-"141 R:\Note\Sistema I\Ultimo C no MPLAB\main.c
+"145 R:\Note\Sistema I\Ultimo C no MPLAB\main.c
 [v _max_val max_val `(f  1 e 3 0 ]
 {
 [v max_val@a a `f  1 p 3 28 ]
 [v max_val@b b `f  1 p 3 31 ]
-"147
+"151
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c
 [v ___ftge __ftge `(b  1 e 0 0 ]
