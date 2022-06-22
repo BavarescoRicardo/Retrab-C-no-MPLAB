@@ -422,21 +422,21 @@ void interrupt ISR(void)
 		{
 			send();
 		}
-		// Flag de status da Interrup��o do buffer de recep��o da USART.
+		// Flag de status da Interrupcao do buffer de recepcao da USART.
 		PIR1bits.RCIF = 0;
 	}
 
-	// Tratamento da interrup��o do conversor A/D.
+	// Tratamento da interrupcao do conversor A/D.
 	if (PIR1bits.ADIF)
 	{
-		// Caso a interrup��o seja ativada a manipula��o dos dados pode ser feita aqui!	
+		// Caso a interrupcao seja ativada a manipulacao dos dados pode ser feita aqui!	
 
-		// Limpa a flag da interrup��o do conversor A/D.
+		// Limpa a flag da interrupcao do conversor A/D.
 		PIR1bits.ADIF = 0;	
 	}
 
-	// Tratamento da interrup��o do Timer0.
-	// Controle da Interrup��o do TIMER0.
+	// Tratamento da interrupcao do Timer0.
+	// Controle da Interrupcao do TIMER0.
 	if (INTCONbits.T0IF)
 	{
 		// Carrega o valor equivalente a contagens de 1ms.
@@ -445,22 +445,21 @@ void interrupt ISR(void)
 		// Controle do n�mero de contagens de tempo.
 		if (contagens_tm0 < 499)		// (n-1) n=10ms, n=20ms, n=500ms
 		{	
-			// Vari�vel de controle/incremento do per�odo de tempo.  	
+			// Vari�vel de controle/incremento do periodo de tempo.  	
 			contagens_tm0++;
 
-     		// Vari�veis de controle (n�vel alto).
+     		// Vari�veis de controle (nivel alto).
 			PORTBbits.RB6 = 1;
 		}
 		else
 		{
-			// Vari�vel de controle do per�odo de tempo.
+			// Vari�vel de controle do periodo de tempo.
 			contagens_tm0 = 0;
 
-			// C�lculo das rota��es por minuto.
+			// Calculo das rotacaes por minuto.
 			pulsos = (TMR1H << 8) + TMR1L;
-			// rpm = ((pulsos / pas_cooler) * 120);
-			rpm = ((pulsos / pas_cooler) * 3);
-
+			rpm = ((pulsos / pas_cooler) * 120);
+			
 			// Transforma rpm em km/h
 				// cada 40 rpm sera 1 km
 			// rpm = rpm / 40;
@@ -469,7 +468,7 @@ void interrupt ISR(void)
 			TMR1L = 0x00;
 			TMR1H = 0x00;
 
-			// Vari�veis de controle (n�vel baixo).
+			// Variaveis de controle (nivel baixo).
 			PORTBbits.RB6 = 0;
 		}
 
@@ -477,19 +476,19 @@ void interrupt ISR(void)
 		INTCONbits.T0IF = 0;
 	}		
 
-	// Tratamento da interrup��o do Timer1.
+	// Tratamento da interrupcao do Timer1.
 	if (PIR1bits.TMR1IF) 
 	{
-		// Caso a interrup��o seja ativada a manipula��o dos dados pode ser feita aqui!	
+		// Caso a interrupcao seja ativada a manipula��o dos dados pode ser feita aqui!	
 
 		// Resetar a flag do Timer1 para uma nova contagem.
         PIR1bits.TMR1IF = 0;		
 	}
 
-	// Tratamento da interrup��o da SPI.
+	// Tratamento da interrupcao da SPI.
 	if (PIR1bits.SSPIF) 
 	{
-		// Caso a interrup��o seja ativada a manipula��o dos dados pode ser feita aqui!	
+		// Caso a interrupcao seja ativada a manipula��o dos dados pode ser feita aqui!	
 
 		// Resetar a flag do SPI para uma nova contagem.
         PIR1bits.SSPIF = 0;		
@@ -499,16 +498,16 @@ void interrupt ISR(void)
 //-----------------------------------------------------------------------------
 void main(void)
 {
-    TRISA = 0b00000001;		// Configuracao dos canais anal�gicos do PORTA.
-    PORTA = 0b00000001;  	// Inicializacao dos canais anal�gicos do PORTA.
-    TRISB = 0b00000000;		// Configuracao das entradas/sa�das do PORTB (RB4 e RB5 PWM).
-    PORTB = 0b00000000;  	// Inicializacao das entradas/sa�das do PORTB.
+    TRISA = 0b00000001;		// Configuracao dos canais do PORTA.
+    PORTA = 0b00000001;  	// Inicializacao dos canais do PORTA.
+    TRISB = 0b00000000;		// Configuracao das entradas/saidas do PORTB (RB4 e RB5 PWM).
+    PORTB = 0b00000000;  	// Inicializacao das entradas/saidas do PORTB.
 	TRISC = 0b10000001;		// Configuracao do PORTC - pinos RC0(TIMER), RC7(RX) e RC6(TX).
     PORTC = 0b11000000; 	// Inicializacao dos pinos RX e TX em n�vel alto (Modo IDLE).
-    TRISD = 0b00000000;		// Configuracao das entradas/sa�das do PORTD.		
-    PORTD = 0b00000000;  	// Inicializacao das das entradas/sa�das do PORTD.
-    TRISE = 0b00000000;		// Configuracao dos canais anal�gicos do PORTE.
-    PORTE = 0b00000000;  	// Inicializacao dos canais anal�gicos do PORTE.
+    TRISD = 0b00000000;		// Configuracao das entradas/saidas do PORTD.		
+    PORTD = 0b00000000;  	// Inicializacao das das entradas/saidas do PORTD.
+    TRISE = 0b00000000;		// Configuracao dos canais do PORTE.
+    PORTE = 0b00000000;  	// Inicializacao dos canais do PORTE.
 
 	// Configura��es do TIMER1 para contagem de pulsos externos.
 	T1CON = 0x03;
@@ -516,22 +515,22 @@ void main(void)
 	TMR1H = 0x00;
 	
 	// Inicializa��o dos perif�ricos do microcontrolador.
-	USART_Init(115200);		// Inicializa��o do m�dulo USART.
-	TIMER0_Init();			// Inicializa��o do m�dulo do Timer0.
-	ADC_Init();				// Inicializa��o do m�dulo do conversor A/D.
+	USART_Init(115200);		// Inicializacao do  USART.
+	TIMER0_Init();			// Inicializacao do  do Timer0.
+	ADC_Init();				// Inicializacao do  do conversor A/D.
 	PWM_Init();	 			// 1.125khz, prescaler 16, 1024 passos.
-	LCD_Init();				// Inicializa��o do LCD.
+	LCD_Init();				// Inicializacao do LCD.
 	
-	// Ativa��o das interrup��es do microcontrolador.
-	INTCONbits.PEIE	= 1;	// Habilita Interrup��o de Perif�ricos do Microcontrolador.
-	INTCONbits.GIE	= 1;	// Habilita Interrup��o Global.
+	// Ativacao das interrupces do microcontrolador.
+	INTCONbits.PEIE	= 1;	// Habilita Interrupcao de Perif�ricos do Microcontrolador.
+	INTCONbits.GIE	= 1;	// Habilita Interrupcao Global.
 
 	// Rotinas do USART.
  	// USART_WriteString("Inicializando o PIC16F877A\n\r");
  	// USART_WriteString("USART: 115.200bps\n\r");
 
 	// Rotinas do LCD.
-	LCD_Init();								// Inicializa��o do LCD.
+	LCD_Init();								// Inicializacao do LCD.
 	LCD_Cursor(0,0);						// Posicionamento da string na linha 0 e coluna 0;
 	LCD_WriteString("Inicializando...");	// Escrita da string no LCD.
 
@@ -542,7 +541,7 @@ void main(void)
 	// Seta o TIMER 0 para estouro de 1 em 1ms.
 	TIMER0_Set(238);
 
-	// Delay para estabiliza��o.
+	// Delay para estabilizacao.
 	__delay_ms(1000);
 
 	// La�o principal do firmware.
@@ -552,7 +551,7 @@ void main(void)
 		//sprintf(display_rpm,"%04d", deltaV);
 		sprintf(display_rpm,"%03d", rpm);		
 
-     	// Apresenta as informa��es no LCD.
+     	// Apresenta as informacoes no LCD.
 		LCD_Clear();
 		LCD_Cursor(0,0);
 		LCD_WriteString("kmH: ");
