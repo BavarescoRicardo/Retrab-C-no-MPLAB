@@ -11,30 +11,26 @@
 #include "timers.h"
 #include "lcd.h"
 #include "i2c.h"
-#include "spi.h"
-#include "eeprom.h"
+// #include "spi.h"
+// #include "eeprom.h"
 #include "pwm.h"
 
 //Vari�veis Globais de Controle.
 unsigned short ADCResult = 0;
-unsigned int temp_lida = 0;
 
 //Configura��es para formata��o de dados de sa�da.
 unsigned char display_rpm[10];
-unsigned char display_pwm[10];
+// unsigned char display_pwm[10];
+unsigned char buffer[7];
 int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 50;
 unsigned int deltaV = 0;
-unsigned int setpointUI = 200;
-
+unsigned int setpointUI = 0;
 
 unsigned int contagens_tm0 = 0;
-unsigned int contador_rb6 = 0;
-unsigned int tempo_rb6 = 0;
-
 
 
 // INICIO FUZZY
@@ -59,7 +55,6 @@ float ativa_fan = 0;
 
 // Entradas para o sistema.
 float tf = 50;
-float derro = 0;
 float setpoint = 20;
 
 //---------------------------------------------------------------------
@@ -103,6 +98,29 @@ float trapmf(float x, float a, float b, float c, float d)
 }
 
 //---------------------------------------------------------------------
+// Montagem do buffer de dados 
+void send()
+{
+
+  //Formata��o do Pacote de dados.
+  buffer[0] = '#';
+  buffer[1] = '$';
+  buffer[2] = ':';
+
+  // Medi��o
+  buffer[3] = (rpm >> 8) & 0xFF;
+  buffer[4] = rpm & 0xFF;
+  buffer[5] = 0;
+
+  unsigned char checksum = 0x00;
+  for (unsigned char index = 0; index < 6; index++)
+  {
+    USART_WriteChar(buffer[index]);
+    checksum ^= buffer[index];
+  }
+  buffer[6] = checksum;
+  USART_WriteChar(buffer[6]);
+}
 
 float min_val(float a, float b)
 {
@@ -342,63 +360,54 @@ void interrupt ISR(void)
 
 		if (USART_ReceiveChar() == '1')
 		{
-			USART_WriteString("\n\rpwm = \n\r");
 			setpointUI = 720;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '2')
 		{
-			USART_WriteString("\n\rpwm = \n\r");
 			setpointUI = 1450;
 			// PWM_DutyCycle2(pwm);			
 		}
 
 		if (USART_ReceiveChar() == '3')
 		{
-			USART_WriteString("\n\rpwm = \n\r");
 			setpointUI = 2828;
 			// PWM_DutyCycle2(pwm);
 		}
 		
 		if (USART_ReceiveChar() == '4')
 		{
-			USART_WriteString("\n\rpwm = \n\r");
 			setpointUI = 3256;
 			//PWM_DutyCycle2(setpointUI);			
 		}
 
 		if (USART_ReceiveChar() == '5')
 		{
-			USART_WriteString("\n\rpwm = \n\r");
 			setpointUI = 4510;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '6')
 		{
-			USART_WriteString("\n\rpwm = 768\n\r");
 			setpointUI = 5760;
 			//PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '7')
 		{
-			USART_WriteString("\n\rpwm = 896\n\r");
 			setpointUI = 6890;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '8')
 		{
-			USART_WriteString("\n\rpwm = \n\r");
 			setpointUI = 8100;
 			// PWM_DutyCycle2(pwm);
 		}
 
 		if (USART_ReceiveChar() == '9')
 		{
-			USART_WriteString("\n\rpwm = 1023\n\r");
 			setpointUI = 9000;
 			//PWM_DutyCycle2(pwm);
 		}
@@ -407,6 +416,12 @@ void interrupt ISR(void)
 		// No fim das condições manda o sinal para a função fuzzy
 		Fuzzy();
 		tf = (setpointUI - 100);
+
+		// Apresenta as informacoes na USART.
+		if(setpointUI != 0)
+		{
+			send();
+		}
 		// Flag de status da Interrup��o do buffer de recep��o da USART.
 		PIR1bits.RCIF = 0;
 	}
@@ -455,7 +470,7 @@ void interrupt ISR(void)
 
 		// Resetar a flag do Timer0 para uma nova contagem.
 		INTCONbits.T0IF = 0;
-	}
+	}		
 
 	// Tratamento da interrup��o do Timer1.
 	if (PIR1bits.TMR1IF) 
@@ -479,16 +494,16 @@ void interrupt ISR(void)
 //-----------------------------------------------------------------------------
 void main(void)
 {
-    TRISA = 0b00000001;		// Configura��o dos canais anal�gicos do PORTA.
-    PORTA = 0b00000001;  	// Inicializa��o dos canais anal�gicos do PORTA.
-    TRISB = 0b00000000;		// Configura��o das entradas/sa�das do PORTB (RB4 e RB5 PWM).
-    PORTB = 0b00000000;  	// Inicializa��o das entradas/sa�das do PORTB.
-	TRISC = 0b10000001;		// Configura��o do PORTC - pinos RC0(TIMER), RC7(RX) e RC6(TX).
-    PORTC = 0b11000000; 	// Inicializa��o dos pinos RX e TX em n�vel alto (Modo IDLE).
-    TRISD = 0b00000000;		// Configura��o das entradas/sa�das do PORTD.		
-    PORTD = 0b00000000;  	// Inicializa��o das das entradas/sa�das do PORTD.
-    TRISE = 0b00000000;		// Configura��o dos canais anal�gicos do PORTE.
-    PORTE = 0b00000000;  	// Inicializa��o dos canais anal�gicos do PORTE.
+    TRISA = 0b00000001;		// Configuracao dos canais anal�gicos do PORTA.
+    PORTA = 0b00000001;  	// Inicializacao dos canais anal�gicos do PORTA.
+    TRISB = 0b00000000;		// Configuracao das entradas/sa�das do PORTB (RB4 e RB5 PWM).
+    PORTB = 0b00000000;  	// Inicializacao das entradas/sa�das do PORTB.
+	TRISC = 0b10000001;		// Configuracao do PORTC - pinos RC0(TIMER), RC7(RX) e RC6(TX).
+    PORTC = 0b11000000; 	// Inicializacao dos pinos RX e TX em n�vel alto (Modo IDLE).
+    TRISD = 0b00000000;		// Configuracao das entradas/sa�das do PORTD.		
+    PORTD = 0b00000000;  	// Inicializacao das das entradas/sa�das do PORTD.
+    TRISE = 0b00000000;		// Configuracao dos canais anal�gicos do PORTE.
+    PORTE = 0b00000000;  	// Inicializacao dos canais anal�gicos do PORTE.
 
 	// Configura��es do TIMER1 para contagem de pulsos externos.
 	T1CON = 0x03;
@@ -507,8 +522,8 @@ void main(void)
 	INTCONbits.GIE	= 1;	// Habilita Interrup��o Global.
 
 	// Rotinas do USART.
- 	USART_WriteString("Inicializando o PIC16F877A\n\r");
- 	USART_WriteString("USART: 115.200bps\n\r");
+ 	// USART_WriteString("Inicializando o PIC16F877A\n\r");
+ 	// USART_WriteString("USART: 115.200bps\n\r");
 
 	// Rotinas do LCD.
 	LCD_Init();								// Inicializa��o do LCD.
@@ -531,13 +546,7 @@ void main(void)
 		// Formata os dados de rota��o para apresenta��o.
 		
 		//sprintf(display_rpm,"%04d", deltaV);
-		sprintf(display_rpm,"%04d", rpm);
-		sprintf(display_pwm,"%04d", deltaV);
-
-		// Apresenta as informa��es na USART.
-
-		USART_WriteString(display_rpm);
- 		USART_WriteString("\n\r");
+		sprintf(display_rpm,"%04d", rpm);		
 
      	// Apresenta as informa��es no LCD.
 		LCD_Clear();
@@ -545,10 +554,10 @@ void main(void)
 		LCD_WriteString("RPM: ");
 		LCD_Cursor(0,6);
 		LCD_WriteString(display_rpm);
-		LCD_Cursor(1,0);
-		LCD_WriteString("Delta: ");
+		// LCD_Cursor(1,0);
+		// LCD_WriteString("Delta: ");
 		LCD_Cursor(1,6);
-		LCD_WriteString(display_pwm);
+		// LCD_WriteString(display_pwm);
 
 		__delay_ms(200);
 	}

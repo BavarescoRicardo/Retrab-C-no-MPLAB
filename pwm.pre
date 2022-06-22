@@ -1,8 +1,8 @@
 
-# 1 "R:\Note\Ultimo C no MPLAB\pwm.c"
+# 1 "R:\Note\Sistema I\Ultimo C no MPLAB\pwm.c"
 
 
-# 6 "R:\Note\Ultimo C no MPLAB\config.h"
+# 6 "R:\Note\Sistema I\Ultimo C no MPLAB\config.h"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -1435,12 +1435,12 @@ extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsi
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
-# 5 "R:\Note\Ultimo C no MPLAB\pwm.h"
+# 5 "R:\Note\Sistema I\Ultimo C no MPLAB\pwm.h"
 void PWM_Init();
 void PWM_DutyCycle1(int);
 void PWM_DutyCycle2(int);
 
-# 5 "R:\Note\Ultimo C no MPLAB\pwm.c"
+# 5 "R:\Note\Sistema I\Ultimo C no MPLAB\pwm.c"
 void PWM_Init()
 {
 

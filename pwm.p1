@@ -74,7 +74,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _CCPR2L `Vuc ~T0 @X0 0 e@27 ]
 "1059
 [v _CCP2CON `Vuc ~T0 @X0 0 e@29 ]
-"6 R:\Note\Ultimo C no MPLAB\config.h
+"6 R:\Note\Sistema I\Ultimo C no MPLAB\config.h
 [p x FOSC=HS ]
 "7
 [p x WDTE=OFF ]
@@ -1104,7 +1104,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pwm.h: 5: void PWM_Init();
 [; ;pwm.h: 6: void PWM_DutyCycle1(int);
 [; ;pwm.h: 7: void PWM_DutyCycle2(int);
-"5 R:\Note\Ultimo C no MPLAB\pwm.c
+"5 R:\Note\Sistema I\Ultimo C no MPLAB\pwm.c
 [v _PWM_Init `(v ~T0 @X0 1 ef ]
 "6
 {

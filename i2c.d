@@ -1,1 +1,1 @@
- i2c.d  i2c.p1:  R:/Note/Ultimo\ C\ no\ MPLAB/i2c.c R:/Note/Ultimo\ C\ no\ MPLAB/config.h R:/Note/Ultimo\ C\ no\ MPLAB/i2c.h
+ i2c.d  i2c.p1:  R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/i2c.c R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/config.h R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/i2c.h

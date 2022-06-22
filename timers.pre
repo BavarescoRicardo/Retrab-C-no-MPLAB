@@ -1,8 +1,8 @@
 
-# 1 "R:\Note\Ultimo C no MPLAB\timers.c"
+# 1 "R:\Note\Sistema I\Ultimo C no MPLAB\timers.c"
 
 
-# 6 "R:\Note\Ultimo C no MPLAB\config.h"
+# 6 "R:\Note\Sistema I\Ultimo C no MPLAB\config.h"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -1435,13 +1435,13 @@ extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsi
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
-# 5 "R:\Note\Ultimo C no MPLAB\timers.h"
+# 5 "R:\Note\Sistema I\Ultimo C no MPLAB\timers.h"
 void TIMER0_Init();
 void TIMER0_Set(unsigned char);
 void TIMER1_Init();
 void TIMER1_Set(unsigned short);
 
-# 6 "R:\Note\Ultimo C no MPLAB\timers.c"
+# 6 "R:\Note\Sistema I\Ultimo C no MPLAB\timers.c"
 void TIMER0_Init()
 {
 OPTION_REGbits.T0CS = 0;

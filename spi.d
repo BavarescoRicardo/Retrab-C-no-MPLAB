@@ -1,1 +1,1 @@
- spi.d  spi.p1:  R:/Note/Ultimo\ C\ no\ MPLAB/spi.c R:/Note/Ultimo\ C\ no\ MPLAB/spi.h R:/Note/Ultimo\ C\ no\ MPLAB/config.h
+ spi.d  spi.p1:  R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/spi.c R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/spi.h R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/config.h

@@ -54,7 +54,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OERR `Vb ~T0 @X0 0 e@193 ]
 "1035
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
-"6 R:\Note\Ultimo C no MPLAB\config.h
+"6 R:\Note\Sistema I\Ultimo C no MPLAB\config.h
 [p x FOSC=HS ]
 "7
 [p x WDTE=OFF ]
@@ -1085,7 +1085,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;usart.h: 7: void USART_WriteChar(unsigned char);
 [; ;usart.h: 8: void USART_WriteString(const char *);
 [; ;usart.h: 9: unsigned char USART_ReceiveChar(void);
-"6 R:\Note\Ultimo C no MPLAB\usart.c
+"6 R:\Note\Sistema I\Ultimo C no MPLAB\usart.c
 [v _USART_Init `(v ~T0 @X0 1 ef1`l ]
 "7
 {

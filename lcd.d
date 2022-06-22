@@ -1,1 +1,1 @@
- lcd.d  lcd.p1:  R:/Note/Ultimo\ C\ no\ MPLAB/lcd.c R:/Note/Ultimo\ C\ no\ MPLAB/config.h R:/Note/Ultimo\ C\ no\ MPLAB/lcd.h
+ lcd.d  lcd.p1:  R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/lcd.c R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/config.h R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/lcd.h

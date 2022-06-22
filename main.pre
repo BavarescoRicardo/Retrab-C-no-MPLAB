@@ -1,8 +1,8 @@
 
-# 1 "R:\Note\Ultimo C no MPLAB\main.c"
+# 1 "R:\Note\Sistema I\Ultimo C no MPLAB\main.c"
 
 
-# 6 "R:\Note\Ultimo C no MPLAB\config.h"
+# 6 "R:\Note\Sistema I\Ultimo C no MPLAB\config.h"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -1571,23 +1571,23 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 6 "R:\Note\Ultimo C no MPLAB\usart.h"
+# 6 "R:\Note\Sistema I\Ultimo C no MPLAB\usart.h"
 void USART_Init(long);
 void USART_WriteChar(unsigned char);
 void USART_WriteString(const char *);
 unsigned char USART_ReceiveChar(void);
 
-# 6 "R:\Note\Ultimo C no MPLAB\adc.h"
+# 6 "R:\Note\Sistema I\Ultimo C no MPLAB\adc.h"
 void ADC_Init();
 unsigned int ADC_Read(unsigned int channel);
 
-# 5 "R:\Note\Ultimo C no MPLAB\timers.h"
+# 5 "R:\Note\Sistema I\Ultimo C no MPLAB\timers.h"
 void TIMER0_Init();
 void TIMER0_Set(unsigned char);
 void TIMER1_Init();
 void TIMER1_Set(unsigned short);
 
-# 12 "R:\Note\Ultimo C no MPLAB\lcd.h"
+# 12 "R:\Note\Sistema I\Ultimo C no MPLAB\lcd.h"
 void LCD_Cursor(unsigned char, unsigned char);
 void LCD_WriteCmd(unsigned char);
 void LCD_WriteData(unsigned char);
@@ -1595,7 +1595,7 @@ void LCD_WriteString(const char *);
 void LCD_Clear();
 void LCD_Init();
 
-# 5 "R:\Note\Ultimo C no MPLAB\i2c.h"
+# 5 "R:\Note\Sistema I\Ultimo C no MPLAB\i2c.h"
 void I2C_Init(void);
 void I2C_Idle(void);
 void I2C_Start(void);
@@ -1606,42 +1606,29 @@ void I2C_Stop(void);
 void I2C_ACK(void);
 void I2C_NACK(void);
 
-# 5 "R:\Note\Ultimo C no MPLAB\spi.h"
-void SPI_Init(void);
-unsigned char SPI_Write(unsigned char);
-void SPI_Wait();
-
-# 5 "R:\Note\Ultimo C no MPLAB\eeprom.h"
-unsigned char EEPROM_Read(unsigned char);
-void EEPROM_Write(unsigned char, unsigned char);
-void EEPROM_Erase();
-
-# 5 "R:\Note\Ultimo C no MPLAB\pwm.h"
+# 5 "R:\Note\Sistema I\Ultimo C no MPLAB\pwm.h"
 void PWM_Init();
 void PWM_DutyCycle1(int);
 void PWM_DutyCycle2(int);
 
-# 19 "R:\Note\Ultimo C no MPLAB\main.c"
+# 19 "R:\Note\Sistema I\Ultimo C no MPLAB\main.c"
 unsigned short ADCResult = 0;
-unsigned int temp_lida = 0;
 
 
 unsigned char display_rpm[10];
-unsigned char display_pwm[10];
+
+unsigned char buffer[7];
 int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 50;
 unsigned int deltaV = 0;
-unsigned int setpointUI = 200;
-
+unsigned int setpointUI = 0;
 
 unsigned int contagens_tm0 = 0;
-unsigned int contador_rb6 = 0;
-unsigned int tempo_rb6 = 0;
 
-# 45
+# 41
 float x=0;
 float y=0;
 
@@ -1659,7 +1646,6 @@ float ativa_fan = 0;
 
 
 float tf = 50;
-float derro = 0;
 float setpoint = 20;
 
 
@@ -1704,6 +1690,29 @@ return(ua);
 
 
 
+void send()
+{
+
+
+buffer[0] = '#';
+buffer[1] = '$';
+buffer[2] = ':';
+
+
+buffer[3] = (rpm >> 8) & 0xFF;
+buffer[4] = rpm & 0xFF;
+buffer[5] = 0;
+
+unsigned char checksum = 0x00;
+for (unsigned char index = 0; index < 6; index++)
+{
+USART_WriteChar(buffer[index]);
+checksum ^= buffer[index];
+}
+buffer[6] = checksum;
+USART_WriteChar(buffer[6]);
+}
+
 float min_val(float a, float b)
 {
 if (a < b)
@@ -1722,18 +1731,18 @@ else
 return b;
 }
 
-# 129
+# 147
 void Fuzzy()
 {
 
-# 140
+# 158
 setpoint = (float)setpointUI;
 float deltaRpm = 0;
 
 
 unsigned int freio = 0;
 
-# 150
+# 168
 float mantem = 0;
 float reduz = 0;
 float aumenta = 0;
@@ -1793,7 +1802,7 @@ x=x+1;
 
 }
 
-# 213
+# 231
 if ((deltaRpm > 20) && (deltaRpm < 70))
 {
 
@@ -1824,7 +1833,7 @@ x=x+1;
 
 }
 
-# 247
+# 265
 if (deltaRpm > 70 )
 {
 
@@ -1899,7 +1908,7 @@ PWM_DutyCycle2(tf - deltaV);
 
 }
 
-# 330
+# 348
 void interrupt ISR(void)
 {
 
@@ -1915,63 +1924,54 @@ return;
 
 if (USART_ReceiveChar() == '1')
 {
-USART_WriteString("\n\rpwm = \n\r");
 setpointUI = 720;
 
 }
 
 if (USART_ReceiveChar() == '2')
 {
-USART_WriteString("\n\rpwm = \n\r");
 setpointUI = 1450;
 
 }
 
 if (USART_ReceiveChar() == '3')
 {
-USART_WriteString("\n\rpwm = \n\r");
 setpointUI = 2828;
 
 }
 
 if (USART_ReceiveChar() == '4')
 {
-USART_WriteString("\n\rpwm = \n\r");
 setpointUI = 3256;
 
 }
 
 if (USART_ReceiveChar() == '5')
 {
-USART_WriteString("\n\rpwm = \n\r");
 setpointUI = 4510;
 
 }
 
 if (USART_ReceiveChar() == '6')
 {
-USART_WriteString("\n\rpwm = 768\n\r");
 setpointUI = 5760;
 
 }
 
 if (USART_ReceiveChar() == '7')
 {
-USART_WriteString("\n\rpwm = 896\n\r");
 setpointUI = 6890;
 
 }
 
 if (USART_ReceiveChar() == '8')
 {
-USART_WriteString("\n\rpwm = \n\r");
 setpointUI = 8100;
 
 }
 
 if (USART_ReceiveChar() == '9')
 {
-USART_WriteString("\n\rpwm = 1023\n\r");
 setpointUI = 9000;
 
 }
@@ -1980,6 +1980,12 @@ setpointUI = 9000;
 
 Fuzzy();
 tf = (setpointUI - 100);
+
+
+if(setpointUI != 0)
+{
+send();
+}
 
 PIR1bits.RCIF = 0;
 }
@@ -2079,11 +2085,7 @@ LCD_Init();
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
 
-
-USART_WriteString("Inicializando o PIC16F877A\n\r");
-USART_WriteString("USART: 115.200bps\n\r");
-
-
+# 529
 LCD_Init();
 LCD_Cursor(0,0);
 LCD_WriteString("Inicializando...");
@@ -2105,12 +2107,6 @@ while(1)
 
 
 sprintf(display_rpm,"%04d", rpm);
-sprintf(display_pwm,"%04d", deltaV);
-
-
-
-USART_WriteString(display_rpm);
-USART_WriteString("\n\r");
 
 
 LCD_Clear();
@@ -2118,10 +2114,10 @@ LCD_Cursor(0,0);
 LCD_WriteString("RPM: ");
 LCD_Cursor(0,6);
 LCD_WriteString(display_rpm);
-LCD_Cursor(1,0);
-LCD_WriteString("Delta: ");
+
+
 LCD_Cursor(1,6);
-LCD_WriteString(display_pwm);
+
 
 _delay((unsigned long)((200)*(18432000/4000.0)));
 }

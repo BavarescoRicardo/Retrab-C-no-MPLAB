@@ -1,1 +1,1 @@
- timers.d  timers.p1:  R:/Note/Ultimo\ C\ no\ MPLAB/timers.c R:/Note/Ultimo\ C\ no\ MPLAB/config.h R:/Note/Ultimo\ C\ no\ MPLAB/timers.h
+ timers.d  timers.p1:  R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/timers.c R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/config.h R:/Note/Sistema\ I/Ultimo\ C\ no\ MPLAB/timers.h
