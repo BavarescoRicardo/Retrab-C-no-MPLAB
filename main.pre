@@ -1617,7 +1617,7 @@ unsigned short ADCResult = 0;
 
 unsigned char display_rpm[10];
 
-unsigned char buffer[7];
+unsigned char buffer[10];
 int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
@@ -1698,20 +1698,25 @@ buffer[0] = '#';
 buffer[1] = '$';
 buffer[2] = ':';
 
-
 unsigned int velocidade = rpm * 40;
+
 buffer[3] = (velocidade >> 8) & 0xFF;
 buffer[4] = velocidade & 0xFF;
 buffer[5] = 0;
 
+
+buffer[6] = (velocidade >> 8) & 0xFF;
+buffer[7] = velocidade & 0xFF;
+buffer[8] = 0;
+
 unsigned char checksum = 0x00;
-for (unsigned char index = 0; index < 6; index++)
+for (unsigned char index = 0; index < 9; index++)
 {
 USART_WriteChar(buffer[index]);
 checksum ^= buffer[index];
 }
-buffer[6] = checksum;
-USART_WriteChar(buffer[6]);
+buffer[9] = checksum;
+USART_WriteChar(buffer[9]);
 }
 
 float min_val(float a, float b)
@@ -1732,18 +1737,18 @@ else
 return b;
 }
 
-# 148
+# 153
 void Fuzzy()
 {
 
-# 159
+# 164
 setpoint = (float)setpointUI;
 float deltaRpm = 0;
 
 
 unsigned int freio = 0;
 
-# 169
+# 174
 float mantem = 0;
 float reduz = 0;
 float aumenta = 0;
@@ -1803,7 +1808,7 @@ x=x+1;
 
 }
 
-# 232
+# 237
 if ((deltaRpm > 20) && (deltaRpm < 70))
 {
 
@@ -1834,7 +1839,7 @@ x=x+1;
 
 }
 
-# 266
+# 271
 if (deltaRpm > 70 )
 {
 
@@ -1909,7 +1914,7 @@ PWM_DutyCycle2(tf - deltaV);
 
 }
 
-# 349
+# 354
 void interrupt ISR(void)
 {
 
@@ -2090,7 +2095,7 @@ LCD_Init();
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
 
-# 534
+# 539
 LCD_Init();
 LCD_Cursor(0,0);
 LCD_WriteString("Inicializando...");
@@ -2109,10 +2114,7 @@ _delay((unsigned long)((1000)*(18432000/4000.0)));
 while(1)
 {
 
-
-sprintf(display_rpm,"%04d", rpm);
-
-
+# 561
 LCD_Clear();
 LCD_Cursor(0,0);
 LCD_WriteString("kmH: ");

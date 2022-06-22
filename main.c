@@ -21,7 +21,7 @@ unsigned short ADCResult = 0;
 //Configuracoes para formatacao de dados de saida.
 unsigned char display_rpm[10];
 // unsigned char display_pwm[10];
-unsigned char buffer[7];
+unsigned char buffer[10];
 int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
@@ -107,20 +107,25 @@ void send()
   buffer[1] = '$';
   buffer[2] = ':';
 
-  // Conversao para char
   unsigned int velocidade = rpm * 40;
+  // Conversao para char	rpm  
   buffer[3] = (velocidade >> 8) & 0xFF;
   buffer[4] = velocidade & 0xFF;
   buffer[5] = 0;
 
+  // Conversao para char	setpoint  
+  buffer[6] = (velocidade >> 8) & 0xFF;
+  buffer[7] = velocidade & 0xFF;
+  buffer[8] = 0;
+
   unsigned char checksum = 0x00;
-  for (unsigned char index = 0; index < 6; index++)
+  for (unsigned char index = 0; index < 9; index++)
   {
     USART_WriteChar(buffer[index]);
     checksum ^= buffer[index];
   }
-  buffer[6] = checksum;
-  USART_WriteChar(buffer[6]);
+  buffer[9] = checksum;
+  USART_WriteChar(buffer[9]);
 }
 
 float min_val(float a, float b)
@@ -550,7 +555,7 @@ void main(void)
 	{
 		
 		//sprintf(display_rpm,"%04d", deltaV);
-		sprintf(display_rpm,"%04d", rpm);		
+		//sprintf(display_rpm,"%04d", rpm);		
 
      	// Apresenta as informacoes no LCD.
 		LCD_Clear();
