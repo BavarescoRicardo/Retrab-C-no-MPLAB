@@ -21,12 +21,12 @@ unsigned short ADCResult = 0;
 //Configuracoes para formatacao de dados de saida.
 unsigned char display_rpm[10];
 // unsigned char display_pwm[10];
-unsigned char buffer[16];
+unsigned char buffer[13];
 int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
-unsigned int pwm = 50;
+unsigned int pwm = 1;
 
 unsigned int contagens_tm0 = 0;
 
@@ -42,9 +42,9 @@ int y=0;
 
 // Variáveis Fuzzy.
 float fitemp = 0;
-float fop_rule1 = 0;
-float fop_rule2 = 0;
-float fop_rule3 = 0;
+float rulemedio = 0;
+float rulepequeno = 0;
+float rulegrande = 0;
 
 // Variáveis de auxilio ao cálculo da centróide.
 float sum = 0;
@@ -52,9 +52,7 @@ float total_area = 0;
 float ativa_fan = 0;
 
 // Entradas para o sistema.
-float antigo = 50;
-float setpoint = 20;
-
+float antigo = 0;
 // Entradas em int 
 unsigned int deltaV = 0;
 unsigned int setpointUI = 0;
@@ -100,6 +98,20 @@ float trapmf(float x, float a, float b, float c, float d)
 	return(ua);
 }
 
+float maximo(float a, float b) {
+  if (a > b) {
+    return a;
+  }
+  return b;
+}
+
+float minimo(float a, float b) {
+  if (a < b) {
+    return a;
+  }
+  return b;
+}
+
 //---------------------------------------------------------------------
 // Montagem do buffer de dados 
 void send()
@@ -125,19 +137,14 @@ void send()
 	buffer[10] = deltaV & 0xFF;
 	buffer[11] = 'S';
 
-	// Conversao para char	antigo  
-	buffer[12] = (antigoUI >> 8) & 0xFF;
-	buffer[13] = antigoUI & 0xFF;
-	buffer[14] = 'S';
-
 	unsigned char checksum = 0x00;
-	for (unsigned char index = 0; index < 15; index++)
+	for (unsigned char index = 0; index < 12; index++)
 	{
 	USART_WriteChar(buffer[index]);
 	checksum ^= buffer[index];
 	}
-	buffer[15] = checksum;
-	USART_WriteChar(buffer[15]);
+	buffer[12] = checksum;
+	USART_WriteChar(buffer[12]);
 }
 
 float min_val(float a, float b)
@@ -170,193 +177,134 @@ void Fuzzy()
   3 - métodos de implicação
   4 - métodos de agregação
   5 - defuzzificação das saídas (centróide)
-
 */
-	//setpoint = (float)setpointUI;
-
-	// Variavel para indicar se esta reduzindo ou aumentando
-	unsigned int freio = 0;
-	float deltaFuzzy;
 	// Variaveis de fuzzy
-		// setpointUI --- Definido
-		// deltaV	  --- Diferença
-		// antigoUI	  --- Rpm Definido antigo
+	// setpointUI --- Definido
+	// deltaV	  --- Diferença
+	// antigoUI	  --- Rpm Definido antigo
 
-	float mantem = 0;
-	float reduz = 0;
-	float aumenta = 0;
-	float tip;
-	fitemp = 0;
+	// if (setpointUI == antigoUI)
+	// {
+	// 	return;
+	// }
 
-	// calculo do erro para o setpoint se nao forem iguais
-	if (setpointUI == antigoUI)
-	{
-		return;
-	}
+	deltaV = minimo(abs(setpointUI - rpm), 2000);
+	int delta = maximo(minimo(abs(deltaV - antigoUI), 1000), 1);
+	float x = 0;
+	float rule = 0;
 
-	// Normaliza os valores de diferenca
-	deltaV = (setpointUI - antigoUI)/80;	
-	//float deltaF = (float)(setpointUI - antigoUI);	
-	
-	if (setpointUI < antigoUI)
-	{
-			if(PORTBbits.RB1 == 1)
-			{
-				PORTBbits.RB1 = 0;
-			}else{
-				PORTBbits.RB1 = 1;
+	// 1 regra - Se a proximidade  alta, entao o reajuste  baixo
+	if (deltaV <= 100) {
+		// Fuzzificar as entradas e aplicacao dos operadores
+
+		rule = trapmf(deltaV, -1, 0, 1, 100);
+
+		x = 0;
+		for (int a = 0; a <= 15; a++) {
+			rulepequeno = trapmf(x, -1, 0, 0, 5);
+			if (rulepequeno >= rule) {
+			rulepequeno = rule;
 			}
 
-		 freio = 1;
-	}
-	//Limites (valores acima recebem o maximo...)
-	if (deltaV >90) deltaV = 90;
-
-
-	
-	// 1ª regra - If delta é menor e esta lento - fica pouco lento 
-	if (deltaV < 20)
-	{
-
-		// 1 - Reduz as velocidades.
-		// [0 0 13 32.4]
-		fitemp = trapmf(deltaV, 0,0,13,32);
-
-		// 2 - Aplicação dos operadores Fuzzy.
-		fop_rule1 = max_val(fitemp,0.1);
-
-		//3 - Aplicação do Método de Implicação (valores mínimos).
-		x=0;
-		y=0;
-		for (int a=0; a<=90; a++)
-		{
-			y = trapmf(x,0,0,13,32);
-
-			if (y > fop_rule1)
-			{
-				reduz += fop_rule1;
-			}
-			else
-			{
-				reduz += y;
-			}
-
-			x=x+1;
-		}
-
-	}
-
-
-
-	// 2ª regra - If deltaRpm is na faixa de diferenca é meida e esta lento - muda pouco
-	//  [9 45 81]
-	if ((deltaV > 20) && (deltaV < 70))
-	{
-
-		// 1 - Fuzzificar as entradas.
-		fitemp = trimf(deltaV, 9, 45, 81);
-
-		// 2 - Aplicação dos operadores Fuzzy.
-		fop_rule2 = max_val(fitemp,0.1);
-
-		 // 3 - Aplicação do Método de Implicação (valores mínimos).
-		x=0;
-		y=0;
-		for (int a=0; a<=90; a++)
-		{
-			y = trimf(x, 9, 45, 81);
-
-			if (y >= fop_rule2)
-			{
-				mantem += fop_rule2;
-			}
-			else
-			{
-				mantem += y;
-			}
-
-			x=x+1;
-		}
-
-	}
-
-
-
-	// 3ª regra - If deltaRpm is acima  e esta lento - aumentaa velocidade
-	// [62 79 90 90]
-	if (deltaV > 70 )
-	{
-	
-		// 1 - Fuzzificar as entradas.
-		fitemp = trapmf(deltaV, 62, 79, 90, 90);
-//		fiFood    = trapmf(food,7,9,10,10);
-
-		// 2 - Aplicação dos operadores Fuzzy.
-		fop_rule3 = max_val(fitemp,0.1);
-
-		// 3 - Aplicação do Método de Implicação (valores mínimos).
-		x=0;
-		y=0;
-		for (int a=0; a<=90; a++)
-		{
-			y = trapmf(x, 62, 79, 90, 90);
-
-			if (y >= fop_rule3)
-			{
-				aumenta += fop_rule3;
-			}
-			else
-			{
-				aumenta += y;
-			}
-
-			x=x+1;
-		}
-
-	}
-
-	// 4 - Aplicação do Método de Agregação.
-	if (deltaV < 25)
-	{
-		tip = reduz;
-	}else
-	if (deltaV >= 25 && deltaV < 75)
-	{
-		tip = mantem;
-	}else
-	{
-		tip = aumenta;
-	}
-
-	// 5 - desfuzifica
-	total_area = 90;
-	sum = 0;	
-	sum = sum + tip;
-
-	// Cálculo da Centróide.
-	ativa_fan = sum/total_area;
-
-	// Normaliza valores para o duty_cicle
-	ativa_fan = ativa_fan*100;
-
-	
-	//deltaV = (int)ativa_fan;
-
-	// Envia o valor calculado para o duty cicle pwm
-	if (freio = 1)
-	{	
-		if (deltaV >0 && deltaV < 1020)
-		{
-			PWM_DutyCycle2(deltaV);
-		}
-	}else 
-	{
-		if (deltaV > 0 && deltaV < 1020)
-		{
-			PWM_DutyCycle2(deltaV);
+			x += 1;
 		}
 	}
+
+	// 2 regra - Se a proximidade  media e esta em ajuste baixo, o reajuste
+	// baixo
+	if (deltaV >= 100 && deltaV <= 1001 && delta <= 200) 
+	{
+		// Fuzzificar as entradas e aplicacao dos operadores
+		rule = trapmf(deltaV, 50, 800, 800, 1550) *
+				(1 - trapmf(delta, -1, 0, 1, 200));
+
+		x = 0;
+		for (int a = 0; a <= 15; a++) {
+			rulepequeno = trapmf(x, 2, 5, 5, 10);
+			if (rulepequeno >= rule) {
+			rulepequeno = rule;
+			}
+
+			x += 1;
+		}
+	}
+
+	// 3 regra - Se a proximidade  media e esta em ajuste alto, o reajuste
+	// medio
+	if (deltaV >= 100 && deltaV <= 1001 && delta >= 201) 
+	{
+		// Fuzzificar as entradas e aplica��o dos operadores
+		rule = trapmf(deltaV, 50, 800, 800, 1550) *
+				trapmf(delta, 200, 500, 2000, 2001);
+
+		x = 0;
+		for (int a = 0; a <= 15; a++) {
+			rulemedio = trapmf(x, 2, 5, 5, 10);
+
+			if (rulemedio >= rule) {
+			rulemedio = rule;
+			}
+
+			x += 1;
+		}
+	}
+
+	// 4 regra - Se a proximidade baixa, entao o reajuste  alto
+	if (deltaV >= 1001) 
+	{
+		// Fuzzificar as entradas e aplicacao dos operadores
+		rule = trapmf(deltaV, 1001, 1500, 2000, 2001);
+
+		x = 0;
+		for (int a = 0; a <= 15; a++) {
+			rulegrande = trapmf(x, 5, 10, 15, 16);
+
+			if (rulegrande >= rule) {
+			rulegrande = rule;
+			}
+
+			x += 1;
+		}
+	}
+
+	// Aplicacao do Metodo de agregacao e implicacao dos antecedentes pelo
+	// consequente.
+	x = 0;
+	float total_area = 0;
+	float soma = 0;
+	for (int a = 0; a <= 15; a++) 
+	{
+		if (a >= 0 && a <= 5) {
+			total_area += rulepequeno;
+			soma += (x * rulepequeno);
+		}
+
+		if (a >= 5 && a <= 10) {
+			total_area += rulemedio;
+			soma += (x * rulemedio);
+		}
+
+		if (a >= 10 && a <= 15) {
+			total_area += rulegrande;
+			soma += (x * rulegrande);
+		}
+		x += 1;
+	}
+
+	// Calculo da Centroide.
+	float reajuste = 0;
+	if (total_area != 0) 
+	{
+		reajuste = soma / total_area;
+	}
+
+	// vAnterior + erro * (sentido) entre um maximo de 1023 e um minimo de 0
+	pwm = maximo(minimo(pwm + ((int)minimo(reajuste, deltaV)) * (setpointUI > rpm ? 1 : -1), 1023), 0);
 	
+	if(pwm > 0 && pwm < 1024)
+	{
+		PWM_DutyCycle2(pwm);
+	}
 
 }
 
@@ -384,56 +332,47 @@ void interrupt ISR(void)
 
 		if (USART_ReceiveChar() == '1')
 		{
-			setpointUI = 720;
-			// PWM_DutyCycle2(pwm);
+			setpointUI = 430;
 		}
 
 		if (USART_ReceiveChar() == '2')
 		{
-			setpointUI = 1450;
-			// PWM_DutyCycle2(pwm);			
+			setpointUI = 520;
 		}
 
 		if (USART_ReceiveChar() == '3')
 		{
-			setpointUI = 2828;
-			// PWM_DutyCycle2(pwm);
+			setpointUI = 760;
 		}
 		
 		if (USART_ReceiveChar() == '4')
 		{
-			setpointUI = 3256;
-			//PWM_DutyCycle2(setpointUI);			
+			setpointUI = 890;
 		}
 
 		if (USART_ReceiveChar() == '5')
 		{
-			setpointUI = 4510;
-			// PWM_DutyCycle2(pwm);
+			setpointUI = 1250;
 		}
 
 		if (USART_ReceiveChar() == '6')
 		{
-			setpointUI = 5760;
-			//PWM_DutyCycle2(pwm);
+			setpointUI = 2250;
 		}
 
 		if (USART_ReceiveChar() == '7')
 		{
-			setpointUI = 6890;
-			// PWM_DutyCycle2(pwm);
+			setpointUI = 3450;
 		}
 
 		if (USART_ReceiveChar() == '8')
 		{
-			setpointUI = 8100;
-			// PWM_DutyCycle2(pwm);
+			setpointUI = 4650;
 		}
 
 		if (USART_ReceiveChar() == '9')
 		{
-			setpointUI = 9000;
-			//PWM_DutyCycle2(pwm);
+			setpointUI = 5400;
 		}
 
 
@@ -486,7 +425,7 @@ void interrupt ISR(void)
 			
 			// Transforma rpm em km/h
 				// cada 40 rpm sera 1 km
-			rpm = rpm / 40;
+			// rpm = rpm / 40;
 
 			// Limpa registrador para nova contagem.
 			TMR1L = 0x00;
