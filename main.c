@@ -19,14 +19,17 @@
 unsigned short ADCResult = 0;
 
 //Configuracoes para formatacao de dados de saida.
-unsigned char display_rpm[10];
+// unsigned char display_rpm[10];
 // unsigned char display_pwm[10];
 unsigned char buffer[13];
+unsigned char bufferRecebido[7];
+unsigned char lendo = 'N';
 int status = 0;
 unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 1;
+unsigned int indicebuffer = 0;
 unsigned int cruzeiroVel = 0;
 unsigned char cruzeiroSet = 'N';
 
@@ -116,7 +119,7 @@ float minimo(float a, float b) {
 
 //---------------------------------------------------------------------
 // Montagem do buffer de dados 
-void send()
+void enviabuffer()
 {
 	//Monta pacote de dados buffer
 	buffer[0] = '#';
@@ -180,25 +183,15 @@ void Fuzzy()
   4 - métodos de agregação
   5 - defuzzificação das saídas (centróide)
 */
-	// Variaveis de fuzzy
-	// setpointUI --- Definido
-	// deltaV	  --- Diferença
-	// antigoUI	  --- Rpm Definido antigo
-
-	// if (setpointUI == antigoUI)
-	// {
-	// 	return;
-	// }
 
 	deltaV = minimo(abs(setpointUI - rpm), 2000);
 	int delta = maximo(minimo(abs(deltaV - antigoUI), 1000), 1);
 	float x = 0;
 	float rule = 0;
 
-	// 1 regra - Se a proximidade  alta, entao o reajuste  baixo
+	// 1 regra - Se delta alto, entao o reajuste  baixo
 	if (deltaV <= 100) {
 		// Fuzzificar as entradas e aplicacao dos operadores
-
 		rule = trapmf(deltaV, -1, 0, 1, 100);
 
 		x = 0;
@@ -212,13 +205,11 @@ void Fuzzy()
 		}
 	}
 
-	// 2 regra - Se a proximidade  media e esta em ajuste baixo, o reajuste
-	// baixo
+	// 2 regra - Se a delta  media e esta em ajuste baixo
 	if (deltaV >= 100 && deltaV <= 1001 && delta <= 200) 
 	{
 		// Fuzzificar as entradas e aplicacao dos operadores
-		rule = trapmf(deltaV, 50, 800, 800, 1550) *
-				(1 - trapmf(delta, -1, 0, 1, 200));
+		rule = trapmf(deltaV, 50, 800, 800, 1550) *	(1 - trapmf(delta, -1, 0, 1, 200));
 
 		x = 0;
 		for (int a = 0; a <= 15; a++) {
@@ -231,8 +222,7 @@ void Fuzzy()
 		}
 	}
 
-	// 3 regra - Se a proximidade  media e esta em ajuste alto, o reajuste
-	// medio
+	// 3 regra - Se delta medio e esta em ajuste alto, o reajuste
 	if (deltaV >= 100 && deltaV <= 1001 && delta >= 201) 
 	{
 		// Fuzzificar as entradas e aplica��o dos operadores
@@ -251,7 +241,7 @@ void Fuzzy()
 		}
 	}
 
-	// 4 regra - Se a proximidade baixa, entao o reajuste  alto
+	// 4 regra - Se a delta baixa, entao o reajuste  alto
 	if (deltaV >= 1001) 
 	{
 		// Fuzzificar as entradas e aplicacao dos operadores
@@ -269,8 +259,7 @@ void Fuzzy()
 		}
 	}
 
-	// Aplicacao do Metodo de agregacao e implicacao dos antecedentes pelo
-	// consequente.
+	// Aplicacao do Metodo de agregacao e implicacao
 	x = 0;
 	float total_area = 0;
 	float soma = 0;
@@ -303,6 +292,7 @@ void Fuzzy()
 	// vAnterior + erro * (sentido) entre um maximo de 1023 e um minimo de 0
 	pwm = maximo(minimo(pwm + ((int)minimo(reajuste, deltaV)) * (setpointUI > rpm ? 1 : -1), 1023), 0);
 	
+	// Garante que seja enviado um valor aceitavel ao DutyCycle
 	if(pwm > 0 && pwm < 1024)
 	{
 		PWM_DutyCycle2(pwm);
@@ -320,11 +310,47 @@ void Fuzzy()
 
 //-----------------------------------------------------------------------------
 void interrupt ISR(void)
-{
+{	
 	// Tratamento da interrupcao do buffer de recepcaoo.
 	if (PIR1bits.RCIF)
-	{		
-		if (USART_ReceiveChar() == '0')
+	{	
+		// recebe um buffer caractere por caractere via magica
+    	unsigned char byte = USART_ReceiveChar();
+		if (byte == '#')
+		{
+			indicebuffer = 0;
+			lendo = 'S';
+			PORTBbits.RB0 = 1;
+		} else  if(lendo == 'S'){
+			indicebuffer++;
+		}
+		bufferRecebido[indicebuffer] = byte;
+
+		if (indicebuffer >= 6 && lendo == 'S') {
+			indicebuffer = 0;			
+			lendo == 'N';			
+			if (bufferRecebido[0] == '#' && bufferRecebido[1] == '$' && bufferRecebido[2] == ':') {
+				// Se buffer esta nos conformes - entao define setpoint e zera os anteriores
+				antigoUI = 0;
+				deltaV = 0;
+				PORTBbits.RB2 = 1;
+
+				setpointUI = (bufferRecebido[3] << 8) + (bufferRecebido[4]);				
+				deltaV = setpointUI;
+				
+				// // se recebido gira o cooler
+				// if (setpointUI > 1000)
+				// {
+				// 	PWM_DutyCycle2(880);
+				// 	PORTBbits.RB0 = 0;
+				// }else{					
+				// 	PORTBbits.RB1 = 1;
+				// }			
+			}			
+		}
+	
+
+		if (USART_ReceiveChar() == '0' && lendo == 'N')
 		{
 			USART_WriteString("\n\rfreio\n\r");
 			//pwm = 0;
@@ -333,62 +359,18 @@ void interrupt ISR(void)
 			return;
 		}
 
-		if (USART_ReceiveChar() == '1')
-		{
-			setpointUI = 430;
-		}
-
-		if (USART_ReceiveChar() == '2')
-		{
-			setpointUI = 520;
-		}
-
-		if (USART_ReceiveChar() == '3')
-		{
-			setpointUI = 760;
-		}
-		
-		if (USART_ReceiveChar() == '4')
-		{
-			setpointUI = 890;
-		}
-
-		if (USART_ReceiveChar() == '5')
-		{
-			setpointUI = 1250;
-		}
-
-		if (USART_ReceiveChar() == '6')
-		{
-			setpointUI = 2250;
-		}
-
-		if (USART_ReceiveChar() == '7')
-		{
-			setpointUI = 3450;
-		}
-
-		if (USART_ReceiveChar() == '8')
-		{
-			setpointUI = 4650;
-		}
-
-		if (USART_ReceiveChar() == '9')
-		{
-			setpointUI = 5400;
-		}
 
 		// Se o cruzeiroVel foi setado entao não deixa atualizar valores
-		if(USART_ReceiveChar() == 'S' || cruzeiroSet == 'S')
+		if(USART_ReceiveChar() == 'S' || cruzeiroSet == 'S' && lendo == 'N')
 		{
 			setpointUI = antigoUI;
 			cruzeiroVel = setpointUI; 
 			cruzeiroSet = 'S';
-		}else if(USART_ReceiveChar() == 'R' && cruzeiroSet == 'S')
+		}else if(USART_ReceiveChar() == 'R' && cruzeiroSet == 'S' && lendo == 'N')
 		{
 			setpointUI += 150;
 			cruzeiroVel = setpointUI; 
-		}else if(USART_ReceiveChar() == 'R' && cruzeiroSet == 'N')
+		}else if(USART_ReceiveChar() == 'R' && cruzeiroSet == 'N' && lendo == 'N')
 		{
 			setpointUI = antigoUI;
 			cruzeiroVel = setpointUI; 
@@ -396,13 +378,16 @@ void interrupt ISR(void)
 		}
 
 		// No fim das condições manda o sinal para a função fuzzy
-		Fuzzy();
-		antigoUI = setpointUI;		
+		if (lendo == 'N')
+		{
+			Fuzzy();
+			antigoUI = setpointUI;		
+		}
 
 		// Apresenta as informacoes na USART.
-		if(USART_ReceiveChar() == 'X')
+		if(USART_ReceiveChar() == 'X' && lendo == 'N')
 		{
-			send();
+			enviabuffer();
 		}
 		// Flag de status da Interrupcao do buffer de recepcao da USART.
 		PIR1bits.RCIF = 0;
@@ -537,8 +522,8 @@ void main(void)
 		LCD_Clear();
 		LCD_Cursor(0,0);
 		LCD_WriteString("kmH: ");
-		LCD_Cursor(0,6);
-		LCD_WriteString(display_rpm);
+		// LCD_Cursor(0,6);
+		// LCD_WriteString(display_rpm);
 		LCD_Cursor(1,0);
 		// LCD_WriteString("Delta: ");
 		//LCD_Cursor(1,6);
