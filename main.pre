@@ -1623,10 +1623,12 @@ unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 1;
+unsigned int cruzeiroVel = 0;
+unsigned char cruzeiroSet = 'N';
 
 unsigned int contagens_tm0 = 0;
 
-# 39
+# 41
 int x=0;
 int y=0;
 
@@ -1712,10 +1714,10 @@ buffer[0] = '#';
 buffer[1] = '$';
 buffer[2] = ':';
 
-unsigned int velocidade = rpm * 40;
 
-buffer[3] = (velocidade >> 8) & 0xFF;
-buffer[4] = velocidade & 0xFF;
+
+buffer[3] = (rpm >> 8) & 0xFF;
+buffer[4] = rpm & 0xFF;
 buffer[5] = 'V';
 
 
@@ -1756,11 +1758,11 @@ else
 return b;
 }
 
-# 172
+# 174
 void Fuzzy()
 {
 
-# 191
+# 193
 deltaV = minimo(abs(setpointUI - rpm), 2000);
 int delta = maximo(minimo(abs(deltaV - antigoUI), 1000), 1);
 float x = 0;
@@ -1881,7 +1883,7 @@ PWM_DutyCycle2(pwm);
 
 }
 
-# 320
+# 322
 void interrupt ISR(void)
 {
 
@@ -1889,9 +1891,10 @@ if (PIR1bits.RCIF)
 {
 if (USART_ReceiveChar() == '0')
 {
-USART_WriteString("\n\rdesligado\n\r");
+USART_WriteString("\n\rfreio\n\r");
 
 PWM_DutyCycle2(0);
+cruzeiroSet = 'N';
 return;
 }
 
@@ -1941,6 +1944,22 @@ setpointUI = 5400;
 }
 
 
+if(USART_ReceiveChar() == 'S' || cruzeiroSet == 'S')
+{
+setpointUI = antigoUI;
+cruzeiroVel = setpointUI;
+cruzeiroSet = 'S';
+}else if(USART_ReceiveChar() == 'R' && cruzeiroSet == 'S')
+{
+setpointUI += 150;
+cruzeiroVel = setpointUI;
+}else if(USART_ReceiveChar() == 'R' && cruzeiroSet == 'N')
+{
+setpointUI = antigoUI;
+cruzeiroVel = setpointUI;
+cruzeiroSet = 'S';
+}
+
 
 Fuzzy();
 antigoUI = setpointUI;
@@ -1988,7 +2007,7 @@ contagens_tm0 = 0;
 pulsos = (TMR1H << 8) + TMR1L;
 rpm = ((pulsos / pas_cooler) * 120);
 
-# 431
+# 450
 TMR1L = 0x00;
 TMR1H = 0x00;
 
@@ -2049,7 +2068,7 @@ LCD_Init();
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
 
-# 496
+# 515
 LCD_Init();
 LCD_Cursor(0,0);
 LCD_WriteString("Inicializando...");
@@ -2068,7 +2087,7 @@ _delay((unsigned long)((1000)*(18432000/4000.0)));
 while(1)
 {
 
-# 518
+# 537
 LCD_Clear();
 LCD_Cursor(0,0);
 LCD_WriteString("kmH: ");

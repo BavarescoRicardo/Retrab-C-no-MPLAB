@@ -27,6 +27,8 @@ unsigned int pas_cooler = 7;
 unsigned int pulsos = 0;
 unsigned int rpm = 0;
 unsigned int pwm = 1;
+unsigned int cruzeiroVel = 0;
+unsigned char cruzeiroSet = 'N';
 
 unsigned int contagens_tm0 = 0;
 
@@ -121,10 +123,10 @@ void send()
 	buffer[1] = '$';
 	buffer[2] = ':';
 
-	unsigned int velocidade = rpm * 40;
+	// unsigned int velocidade = rpm * 40;
 	// Conversao para char	rpm  
-	buffer[3] = (velocidade >> 8) & 0xFF;
-	buffer[4] = velocidade & 0xFF;
+	buffer[3] = (rpm >> 8) & 0xFF;
+	buffer[4] = rpm & 0xFF;
 	buffer[5] = 'V';
 
 	// Conversao para char	setpoint  
@@ -324,9 +326,10 @@ void interrupt ISR(void)
 	{		
 		if (USART_ReceiveChar() == '0')
 		{
-			USART_WriteString("\n\rdesligado\n\r");
+			USART_WriteString("\n\rfreio\n\r");
 			//pwm = 0;
 			PWM_DutyCycle2(0);
+			cruzeiroSet = 'N';
 			return;
 		}
 
@@ -375,6 +378,22 @@ void interrupt ISR(void)
 			setpointUI = 5400;
 		}
 
+		// Se o cruzeiroVel foi setado entao não deixa atualizar valores
+		if(USART_ReceiveChar() == 'S' || cruzeiroSet == 'S')
+		{
+			setpointUI = antigoUI;
+			cruzeiroVel = setpointUI; 
+			cruzeiroSet = 'S';
+		}else if(USART_ReceiveChar() == 'R' && cruzeiroSet == 'S')
+		{
+			setpointUI += 150;
+			cruzeiroVel = setpointUI; 
+		}else if(USART_ReceiveChar() == 'R' && cruzeiroSet == 'N')
+		{
+			setpointUI = antigoUI;
+			cruzeiroVel = setpointUI; 
+			cruzeiroSet = 'S';
+		}
 
 		// No fim das condições manda o sinal para a função fuzzy
 		Fuzzy();
