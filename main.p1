@@ -2083,53 +2083,53 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 323: PORTBbits.RB0 = 1;
 "323
 [e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 324: bufferRecebido[indicebuffer] = byte;
 "324
+[e = *U + &U _bufferRecebido * -> _indicebuffer `ux -> -> # *U &U _bufferRecebido `ui `ux _byte ]
+"325
 }
-[; ;main.c: 324: } else if(lendo == 'S'){
+[; ;main.c: 325: } else if(lendo == 'S'){
 [e $U 165  ]
 [e :U 164 ]
 [e $ ! == -> _lendo `ui -> 83 `ui 166  ]
 {
-[; ;main.c: 325: indicebuffer++;
-"325
-[e ++ _indicebuffer -> -> 1 `i `ui ]
+[; ;main.c: 326: indicebuffer++;
 "326
+[e ++ _indicebuffer -> -> 1 `i `ui ]
+[; ;main.c: 327: bufferRecebido[indicebuffer] = byte;
+"327
+[e = *U + &U _bufferRecebido * -> _indicebuffer `ux -> -> # *U &U _bufferRecebido `ui `ux _byte ]
+"328
 }
 [e :U 166 ]
-"327
+"330
 [e :U 165 ]
-[; ;main.c: 326: }
-[; ;main.c: 327: bufferRecebido[indicebuffer] = byte;
-[e = *U + &U _bufferRecebido * -> _indicebuffer `ux -> -> # *U &U _bufferRecebido `ui `ux _byte ]
-[; ;main.c: 329: if (indicebuffer >= 6 && lendo == 'S') {
-"329
+[; ;main.c: 328: }
+[; ;main.c: 330: if (indicebuffer >= 6 && lendo == 'S') {
 [e $ ! && >= _indicebuffer -> -> 6 `i `ui == -> _lendo `ui -> 83 `ui 167  ]
 {
-[; ;main.c: 330: indicebuffer = 0;
-"330
-[e = _indicebuffer -> -> 0 `i `ui ]
-[; ;main.c: 331: lendo == 'N';
+[; ;main.c: 331: indicebuffer = 0;
 "331
-[e == -> _lendo `ui -> 78 `ui ]
-[; ;main.c: 332: if (bufferRecebido[0] == '#' && bufferRecebido[1] == '$' && bufferRecebido[2] == ':') {
+[e = _indicebuffer -> -> 0 `i `ui ]
+[; ;main.c: 332: lendo == 'N';
 "332
+[e == -> _lendo `ui -> 78 `ui ]
+[; ;main.c: 333: if (bufferRecebido[0] == '#' && bufferRecebido[1] == '$' && bufferRecebido[2] == ':') {
+"333
 [e $ ! && && == -> *U + &U _bufferRecebido * -> -> -> 0 `i `ui `ux -> -> # *U &U _bufferRecebido `ui `ux `ui -> 35 `ui == -> *U + &U _bufferRecebido * -> -> -> 1 `i `ui `ux -> -> # *U &U _bufferRecebido `ui `ux `ui -> 36 `ui == -> *U + &U _bufferRecebido * -> -> -> 2 `i `ui `ux -> -> # *U &U _bufferRecebido `ui `ux `ui -> 58 `ui 168  ]
 {
-[; ;main.c: 334: antigoUI = 0;
-"334
-[e = _antigoUI -> -> 0 `i `ui ]
-[; ;main.c: 335: deltaV = 0;
+[; ;main.c: 335: antigoUI = 0;
 "335
-[e = _deltaV -> -> 0 `i `ui ]
-[; ;main.c: 336: PORTBbits.RB2 = 1;
+[e = _antigoUI -> -> 0 `i `ui ]
+[; ;main.c: 336: deltaV = 0;
 "336
+[e = _deltaV -> -> 0 `i `ui ]
+[; ;main.c: 337: PORTBbits.RB2 = 1;
+"337
 [e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 338: setpointUI = (bufferRecebido[3] << 8) + (bufferRecebido[4]);
-"338
-[e = _setpointUI -> + << -> *U + &U _bufferRecebido * -> -> -> 3 `i `ui `ux -> -> # *U &U _bufferRecebido `ui `ux `i -> 8 `i -> *U + &U _bufferRecebido * -> -> -> 4 `i `ui `ux -> -> # *U &U _bufferRecebido `ui `ux `i `ui ]
-[; ;main.c: 339: deltaV = setpointUI;
+[; ;main.c: 339: setpointUI = (bufferRecebido[3] << 8) + (bufferRecebido[4]);
 "339
-[e = _deltaV _setpointUI ]
+[e = _setpointUI -> + << -> *U + &U _bufferRecebido * -> -> -> 3 `i `ui `ux -> -> # *U &U _bufferRecebido `ui `ux `i -> 8 `i -> *U + &U _bufferRecebido * -> -> -> 4 `i `ui `ux -> -> # *U &U _bufferRecebido `ui `ux `i `ui ]
 "349
 }
 [e :U 168 ]
@@ -2160,9 +2160,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 169 ]
 [; ;main.c: 360: }
-[; ;main.c: 364: if(USART_ReceiveChar() == 'S' || cruzeiroSet == 'S' && lendo == 'N')
+[; ;main.c: 364: if((USART_ReceiveChar() == 'S' || cruzeiroSet == 'S') && (lendo == 'N'))
 "364
-[e $ ! || == -> ( _USART_ReceiveChar ..  `ui -> 83 `ui && == -> _cruzeiroSet `ui -> 83 `ui == -> _lendo `ui -> 78 `ui 170  ]
+[e $ ! && || == -> ( _USART_ReceiveChar ..  `ui -> 83 `ui == -> _cruzeiroSet `ui -> 83 `ui == -> _lendo `ui -> 78 `ui 170  ]
 [; ;main.c: 365: {
 "365
 {
@@ -2230,9 +2230,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 175 ]
 [; ;main.c: 385: }
-[; ;main.c: 388: if(USART_ReceiveChar() == 'X' && lendo == 'N')
+[; ;main.c: 388: if(lendo == 'N')
 "388
-[e $ ! && == -> ( _USART_ReceiveChar ..  `ui -> 88 `ui == -> _lendo `ui -> 78 `ui 176  ]
+[e $ ! == -> _lendo `ui -> 78 `ui 176  ]
 [; ;main.c: 389: {
 "389
 {

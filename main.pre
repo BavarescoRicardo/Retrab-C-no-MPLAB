@@ -1895,10 +1895,11 @@ if (byte == '#')
 indicebuffer = 0;
 lendo = 'S';
 PORTBbits.RB0 = 1;
+bufferRecebido[indicebuffer] = byte;
 } else if(lendo == 'S'){
 indicebuffer++;
-}
 bufferRecebido[indicebuffer] = byte;
+}
 
 if (indicebuffer >= 6 && lendo == 'S') {
 indicebuffer = 0;
@@ -1910,7 +1911,6 @@ deltaV = 0;
 PORTBbits.RB2 = 1;
 
 setpointUI = (bufferRecebido[3] << 8) + (bufferRecebido[4]);
-deltaV = setpointUI;
 
 # 349
 }
@@ -1928,7 +1928,7 @@ return;
 
 
 
-if(USART_ReceiveChar() == 'S' || cruzeiroSet == 'S' && lendo == 'N')
+if((USART_ReceiveChar() == 'S' || cruzeiroSet == 'S') && (lendo == 'N'))
 {
 setpointUI = antigoUI;
 cruzeiroVel = setpointUI;
@@ -1952,7 +1952,7 @@ antigoUI = setpointUI;
 }
 
 
-if(USART_ReceiveChar() == 'X' && lendo == 'N')
+if(lendo == 'N')
 {
 enviabuffer();
 }

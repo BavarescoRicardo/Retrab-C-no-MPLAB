@@ -321,10 +321,11 @@ void interrupt ISR(void)
 			indicebuffer = 0;
 			lendo = 'S';
 			PORTBbits.RB0 = 1;
+			bufferRecebido[indicebuffer] = byte;
 		} else  if(lendo == 'S'){
 			indicebuffer++;
-		}
-		bufferRecebido[indicebuffer] = byte;
+			bufferRecebido[indicebuffer] = byte;
+		}		
 
 		if (indicebuffer >= 6 && lendo == 'S') {
 			indicebuffer = 0;			
@@ -336,7 +337,6 @@ void interrupt ISR(void)
 				PORTBbits.RB2 = 1;
 
 				setpointUI = (bufferRecebido[3] << 8) + (bufferRecebido[4]);				
-				deltaV = setpointUI;
 				
 				// // se recebido gira o cooler
 				// if (setpointUI > 1000)
@@ -361,7 +361,7 @@ void interrupt ISR(void)
 
 
 		// Se o cruzeiroVel foi setado entao não deixa atualizar valores
-		if(USART_ReceiveChar() == 'S' || cruzeiroSet == 'S' && lendo == 'N')
+		if((USART_ReceiveChar() == 'S' || cruzeiroSet == 'S') && (lendo == 'N'))
 		{
 			setpointUI = antigoUI;
 			cruzeiroVel = setpointUI; 
@@ -385,7 +385,7 @@ void interrupt ISR(void)
 		}
 
 		// Apresenta as informacoes na USART.
-		if(USART_ReceiveChar() == 'X' && lendo == 'N')
+		if(lendo == 'N')
 		{
 			enviabuffer();
 		}
