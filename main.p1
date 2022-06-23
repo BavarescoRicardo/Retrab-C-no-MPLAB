@@ -2088,10 +2088,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _bufferRecebido * -> _indicebuffer `ux -> -> # *U &U _bufferRecebido `ui `ux _byte ]
 "325
 }
-[; ;main.c: 325: } else if(lendo == 'S'){
+[; ;main.c: 325: } else if(lendo == 'S' && byte != 'X'){
 [e $U 165  ]
 [e :U 164 ]
-[e $ ! == -> _lendo `ui -> 83 `ui 166  ]
+[e $ ! && == -> _lendo `ui -> 83 `ui != -> _byte `ui -> 88 `ui 166  ]
 {
 [; ;main.c: 326: indicebuffer++;
 "326
@@ -2105,8 +2105,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "330
 [e :U 165 ]
 [; ;main.c: 328: }
-[; ;main.c: 330: if (indicebuffer >= 6 && lendo == 'S') {
-[e $ ! && >= _indicebuffer -> -> 6 `i `ui == -> _lendo `ui -> 83 `ui 167  ]
+[; ;main.c: 330: if (indicebuffer >= 6 && lendo == 'S' && byte != 'X') {
+[e $ ! && && >= _indicebuffer -> -> 6 `i `ui == -> _lendo `ui -> 83 `ui != -> _byte `ui -> 88 `ui 167  ]
 {
 [; ;main.c: 331: indicebuffer = 0;
 "331

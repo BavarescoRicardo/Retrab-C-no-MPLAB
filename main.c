@@ -322,12 +322,12 @@ void interrupt ISR(void)
 			lendo = 'S';
 			PORTBbits.RB0 = 1;
 			bufferRecebido[indicebuffer] = byte;
-		} else  if(lendo == 'S'){
+		} else  if(lendo == 'S' && byte != 'X'){
 			indicebuffer++;
 			bufferRecebido[indicebuffer] = byte;
 		}		
 
-		if (indicebuffer >= 6 && lendo == 'S') {
+		if (indicebuffer >= 6 && lendo == 'S' && byte != 'X') {
 			indicebuffer = 0;			
 			lendo == 'N';			
 			if (bufferRecebido[0] == '#' && bufferRecebido[1] == '$' && bufferRecebido[2] == ':') {
